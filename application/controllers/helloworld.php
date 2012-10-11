@@ -21,4 +21,3 @@ class helloworld extends CI_Controller{
     
     
 }
-?>
