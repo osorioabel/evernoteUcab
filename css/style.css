@@ -330,6 +330,11 @@ h6{ font-size: 20px; }
 	top:47px;
 	right: 30px;
 }
+.top-login{
+	position: absolute;
+	top:47px;
+	right: 30px;
+}
 
 #searchform #s{
 	color: #7e7e7e;
