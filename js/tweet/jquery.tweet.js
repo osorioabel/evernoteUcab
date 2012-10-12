@@ -6,7 +6,7 @@
 
   $.fn.tweet = function(o){
     var s = $.extend({
-      username: ["seaofclouds"],                // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
+      username: 'osorioabel',                // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
       list: null,                               // [string]   optional name of list belonging to username
       favorites: false,                         // [boolean]  display the user's favorites instead of his tweets
       avatar_size: null,                        // [integer]  height and width of avatar if displayed (48px max)
@@ -15,11 +15,6 @@
       intro_text: null,                         // [string]   do you want text BEFORE your your tweets?
       outro_text: null,                         // [string]   do you want text AFTER your tweets?
       join_text:  null,                         // [string]   optional text in between date and tweet, try setting to "auto"
-      auto_join_text_default: "i said,",        // [string]   auto text for non verb: "i said" bullocks
-      auto_join_text_ed: "i",                   // [string]   auto text for past tense: "i" surfed
-      auto_join_text_ing: "i am",               // [string]   auto tense for present tense: "i was" surfing
-      auto_join_text_reply: "i replied to",     // [string]   auto tense for replies: "i replied to" @someone "with"
-      auto_join_text_url: "i was looking at",   // [string]   auto tense for urls: "i was looking at" http:...
       loading_text: null,                       // [string]   optional loading text, displayed while tweets load
       query: null,                              // [string]   optional search query
       callback: null,                 // [function] optional callback fired when the data has loaded

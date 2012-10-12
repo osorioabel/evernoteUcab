@@ -29,7 +29,6 @@
         <!-- ENDS prettyPhoto -->
         <!-- superfish -->
         <link rel="stylesheet" media="screen" href="<?php echo base_url(); ?>css/superfish.css" /> 
-        <link rel="stylesheet" media="screen" href="<?php echo base_url(); ?>css/superfish-left.css" /> 
         <script type="text/javascript" src="<?php echo base_url(); ?>js/superfish-1.4.8/js/hoverIntent.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/superfish-1.4.8/js/superfish.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/superfish-1.4.8/js/supersubs.js"></script>
@@ -41,9 +40,10 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>js/poshytip-1.0/src/jquery.poshytip.min.js"></script>
         <!-- ENDS poshytip -->
 
+        
         <!-- Tweet -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.tweet.css" media="all"  type="text/css"/> 
-        <script src="<?php echo base_url(); ?>js/tweet/jquery.tweet.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url(); ?>js/tweet/jquery.tweet.js" type="text/javascript"></script> 
+		
         <!-- ENDS Tweet -->
 
         <!-- Fancybox -->
