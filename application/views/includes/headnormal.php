@@ -31,16 +31,16 @@
                 <div class="wrapper">
                     <!-- Navigation -->
                     <ul id="nav" class="sf-menu">
-                        <li><a href="index.html">Home<span class="subheader">Welcome</span></a></li>
-                        <li><a href="features.html">Features<span class="subheader">Awesome options</span></a>
+                        
+                        
+                        <li><?php echo anchor ('homeuser','Home', array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a></li>
+                        <li><?php echo anchor ('home',$username, array ( 'title' => 'Home'));?><a><span class="subheader">Awesome options</span></a>
                             <ul>
 
-                                <li><a href="features-columns.html"><span> Columns layout</span></a></li>
-                                <li><a href="features-accordion.html"><span> Accordion</span></a></li>
-                                <li><a href="features-toggle.html"><span> Toggle box</span></a></li>
-                                <li><a href="features-tabs.html"><span> Tabs</span></a></li>
-                                <li><a href="features-infobox.html"><span> Text box</span></a></li>
-                                <li><a href="features-monobox.html"><span> Icons</span></a></li>
+                                <li><a href=""><span>Modificar Datos</span></a></li>
+                                <li><a href=""><span>Configurar cuenta Drropbox</span></a></li>
+                                <li><a href=""><span>Logout</span></a></li>
+                                
                             </ul>
                         </li>
                         <li class="current-menu-item"><a href="blog.html">Blog<span class="subheader">Read our posts</span></a></li>

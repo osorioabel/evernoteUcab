@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title><?php echo $title; ?></title>
         <!-- CSS -->
+        <link rel="icon" href="<?php echo base_url(); ?>img/EvernoteLoguito.png" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/social-icons.css" type="text/css" media="screen" />
         <!-- JS -->
@@ -33,10 +34,9 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>js/superfish-1.4.8/js/superfish.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/superfish-1.4.8/js/supersubs.js"></script>
         <!-- ENDS superfish -->
-
         <!-- poshytip -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>js/poshytip-1.0/src/tip-twitter/tip-twitter.css" type="text/css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+        
         <script type="text/javascript" src="<?php echo base_url(); ?>js/poshytip-1.0/src/jquery.poshytip.min.js"></script>
         <!-- ENDS poshytip -->
 
@@ -50,4 +50,13 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
         <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
         <!-- ENDS Fancybox -->
+        
+        
+        <script type="text/javascript" src="<?php echo base_url();?>js/jquery-validation-1.9.0/jquery.validate.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>js/ValidarForm.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>js/ValidarFormRegister.js"></script>
+        
+        
+        
+        
     </head>

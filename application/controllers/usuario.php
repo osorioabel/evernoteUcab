@@ -13,9 +13,7 @@ class usuario extends CI_Controller{
      function index() {
           
          $data = array();
-         $data['main_content']='login';
-        
-        
+         $data['main_content']='login';  
     }
     
     

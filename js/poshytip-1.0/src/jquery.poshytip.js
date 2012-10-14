@@ -390,7 +390,7 @@
 	// default settings
 	$.fn.poshytip.defaults = {
 		content: 		'[title]',	// content to display ('[title]', 'string', element, function(updateCallback){...}, jQuery)
-		className:		'tip-yellow',	// class for the tips
+		className:		'tip-darkgray',	// class for the tips
 		bgImageFrameSize:	10,		// size in pixels for the background-image (if set in CSS) frame around the inner content of the tip
 		showTimeout:		500,		// timeout before showing the tip (in milliseconds 1000 == 1 second)
 		hideTimeout:		100,		// timeout before hiding the tip

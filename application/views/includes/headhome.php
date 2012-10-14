@@ -4,7 +4,7 @@
     <div id="header">
         <!-- wrapper-header -->
         <div class="wrapper">
-            <a href="index.html"><img id="logo" src="img/logo.png" alt="Nova" /></a>
+            <a href="<?php echo base_url(); ?>"><img id="logo" src="<?php echo base_url(); ?>img/logo.png" alt="Nova" /></a>
 
         </div>
         <!-- ENDS wrapper-header -->					

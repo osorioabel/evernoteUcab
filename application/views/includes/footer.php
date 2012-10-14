@@ -19,20 +19,12 @@
 						<li class="col">
 							<h6>Categories</h6>
 							<ul>
-								<li><a href="#">Webdesign projects senectus</a></li>
-								<li><a href="#/">Wordpress projects senectus</a></li>
-								<li><a href="#">Vestibulum tortor quam</a></li>
-								<li><a href="#">Code projects amet quam egestas</a></li>
-								<li><a href="#">Web design projects senectus</a></li>
-								<li><a href="#/">Marketplace projects</a></li>
-								<li><a href="#">Writting projects senectus</a></li>
-								<li><a href="#">Drawings projects fames Aenean</a></li>
-								<li><a href="#/">Wordpress projects Aenean ultricies</a></li>
+								
 							</ul>
 						</li>
 						<li class="col">
 							<h6>About the theme</h6>
-							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros.
+							
 						</li>
 						
 					</ul>
