@@ -40,7 +40,8 @@ class Usuario_Model extends CI_Model {
             'passdropbox' => $dropboxpassword,
         );
         $insert = $this->db->insert('usuario', $data);
-        $insert['error']= $this->db->_error_message();
+        $insert2 = array();
+        $insert2['error']= $this->db->_error_message();
         if($insert['error']!= '')
          return false;
         return true;
