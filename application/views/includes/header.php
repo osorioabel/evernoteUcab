@@ -60,4 +60,7 @@
         <script src="<?php echo base_url();?>js/messi/messi.min.js"></script>
         
         
+         <link rel="stylesheet" href="<?php echo base_url();?>js/popup/popup.min.css" />
+        <script src="<?php echo base_url();?>js/popup/popup.min.js"></script>
+        
     </head>

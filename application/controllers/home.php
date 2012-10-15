@@ -15,6 +15,24 @@ class Home extends CI_Controller {
     function index() {
 
         $data = array();
+         $data['messi'] = "";
+        $data['head'] = '/includes/headhome';
+        $data['main_content'] = 'home/home';
+        $data['title'] = 'Evernote->Home';
+        $this->load->view('/includes/templates', $data);
+    }
+
+    function index2() {
+
+        $data = array();
+        $data['messi'] = "<a id='error-title'></a>
+    
+        <script>
+        new popUp('Username or Password incorrect .', 
+        {title: 'Error', titleClass: 'anim error', 
+        buttons: [{id: 0, label: 'Close', val: 'X'}]});
+        </script>
+        ";
         $data['head'] = '/includes/headhome';
         $data['main_content'] = 'home/home';
         $data['title'] = 'Evernote->Home';
@@ -30,12 +48,12 @@ class Home extends CI_Controller {
         $booleano = $this->usuario_model->login($username, $password);
 
         if ($booleano) {
-            echo ""
-                  ;
 
             $homeuser = new homeuser();
-            $homeuser->index($username);
+            $homeuser->index2($username, 1);
         } else {
+            
+            $this->index2();
             
         }
     }

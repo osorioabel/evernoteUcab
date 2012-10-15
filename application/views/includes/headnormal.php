@@ -34,7 +34,7 @@
                         
                         
                         
-                        <li><?php echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
+                        <li class="current-menu-item"><?php echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
                             <ul>
 
                                 <li><?php echo anchor ('usuario/index/'. $username.'/modify','Modificar Datos', array ( 'title' => 'Modify'));?></li>
@@ -44,17 +44,25 @@
                                 
                             </ul>
                         </li>
-                        <li class="current-menu-item"><a href="blog.html">Blog<span class="subheader">Read our posts</span></a></li>
-                        <li><a href="portfolio.html">Portfolio <span class="subheader">Showcase work</span></a></li>
-                        <li><a href="gallery.html">Gallery<span class="subheader">Featured work</span></a>
+                        <li ><?php echo anchor ('homeuser/index/'. $username,'Libretas', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notebook</span></a>
                             <ul>
-                                <li><a href="gallery.html"><span> Four columns</span></a></li>
-                                <li><a href="gallery-3.html"><span> Three columns </span></a></li>
-                                <li><a href="gallery-2.html"><span> Two columns </span></a></li>
-                                <li><a href="video-gallery.html"><span> Video gallery </span></a></li>
+
+                                <li><?php echo anchor ('','Crear Libreta', array ( 'title' => 'Create'));?></li>
+                                <li><?php echo anchor ('','Modificar Libreta', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('','Eliminar Libreta', array ( 'title' => 'Delete'));?></li>
+                                <li><?php echo anchor ('','Agregar Nota a Libreta', array ( 'title' => 'Add'));?></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact<span class="subheader">Get in touch</span></a></li>
+                        <li ><?php echo anchor ('homeuser/index/'. $username,'Notas', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notes</span></a>
+                            <ul>
+
+                                <li><?php echo anchor ('','Crear Nota', array ( 'title' => 'Create'));?></li>
+                                <li><?php echo anchor ('','Modificar Nota', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('','Eliminar Nota', array ( 'title' => 'Delete'));?></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="">Contact Us<span class="subheader">Get in touch</span></a></li>
                     </ul>
                     <!-- Navigation -->
                 </div>

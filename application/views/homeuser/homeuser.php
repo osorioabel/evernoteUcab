@@ -1,4 +1,10 @@
 
+
+<?php
+     if($messi)   
+     echo $messi;
+
+?>
 <!-- Slider -->
 <div id="slider-block">
     <div id="slider-holder">

@@ -1,4 +1,9 @@
-<!-- MAIN -->
+
+<?php
+       if ($messi)
+        echo $messi;
+
+?><!-- MAIN -->
 <div id="main">
     <!-- wrapper-main -->
     <div class="wrapper">
@@ -70,7 +75,7 @@
                         <input name="repass_signup"  id="repass_signup" type="password" class="form-poshytip" title="Re-Enter a password " />
                     </div>
                     <div>
-                        
+
 
                         <p><input type="submit" value="Sign Up" name="submit" id="submit" onclick="message" /></p>
                 </fieldset>
@@ -93,12 +98,11 @@
             </div>
         </div>
     </div>
-    
+
     <!-- ENDS Twitter -->
-      <a id='success-title'></a>
+
     
-                         <script>
-			new Messi('Login Exitoso', 
-                        {title: 'Success login', titleClass: 'success', 
-                         autoclose: '1000'});
-                        </script>
+    
+    
+    
+    
