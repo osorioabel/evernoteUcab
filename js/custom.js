@@ -27,10 +27,10 @@ jQuery(document).ready(function($) {
     $('.poshytip').poshytip({
         className: 'tip-twitter',
         showOn: 'focus',
-	alignTo: 'target',
-	alignX: 'inner-left',
-	offsetX: 0,
-	offsetY: 5
+        alignTo: 'target',
+        alignX: 'inner-left',
+        offsetX: 0,
+        offsetY: 5
         
         
     });
@@ -39,12 +39,12 @@ jQuery(document).ready(function($) {
     // Poshytips Forms ------------------------------------------------------ //
     
     $('.form-poshytip').poshytip({
-       className: 'tip-twitter',
-	showOn: 'focus',
-	alignTo: 'target',
-	alignX: 'inner-left',
-	offsetX: 0,
-	offsetY: 5
+        className: 'tip-twitter',
+        showOn: 'focus',
+        alignTo: 'target',
+        alignX: 'inner-left',
+        offsetX: 0,
+        offsetY: 5
     });
 	
     // Superfish menu ------------------------------------------------------ //
@@ -320,13 +320,13 @@ jQuery(document).ready(function($) {
 function defaultInput(target){
     if((target).value == 'Search...'){
         (target).value=''
-        }
+    }
 }
 
 function clearInput(target){
     if((target).value == ''){
         (target).value='Search...'
-        }
+    }
 }
 
 

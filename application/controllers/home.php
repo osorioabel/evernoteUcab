@@ -1,6 +1,7 @@
 <?php
 
-if (!defined('BASEPATH')) exit('No direct script access allowed');
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
@@ -8,7 +9,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->model('usuario_model');
         $this->load->helper('form');
-        include_once(APPPATH.'controllers/homeuser.php');
+        include_once(APPPATH . 'controllers/homeuser.php');
     }
 
     function index() {
@@ -20,10 +21,6 @@ class Home extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
 
-    function islogin() {
-        
-    }
-
     function verifylogin() {
 
 
@@ -31,32 +28,28 @@ class Home extends CI_Controller {
         $password = $this->input->post('password_login');
 
         $booleano = $this->usuario_model->login($username, $password);
-        
-        if($booleano)
-        {
-            
+
+        if ($booleano) {
+            echo ""
+                  ;
+
             $homeuser = new homeuser();
             $homeuser->index($username);
+        } else {
             
-       
-            
-        }
-            
-        else {
-            echo "este pana no esta en la BD";
         }
     }
 
     function register() {
 
 
+        $name = $this->input->post('name_signup');
+        $lastname = $this->input->post('lastname_signup');
         $username = $this->input->post('username_signup');
         $password = $this->input->post('pass_signup');
         $email = $this->input->post('email_signup');
-        $dropboxmail = $this->input->post('dropboxmail_signup');
-        $dropboxpass = $this->input->post('dropboxpass_signup');
 
-        $booleano = $this->usuario_model->register($username, $email, $password, $dropboxmail, $dropboxpass);
+        $booleano = $this->usuario_model->register($name, $lastname, $username, $email, $password);
         //echo $booleano;
         if ($booleano == true) {
 

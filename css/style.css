@@ -40,6 +40,24 @@ body {
 	position: relative;
 }
 
+.centrar
+	{
+		position: relative;
+		/*nos posicionamos en el centro del navegador*/
+		top:50%;
+		left:50%;
+		/*determinamos una anchura*/
+		width: 966px;
+		/*indicamos que el margen izquierdo, es la mitad de la anchura*/
+		margin-left:-200px;
+		/*determinamos una altura*/
+	
+		/*indicamos que el margen superior, es la mitad de la altura*/
+	
+		
+		
+	}
+
 #header{
 	height: 117px;
 	position: relative;
@@ -997,6 +1015,7 @@ h6{ font-size: 20px; }
 /* FORMS ------------------------------------------------------------*/
 
 #sc-contact-form,
+#sc-modify-form,
 #contactForm,
 #commentform,
 #contactForm{
@@ -1005,6 +1024,8 @@ h6{ font-size: 20px; }
 
 #sc-contact-form input,
 #sc-contact-form textarea,
+#sc-modify-form input,
+#sc-modify-form textarea,
 .admin-form input,
 .admin-form textarea,
 #contactForm input,
@@ -1020,6 +1041,7 @@ h6{ font-size: 20px; }
 }
 
 #sc-contact-form input,
+#sc-modify-form input,
 .admin-form input,
 #contactForm input,
 #commentform input{
@@ -1027,6 +1049,7 @@ h6{ font-size: 20px; }
 }
 
 #sc-contact-form textarea,
+#sc-modify-form textarea,
 .admin-form textarea,
 #contactForm textarea,
 #commentform textarea{
@@ -1034,6 +1057,7 @@ h6{ font-size: 20px; }
 }
 
 #sc-contact-form #submit,
+#sc-modify-form #submit,
 .admin-form #submit,
 #contactForm #submit,
 #commentform input#submit{
@@ -1055,6 +1079,7 @@ h6{ font-size: 20px; }
 }
 
 #sc-contact-form #submit:hover,
+#sc-modify-form #submit:hover,
 .admin-form #submit:hover,
 #contactForm #submit:hover,
 #commentform input#submit:hover{
@@ -1069,6 +1094,8 @@ h6{ font-size: 20px; }
 
 #sc-contact-form input,
 #sc-contact-form textarea,
+#sc-modify-form input,
+#sc-modify-form textarea,
 .admin-form input,
 .admin-form textarea,
 #contactForm input,
@@ -1080,6 +1107,7 @@ h6{ font-size: 20px; }
 }
 
 #sc-contact-form label,
+#sc-modify-form label,
 .admin-form label,
 #contactForm label,
 #commentform label{

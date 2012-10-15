@@ -33,13 +33,14 @@
                     <ul id="nav" class="sf-menu">
                         
                         
-                        <li><?php echo anchor ('homeuser','Home', array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a></li>
-                        <li><?php echo anchor ('home',$username, array ( 'title' => 'Home'));?><a><span class="subheader">Awesome options</span></a>
+                        
+                        <li><?php echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
                             <ul>
 
-                                <li><a href=""><span>Modificar Datos</span></a></li>
-                                <li><a href=""><span>Configurar cuenta Drropbox</span></a></li>
-                                <li><a href=""><span>Logout</span></a></li>
+                                <li><?php echo anchor ('usuario/index/'. $username.'/modify','Modificar Datos', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('usuario/index/'. $username.'/changePassword','Cambiar Clave', array ( 'title' => 'Change Password'));?></li>
+                                <li><?php echo anchor ('usuario/index/'. $username.'/configurateDropbox','Configurar cuenta Dropbox', array ( 'title' => 'Configurate Dropbox Account'));?></li>
+                                <li><?php echo anchor ('home','Logout', array ( 'title' => 'Home'));?></li>
                                 
                             </ul>
                         </li>

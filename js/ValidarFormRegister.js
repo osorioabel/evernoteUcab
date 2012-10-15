@@ -21,13 +21,21 @@ $(document).ready(function(){
         
         
         rules: {
+            name_signup:{
+                required: true, 
+                minlength: 2
+            },
+            lastname_signup: {
+                required: true, 
+                minlength: 2
+            },
             username_signup: {
                 required: true, 
                 minlength: 2
             },
             email_signup: {
-                required: false, 
-                minlength: 2
+                required: true, 
+                email: true
             },
             pass_signup: {
                 required: true, 
@@ -39,26 +47,26 @@ $(document).ready(function(){
                 minlength: 6,
                 maxlength: 12,
                 equalTo:"#pass_signup"
-            },
-            dropboxmail_signup:{
-                required: false, 
-                email: true
-            },
-            dropboxpass_signup: {
-                required: false
-                
             }
-
+           
 			
         },
         messages: {
+            name_signup:{  
+                required:"name required",  
+                minlength:"enter at least 2 characters"  
+            },  
+            lastname_signup: {  
+                required:"name required",  
+                minlength:"enter at least 2 characters"  
+            },
             username_signup:{  
                 required:"username require",  
                 minlength:"enter at least 3 characters"  
             },  
             email_signup:
             {  
-                required:"required email",  
+                required:"Email require",  
                 email :"invalid email" 
             },
             pass_signup:
@@ -71,15 +79,8 @@ $(document).ready(function(){
             {
                 required:"required email",  
                 equalTo:" Passwords Missmatch"
-            },    
-            dropboxmail_signup:{  
-                required:"email required ",  
-                email :"invalid email" 
-            },  
-            dropboxpass_signup: {  
-                required:"required  pass"
-                
-            }
+            }   
+            
         
         }
         

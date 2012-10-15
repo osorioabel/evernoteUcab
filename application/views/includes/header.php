@@ -56,7 +56,8 @@
         <script type="text/javascript" src="<?php echo base_url();?>js/ValidarForm.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>js/ValidarFormRegister.js"></script>
         
-        
+        <link rel="stylesheet" href="<?php echo base_url();?>js/messi/messi.min.css" />
+        <script src="<?php echo base_url();?>js/messi/messi.min.js"></script>
         
         
     </head>

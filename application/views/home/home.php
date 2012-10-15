@@ -46,6 +46,14 @@
                 ?>
                 <fieldset>
                     <div>
+                        <label>Name</label>
+                        <input name="name_signup"  id="name_signup" type="text" class="form-poshytip" title="Enter your name" />
+                    </div>
+                    <div>
+                        <label>Lastname</label>
+                        <input name="lastname_signup"  id="lastname_signup" type="text" class="form-poshytip" title="Enter your lastname" />
+                    </div>
+                    <div>
                         <label>Username</label>
                         <input name="username_signup"  id="username_signup" type="text" class="form-poshytip" title="Enter a username" />
                     </div>
@@ -62,15 +70,9 @@
                         <input name="repass_signup"  id="repass_signup" type="password" class="form-poshytip" title="Re-Enter a password " />
                     </div>
                     <div>
-                        <label>Dropbox Email</label>
-                        <input name="dropboxmail_signup"  id="dropboxmail_signup" type="text" class="form-poshytip" title="Enter your Dropbox User" />
-                    </div>
-                    <div>
-                        <label>Dropbox Password</label>
-                        <input name="dropboxpass_signup"  id="dropboxmail_signup" type="password" class="form-poshytip" title="Enter your Dropbox password" />
-                    </div>
+                        
 
-                    <p><input type="submit" value="Sign Up" name="submit" id="submit" /></p>
+                        <p><input type="submit" value="Sign Up" name="submit" id="submit" onclick="message" /></p>
                 </fieldset>
                 <?php echo form_close(); ?>
                 <!-- ENDS form -->
@@ -91,4 +93,12 @@
             </div>
         </div>
     </div>
+    
     <!-- ENDS Twitter -->
+      <a id='success-title'></a>
+    
+                         <script>
+			new Messi('Login Exitoso', 
+                        {title: 'Success login', titleClass: 'success', 
+                         autoclose: '1000'});
+                        </script>
