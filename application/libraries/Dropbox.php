@@ -28,6 +28,7 @@ class Dropbox
     const HOST          = 'api.dropbox.com';
     const AUTHORIZE_URI = '/oauth/authorize';
     const REQUEST_URI   = '/oauth/request_token';
+    
     const ACCESS_URI    = '/oauth/access_token';
     
     const DEFAULT_ROOT  = 'dropbox';//Customize which root you wish the library to default to
