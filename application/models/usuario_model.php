@@ -1,17 +1,7 @@
 <?php
 
-class Usuario_Model extends CI_Model {
-    
-    private $username = '';
-    private $password = '';
-    private $email = '';
-    private $userdropbox = '';
-    private $passdropbox = '';
-    private $name ;
-    private $apellido;
-    
-    
-
+class Usuario_Model extends CI_Model implements Usuario_DAO {
+ 
     
 
     function __construct() {
@@ -88,6 +78,23 @@ class Usuario_Model extends CI_Model {
         
         return true;
      }
+     
+     public function updatetoken(Usuario_OD $usuario){
+      
+          
+          $data = array('auth_token' => $usuario->getOauth_token(),
+                        'auth_token_secret' => $usuario->getOauth_token_secret(),
+          );
+         $this->db->where('username',$username);
+         $this->db->update('usuario',$data);
+       
+        if($this->db->_error_message())
+         return false;
+        
+        return true;
+     }
+     
+     
 
 }
 

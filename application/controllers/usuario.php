@@ -4,7 +4,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Usuario extends CI_Controller{
     
-       
+         
    public function __construct() {
         parent::__construct();
         $this->load->model('usuario_model');
@@ -98,6 +98,8 @@ class Usuario extends CI_Controller{
         // caso de gente repetido
             echo "esta repedito";
     }
+    
+    
     
     
 }
