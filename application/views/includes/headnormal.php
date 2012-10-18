@@ -39,7 +39,7 @@
 
                                 <li><?php echo anchor ('usuario/index/'. $username.'/modify','Modificar Datos', array ( 'title' => 'Modify'));?></li>
                                 <li><?php echo anchor ('usuario/index/'. $username.'/changePassword','Cambiar Clave', array ( 'title' => 'Change Password'));?></li>
-                                <li><?php echo anchor ('usuario/index/'. $username.'/configurateDropbox','Configurar cuenta Dropbox', array ( 'title' => 'Configurate Dropbox Account'));?></li>
+                                <li><?php echo anchor ('example/request_dropbox/','Configurar cuenta Dropbox', array ( 'title' => 'Configurate Dropbox Account'));?></li>
                                 <li><?php echo anchor ('home','Logout', array ( 'title' => 'Home'));?></li>
                                 
                             </ul>

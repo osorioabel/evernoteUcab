@@ -1,6 +1,6 @@
 <?php
 
-class Usuario_Model extends CI_Model implements Usuario_DAO {
+class Usuario_Model extends CI_Model {
  
     
 
@@ -9,7 +9,7 @@ class Usuario_Model extends CI_Model implements Usuario_DAO {
       
     }
     
-     function login($username, $password) {
+  public function login($username, $password) {
 
        $this->db->where('username', $username);
         $this->db->where('password', $password);
@@ -21,7 +21,7 @@ class Usuario_Model extends CI_Model implements Usuario_DAO {
         return FALSE;
     }
 
-    function register($name,$lastname,$username, $email, $password) {
+   public function register($name,$lastname,$username, $email, $password) {
 
         $data = array(
             'nombre' =>$name,
@@ -40,7 +40,7 @@ class Usuario_Model extends CI_Model implements Usuario_DAO {
       
     }
 
-     function modificar($username,$nombre, $apellido,$email){
+    public function modificar($username,$nombre, $apellido,$email){
           $data = array('nombre' => $nombre,
             'apellido' => $apellido,  
             'email' => $email,
@@ -54,7 +54,7 @@ class Usuario_Model extends CI_Model implements Usuario_DAO {
         return true;
      }
      
-     function cambiarClave($username,$password){
+   public function cambiarClave($username,$password){
           $data = array('password' => $password,
           );
          $this->db->where('username',$username);
@@ -66,7 +66,7 @@ class Usuario_Model extends CI_Model implements Usuario_DAO {
         return true;
      }
      
-     function configuarDropbox($username,$cuentadropbox,$passdropbox){
+    public function configuarDropbox($username,$cuentadropbox,$passdropbox){
           $data = array('cuentadropbox' => $cuentadropbox,
                         'passdropbox' => $passdropbox,
           );

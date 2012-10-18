@@ -10,12 +10,8 @@ class Example extends CI_Controller {
         $this->load->library('session');
         $this->load->helper('url');
         include_once(APPPATH . 'controllers/usuario.php');
-        include_once(APPPATH . 'modelOD/usuario_OD.php');
-        include_once(APPPATH . 'modelDAP/usuario_DAO.php');
-        include_once(APPPATH . 'modelDAP/usuario_model.php');
-        
-        
-        
+        //include_once(APPPATH . 'model/usuario_model.php');
+             
     }
 
     // Call this method first by visiting http://SITE_URL/example/request_dropbox
@@ -42,9 +38,6 @@ class Example extends CI_Controller {
         $this->session->set_userdata('oauth_token', $oauth['oauth_token']);
         $this->session->set_userdata('oauth_token_secret', $oauth['oauth_token_secret']);
         
-        $Usuario = Usuario_OD::token_OD($username,$oauth['oauth_token'],$oauth['oauth_token_secret']);
-        $UsuarioDAO = new Usuario_Model();
-        $UsuarioDAO->updatetoken($Usuario);
         
         redirect('/example/test_dropbox');
     }

@@ -113,8 +113,8 @@ class Dropbox
         //we will add to the redirect url.
         $resarray="";
         parse_str($response, $resarray);
-        
-        $callback='http://localhost/evernoteUcab/homeuser/';
+        $username='osorioabel';
+        $callback='http://localhost/evernoteUcab/homeuser/index/'.$username;
         $callback = urlencode($callback);
         
         //Return the full redirect url and let the user decide what to do from there.
