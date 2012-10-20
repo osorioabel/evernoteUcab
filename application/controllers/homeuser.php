@@ -9,20 +9,20 @@ class homeuser extends CI_Controller {
         parent::__construct();
     }
 
-    public function index($username) {
+    public function index() {
 
         $data = array();
         $data['messi']="";
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/homeuser/homeuser';
-        $data['username'] = $username;
+        //$data['username'] = $username;
 
         //echo $data['main_content'];
         $data['title'] = 'Home Page User';
         $this->load->view('/includes/templates', $data);
     }
 
-    public function index2($username, $success) {
+    public function index2($success) {
 
        
 
@@ -38,7 +38,7 @@ class homeuser extends CI_Controller {
        
             $data['head'] = '/includes/headnormal';
             $data['main_content'] = '/homeuser/homeuser';
-            $data['username'] = $username;
+            //$data['username'] = $username;
 
             //echo $data['main_content'];
             $data['title'] = 'Home Page User';

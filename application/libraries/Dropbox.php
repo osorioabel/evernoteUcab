@@ -37,7 +37,7 @@ class Dropbox
     const HTTP_1        = '1.1';
     const LINE_END      = "\r\n";
     
-    const DEBUG = false;
+    const DEBUG = true;
     
     //Array that should contain the consumer secret and
     //key which should be passed into the constructor.
@@ -113,8 +113,9 @@ class Dropbox
         //we will add to the redirect url.
         $resarray="";
         parse_str($response, $resarray);
-        $username='osorioabel';
-        $callback='http://localhost/evernoteUcab/homeuser/index/'.$username;
+        //$username='osorioabel';
+        $callback='http://localhost/evernoteUcab/example/access_dropbox';
+        //$callback=$callback;
         $callback = urlencode($callback);
         
         //Return the full redirect url and let the user decide what to do from there.

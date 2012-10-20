@@ -9,20 +9,21 @@ class Example extends CI_Controller {
         parent::__construct();
         $this->load->library('session');
         $this->load->helper('url');
+        $this->load->model('usuario_model');
         include_once(APPPATH . 'controllers/usuario.php');
-        //include_once(APPPATH . 'model/usuario_model.php');
-             
+        
+        
     }
 
     // Call this method first by visiting http://SITE_URL/example/request_dropbox
     public function request_dropbox() {
         $params['key'] = 'e9us87r5ehin30k';
         $params['secret'] = 'vvzs5zc3kwt305c';
-
         $this->load->library('dropbox', $params);
         $data = $this->dropbox->get_request_token(site_url("/example/access_dropbox"));
         $this->session->set_userdata('token_secret', $data['token_secret']);
         redirect($data['redirect']);
+        
     }
 
     //This method should not be called directly, it will be called after 
@@ -32,14 +33,11 @@ class Example extends CI_Controller {
         $params['secret'] = 'vvzs5zc3kwt305c';
 
         $this->load->library('dropbox', $params);
-
         $oauth = $this->dropbox->get_access_token($this->session->userdata('token_secret'));
-
         $this->session->set_userdata('oauth_token', $oauth['oauth_token']);
         $this->session->set_userdata('oauth_token_secret', $oauth['oauth_token_secret']);
-        
-        
-        redirect('/example/test_dropbox');
+        $booleano= $this->usuario_model->modificartoken('osorioabel',$oauth['oauth_token'],$oauth['oauth_token_secret']);
+        redirect('/example/upload_file');
     }
 
     //Once your application is approved you can proceed to load the library
@@ -51,22 +49,39 @@ class Example extends CI_Controller {
         $params['secret'] = 'vvzs5zc3kwt305c';
         $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
-        
+
         $this->load->library('dropbox', $params);
 
-        $dbobj = $this->dropbox->account();
+        $return = $this->dropbox->account();
 
-        print_r($dbobj);
+        print_r($return);
+    }
+
+    public function upload_file() {
+
+        $params['key'] = 'e9us87r5ehin30k';
+        $params['secret'] = 'vvzs5zc3kwt305c';
+        $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
+            'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
+        $this->load->library('dropbox', $params);
+        $arrayfalso=array();
+        $return = $this->dropbox->add('prueba', 'dropbox/Practica1.pdf',$arrayfalso,'dropbox');
+        print_r($return);
     }
     
-    public function upload_file() {
+    public function create_folder() {
+
+        $params['key'] = 'e9us87r5ehin30k';
+        $params['secret'] = 'vvzs5zc3kwt305c';
         $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
-        'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
+            'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
+        
         $this->load->library('dropbox', $params);
-
-        $dbobj = $this->dropbox->account();
-
-        print_r($dbobj);
+       
+        
+        
+        $return = $this->dropbox->create_folder('/prueba/prueba','dropbox');
+        print_r($return);
     }
     
     

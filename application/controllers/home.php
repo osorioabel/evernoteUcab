@@ -48,9 +48,9 @@ class Home extends CI_Controller {
         $booleano = $this->usuario_model->login($username, $password);
 
         if ($booleano) {
-
+            $this->session->set_userdata('username',$username);
             $homeuser = new homeuser();
-            $homeuser->index2($username, 1);
+            $homeuser->index2($this->session->userdata('username'), 1);
         } else {
             
             $this->index2();

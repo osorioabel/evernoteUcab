@@ -34,7 +34,9 @@
                         
                         
                         
-                        <li class="current-menu-item"><?php echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
+                        <li class="current-menu-item"><?php
+                        $username=$this->session->userdata('username');
+                        echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
                             <ul>
 
                                 <li><?php echo anchor ('usuario/index/'. $username.'/modify','Modificar Datos', array ( 'title' => 'Modify'));?></li>
