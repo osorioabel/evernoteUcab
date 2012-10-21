@@ -15,9 +15,7 @@ class homeuser extends CI_Controller {
         $data['messi']="";
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/homeuser/homeuser';
-        //$data['username'] = $username;
-
-        //echo $data['main_content'];
+      // $data['user'] = $this->session->userdata('username');
         $data['title'] = 'Home Page User';
         $this->load->view('/includes/templates', $data);
     }
@@ -39,6 +37,7 @@ class homeuser extends CI_Controller {
             $data['head'] = '/includes/headnormal';
             $data['main_content'] = '/homeuser/homeuser';
             //$data['username'] = $username;
+            // $data['user'] = $success;
 
             //echo $data['main_content'];
             $data['title'] = 'Home Page User';

@@ -1,3 +1,6 @@
+
+<?php   $username=$this->session->userdata('username'); ?>
+
 <body>
         <!-- HEADER -->
         <div id="header">
@@ -35,7 +38,7 @@
                         
                         
                         <li class="current-menu-item"><?php
-                        $username=$this->session->userdata('username');
+                      
                         echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
                             <ul>
 
@@ -49,9 +52,10 @@
                         <li ><?php echo anchor ('homeuser/index/'. $username,'Libretas', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notebook</span></a>
                             <ul>
 
-                                <li><?php echo anchor ('','Crear Libreta', array ( 'title' => 'Create'));?></li>
-                                <li><?php echo anchor ('','Modificar Libreta', array ( 'title' => 'Modify'));?></li>
-                                <li><?php echo anchor ('','Eliminar Libreta', array ( 'title' => 'Delete'));?></li>
+                                <li><?php echo anchor ('libreta/index/'. $username.'','Crear Libreta', array ( 'title' => 'Create'));?></li>
+                                <li><?php echo anchor ('libreta/indexModify/'. $username.'','Modificar Libreta', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('libreta/indexDelete/'. $username.'','Eliminar Libreta', array ( 'title' => 'Delete'));?></li>
+                                <li><?php echo anchor ('libreta/indexSelect/'. $username.'','Ver Libreta', array ( 'title' => 'Add'));?></li>
                                 <li><?php echo anchor ('','Agregar Nota a Libreta', array ( 'title' => 'Add'));?></li>
                             </ul>
                         </li>

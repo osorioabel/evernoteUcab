@@ -36,7 +36,7 @@ class Example extends CI_Controller {
         $oauth = $this->dropbox->get_access_token($this->session->userdata('token_secret'));
         $this->session->set_userdata('oauth_token', $oauth['oauth_token']);
         $this->session->set_userdata('oauth_token_secret', $oauth['oauth_token_secret']);
-        $booleano= $this->usuario_model->modificartoken('osorioabel',$oauth['oauth_token'],$oauth['oauth_token_secret']);
+        $booleano= $this->usuario_model->modificartoken('hjmatheus',$oauth['oauth_token'],$oauth['oauth_token_secret']);
         redirect('/example/upload_file');
     }
 
@@ -65,7 +65,7 @@ class Example extends CI_Controller {
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
         $this->load->library('dropbox', $params);
         $arrayfalso=array();
-        $return = $this->dropbox->add('prueba', 'dropbox/Practica1.pdf',$arrayfalso,'dropbox');
+        $return = $this->dropbox->add('prueba', 'dropbox/02.jpg',$arrayfalso,'dropbox');
         print_r($return);
     }
     

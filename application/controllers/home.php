@@ -13,7 +13,8 @@ class Home extends CI_Controller {
     }
 
     function index() {
-
+        
+        $this->session->set_userdata('username', '');
         $data = array();
          $data['messi'] = "";
         $data['head'] = '/includes/headhome';
@@ -41,16 +42,17 @@ class Home extends CI_Controller {
 
     function verifylogin() {
 
-
+        $this->session->set_userdata('username', '');
         $username = $this->input->post('username_login');
         $password = $this->input->post('password_login');
 
         $booleano = $this->usuario_model->login($username, $password);
-
+        
         if ($booleano) {
+            
             $this->session->set_userdata('username',$username);
             $homeuser = new homeuser();
-            $homeuser->index2($this->session->userdata('username'), 1);
+            $homeuser->index2($this->session->set_userdata('username',$username));
         } else {
             
             $this->index2();
