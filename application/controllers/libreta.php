@@ -54,7 +54,7 @@ class libreta extends CI_Controller{
            
         $data = array();
         $data['messi']="";
-        $data['upload']= $this->uploadNotebookView($username);
+        $data['upload']= $this->uploadNotebookViewDelete($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Eliminar';
         $data['username'] = $username;
@@ -66,10 +66,11 @@ class libreta extends CI_Controller{
            
         $data = array();
         $data['messi']="";
+        $data['upload']= $this->uploadNotebookView($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Select';
         $data['username'] = $username;
-        $data['title'] = 'Delete Book';
+        $data['title'] = 'Your Books';
         $this->load->view('/includes/templates', $data);
     }
     
@@ -117,7 +118,7 @@ class libreta extends CI_Controller{
      }
 
 
-     function uploadNotebookView($username) {
+     function uploadNotebookViewDelete($username) {
      $base_url=  base_url().'images/book.png';
      $return ='';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username) ; $i++) {
@@ -134,11 +135,9 @@ class libreta extends CI_Controller{
             
             
             $attributes = array('id' => 'sc-modify-form');
-            
-            $boton= base_url().'Libreta/DeleteBook/'.$username.'/'.$id;
-            $ref= base_url().'Libreta/indexDelete/'.$username.'/'.$nombre.'>';
-            
-            
+            $ref= base_url().'Libreta/indexDelete/'.$username.'>';
+             $boton= base_url().'Libreta/DeleteBook/'.$username.'/'.$id;
+             $ref2= base_url().'Libreta/indexDelete/'.$username;
             $result =" 
             
             <?php 
@@ -159,7 +158,7 @@ class libreta extends CI_Controller{
                                         </ul>
                                         <!-- ENDS meta -->
 
-                                        <a href='project.html' class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
                                     </div>
                                     <!-- ENDS project-thumb -->
 
@@ -182,6 +181,69 @@ class libreta extends CI_Controller{
         return $return;
     }
      
+    function uploadNotebookView($username) {
+     $base_url=  base_url().'images/book.png';
+     $return ='';
+        for ($i = 0; $i < $this->libreta_model->tamListLibreta($username) ; $i++) {
+            
+            
+            $libreta= new Libreta_Model();
+            $libreta= $libreta->libretaAtIndex($i, $username);
+            
+            $nombre= $libreta->getNombre();
+            //$libreta->setNombre('abel');
+            $id= $libreta->getId_libreta();
+            $fecha= $libreta->getFecha();
+            $descripcion= $libreta->getDescripcion();
+            
+            
+            $attributes = array('id' => 'sc-modify-form');
+            
+           
+            $ref= base_url().'Libreta/indexSelect/'.$username.'/'.$nombre.'>';
+             $ref2= base_url().'Libreta/indexSelect/'.$username.'/'.$nombre;
+            
+            $result =" 
+            
+            <?php 
+               echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
+                ?>
+                 <div class='project'>
+                          <h1><a href=$ref $nombre </a></h1>
+                                <!-- shadow -->
+                                <div class='project-shadow'>
+                                    <!-- project-thumb -->
+                                    <div class='project-thumbnail'>
+            
+
+                                        <!-- meta -->
+                                        <ul class='meta'>
+                                            <li><strong>Project date</strong> $fecha </li>
+                                            <li><strong>username</strong> <a href='#'> $username </a></li>
+                                        </ul>
+                                        <!-- ENDS meta -->
+
+                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                                    </div>
+                                    <!-- ENDS project-thumb -->
+
+                                    <div class='the-excerpt'>
+                                         $descripcion 
+                                    </div>	
+                                 
+             </div>
+                                <!-- ENDS shadow -->
+                            </div>
+                            <!-- ENDS project -->
+              <?php echo form_close(); ?>
+             
+                 ";
+            
+          
+            $return = $result.$return;
+        }
+        return $return;
+    }
     
      function uploadNotebookViewModify($username) {
      $base_url=  base_url().'images/book.png';
@@ -203,7 +265,7 @@ class libreta extends CI_Controller{
             
             
             $ref= base_url().'Libreta/indexModify2/'.$username.'/'.$id.'>';
-            
+            $ref2= base_url().'Libreta/indexModify2/'.$username.'/'.$id;
             
             $result =" 
             
@@ -225,7 +287,7 @@ class libreta extends CI_Controller{
                                         </ul>
                                         <!-- ENDS meta -->
 
-                                        <a href='project.html' class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
                                     </div>
                                     <!-- ENDS project-thumb -->
 
