@@ -1,5 +1,7 @@
 
-<?php   $username=$this->session->userdata('username'); ?>
+<?php   
+$username=$this->session->unset_userdata('username');
+$username=$this->session->userdata('username'); ?>
 
 <body>
         <!-- HEADER -->

@@ -14,9 +14,9 @@ class Home extends CI_Controller {
 
     function index() {
         
-        $this->session->set_userdata('username', '');
+        $this->session->unset_userdata('username');
         $data = array();
-         $data['messi'] = "";
+        $data['messi'] = "";
         $data['head'] = '/includes/headhome';
         $data['main_content'] = 'home/home';
         $data['title'] = 'Evernote->Home';
@@ -27,7 +27,8 @@ class Home extends CI_Controller {
 
         $data = array();
         $data['messi'] = "<a id='error-title'></a>
-    
+    $this->session->unset_userdata('username');
+        
         <script>
         new popUp('Username or Password incorrect .', 
         {title: 'Error', titleClass: 'anim error', 

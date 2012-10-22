@@ -46,7 +46,7 @@ class Libreta_Model extends CI_Model {
 
         return true;
     }
-
+    
     function BorrarLibreta($username, $libreta2) {
 
 
