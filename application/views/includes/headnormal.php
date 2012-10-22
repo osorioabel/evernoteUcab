@@ -1,6 +1,6 @@
 
 <?php   
-$username=$this->session->unset_userdata('username');
+//$username=$this->session->unset_userdata('username');
 $username=$this->session->userdata('username'); ?>
 
 <body>
@@ -44,29 +44,29 @@ $username=$this->session->userdata('username'); ?>
                         echo anchor ('homeuser/index/'. $username,$username, array ( 'title' => 'Home'));?><a><span class="subheader">Welcome</span></a>
                             <ul>
 
-                                <li><?php echo anchor ('usuario/index/'. $username.'/modify','Modificar Datos', array ( 'title' => 'Modify'));?></li>
-                                <li><?php echo anchor ('usuario/index/'. $username.'/changePassword','Cambiar Clave', array ( 'title' => 'Change Password'));?></li>
-                                <li><?php echo anchor ('example/request_dropbox/','Configurar cuenta Dropbox', array ( 'title' => 'Configurate Dropbox Account'));?></li>
+                                <li><?php echo anchor ('usuario/index/'. $username.'/modify','Modify User Data', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('usuario/index/'. $username.'/changePassword','Change Password', array ( 'title' => 'Change Password'));?></li>
+                                <li><?php echo anchor ('example/request_dropbox/','Configure Dropbox Account', array ( 'title' => 'Configurate Dropbox Account'));?></li>
                                 <li><?php echo anchor ('home','Logout', array ( 'title' => 'Home'));?></li>
                                 
                             </ul>
                         </li>
-                        <li ><?php echo anchor ('homeuser/index/'. $username,'Libretas', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notebook</span></a>
+                        <li ><?php echo anchor ('homeuser/index/'. $username,'Notebooks', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notebook</span></a>
                             <ul>
 
-                                <li><?php echo anchor ('libreta/index/'. $username.'','Crear Libreta', array ( 'title' => 'Create'));?></li>
-                                <li><?php echo anchor ('libreta/indexModify/'. $username.'','Modificar Libreta', array ( 'title' => 'Modify'));?></li>
-                                <li><?php echo anchor ('libreta/indexDelete/'. $username.'','Eliminar Libreta', array ( 'title' => 'Delete'));?></li>
-                                <li><?php echo anchor ('libreta/indexSelect/'. $username.'','Ver Libreta', array ( 'title' => 'Add'));?></li>
-                                <li><?php echo anchor ('','Agregar Nota a Libreta', array ( 'title' => 'Add'));?></li>
+                                <li><?php echo anchor ('libreta/index/'. $username.'','Create a Notebook', array ( 'title' => 'Create'));?></li>
+                                <li><?php echo anchor ('libreta/indexModify/'. $username.'','Modify your Notebook', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('libreta/indexDelete/'. $username.'','Delete a Notebooks', array ( 'title' => 'Delete'));?></li>
+                                <li><?php echo anchor ('libreta/indexSelect/'. $username.'','See your Notebooks', array ( 'title' => 'Add'));?></li>
+                                <li><?php echo anchor ('','Add Note to Notebook', array ( 'title' => 'Add'));?></li>
                             </ul>
                         </li>
-                        <li ><?php echo anchor ('homeuser/index/'. $username,'Notas', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notes</span></a>
+                        <li ><?php echo anchor ('homeuser/index/'. $username,'Notes', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notes</span></a>
                             <ul>
 
-                                <li><?php echo anchor ('','Crear Nota', array ( 'title' => 'Create'));?></li>
-                                <li><?php echo anchor ('','Modificar Nota', array ( 'title' => 'Modify'));?></li>
-                                <li><?php echo anchor ('','Eliminar Nota', array ( 'title' => 'Delete'));?></li>
+                                <li><?php echo anchor ('','Create a Note', array ( 'title' => 'Create'));?></li>
+                                <li><?php echo anchor ('','Modify your Notes', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('','Delete a Note', array ( 'title' => 'Delete'));?></li>
                                 
                             </ul>
                         </li>
