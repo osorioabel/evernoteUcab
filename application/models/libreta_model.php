@@ -50,7 +50,7 @@ class Libreta_Model extends CI_Model {
     function BorrarLibreta($username, $libreta2) {
 
 
-        $query = $this->db->query("Delete from libreta where nombre = '$libreta2'");
+        $query = $this->db->query("Delete from libreta where id_libreta = '$libreta2'");
 
 
         if ($this->db->_error_message())

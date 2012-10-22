@@ -128,14 +128,14 @@ class libreta extends CI_Controller{
             
             $nombre= $libreta->getNombre();
             //$libreta->setNombre('abel');
-           
+            $id= $libreta->getId_libreta();
             $fecha= $libreta->getFecha();
             $descripcion= $libreta->getDescripcion();
             
             
             $attributes = array('id' => 'sc-modify-form');
             
-            $boton= base_url().'Libreta/DeleteBook/'.$username.'/'.$nombre;
+            $boton= base_url().'Libreta/DeleteBook/'.$username.'/'.$id;
             $ref= base_url().'Libreta/indexDelete/'.$username.'/'.$nombre.'>';
             
             
