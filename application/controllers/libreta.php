@@ -18,8 +18,6 @@ class libreta extends CI_Controller{
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/libreria';
         $data['username'] = $username;
-        
-        echo "luis";
         $data['title'] = 'Create Book';
         $this->load->view('/includes/templates', $data);
     }
