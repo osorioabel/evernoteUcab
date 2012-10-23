@@ -27,14 +27,14 @@ class Home extends CI_Controller {
 
         $data = array();
         $data['messi'] = "<a id='error-title'></a>
-    $this->session->unset_userdata('username');
         
         <script>
         new popUp('Username or Password incorrect .', 
         {title: 'Error', titleClass: 'anim error', 
         buttons: [{id: 0, label: 'Close', val: 'X'}]});
-        </script>
-        ";
+        </script>";
+        $this->session->unset_userdata('username');
+
         $data['head'] = '/includes/headhome';
         $data['main_content'] = 'home/home';
         $data['title'] = 'Evernote->Home';
