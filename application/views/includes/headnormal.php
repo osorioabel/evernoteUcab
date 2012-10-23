@@ -57,15 +57,15 @@ $username=$this->session->userdata('username'); ?>
                                 <li><?php echo anchor ('libreta/index/'. $username.'','Create a Notebook', array ( 'title' => 'Create'));?></li>
                                 <li><?php echo anchor ('libreta/indexModify/'. $username.'','Modify your Notebook', array ( 'title' => 'Modify'));?></li>
                                 <li><?php echo anchor ('libreta/indexDelete/'. $username.'','Delete a Notebooks', array ( 'title' => 'Delete'));?></li>
-                                <li><?php echo anchor ('libreta/indexSelect/'. $username.'','See your Notebooks', array ( 'title' => 'Add'));?></li>
+                                <li><?php echo anchor ('libreta/indexSelectConsulta/'. $username.'','See your Notebooks', array ( 'title' => 'Add'));?></li>
                                 <li><?php echo anchor ('','Add Note to Notebook', array ( 'title' => 'Add'));?></li>
                             </ul>
                         </li>
                         <li ><?php echo anchor ('homeuser/index/'. $username,'Notes', array ( 'title' => 'Home'));?><a><span class="subheader">Admin your Notes</span></a>
                             <ul>
 
-                                <li><?php echo anchor ('','Create a Note', array ( 'title' => 'Create'));?></li>
-                                <li><?php echo anchor ('','Modify your Notes', array ( 'title' => 'Modify'));?></li>
+                                <li><?php echo anchor ('nota/index/'. $username.'','Create a Note', array ( 'title' => 'Create'));?></li>
+                                <li><?php echo anchor ('libreta/indexSelect/'.$username.'','Modify your Notes', array ( 'title' => 'Modify'));?></li>
                                 <li><?php echo anchor ('','Delete a Note', array ( 'title' => 'Delete'));?></li>
                                 
                             </ul>
