@@ -34,8 +34,12 @@ class Nota_Model extends CI_Model {
     }
     
         public function tamListNota($id) {
-        $query = $this->db->query("select id_nota from nota where id_libreta = '$id';");
-        return $query->num_rows;
+        //var_dump($query);
+        $query2 = $this->db->query("select id_nota from nota where id_libreta = '$id';");
+        $numrow= $query2->num_rows;
+              
+
+        return $numrow ;
     }
     
     

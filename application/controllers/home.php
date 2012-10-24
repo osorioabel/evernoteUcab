@@ -14,7 +14,7 @@ class Home extends CI_Controller {
 
     function index() {
         
-        $this->session->unset_userdata('username');
+       // $this->session->unset_userdata('username');
         $data = array();
         $data['messi'] = "";
         $data['head'] = '/includes/headhome';
@@ -61,7 +61,7 @@ class Home extends CI_Controller {
 
     function verifylogin() {
 
-       // $this->session->set_userdata('username', '');
+         //$this->session->set_userdata('username', '');
         $username = $this->input->post('username_login');
         $password = $this->input->post('password_login');
 
@@ -69,8 +69,8 @@ class Home extends CI_Controller {
         
         if ($booleano) {
             
-            $this->session->set_userdata('username',$username);
-           redirect('/homeuser/index2', 'refresh');
+           $this->session->set_userdata('username',$username);
+           redirect('/homeuser/index2');
         } else {
             
             $this->index2();

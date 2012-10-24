@@ -36,7 +36,7 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $this->db->where('password', $password);
         $query = $this->db->get('usuario');
-        if ($query->num_rows > 0) {
+        if ($query->num_rows>0) {
             return TRUE;
         }
 
