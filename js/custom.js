@@ -84,7 +84,7 @@ jQuery(document).ready(function($) {
 	
     $("#tweets").tweet({
         count: 3,
-        username: "lucholj",
+        username: "osorio_abel",
         avatar_size: '20px', 
         callback: tweet_cycle
     });

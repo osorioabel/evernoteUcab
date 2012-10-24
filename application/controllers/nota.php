@@ -38,11 +38,11 @@ class nota extends CI_Controller{
         $this->load->view('/includes/templates', $data);
     }
     
-           function SelectNoteConsulta($username,$id) {
+        function SelectNoteConsulta($username,$id) {
            
         $data = array();
         $data['messi']="";
-        //$data['uploadNote']= $this->uploadNoteView($username,$id);
+        $data['uploadNote']= $this->uploadNoteView($username,$id);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/nota/List_Note';
         $data['username'] = $username;

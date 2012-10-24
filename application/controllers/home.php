@@ -22,6 +22,7 @@ class Home extends CI_Controller {
         $data['title'] = 'Evernote->Home';
         $this->load->view('/includes/templates', $data);
     }
+    
 
     function index2() {
 
@@ -40,10 +41,27 @@ class Home extends CI_Controller {
         $data['title'] = 'Evernote->Home';
         $this->load->view('/includes/templates', $data);
     }
+    function index3() {
+
+        $data = array();
+        $data['messi']= "<a id='success-title'></a>
+             <script>
+            new popUp('Succesful Register ', 
+            {title: 'WELCOME', titleClass: 'success', 
+            autoclose: '1000'});
+            </script>";
+        $this->session->unset_userdata('username');
+
+        $data['head'] = '/includes/headhome';
+        $data['main_content'] = 'home/home';
+        $data['title'] = 'Evernote->Home';
+        $this->load->view('/includes/templates', $data);
+    }
+
 
     function verifylogin() {
 
-        $this->session->set_userdata('username', '');
+       // $this->session->set_userdata('username', '');
         $username = $this->input->post('username_login');
         $password = $this->input->post('password_login');
 
@@ -52,8 +70,7 @@ class Home extends CI_Controller {
         if ($booleano) {
             
             $this->session->set_userdata('username',$username);
-            $homeuser = new homeuser();
-            $homeuser->index2($this->session->set_userdata('username',$username));
+           redirect('/homeuser/index2', 'refresh');
         } else {
             
             $this->index2();
@@ -74,7 +91,9 @@ class Home extends CI_Controller {
         //echo $booleano;
         if ($booleano == true) {
 
-            $this->index();
+            $this->index3();
+            
+            
         } else
         // caso de gente repetido
             echo "esta repedito";

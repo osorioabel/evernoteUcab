@@ -77,7 +77,7 @@ $(document).ready(function(){
             },
             repass_signup:
             {
-                required:"required email",  
+                required:"password required",  
                 equalTo:" Passwords Missmatch"
             }   
             
