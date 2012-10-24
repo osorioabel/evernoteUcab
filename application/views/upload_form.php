@@ -31,7 +31,7 @@ h2 {
 <body>
 
 <div id="main_container">
-	<h2>jQuery Fileuploder Plugin</h2>
+	<h7>Attach will appears on your Dropbox account</h7>
 	
 	<form action="index.php/upload/do_upload" method="post" enctype="multipart/form-data">
 	

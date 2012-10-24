@@ -114,7 +114,7 @@ class Dropbox
         $resarray="";
         parse_str($response, $resarray);
         //$username='osorioabel';
-        $callback='http://localhost/evernoteUcab/example/access_dropbox';
+        $callback='http://localhost/evernoteUcab/upload/access_dropbox';
         //$callback=$callback;
         $callback = urlencode($callback);
         

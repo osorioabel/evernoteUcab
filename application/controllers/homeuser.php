@@ -15,7 +15,7 @@ class homeuser extends CI_Controller {
         $data['messi'] = "";
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/homeuser/homeuser';
-        // $data['user'] = $this->session->userdata('username');
+        $data['username'] = $this->session->userdata('username');
         $data['title'] = 'Home Page User';
         $this->load->view('/includes/templates', $data);
     }
