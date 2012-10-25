@@ -8,6 +8,7 @@ class nota extends CI_Controller{
    public function __construct() {
         parent::__construct();
         $this->load->model('nota_model');
+         $this->load->model('libreta_model');
         $this->load->helper('form');
         
     }
@@ -17,6 +18,7 @@ class nota extends CI_Controller{
         $data = array();
         $data['messi']="";
         $data['head'] = '/includes/headnormal';
+        $data['upload'] = $this->uploadCombobox($username);
         $data['main_content'] = '/nota/Add_Nota';
         $data['username'] = $username;
         $data['title'] = 'Create Note';
@@ -25,7 +27,26 @@ class nota extends CI_Controller{
         
     }
     
-        function SelectNote($username,$id) {
+    function uploadCombobox($username){
+        $return = '';
+        for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
+            $libreta = new Libreta_Model();
+            $libreta = $libreta->libretaAtIndex($i, $username);
+
+            $nombre = $libreta->getNombre();
+            //$libreta->setNombre('abel');
+            $id = $libreta->getId_libreta();
+            
+            $return=$return."
+            <option value= $id > $nombre </option>;";
+            
+            
+        }
+        return $return;
+    }
+
+
+    function SelectNote($username,$id) {
            
         $data = array();
         $data['messi']="";
@@ -81,6 +102,7 @@ class nota extends CI_Controller{
     
     
          function AddNote($username) {
+             
         $titulo = $this->input->post('tittleNote');
         $nota = $this->input->post('Note');
         $book = $this->input->post('ListBook');

@@ -51,20 +51,9 @@ if ($messi)
                         <label>Which book?</label>
                         <select class="iclass" name="ListBook"  id="ListBook" >
                             <option value="NULL"></option>
-
-                            <?php
-                            $query = $this->db->query("select id_libreta,nombre from libreta");
-                            if ($query->num_rows() > 0) {
-                                $row = $query->num_rows();
-                                $row2 = $query->row();
-                                for ($i = 0; $i < $row; $i++) {
-                                    ?>
-                                    <option value=<?php echo $row2->id_libreta ?>><?php echo $row2->nombre ?> </option>;
-                                    <?php
-                                    $row2 = $query->next_row();
-                                }
-                            }
-                            ?>
+                               
+                            <?php echo $upload;?>
+                            
                         </select>
                     </div>
 
