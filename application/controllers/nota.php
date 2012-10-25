@@ -65,6 +65,20 @@ class nota extends CI_Controller{
     }
     
     
+            function indexDelete($username,$idlibreta) {
+           
+       $data = array();
+        $data['messi']="";
+        $data['uploadNoteDelete']= $this->NoteViewDelete($username,$idlibreta);
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/nota/Delete_Note';
+        $data['username'] = $username;
+        $data['idlibreta'] = $idlibreta;
+        $data['title'] = 'Select a Note';
+        $this->load->view('/includes/templates', $data);
+    }
+    
+    
     
          function AddNote($username) {
         $titulo = $this->input->post('tittleNote');
@@ -93,6 +107,18 @@ class nota extends CI_Controller{
         // caso de gente repetido
             echo "HOLA";
      }
+        function DeleteNote($username, $nota2,$idlibreta2) {
+
+
+
+        $booleano = $this->nota_model->BorrarNota($username, $nota2);
+
+        if ($booleano == true) {
+            $this->indexDelete($username,$idlibreta2, '');
+        } else
+        // caso de gente repetido
+            echo "HOLA";
+    }
      
      
        function uploadNoteView($username,$id) {
@@ -145,6 +171,70 @@ class nota extends CI_Controller{
                                          $texto
                                     </div>	
                                  
+             </div>
+                                <!-- ENDS shadow -->
+                            </div>
+                            <!-- ENDS project -->
+              <?php echo form_close(); ?>
+             
+                 ";
+            
+          
+            $return = $result.$return;
+        }
+        return $return;
+    }
+    
+       function NoteViewDelete($username,$id) {
+     $base_url=  base_url().'images/nota.png';
+     $return ='';
+        for ($i = 0; $i < $this->nota_model->tamListNota($id) ; $i++) {
+            
+            
+            $nota= new Nota_Model();
+            $nota= $nota->notaAtIndex($i, $id);
+            $idNota = $nota->getId_nota();
+            $titulo= $nota->gettitulo();
+            $texto= $nota->gettexto();
+            $fecha_act= $nota->getFecha_creacion();
+          
+            
+            
+            $attributes = array('id' => 'sc-modify-form');
+            
+           
+            $ref= base_url().'Nota/DeleteNote/'.$username.'/'.$idNota. '/' . $id.'>';
+            $boton = base_url() . 'Nota/DeleteNote/' . $username . '/' . $idNota. '/' . $id;
+             $ref2= base_url().'Nota/DeleteNote/'.$username.'/'.$idNota. '/' . $id;
+            
+            $result =" 
+            
+            <?php 
+               echo form_open('/Nota/DeleteNote/'$username'/'$idNota'/'$id,'$attributes');
+                ?>
+                 <div class='project'>
+                          <h1><a href=$ref $titulo </a></h1>
+                                <!-- shadow -->
+                                <div class='project-shadow'>
+                                    <!-- project-thumb -->
+                                    <div class='project-thumbnail'>
+            
+
+                                        <!-- meta -->
+                                        <ul class='meta'>
+                                            <li><strong>Project date</strong> $fecha_act </li>
+                                            <li><strong>username</strong> <a href='#'> $username </a></li>
+                                        </ul>
+                                        <!-- ENDS meta -->
+
+                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                                    </div>
+                                    <!-- ENDS project-thumb -->
+
+                                    <div class='the-excerpt'>
+                                         $texto
+                                    </div>	
+                 <a href=$boton class='read-more link-button' name='<?php echo $titulo ?>' id='<?php echo $titulo ?>'><span>Delete it</span></a>                                        
              </div>
                                 <!-- ENDS shadow -->
                             </div>

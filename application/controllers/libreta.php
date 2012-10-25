@@ -83,6 +83,21 @@ class libreta extends CI_Controller {
         $data['title'] = 'Your Books';
         $this->load->view('/includes/templates', $data);
     }
+    
+    
+    
+        function indexDeleteNote($username) {
+
+        $data = array();
+        $data['messi'] = "";
+        $data['upload4'] = $this->uploadNotebookView3Delete($username);
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/libreria/Libreta_delete_note';
+        $data['username'] = $username;
+        //$data['libreta'] = $id;
+        $data['title'] = 'Your Books';
+        $this->load->view('/includes/templates', $data);
+    }
 
     function AddBook($username) {
         $titulo = $this->input->post('tituloBook');
@@ -378,5 +393,78 @@ class libreta extends CI_Controller {
         }
         return $return;
     }
+    
+    
+    
+    function uploadNotebookView3Delete($username) {
+        $base_url = base_url() . 'images/book.png';
+        $return = '';
+        for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
+
+
+            $libreta = new Libreta_Model();
+            $libreta = $libreta->libretaAtIndex($i, $username);
+
+            $nombre = $libreta->getNombre();
+            //$libreta->setNombre('abel');
+            $id = $libreta->getId_libreta();
+            $fecha = $libreta->getFecha();
+            $descripcion = $libreta->getDescripcion();
+
+
+            $attributes = array('id' => 'sc-modify-form');
+
+
+            $ref = base_url() . 'nota/indexDelete/' . $username . '/' . $id . '>';
+            $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $nombre;
+
+            $result = " 
+            
+            <?php 
+               echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
+                ?>
+                 <div class='project'>
+                          <h1><a href=$ref $nombre </a></h1>
+                                <!-- shadow -->
+                                <div class='project-shadow'>
+                                    <!-- project-thumb -->
+                                    <div class='project-thumbnail'>
+            
+
+                                        <!-- meta -->
+                                        <ul class='meta'>
+                                            <li><strong>Project date</strong> $fecha </li>
+                                            <li><strong>username</strong> <a href='#'> $username </a></li>
+                                        </ul>
+                                        <!-- ENDS meta -->
+
+                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                                    </div>
+                                    <!-- ENDS project-thumb -->
+
+                                    <div class='the-excerpt'>
+                                         $descripcion 
+                                    </div>	
+                                 
+             </div>
+                                <!-- ENDS shadow -->
+                            </div>
+                            <!-- ENDS project -->
+              <?php echo form_close(); ?>
+             
+                 ";
+
+
+            $return = $result . $return;
+        }
+        return $return;
+    }
+
+    
+    
+    
+    
+    
+    
 
 }

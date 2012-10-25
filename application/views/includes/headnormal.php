@@ -58,7 +58,7 @@
 
                             <li><?php echo anchor('nota/index/' . $username . '', 'Create a Note', array('title' => 'Create')); ?></li>
                             <li><?php echo anchor('libreta/indexSelect/' . $username . '', 'Modify your Notes', array('title' => 'Modify')); ?></li>
-                            <li><?php echo anchor('', 'Delete a Note', array('title' => 'Delete')); ?></li>
+                            <li><?php echo anchor('libreta/indexDeleteNote/' . $username .'', 'Delete a Note', array('title' => 'Delete')); ?></li>
 
                         </ul>
                     </li>

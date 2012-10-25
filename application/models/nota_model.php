@@ -81,6 +81,18 @@ class Nota_Model extends CI_Model {
 
         return true;
     }
+    
+      function BorrarNota($username, $nota2) {
+
+
+        $query = $this->db->query("Delete from nota where id_nota = '$nota2'");
+
+
+        if ($this->db->_error_message())
+            return false;
+
+        return true;
+    }
 
     
      public function getId_nota() {
