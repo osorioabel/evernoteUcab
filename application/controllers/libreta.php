@@ -41,10 +41,33 @@ class libreta extends CI_Controller {
         $data['messi'] = "";
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Modificar_2';
+        $data['upload'] = $this->uploadBookDetail($username, $id);
         $data['username'] = $username;
         $data['libreta'] = $id;
         $data['title'] = 'Modify Book';
         $this->load->view('/includes/templates', $data);
+    }
+
+    function uploadBookDetail($username, $id_libreta) {
+        $return = '';
+        $libreta = new Libreta_Model();
+        $libreta = $libreta->libretaAtIndex2($id_libreta, $username);
+
+        $nombre = $libreta->getNombre();
+        $descripcion = $libreta->getDescripcion();
+
+        $return = "<div>
+                        <label>Titulo</label>
+                        <input name='titulo'  id='titulo' value ='$nombre'
+                               type='text' class='form-poshytip' title='Enter a tittle' />
+                    </div>
+                    <div>
+                        <label>Descripcion</label>
+                        <textarea name='descrip' id='descrip'  cols='30' rows='6' class='form-poshytip' title='Description'>'$descripcion'</textarea>
+                    </div>";
+
+
+        return $return;
     }
 
     function indexDelete($username) {
@@ -83,10 +106,8 @@ class libreta extends CI_Controller {
         $data['title'] = 'Your Books';
         $this->load->view('/includes/templates', $data);
     }
-    
-    
-    
-        function indexDeleteNote($username) {
+
+    function indexDeleteNote($username) {
 
         $data = array();
         $data['messi'] = "";
@@ -393,9 +414,7 @@ class libreta extends CI_Controller {
         }
         return $return;
     }
-    
-    
-    
+
     function uploadNotebookView3Delete($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
@@ -459,12 +478,5 @@ class libreta extends CI_Controller {
         }
         return $return;
     }
-
-    
-    
-    
-    
-    
-    
 
 }

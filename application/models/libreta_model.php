@@ -11,19 +11,18 @@ class Libreta_Model extends CI_Model {
     function __construct() {
         parent::__construct();
         $this->load->helper('date');
-        
     }
 
-    function registerBook($username, $title,$descrip) {
+    function registerBook($username, $title, $descrip) {
         //$id =  $this->db->where('username',$username);
         $query = $this->db->query("select id_usuario from usuario where username = '$username'");
         $row2 = $query->row();
-        $hoy = date("Y-m-d H:i:s");   
+        $hoy = date("Y-m-d H:i:s");
         $data = array(
-            'fk_usuario' =>  $row2->id_usuario,
+            'fk_usuario' => $row2->id_usuario,
             'nombre' => $title,
             'descripcion' => $descrip,
-            'fecha' => $hoy,    
+            'fecha' => $hoy,
         );
         $insert = $this->db->insert('libreta', $data);
         $insert2 = array();
@@ -46,7 +45,7 @@ class Libreta_Model extends CI_Model {
 
         return true;
     }
-    
+
     function BorrarLibreta($username, $libreta2) {
 
 
@@ -64,26 +63,44 @@ class Libreta_Model extends CI_Model {
         return $query->num_rows;
     }
 
-    public function libretaAtIndex($index,$username) {
+    public function libretaAtIndex($index, $username) {
         $libreta = new Libreta_Model();
         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where  u.username = '$username' and u.id_usuario = l.fk_usuario");
-            
-            
-            $row = $query->num_rows();
-             $row2 = $query->row();
-            for($i=0; $i<$row; $i++){
-            
-                
-            
-               if($index==$i){
-               $libreta->setId_libreta($row2->id_libreta);
-               $libreta->setNombre($row2->nombre);
-               $libreta->setDescripcion($row2->descripcion);
-               $libreta->setFecha($row2->fecha);
-               }
-             $row2=$query->next_row();  
+
+
+        $row = $query->num_rows();
+        $row2 = $query->row();
+        for ($i = 0; $i < $row; $i++) {
+
+
+
+            if ($index == $i) {
+                $libreta->setId_libreta($row2->id_libreta);
+                $libreta->setNombre($row2->nombre);
+                $libreta->setDescripcion($row2->descripcion);
+                $libreta->setFecha($row2->fecha);
             }
-        
+            $row2 = $query->next_row();
+        }
+
+
+        return $libreta;
+    }
+
+    public function libretaAtIndex2($index, $username) {
+        $libreta = new Libreta_Model();
+        $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where  u.username = '$username' and u.id_usuario = l.fk_usuario and l.id_libreta='$index'");
+
+
+
+        $row2 = $query->row();
+
+        $libreta->setId_libreta($row2->id_libreta);
+        $libreta->setNombre($row2->nombre);
+        $libreta->setDescripcion($row2->descripcion);
+
+
+
 
         return $libreta;
     }

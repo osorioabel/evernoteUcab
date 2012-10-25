@@ -18,40 +18,20 @@ if ($messi)
             ?>
             <fieldset>
                 <?php
-                $query = $this->db->query("select titulo,texto from nota where id_libreta = '$id'");
-                if ($query->num_rows() > 0) {
-                    $row = $query->num_rows();
-                    $row2 = $query->row();
-                    for ($i = 0; $i < $row; $i++) {
-                        ?>
-                        <div id="page-content">
-                            <h6 class="toggle-trigger"><a href="#"><?php echo $row2->titulo ?> </a></h6>
-                            <div class="toggle-container">
-                                <div class="block">
-                                    <p><?php echo $row2->texto ?></p>
-                                </div>
-                            </div>
+                echo $uploadNote;
+                ?>
 
-                        </div>
-
-               
-                <?php
-                $row2 = $query->next_row();
-            }
-        }
-        ?>
-
+        </div>
+        </fieldset>
+        <?php echo form_close(); ?>
     </div>
-</fieldset>
-<?php echo form_close(); ?>
-</div>
 
 
-<!-- ENDS form -->
-<!-- END Login -->
+    <!-- ENDS form -->
+    <!-- END Login -->
 
 
-<!-- ENDS 2 cols -->
+    <!-- ENDS 2 cols -->
 </div>
 <!-- ENDS wrapper-main -->
 </div>

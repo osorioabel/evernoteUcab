@@ -29,7 +29,7 @@ if ($messi)
                 <h6 class="line-divider">Note's Fields </h6>
                 <p>Here you can write any note,reminders,text,and more..  
                     if you want Attach files 
-                   .</p>
+                    .</p>
                 <?php
                 $attributes = array('id' => 'sc-modify-form');
                 echo form_open('/Nota/AddNote/' . $username, $attributes);
@@ -51,9 +51,9 @@ if ($messi)
                         <label>Which book?</label>
                         <select class="iclass" name="ListBook"  id="ListBook" >
                             <option value="NULL"></option>
-                               
-                            <?php echo $upload;?>
-                            
+
+                            <?php echo $upload; ?>
+
                         </select>
                     </div>
 
@@ -63,11 +63,11 @@ if ($messi)
             </div>
 
             <div class="one-half last">
-                
+
                 <h6 class="line-divider">Attach </h6>
                 <p>Here you can upload type of file to the Note*.. From here this files 
-                   are going to sync with your Dropox Account. 
-                   * Type of File allowed (jpg, jpeg, gif, png, zip, avi)</p>
+                    are going to sync with your Dropox Account. 
+                    * Type of File allowed (jpg, jpeg, gif, png, zip, avi)</p>
                 <?php
                 $attributes2 = array('enctype' => 'multipart/form-data');
                 echo form_open('/upload/do_upload', $attributes);
@@ -92,15 +92,15 @@ if ($messi)
                     });
                 </script>
             </div>
-            	<div class="clear "></div>
+            <div class="clear "></div>
 
-            </div>
-
-            
         </div>
 
 
- 
     </div>
-    <!-- ENDS wrapper-main -->
+
+
+
+</div>
+<!-- ENDS wrapper-main -->
 </div>
