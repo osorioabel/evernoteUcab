@@ -20,13 +20,7 @@
     <div class="wrapper">
 
         <!-- headline -->
-        <div class="clear"></div>
-        <div id="headline">
-            <span class="main">Nova is a FREE HTML template</span>
-            <span class="sub">Need a professional and sleek html web site design. Try nova is free and easy to use.</span>
-            <a href="http://luiszuno.com/blog/downloads/nova-html-template" id="link" class="link-button-big"><span>Download Nova</span></a> 
-        </div>
-        <!-- ENDS headline -->
+        
 
 
 
