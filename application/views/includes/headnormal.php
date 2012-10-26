@@ -50,7 +50,7 @@
                             <li><?php echo anchor('libreta/indexModify/' . $username . '', 'Modify your Notebook', array('title' => 'Modify')); ?></li>
                             <li><?php echo anchor('libreta/indexDelete/' . $username . '', 'Delete a Notebooks', array('title' => 'Delete')); ?></li>
                             <li><?php echo anchor('libreta/indexSelectConsulta/' . $username . '', 'See your Notebooks', array('title' => 'Add')); ?></li>
-                            <li><?php echo anchor('', 'Add Note to Notebook', array('title' => 'Add')); ?></li>
+                            
                         </ul>
                     </li>
                     <li ><?php echo anchor('homeuser/index/' . $username, 'Notes', array('title' => 'Home')); ?><a><span class="subheader">Admin your Notes</span></a>

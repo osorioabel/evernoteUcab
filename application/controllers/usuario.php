@@ -14,6 +14,7 @@ class Usuario extends CI_Controller{
     function loadModifyView($username){
         $data = array();
         $data['head'] = '/includes/headnormal';
+        $data['upload']=$this->uploadUserDetail($username);
         $data['main_content'] = 'usuario/usuario_modificar';
         $data['title'] = 'Evernote->Modify';
         $data['username']=  $username;
@@ -60,18 +61,41 @@ class Usuario extends CI_Controller{
 
     function modificar($username) {
     
-        $nombre = $this->input->post('name_modify');
-        $apellido = $this->input->post('lastname_modify');
-        $email = $this->input->post('email_modify');
+        $nombre = $this->input->post('name_signup');
+        $apellido = $this->input->post('lastname_signup');
+        $email = $this->input->post('email_signup');
         
 
-        $booleano = $this->usuario_model->modificar($username,$nombre, $apellido,$email);
+        $booleano = $this->usuario_model->modificar($username,$nombre,$apellido,$email);
         
         if ($booleano == true) {
-            $this->index($username,'');
+            redirect('/homeuser/index');
         } else
         // caso de gente repetido
             echo "esta repedito";
+    }
+    
+    function uploadUserDetail($username) {
+        $return = '';
+        $usuario = new Usuario_Model();
+        $usuario = $usuario->getUser($username);
+        $nombre = $usuario->getName();
+        $apellido = $usuario->getApellido();
+        $email=$usuario->getEmail();
+
+        $return = "<div>
+                    <label>Name</label>
+                    <input name='name_signup'  id='name_signup' type='text' class='form-poshytip' title='Enter your name' value='$nombre' />
+                </div>
+                <div>
+                    <label>Lastname</label>
+                    <input name='lastname_signup' id='lastname_signup' type='text' class='form-poshytip' title='Enter your lastname'  value='$apellido'/>
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input name='email_signup'  id='email_signup' type='email' class='form-poshytip' title='Enter your email' value='$email' />
+                </div>";
+        return $return;
     }
     
     function cambiarPassword($username) {
@@ -80,24 +104,13 @@ class Usuario extends CI_Controller{
         $booleano = $this->usuario_model->cambiarClave($username,$password);
         
         if ($booleano == true) {
-            $this->index($username,'');
+            redirect('/homeuser/index');
         } else
         // caso de gente repetido
             echo "esta repedito";
     }
     
-    function guardarDatosDropbox($username) {
-    
-        $cuentadropbox = $this->input->post('email_signup');
-        $passdropbox = $this->input->post('pass_signup');
-        $booleano = $this->usuario_model->configuarDropbox($username,$cuentadropbox,$passdropbox);
-        
-        if ($booleano == true) {
-            $this->index($username,'');
-        } else
-        // caso de gente repetido
-            echo "esta repedito";
-    }
+   
     
     
     

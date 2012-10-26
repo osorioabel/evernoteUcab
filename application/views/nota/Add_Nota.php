@@ -31,7 +31,7 @@ if ($messi)
                     if you want Attach files 
                     .</p>
                 <?php
-                $attributes = array('id' => 'sc-modify-form');
+                $attributes = array('id' => 'sc-contact-form');
                 echo form_open('/Nota/AddNote/' . $username, $attributes);
                 ?>
                 <fieldset>
@@ -42,7 +42,7 @@ if ($messi)
                     </div>
                     <div>
                         <label>Note</label>
-                        <textarea name="Note"  id="note" cols="20" rows="3" class="form-poshytip" title="Note"></textarea>
+                        <textarea name="Note"  id="Note" cols="20" rows="3" class="form-poshytip" title="Note" ></textarea>
                     </div>
 
 
@@ -50,7 +50,7 @@ if ($messi)
                     <div> 
                         <label>Which book?</label>
                         <select class="iclass" name="ListBook"  id="ListBook" >
-                            <option value="NULL"></option>
+                            
 
                             <?php echo $upload; ?>
 

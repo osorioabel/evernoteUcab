@@ -18,7 +18,7 @@ if ($messi)
 
             <div class="centrar"> 
                 <?php
-                $attributes = array('id' => 'sc-modify-form');
+                $attributes = array('id' => 'sc-contact-form');
                 echo form_open('/Nota/ModifyNote/' . $username . '/' . $nota, $attributes);
                 ?>
                 <fieldset>

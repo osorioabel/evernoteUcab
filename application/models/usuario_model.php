@@ -74,6 +74,16 @@ class Usuario_Model extends CI_Model {
 
         return true;
     }
+    
+       public function getUser($username) {
+        $user = new Usuario_Model();
+        $query = $this->db->query("select u.nombre, u.apellido,u.email from usuario u where u.username='$username'");
+        $row2 = $query->row();
+        $user->setName($row2->nombre);
+        $user->setApellido($row2->apellido);
+        $user->setEmail($row2->email);
+        return $user;
+    }
 
     public function cambiarClave($username, $password) {
         $data = array('password' => $password,
@@ -99,9 +109,8 @@ class Usuario_Model extends CI_Model {
 
         return true;
     }
-
-   
-
+    
+    
     public function getUsername() {
         return $this->username;
     }
@@ -158,5 +167,10 @@ class Usuario_Model extends CI_Model {
         $this->apellido = $apellido;
     }
 
+
+    
 }
+
+   
+
 

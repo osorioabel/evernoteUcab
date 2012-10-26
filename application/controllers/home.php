@@ -28,11 +28,10 @@ class Home extends CI_Controller {
 
         $data = array();
         $data['messi'] = "<a id='error-title'></a>
-        
         <script>
-        new popUp('Username or Password incorrect .', 
-        {title: 'Error', titleClass: 'anim error', 
-        buttons: [{id: 0, label: 'Close', val: 'X'}]});
+            new popUp('Wrong Password or Username', 
+            {title: 'Oops', titleClass: 'anim error', 
+            autoclose: '1000'});
         </script>";
         $this->session->unset_userdata('username');
 

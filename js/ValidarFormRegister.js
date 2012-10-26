@@ -22,11 +22,12 @@ $(document).ready(function(){
         
         rules: {
             name_signup:{
-                required: true, 
+                required: true,
                 minlength: 2
             },
             lastname_signup: {
                 required: true, 
+                number: false,
                 minlength: 2
             },
             username_signup: {
@@ -47,18 +48,34 @@ $(document).ready(function(){
                 minlength: 6,
                 maxlength: 12,
                 equalTo:"#pass_signup"
+            },
+            tittleNote: {
+                required: true 
+            },
+            Note: {
+                required: true
+                
+            },
+            tituloBook: {
+                required: true 
+                
+            },
+            descrip: {
+                required: true
+                
             }
-           
-			
+        		
         },
         messages: {
             name_signup:{  
-                required:"name required",  
-                minlength:"enter at least 2 characters"  
+                required:"Name required",  
+                minlength:"enter at least 2 characters"
+              
             },  
             lastname_signup: {  
-                required:"name required",  
-                minlength:"enter at least 2 characters"  
+                required:"Last required",  
+                minlength:"enter at least 2 characters" 
+                
             },
             username_signup:{  
                 required:"username require",  
@@ -71,15 +88,32 @@ $(document).ready(function(){
             },
             pass_signup:
             {
-                required:"password required ",  
+                required:"Password required ",  
                 minlength:"enter at least 6 characters", 
                 maxlength:"enter at top 12 characters"
             },
             repass_signup:
             {
-                required:"password required",  
+                required:"Password required",  
                 equalTo:" Passwords Missmatch"
-            }   
+            } ,
+            tituloBook:{  
+                required:"Title required",  
+                minlength:"enter at least 2 characters"  
+            },  
+            descrip:{  
+                required:"Description required",  
+                minlength:"enter at least 2 characters"  
+            },
+            tittleNote:{  
+                required:"Title required",  
+                minlength:"enter at least 2 characters"  
+            },  
+            Note:{  
+                required:"Content required",  
+                minlength:"enter at least 2 characters"  
+            }
+            
             
         
         }

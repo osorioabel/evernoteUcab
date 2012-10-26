@@ -74,6 +74,7 @@ class nota extends CI_Controller {
             $nota = $nota->notaAtIndex($i, $id_libreta);
             $titulo = $nota->gettitulo();
             $texto = $nota->gettexto();
+            
 
             $return = $return . "<div id='page-content'>
                             <h6 class='toggle-trigger'><a href='#'> $titulo</a></h6>
@@ -112,12 +113,12 @@ class nota extends CI_Controller {
         
         <div>
                         <label>Titulo</label>
-                         <input name='tituloNota'  id='titulo' value ='$titulo'
+                         <input name='tittleNote'  id='tittleNote' value ='$titulo'
                                type='text' class='form-poshytip' title='Enter a tittle' />
                     </div>
                     <div>
                         <label>Note</label>
-                        <textarea name='texto' id='texto'  cols='30' rows='6' class='form-poshytip' title='Note'>'$texto'</textarea>
+                        <textarea name='Note' id='Note'  cols='30' rows='6' class='form-poshytip' title='Note'>$texto</textarea>
                     </div>";
 
         return $result;
@@ -141,18 +142,25 @@ class nota extends CI_Controller {
         $titulo = $this->input->post('tittleNote');
         $nota = $this->input->post('Note');
         $book = $this->input->post('ListBook');
+        if($book){
+            $booleano = $this->nota_model->registerNote($username, $titulo, $nota, $book);
+            if ($booleano == true) {
+                $this->index($username);
+            } else
+                echo "La estas cagando";
+            }
+         else{
+             
+             redirect('/nota/index/'.$username);
+             
+         }
 
-
-        $booleano = $this->nota_model->registerNote($username, $titulo, $nota, $book);
-        if ($booleano == true) {
-            $this->index($username);
-        } else
-            echo "La estas cagando";
+        
     }
 
     function ModifyNote($username, $nota) {
-        $tituloNota = $this->input->post('tituloNota');
-        $textoNota = $this->input->post('texto');
+        $tituloNota = $this->input->post('tittleNote');
+        $textoNota = $this->input->post('Note');
 
         $booleano = $this->nota_model->modificarNota($username, $nota, $tituloNota, $textoNota);
 
@@ -197,7 +205,7 @@ class nota extends CI_Controller {
 
             $ref = base_url() . 'Nota/indexModify2/' . $username . '/' . $idNota . '>';
             $ref2 = base_url() . 'Nota/indexModify2/' . $username . '/' . $idNota;
-
+            $textocorto = substr($texto,0,150);
             $result = " 
             
             <?php 
@@ -223,7 +231,7 @@ class nota extends CI_Controller {
                                     <!-- ENDS project-thumb -->
 
                                     <div class='the-excerpt'>
-                                         $texto
+                                         $textocorto
                                     </div>	
                                  
              </div>
@@ -261,7 +269,7 @@ class nota extends CI_Controller {
             $ref = base_url() . 'Nota/DeleteNote/' . $username . '/' . $idNota . '/' . $id . '>';
             $boton = base_url() . 'Nota/DeleteNote/' . $username . '/' . $idNota . '/' . $id;
             $ref2 = base_url() . 'Nota/DeleteNote/' . $username . '/' . $idNota . '/' . $id;
-
+            $textocorto = substr($texto,0,150);
             $result = " 
             
             <?php 
@@ -287,7 +295,7 @@ class nota extends CI_Controller {
                                     <!-- ENDS project-thumb -->
 
                                     <div class='the-excerpt'>
-                                         $texto
+                                         $textocorto
                                     </div>	
                  <a href=$boton class='read-more link-button' name='<?php echo $titulo ?>' id='<?php echo $titulo ?>'><span>Delete it</span></a>                                        
              </div>

@@ -78,7 +78,7 @@ class Upload extends CI_Controller {
     }
 
     public function upload_file($filename) {
-        $folder = 'prueba';
+        $folder = 'evernoteUcab';
         $subidos='subidos/';
         
         $params['key'] = 'e9us87r5ehin30k';
@@ -87,6 +87,7 @@ class Upload extends CI_Controller {
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
         $this->load->library('dropbox', $params);
         $arrayfalso=array();
+        $this->
         $return = $this->dropbox->add($folder,$subidos.$filename,$arrayfalso,'dropbox');
         print_r($return);
     }

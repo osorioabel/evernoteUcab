@@ -89,7 +89,7 @@ class Libreta_Model extends CI_Model {
 
     public function libretaAtIndex2($index, $username) {
         $libreta = new Libreta_Model();
-        $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where  u.username = '$username' and u.id_usuario = l.fk_usuario and l.id_libreta='$index'");
+    $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where  u.username = '$username' and u.id_usuario = l.fk_usuario and l.id_libreta='$index'");
 
 
 

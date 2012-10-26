@@ -57,13 +57,13 @@ class libreta extends CI_Controller {
         $descripcion = $libreta->getDescripcion();
 
         $return = "<div>
-                        <label>Titulo</label>
-                        <input name='titulo'  id='titulo' value ='$nombre'
+                        <label>Title</label>
+                        <input name='tituloBook'  id='tituloBook' value ='$nombre'
                                type='text' class='form-poshytip' title='Enter a tittle' />
                     </div>
                     <div>
-                        <label>Descripcion</label>
-                        <textarea name='descrip' id='descrip'  cols='30' rows='6' class='form-poshytip' title='Description'>'$descripcion'</textarea>
+                        <label>Description</label>
+                        <textarea name='descrip' id='descrip'  cols='30' rows='6' class='form-poshytip' title='Description'>$descripcion</textarea>
                     </div>";
 
 
@@ -131,7 +131,7 @@ class libreta extends CI_Controller {
     }
 
     function ModifyBook($username, $libreta) {
-        $tituloLibreta = $this->input->post('titulo');
+        $tituloLibreta = $this->input->post('tituloBook');
         $descripLibreta = $this->input->post('descrip');
 
         $booleano = $this->libreta_model->modificarLibreta($username, $libreta, $tituloLibreta, $descripLibreta);
@@ -176,7 +176,7 @@ class libreta extends CI_Controller {
             $descripcion = $libreta->getDescripcion();
 
 
-            $attributes = array('id' => 'sc-modify-form');
+            $attributes = array('id' => 'sc-contact-form');
             $ref = base_url() . 'Libreta/indexDelete/' . $username . '>';
             $boton = base_url() . 'Libreta/DeleteBook/' . $username . '/' . $id;
             $ref2 = base_url() . 'Libreta/indexDelete/' . $username;
@@ -239,7 +239,7 @@ class libreta extends CI_Controller {
             $descripcion = $libreta->getDescripcion();
 
 
-            $attributes = array('id' => 'sc-modify-form');
+            $attributes = array('id' => 'sc-contact-form');
 
 
             $ref = base_url() . 'Nota/SelectNote/' . $username . '/' . $id . '>';
@@ -303,7 +303,7 @@ class libreta extends CI_Controller {
             $descripcion = $libreta->getDescripcion();
 
 
-            $attributes = array('id' => 'sc-modify-form');
+            $attributes = array('id' => 'sc-contact-form');
 
 
             $ref = base_url() . 'Libreta/indexModify2/' . $username . '/' . $id . '>';
