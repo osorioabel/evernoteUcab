@@ -30,83 +30,43 @@
             <!-- TABS -->
             <!-- the tabs -->
             <ul class="tabs">
-                <li><a href="#"><span>Featured Pages</span></a></li>
-                <li><a href="#"><span>Information</span></a></li>
-                <li><a href="#"><span>Recent posts</span></a></li>
+                <li><a href="#"><span>Last Books</span></a></li>
+               
             </ul>
 
             <!-- tab "panes" -->
             <div class="panes">
 
                 <!-- Posts -->
-                <div>
+                 <div>
                     <ul class="blocks-thumbs thumbs-rollover">
+                                 <?php		
+                  $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");		
+                   if ($query->num_rows() > 0){ 
+                      $row = $query->num_rows();
+                      $row2 = $query->row();   
+		    for ($i = 0; $i < $row ; $i++){	  
+                        
+                        if ($i < 3)
+                        {
+                            ?>  
                         <li>
-                            <a href="single.html" class="thumb" title="An image"><img src="<?php echo base_url(); ?>img/dummies/282x150.gif" alt="Post" /></a>
+                            <a title="An image"><img src="<?php echo base_url(); ?>images/home.png" /></a>
                             <div class="excerpt">
-                                <a href="single.html" class="header">Lorem ipsum dolor</a>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+                   
+             
+                                <a class="header"><?php echo $row2->nombre ?></a>
+                                <?php echo $row2->descripcion ?>
                             </div>
-                            <a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+                           
                         </li>
-                        <li>
-                            <a href="single.html" class="thumb" title="An image"><img src="<?php echo base_url(); ?>img/dummies/282x150.gif" alt="Post" /></a>
-                            <div class="excerpt">
-                                <a href="single.html" class="header">Lorem ipsum dolor</a>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                            </div>
-                            <a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-                        </li>
-                        <li>
-                            <a href="single.html" class="thumb" title="An image"><img src="<?php echo base_url(); ?>img/dummies/282x150.gif" alt="Post" /></a>
-                            <div class="excerpt">
-                                <a href="single.html" class="header">Lorem ipsum dolor</a>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                            </div>
-                            <a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- ENDS posts -->
+                                       <?php
+                        }            
+       $row2 = $query->next_row();     
 
-                <!-- Information  -->
-                <div>
-                    <div class="plain-text">
-                        <h6>Pellentesque habitant morbi tristique senectus et netus et malesuada.</h6> 
-                        <p>Fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. </p>
-                        <p>Fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.Fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper <a href="single.html">This is a link</a>. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. </p>
-                        <a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-                    </div>
-                </div>
-                <!-- ENDS Information -->
-
-                <!-- Posts -->
-                <div>
-                    <ul class="blocks-thumbs thumbs-rollover">
-                        <li>
-                            <a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-                            <div class="excerpt">
-                                <a href="single.html" class="header">Lorem ipsum dolor</a>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                            </div>
-                            <a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-                        </li>
-                        <li>
-                            <a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-                            <div class="excerpt">
-                                <a href="single.html" class="header">Lorem ipsum dolor</a>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                            </div>
-                            <a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
-                        </li>
-                        <li>
-                            <a href="single.html" class="thumb" title="An image"><img src="img/dummies/282x150.gif" alt="Post" /></a>
-                            <div class="excerpt">
-                                <a href="single.html" class="header">Lorem ipsum dolor</a>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                            </div>
-                            <a href="single.html" class="link-button"><span>Read more</span></a>
-                        </li>
+}
+}
+?> 
                     </ul>
                 </div>
                 <!-- ENDS posts -->
