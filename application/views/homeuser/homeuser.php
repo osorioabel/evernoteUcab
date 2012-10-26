@@ -40,33 +40,7 @@
                 <!-- Posts -->
                  <div>
                     <ul class="blocks-thumbs thumbs-rollover">
-                                 <?php		
-                  $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");		
-                   if ($query->num_rows() > 0){ 
-                      $row = $query->num_rows();
-                      $row2 = $query->row();   
-		    for ($i = 0; $i < $row ; $i++){	  
-                        
-                        if ($i < 3)
-                        {
-                            ?>  
-                        <li>
-                            <a title="An image"><img src="<?php echo base_url(); ?>images/home.png" /></a>
-                            <div class="excerpt">
-                   
-             
-                                <a class="header"><?php echo $row2->nombre ?></a>
-                                <?php echo $row2->descripcion ?>
-                            </div>
-                           
-                        </li>
-                                       <?php
-                        }            
-       $row2 = $query->next_row();     
-
-}
-}
-?> 
+                        <?php echo $upload; ?>        
                     </ul>
                 </div>
                 <!-- ENDS posts -->
