@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1192</span></a></li>
+                <span class="label label-info">1193</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -64,9 +64,9 @@
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#method_cambiarClave" title="cambiarClave :: Esta Funcion cambiarClave($username, $password)
 se encarga de actualizar en la base de datos
-el password que ha aignado el dropbox para su acceso"><span class="description">Esta Funcion cambiarClave($username, $password)
+el password que ha sido cambiado"><span class="description">Esta Funcion cambiarClave($username, $password)
 se encarga de actualizar en la base de datos
-el password que ha aignado el dropbox para su acceso</span><pre>cambiarClave()</pre></a></li>
+el password que ha sido cambiado</span><pre>cambiarClave()</pre></a></li>
 <li class="method public "><a href="#method_getApellido" title="getApellido :: "><span class="description">getApellido()
         </span><pre>getApellido()</pre></a></li>
 <li class="method public "><a href="#method_getEmail" title="getEmail :: "><span class="description">getEmail()
@@ -201,7 +201,7 @@ syntax as controllers.</p></div>
 <a id="method_cambiarClave"></a><div class="element clickable method public method_cambiarClave" data-toggle="collapse" data-target=".method_cambiarClave .collapse">
 <h2>Esta Funcion cambiarClave($username, $password)
 se encarga de actualizar en la base de datos
-el password que ha aignado el dropbox para su acceso</h2>
+el password que ha sido cambiado</h2>
 <pre>cambiarClave(string $username, string $password) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -216,7 +216,7 @@ el password que ha aignado el dropbox para su acceso</h2>
 <code>string</code><p>Indica el Usuario</p></div>
 <div class="subelement argument">
 <h4>$password</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>indica la clave</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>dice si actualizo o no</div>
@@ -278,7 +278,7 @@ el password que ha aignado el dropbox para su acceso</h2>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$username</h4>
-<code>string</code><p>Indica el Usuario</p></div>
+<code>string</code><p>Indica el username a buscar</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>object</code>dice si actualizo o no</div>
@@ -308,7 +308,7 @@ usuario y autentificar su acceso a la app</h2>
 <code>string</code><p>Indica el Usuario</p></div>
 <div class="subelement argument">
 <h4>$password</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>password del usuario</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>dice si actualizo o no</div>
@@ -318,7 +318,7 @@ usuario y autentificar su acceso a la app</h2>
 <h2>Esta Funcion modificar($username, $nombre, $apellido, $email)
 se encarga de actualizar en la base de datos
 datos del usuario</h2>
-<pre>modificar(string $username, string $nombre, string $apellido, $email) : boolean</pre>
+<pre>modificar(string $username, string $nombre, string $apellido, string $email) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -336,7 +336,9 @@ datos del usuario</h2>
 <div class="subelement argument">
 <h4>$apellido</h4>
 <code>string</code><p>apellido del usuario</p></div>
-<div class="subelement argument"><h4>$email</h4></div>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>email del usuario</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>dice si actualizo o no</div>
@@ -530,7 +532,7 @@ a un usuario</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
+            generated on 2012-10-27T13:31:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

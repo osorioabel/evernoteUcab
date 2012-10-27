@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1192</span></a></li>
+                <span class="label label-info">1193</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -83,10 +83,10 @@ se encarga de contar devolver una libreta que
 se encarga de contar devolver una libreta que
  tiene un usuario en la base de datos</span><pre>libretaAtIndex()</pre></a></li>
 <li class="method public "><a href="#method_libretaAtIndex2" title="libretaAtIndex2 :: Esta Funcion libretaAtIndex2($index, $id)
-se encarga de contar devolver una libreta que
- tiene un usuario en la base de datos"><span class="description">Esta Funcion libretaAtIndex2($index, $id)
-se encarga de contar devolver una libreta que
- tiene un usuario en la base de datos</span><pre>libretaAtIndex2()</pre></a></li>
+se encarga de devolver una libreta en especifico
+ que tiene un usuario en la base de datos"><span class="description">Esta Funcion libretaAtIndex2($index, $id)
+se encarga de devolver una libreta en especifico
+ que tiene un usuario en la base de datos</span><pre>libretaAtIndex2()</pre></a></li>
 <li class="method public "><a href="#method_modificarLibreta" title="modificarLibreta :: Esta Funcion modificarLibreta($username, $libreta, $titulolibreta, $descrip)
 se encarga de registrar en la base de datos
 a un usuario"><span class="description">Esta Funcion modificarLibreta($username, $libreta, $titulolibreta, $descrip)
@@ -180,7 +180,7 @@ a una libreta</h2>
 <code>string</code><p>nombre del usuario</p></div>
 <div class="subelement argument">
 <h4>$libreta2</h4>
-<code>string</code><p>id de la nota</p></div>
+<code>string</code><p>id de la libreta</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>dice si actualizo o no</div>
@@ -264,7 +264,7 @@ se encarga de contar devolver una libreta que
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$index</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>posicion en la lista de libretas del usuario</p></div>
 <div class="subelement argument">
 <h4>$username</h4>
 <code>string</code><p>nombre del usuario</p></div>
@@ -275,8 +275,8 @@ se encarga de contar devolver una libreta que
 </div>
 <a id="method_libretaAtIndex2"></a><div class="element clickable method public method_libretaAtIndex2" data-toggle="collapse" data-target=".method_libretaAtIndex2 .collapse">
 <h2>Esta Funcion libretaAtIndex2($index, $id)
-se encarga de contar devolver una libreta que
- tiene un usuario en la base de datos</h2>
+se encarga de devolver una libreta en especifico
+ que tiene un usuario en la base de datos</h2>
 <pre>libretaAtIndex2(string $index, string $username) : object</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -288,7 +288,7 @@ se encarga de contar devolver una libreta que
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$index</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>posicion en la lista de libretas del usuario</p></div>
 <div class="subelement argument">
 <h4>$username</h4>
 <code>string</code><p>nombre del usuario</p></div>
@@ -426,7 +426,7 @@ se encarga de contar cuantas libretas tiene un usuario en la base de datos</h2>
 <code>string</code><p>nombre del usuario</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>int</code>dice cantidad de notas</div>
+<code>int</code>dice cantidad de libretas que tiene el usuario</div>
 </div></div>
 </div>
 <h3>
@@ -468,7 +468,7 @@ se encarga de contar cuantas libretas tiene un usuario en la base de datos</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
+            generated on 2012-10-27T13:31:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1192</span></a></li>
+                <span class="label label-info">1193</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -56,13 +56,43 @@
 <span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
-<ul class="side-nav nav nav-list"><li class="nav-header">
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public inherited"><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method_getId_ajunto" title="getId_ajunto :: "><span class="description">getId_ajunto()
+        </span><pre>getId_ajunto()</pre></a></li>
+<li class="method public "><a href="#method_getLink" title="getLink :: "><span class="description">getLink()
+        </span><pre>getLink()</pre></a></li>
+<li class="method public "><a href="#method_getNombre" title="getNombre :: "><span class="description">getNombre()
+        </span><pre>getNombre()</pre></a></li>
+<li class="method public "><a href="#method_registeradjunto" title="registeradjunto :: Esta Funcion rregisteradjunto($link, $nombre)
+se encarga de registrar en la base de datos
+un archivo adjunto"><span class="description">Esta Funcion rregisteradjunto($link, $nombre)
+se encarga de registrar en la base de datos
+un archivo adjunto</span><pre>registeradjunto()</pre></a></li>
+<li class="method public "><a href="#method_setId_ajunto" title="setId_ajunto :: "><span class="description">setId_ajunto()
+        </span><pre>setId_ajunto()</pre></a></li>
+<li class="method public "><a href="#method_setLink" title="setLink :: "><span class="description">setLink()
+        </span><pre>setLink()</pre></a></li>
+<li class="method public "><a href="#method_setNombre" title="setNombre :: "><span class="description">setNombre()
+        </span><pre>setNombre()</pre></a></li>
 </ul>
-</li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_id_ajunto" title="$id_ajunto :: "><span class="description">$id_ajunto</span><pre>$id_ajunto</pre></a></li>
+<li class="property private "><a href="#property_link" title="$link :: "><span class="description">$link</span><pre>$link</pre></a></li>
+<li class="property private "><a href="#property_nombre" title="$nombre :: "><span class="description">$nombre</span><pre>$nombre</pre></a></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="span8">
 <a id="\Adjunto_Model"></a><ul class="breadcrumb">
@@ -102,20 +132,8 @@ for remeinders, Notebooks and MORE</p></div>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
 <h2>Constructor</h2>
 <pre>__construct() </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>access</th>
-<td>public</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\CI_Model::__construct()</td>
-</tr>
-</table>
-</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
 <h2>__get</h2>
@@ -139,6 +157,104 @@ syntax as controllers.</p></div>
 <h4>$key</h4><p>string</p></div>
 </div></div>
 </div>
+<a id="method_getId_ajunto"></a><div class="element clickable method public method_getId_ajunto" data-toggle="collapse" data-target=".method_getId_ajunto .collapse">
+<h2>getId_ajunto()
+        </h2>
+<pre>getId_ajunto() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getLink"></a><div class="element clickable method public method_getLink" data-toggle="collapse" data-target=".method_getLink .collapse">
+<h2>getLink()
+        </h2>
+<pre>getLink() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getNombre"></a><div class="element clickable method public method_getNombre" data-toggle="collapse" data-target=".method_getNombre .collapse">
+<h2>getNombre()
+        </h2>
+<pre>getNombre() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_registeradjunto"></a><div class="element clickable method public method_registeradjunto" data-toggle="collapse" data-target=".method_registeradjunto .collapse">
+<h2>Esta Funcion rregisteradjunto($link, $nombre)
+se encarga de registrar en la base de datos
+un archivo adjunto</h2>
+<pre>registeradjunto(string $link, string $nombre) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$link</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$nombre</h4>
+<code>string</code><p>titulo de la nota</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
+</div></div>
+</div>
+<a id="method_setId_ajunto"></a><div class="element clickable method public method_setId_ajunto" data-toggle="collapse" data-target=".method_setId_ajunto .collapse">
+<h2>setId_ajunto()
+        </h2>
+<pre>setId_ajunto($id_ajunto) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id_ajunto</h4></div>
+</div></div>
+</div>
+<a id="method_setLink"></a><div class="element clickable method public method_setLink" data-toggle="collapse" data-target=".method_setLink .collapse">
+<h2>setLink()
+        </h2>
+<pre>setLink($link) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$link</h4></div>
+</div></div>
+</div>
+<a id="method_setNombre"></a><div class="element clickable method public method_setNombre" data-toggle="collapse" data-target=".method_setNombre .collapse">
+<h2>setNombre()
+        </h2>
+<pre>setNombre($nombre) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$nombre</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_id_ajunto"> </a><div class="element clickable property private property_id_ajunto" data-toggle="collapse" data-target=".property_id_ajunto .collapse">
+<h2>$id_ajunto</h2>
+<pre>$id_ajunto </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_link"> </a><div class="element clickable property private property_link" data-toggle="collapse" data-target=".property_link .collapse">
+<h2>$link</h2>
+<pre>$link </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_nombre"> </a><div class="element clickable property private property_nombre" data-toggle="collapse" data-target=".property_nombre .collapse">
+<h2>$nombre</h2>
+<pre>$nombre </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -146,7 +262,7 @@ syntax as controllers.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
+            generated on 2012-10-27T13:31:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1192</span></a></li>
+                <span class="label label-info">1193</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -77,6 +77,11 @@ llamadas basicas para la carga de una de las vistas
 que se estan linkeadas al controlador"><span class="description">Funcion index2() se realizan las
 llamadas basicas para la carga de una de las vistas
 que se estan linkeadas al controlador</span><pre>index2()</pre></a></li>
+<li class="method public "><a href="#method_indexAU" title="indexAU :: Funcion indexAU() se realizan las
+llamadas al about us de la pagina
+que se estan linkeadas al controlador"><span class="description">Funcion indexAU() se realizan las
+llamadas al about us de la pagina
+que se estan linkeadas al controlador</span><pre>indexAU()</pre></a></li>
 <li class="method public "><a href="#method_uploadLastBooks" title="uploadLastBooks :: Funcion uploadLastBooks($username) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las ultimas 3 libretas
 creadas por el usuario."><span class="description">Funcion uploadLastBooks($username) Esta funcion se encarga de
@@ -185,11 +190,25 @@ que se estan linkeadas al controlador</h2>
 </tr></table>
 </div></div>
 </div>
+<a id="method_indexAU"></a><div class="element clickable method public method_indexAU" data-toggle="collapse" data-target=".method_indexAU .collapse">
+<h2>Funcion indexAU() se realizan las
+llamadas al about us de la pagina
+que se estan linkeadas al controlador</h2>
+<pre>indexAU() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+</div></div>
+</div>
 <a id="method_uploadLastBooks"></a><div class="element clickable method public method_uploadLastBooks" data-toggle="collapse" data-target=".method_uploadLastBooks .collapse">
 <h2>Funcion uploadLastBooks($username) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las ultimas 3 libretas
 creadas por el usuario.</h2>
-<pre>uploadLastBooks(string $username) </pre>
+<pre>uploadLastBooks(string $username) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"><p>Para luego armar HTML que sera pasado a la
@@ -202,6 +221,9 @@ vista al momento del login exitoso del usuario.</p></div>
 <div class="subelement argument">
 <h4>$username</h4>
 <code>string</code><p>usuario que se encuentra activo</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>codigo HTML contiene las tres ultimas libretas que creo el usuario</div>
 </div></div>
 </div>
 <h3>
@@ -225,7 +247,7 @@ vista al momento del login exitoso del usuario.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
+            generated on 2012-10-27T13:31:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

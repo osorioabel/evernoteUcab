@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1192</span></a></li>
+                <span class="label label-info">1193</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -84,18 +84,18 @@ se encarga de modificar un nota en la base de datos
 a un usuario</span><pre>modificarNota()</pre></a></li>
 <li class="method public "><a href="#method_notaAtIndex" title="notaAtIndex :: Esta Funcion notaAtIndex($index, $id)
 se encarga de contar devolver una nota que
- tiene un usuario en la base de datos"><span class="description">Esta Funcion notaAtIndex($index, $id)
+ tiene un usuario en una libreta"><span class="description">Esta Funcion notaAtIndex($index, $id)
 se encarga de contar devolver una nota que
- tiene un usuario en la base de datos</span><pre>notaAtIndex()</pre></a></li>
+ tiene un usuario en una libreta</span><pre>notaAtIndex()</pre></a></li>
 <li class="method public "><a href="#method_notaAtIndex2" title="notaAtIndex2 :: Esta Funcion notaAtIndex2($id)
-se encarga de contar devolver una nota que
+se encarga de devolver una nota que
  tiene un usuario en la base de datos"><span class="description">Esta Funcion notaAtIndex2($id)
-se encarga de contar devolver una nota que
+se encarga de devolver una nota que
  tiene un usuario en la base de datos</span><pre>notaAtIndex2()</pre></a></li>
 <li class="method public "><a href="#method_registerNote" title="registerNote :: Esta Funcion registerNote($username, $titulo, $nota, $book)
-se encarga de registrar en la base de datos
+se encarga de registrar una nota en la base de datos
 a un usuario"><span class="description">Esta Funcion registerNote($username, $titulo, $nota, $book)
-se encarga de registrar en la base de datos
+se encarga de registrar una nota en la base de datos
 a un usuario</span><pre>registerNote()</pre></a></li>
 <li class="method public "><a href="#method_setFecha_creacion" title="setFecha_creacion :: "><span class="description">setFecha_creacion()
         </span><pre>setFecha_creacion()</pre></a></li>
@@ -108,11 +108,11 @@ a un usuario</span><pre>registerNote()</pre></a></li>
 <li class="method public "><a href="#method_setTitulo" title="setTitulo :: "><span class="description">setTitulo()
         </span><pre>setTitulo()</pre></a></li>
 <li class="method public "><a href="#method_tamListNota" title="tamListNota :: Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en la base de datos"><span class="description">Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en la base de datos</span><pre>tamListNota()</pre></a></li>
+se encarga de contar cuantas notas tiene un usuario en una libreta"><span class="description">Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en una libreta</span><pre>tamListNota()</pre></a></li>
 <li class="method public "><a href="#method_tamListNotes" title="tamListNotes :: Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en la base de datos"><span class="description">Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en la base de datos</span><pre>tamListNotes()</pre></a></li>
+se encarga de contar cuantas notas tiene un usuario en una libreta"><span class="description">Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en una libreta</span><pre>tamListNotes()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -183,7 +183,7 @@ a un usuario</h2>
 <code>string</code><p>nombre del usuario</p></div>
 <div class="subelement argument">
 <h4>$nota2</h4>
-<code>string</code><p>titulo de la nota</p></div>
+<code>string</code><p>id de la nota</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>dice si actualizo o no</div>
@@ -270,13 +270,13 @@ a un usuario</h2>
 <code>string</code><p>nombre del usuario</p></div>
 <div class="subelement argument">
 <h4>$idNote</h4>
-<code>string</code><p>titulo de la nota</p></div>
+<code>string</code><p>id de la nota a modificar</p></div>
 <div class="subelement argument">
 <h4>$tituloNota</h4>
-<code>string</code><p>cuerpo de la nota</p></div>
+<code>string</code><p>titulo de la nota</p></div>
 <div class="subelement argument">
 <h4>$textoNota</h4>
-<code>string</code><p>libreta para asociar la nota</p></div>
+<code>string</code><p>contenido de la nota</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>dice si actualizo o no</div>
@@ -285,7 +285,7 @@ a un usuario</h2>
 <a id="method_notaAtIndex"></a><div class="element clickable method public method_notaAtIndex" data-toggle="collapse" data-target=".method_notaAtIndex .collapse">
 <h2>Esta Funcion notaAtIndex($index, $id)
 se encarga de contar devolver una nota que
- tiene un usuario en la base de datos</h2>
+ tiene un usuario en una libreta</h2>
 <pre>notaAtIndex(string $index, string $id) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -297,10 +297,10 @@ se encarga de contar devolver una nota que
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$index</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>posicion de la nota en la lista</p></div>
 <div class="subelement argument">
 <h4>$id</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>id de la libreta</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>dice cantidad de notas</div>
@@ -308,7 +308,7 @@ se encarga de contar devolver una nota que
 </div>
 <a id="method_notaAtIndex2"></a><div class="element clickable method public method_notaAtIndex2" data-toggle="collapse" data-target=".method_notaAtIndex2 .collapse">
 <h2>Esta Funcion notaAtIndex2($id)
-se encarga de contar devolver una nota que
+se encarga de devolver una nota que
  tiene un usuario en la base de datos</h2>
 <pre>notaAtIndex2(string $id) : int</pre>
 <div class="labels"></div>
@@ -329,7 +329,7 @@ se encarga de contar devolver una nota que
 </div>
 <a id="method_registerNote"></a><div class="element clickable method public method_registerNote" data-toggle="collapse" data-target=".method_registerNote .collapse">
 <h2>Esta Funcion registerNote($username, $titulo, $nota, $book)
-se encarga de registrar en la base de datos
+se encarga de registrar una nota en la base de datos
 a un usuario</h2>
 <pre>registerNote(string $username, string $titulo, string $nota, string $book) : boolean</pre>
 <div class="labels"></div>
@@ -414,7 +414,7 @@ a un usuario</h2>
 </div>
 <a id="method_tamListNota"></a><div class="element clickable method public method_tamListNota" data-toggle="collapse" data-target=".method_tamListNota .collapse">
 <h2>Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
+se encarga de contar cuantas notas tiene un usuario en una libreta</h2>
 <pre>tamListNota(string $id) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -426,7 +426,7 @@ se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$id</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>id de la libreta</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>dice cantidad de notas</div>
@@ -434,7 +434,7 @@ se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
 </div>
 <a id="method_tamListNotes"></a><div class="element clickable method public method_tamListNotes" data-toggle="collapse" data-target=".method_tamListNotes .collapse">
 <h2>Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
+se encarga de contar cuantas notas tiene un usuario en una libreta</h2>
 <pre>tamListNotes(string $id_libreta) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -446,7 +446,7 @@ se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$id_libreta</h4>
-<code>string</code><p>nombre del usuario</p></div>
+<code>string</code><p>id de la libreta</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>dice cantidad de notas</div>
@@ -491,7 +491,7 @@ se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
+            generated on 2012-10-27T13:31:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>
