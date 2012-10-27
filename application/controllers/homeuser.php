@@ -47,6 +47,14 @@ class homeuser extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
     
+     /**
+     *  Funcion indexAU() se realizan las 
+     * llamadas al about us de la pagina 
+     * que se estan linkeadas al controlador 
+     *  
+     * @category	Controller
+     */
+    
     public function indexAU() {
 
         $data = array();
