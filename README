@@ -1,5 +1,30 @@
 Archivo de Configuracion 
 
-Abel Osorio
-Hector Matheus
-Luis Tovar
+Para Utilizar Evernote Ucab solo debes descargar la ultima versión desde nuestro 
+git: 
+
+https://github.com/osorioabel/evernoteUcab
+
+Descomprimir el archivo del proyecto y colocarlo en tu carpeta de servidor,
+sea Xaamp,Maamp, o Wamp.. En cada caso lo debemos realizar este procedimiento.
+
+Antes de usar el proyecto crear la base de datos, el script se encuentra en 
+la carpeta de la aplicación (database.sql)
+
+Para cualquier duda con la documentarion del proyecto una vez se encuentre 
+en funcionamiento hit el link 
+
+localhost/evernoteUcab/documentacion/
+
+Para alguna duda acá nuestros contactos 
+
+EvernoteUcab Team
+
+Abel Osorio , Scrum Master and Developer
+Twitter: @osorioabel -- Email: osorioabel@gmail.com
+
+Hector Matheus , Developer
+Twitter: @hector_matheus -- Email: hect.matheus@gmail.com
+
+Luis Tovar , Developer
+Twitter: @lucholj -- Email: lucholj@gmail.com
