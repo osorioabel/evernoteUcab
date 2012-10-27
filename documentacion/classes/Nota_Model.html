@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>ci » \Nota_Model</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">ci</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/EvernoteUcab.html"><i class="icon-folder-open"></i> EvernoteUcab</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">1268</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_BorrarNota" title="BorrarNota :: "><span class="description">BorrarNota()
+        </span><pre>BorrarNota()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method_getFecha_creacion" title="getFecha_creacion :: "><span class="description">getFecha_creacion()
+        </span><pre>getFecha_creacion()</pre></a></li>
+<li class="method public "><a href="#method_getId_libreta" title="getId_libreta :: "><span class="description">getId_libreta()
+        </span><pre>getId_libreta()</pre></a></li>
+<li class="method public "><a href="#method_getId_nota" title="getId_nota :: "><span class="description">getId_nota()
+        </span><pre>getId_nota()</pre></a></li>
+<li class="method public "><a href="#method_getTexto" title="getTexto :: "><span class="description">getTexto()
+        </span><pre>getTexto()</pre></a></li>
+<li class="method public "><a href="#method_getTitulo" title="getTitulo :: "><span class="description">getTitulo()
+        </span><pre>getTitulo()</pre></a></li>
+<li class="method public "><a href="#method_modificarNota" title="modificarNota :: "><span class="description">modificarNota()
+        </span><pre>modificarNota()</pre></a></li>
+<li class="method public "><a href="#method_notaAtIndex" title="notaAtIndex :: "><span class="description">notaAtIndex()
+        </span><pre>notaAtIndex()</pre></a></li>
+<li class="method public "><a href="#method_notaAtIndex2" title="notaAtIndex2 :: "><span class="description">notaAtIndex2()
+        </span><pre>notaAtIndex2()</pre></a></li>
+<li class="method public "><a href="#method_registerNote" title="registerNote :: "><span class="description">registerNote()
+        </span><pre>registerNote()</pre></a></li>
+<li class="method public "><a href="#method_setFecha_creacion" title="setFecha_creacion :: "><span class="description">setFecha_creacion()
+        </span><pre>setFecha_creacion()</pre></a></li>
+<li class="method public "><a href="#method_setId_libreta" title="setId_libreta :: "><span class="description">setId_libreta()
+        </span><pre>setId_libreta()</pre></a></li>
+<li class="method public "><a href="#method_setId_nota" title="setId_nota :: "><span class="description">setId_nota()
+        </span><pre>setId_nota()</pre></a></li>
+<li class="method public "><a href="#method_setTexto" title="setTexto :: "><span class="description">setTexto()
+        </span><pre>setTexto()</pre></a></li>
+<li class="method public "><a href="#method_setTitulo" title="setTitulo :: "><span class="description">setTitulo()
+        </span><pre>setTitulo()</pre></a></li>
+<li class="method public "><a href="#method_tamListNota" title="tamListNota :: "><span class="description">tamListNota()
+        </span><pre>tamListNota()</pre></a></li>
+<li class="method public "><a href="#method_tamListNotes" title="tamListNotes :: "><span class="description">tamListNotes()
+        </span><pre>tamListNotes()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_fecha_creacion" title="$fecha_creacion :: "><span class="description">$fecha_creacion</span><pre>$fecha_creacion</pre></a></li>
+<li class="property private "><a href="#property_id_libreta" title="$id_libreta :: "><span class="description">$id_libreta</span><pre>$id_libreta</pre></a></li>
+<li class="property private "><a href="#property_id_nota" title="$id_nota :: "><span class="description">$id_nota</span><pre>$id_nota</pre></a></li>
+<li class="property private "><a href="#property_texto" title="$texto :: "><span class="description">$texto</span><pre>$texto</pre></a></li>
+<li class="property private "><a href="#property_titulo" title="$titulo :: "><span class="description">$titulo</span><pre>$titulo</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Nota_Model"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Nota_Model.html">Nota_Model</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">CodeIgniter Model Class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/Default.html">CodeIgniter</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">ExpressionEngine Dev Team</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_BorrarNota"></a><div class="element clickable method public method_BorrarNota" data-toggle="collapse" data-target=".method_BorrarNota .collapse">
+<h2>BorrarNota()
+        </h2>
+<pre>BorrarNota($username, $nota2) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument"><h4>$nota2</h4></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>__get</h2>
+<pre>__get($key) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows models to access CI's loaded classes using the same
+syntax as controllers.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\CI_Model::__get()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4><p>string</p></div>
+</div></div>
+</div>
+<a id="method_getFecha_creacion"></a><div class="element clickable method public method_getFecha_creacion" data-toggle="collapse" data-target=".method_getFecha_creacion .collapse">
+<h2>getFecha_creacion()
+        </h2>
+<pre>getFecha_creacion() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getId_libreta"></a><div class="element clickable method public method_getId_libreta" data-toggle="collapse" data-target=".method_getId_libreta .collapse">
+<h2>getId_libreta()
+        </h2>
+<pre>getId_libreta() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getId_nota"></a><div class="element clickable method public method_getId_nota" data-toggle="collapse" data-target=".method_getId_nota .collapse">
+<h2>getId_nota()
+        </h2>
+<pre>getId_nota() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getTexto"></a><div class="element clickable method public method_getTexto" data-toggle="collapse" data-target=".method_getTexto .collapse">
+<h2>getTexto()
+        </h2>
+<pre>getTexto() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getTitulo"></a><div class="element clickable method public method_getTitulo" data-toggle="collapse" data-target=".method_getTitulo .collapse">
+<h2>getTitulo()
+        </h2>
+<pre>getTitulo() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_modificarNota"></a><div class="element clickable method public method_modificarNota" data-toggle="collapse" data-target=".method_modificarNota .collapse">
+<h2>modificarNota()
+        </h2>
+<pre>modificarNota($username, $idNote, $tituloNota, $textoNota) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument"><h4>$idNote</h4></div>
+<div class="subelement argument"><h4>$tituloNota</h4></div>
+<div class="subelement argument"><h4>$textoNota</h4></div>
+</div></div>
+</div>
+<a id="method_notaAtIndex"></a><div class="element clickable method public method_notaAtIndex" data-toggle="collapse" data-target=".method_notaAtIndex .collapse">
+<h2>notaAtIndex()
+        </h2>
+<pre>notaAtIndex($index, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$index</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_notaAtIndex2"></a><div class="element clickable method public method_notaAtIndex2" data-toggle="collapse" data-target=".method_notaAtIndex2 .collapse">
+<h2>notaAtIndex2()
+        </h2>
+<pre>notaAtIndex2($id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_registerNote"></a><div class="element clickable method public method_registerNote" data-toggle="collapse" data-target=".method_registerNote .collapse">
+<h2>registerNote()
+        </h2>
+<pre>registerNote($username, $titulo, $nota, $book) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument"><h4>$titulo</h4></div>
+<div class="subelement argument"><h4>$nota</h4></div>
+<div class="subelement argument"><h4>$book</h4></div>
+</div></div>
+</div>
+<a id="method_setFecha_creacion"></a><div class="element clickable method public method_setFecha_creacion" data-toggle="collapse" data-target=".method_setFecha_creacion .collapse">
+<h2>setFecha_creacion()
+        </h2>
+<pre>setFecha_creacion($fecha_creacion) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fecha_creacion</h4></div>
+</div></div>
+</div>
+<a id="method_setId_libreta"></a><div class="element clickable method public method_setId_libreta" data-toggle="collapse" data-target=".method_setId_libreta .collapse">
+<h2>setId_libreta()
+        </h2>
+<pre>setId_libreta($id_libreta) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id_libreta</h4></div>
+</div></div>
+</div>
+<a id="method_setId_nota"></a><div class="element clickable method public method_setId_nota" data-toggle="collapse" data-target=".method_setId_nota .collapse">
+<h2>setId_nota()
+        </h2>
+<pre>setId_nota($id_nota) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id_nota</h4></div>
+</div></div>
+</div>
+<a id="method_setTexto"></a><div class="element clickable method public method_setTexto" data-toggle="collapse" data-target=".method_setTexto .collapse">
+<h2>setTexto()
+        </h2>
+<pre>setTexto($texto) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$texto</h4></div>
+</div></div>
+</div>
+<a id="method_setTitulo"></a><div class="element clickable method public method_setTitulo" data-toggle="collapse" data-target=".method_setTitulo .collapse">
+<h2>setTitulo()
+        </h2>
+<pre>setTitulo($titulo) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$titulo</h4></div>
+</div></div>
+</div>
+<a id="method_tamListNota"></a><div class="element clickable method public method_tamListNota" data-toggle="collapse" data-target=".method_tamListNota .collapse">
+<h2>tamListNota()
+        </h2>
+<pre>tamListNota($id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_tamListNotes"></a><div class="element clickable method public method_tamListNotes" data-toggle="collapse" data-target=".method_tamListNotes .collapse">
+<h2>tamListNotes()
+        </h2>
+<pre>tamListNotes($id_libreta) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id_libreta</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_fecha_creacion"> </a><div class="element clickable property private property_fecha_creacion" data-toggle="collapse" data-target=".property_fecha_creacion .collapse">
+<h2>$fecha_creacion</h2>
+<pre>$fecha_creacion </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_id_libreta"> </a><div class="element clickable property private property_id_libreta" data-toggle="collapse" data-target=".property_id_libreta .collapse">
+<h2>$id_libreta</h2>
+<pre>$id_libreta </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_id_nota"> </a><div class="element clickable property private property_id_nota" data-toggle="collapse" data-target=".property_id_nota .collapse">
+<h2>$id_nota</h2>
+<pre>$id_nota </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_texto"> </a><div class="element clickable property private property_texto" data-toggle="collapse" data-target=".property_texto .collapse">
+<h2>$texto</h2>
+<pre>$texto </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_titulo"> </a><div class="element clickable property private property_titulo" data-toggle="collapse" data-target=".property_titulo .collapse">
+<h2>$titulo</h2>
+<pre>$titulo </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+</div>
+</body>
+</html>

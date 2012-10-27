@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Evernote
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
+ */
 class Usuario_Model extends CI_Model {
 
     private $username = '';
@@ -18,7 +28,17 @@ class Usuario_Model extends CI_Model {
     }
     
   
-
+    /**
+	 * 
+	 *
+	 * Esta Funcion se encarga de actualizar en la base de datos 
+         * el token que ha aignado el dropbox para su acceso  
+	 *@category Modelo
+	 * @param	string  Indica el Usuario 
+	 * @param	string	nombre del usuario
+	 * @param	string	apellido del usuario
+	 * @return	boolean dice si actualizo o no 
+	 */
    public function modificartoken($username, $nombre, $apellido) {
         $data = array('oauth_token' => $nombre,
             'oauth_token_secret' => $apellido,  );

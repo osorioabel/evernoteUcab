@@ -1,0 +1,727 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>ci » \Dropbox</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">ci</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/EvernoteUcab.html"><i class="icon-folder-open"></i> EvernoteUcab</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">1268</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Pass in a parameters array which should look as follows:
+array('key'=&gt;'example.com', 'secret'=&gt;'mysecret');"><span class="description">Pass in a parameters array which should look as follows:
+array('key'=&gt;'example.com', 'secret'=&gt;'mysecret');</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_account" title="account :: Retrieve information about the authenticated users account."><span class="description">Retrieve information about the authenticated users account.</span><pre>account()</pre></a></li>
+<li class="method public "><a href="#method_add" title="add :: Adds a local file to the authenticated user's dropbox account using the post method"><span class="description">Adds a local file to the authenticated user's dropbox account using the post method</span><pre>add()</pre></a></li>
+<li class="method public "><a href="#method_copy" title="copy :: Copies a file or folder in dropbox to another location within dropbox."><span class="description">Copies a file or folder in dropbox to another location within dropbox.</span><pre>copy()</pre></a></li>
+<li class="method public "><a href="#method_copy_ref" title="copy_ref :: Creates a reference string that can be used to copy a file to another
+user's Dropbox."><span class="description">Creates a reference string that can be used to copy a file to another
+user's Dropbox.</span><pre>copy_ref()</pre></a></li>
+<li class="method public "><a href="#method_create_folder" title="create_folder :: Create a folder relative to the user's Dropbox root or the user's
+application sandbox folder."><span class="description">Create a folder relative to the user's Dropbox root or the user's
+application sandbox folder.</span><pre>create_folder()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Delete a folder or file relative to the user's Dropbox root or
+the user's application sandbox folder."><span class="description">Delete a folder or file relative to the user's Dropbox root or
+the user's application sandbox folder.</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_delta" title="delta :: Periodically call to get a list of &quot;delta entries&quot;, which are instructions
+on how to update your local state to match the server's state."><span class="description">Periodically call to get a list of "delta entries", which are instructions
+on how to update your local state to match the server's state.</span><pre>delta()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Retrieve a file from the currently authenticated user's dropbox
+account."><span class="description">Retrieve a file from the currently authenticated user's dropbox
+account.</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_get_access_token" title="get_access_token :: This is called to finish the oauth token exchange."><span class="description">This is called to finish the oauth token exchange.</span><pre>get_access_token()</pre></a></li>
+<li class="method public "><a href="#method_get_request_token" title="get_request_token :: This is called to begin the oauth token exchange."><span class="description">This is called to begin the oauth token exchange.</span><pre>get_request_token()</pre></a></li>
+<li class="method public "><a href="#method_media" title="media :: Retrieve a link directly to a file."><span class="description">Retrieve a link directly to a file.</span><pre>media()</pre></a></li>
+<li class="method public "><a href="#method_metadata" title="metadata :: Retrieve metadata information about files or folders in the currently
+authenticated user's dropbox account."><span class="description">Retrieve metadata information about files or folders in the currently
+authenticated user's dropbox account.</span><pre>metadata()</pre></a></li>
+<li class="method public "><a href="#method_move" title="move :: Copies a file or folder in dropbox to another location within dropbox."><span class="description">Copies a file or folder in dropbox to another location within dropbox.</span><pre>move()</pre></a></li>
+<li class="method public "><a href="#method_restore" title="restore :: Restore a file or folder to a previous revision."><span class="description">Restore a file or folder to a previous revision.</span><pre>restore()</pre></a></li>
+<li class="method public "><a href="#method_revisions" title="revisions :: Retrieve revision data about files or folders in the currently
+authenticated user's dropbox account."><span class="description">Retrieve revision data about files or folders in the currently
+authenticated user's dropbox account.</span><pre>revisions()</pre></a></li>
+<li class="method public "><a href="#method_search" title="search :: Retrieve metadata for all files and folders that match the search query"><span class="description">Retrieve metadata for all files and folders that match the search query</span><pre>search()</pre></a></li>
+<li class="method public "><a href="#method_set_oauth_access" title="set_oauth_access :: Sets OAuth access data to authenticate a user with dropbox."><span class="description">Sets OAuth access data to authenticate a user with dropbox.</span><pre>set_oauth_access()</pre></a></li>
+<li class="method public "><a href="#method_shares" title="shares :: Retrieve a shareable link to files or folders."><span class="description">Retrieve a shareable link to files or folders.</span><pre>shares()</pre></a></li>
+<li class="method public "><a href="#method_thumbnails" title="thumbnails :: Retrieve thumbnail data from image files at specified path."><span class="description">Retrieve thumbnail data from image files at specified path.</span><pre>thumbnails()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method__build_header" title="_build_header :: "><span class="description">_build_header()
+        </span><pre>_build_header()</pre></a></li>
+<li class="method private "><a href="#method__connect" title="_connect :: "><span class="description">_connect()
+        </span><pre>_connect()</pre></a></li>
+<li class="method private "><a href="#method__content_request" title="_content_request :: "><span class="description">_content_request()
+        </span><pre>_content_request()</pre></a></li>
+<li class="method private "><a href="#method__post_request" title="_post_request :: "><span class="description">_post_request()
+        </span><pre>_post_request()</pre></a></li>
+<li class="method private "><a href="#method__response_request" title="_response_request :: "><span class="description">_response_request()
+        </span><pre>_response_request()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property__access" title="$_access :: "><span class="description">$_access</span><pre>$_access</pre></a></li>
+<li class="property private "><a href="#property__consumer" title="$_consumer :: "><span class="description">$_consumer</span><pre>$_consumer</pre></a></li>
+<li class="property private "><a href="#property__header" title="$_header :: "><span class="description">$_header</span><pre>$_header</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_ACCESS_URI" title="ACCESS_URI :: "><span class="description">ACCESS_URI</span><pre>ACCESS_URI</pre></a></li>
+<li class="constant  "><a href="#constant_API_VERSION" title="API_VERSION :: "><span class="description">API_VERSION</span><pre>API_VERSION</pre></a></li>
+<li class="constant  "><a href="#constant_AUTHORIZE_URI" title="AUTHORIZE_URI :: "><span class="description">AUTHORIZE_URI</span><pre>AUTHORIZE_URI</pre></a></li>
+<li class="constant  "><a href="#constant_DEBUG" title="DEBUG :: "><span class="description">DEBUG</span><pre>DEBUG</pre></a></li>
+<li class="constant  "><a href="#constant_DEFAULT_ROOT" title="DEFAULT_ROOT :: "><span class="description">DEFAULT_ROOT</span><pre>DEFAULT_ROOT</pre></a></li>
+<li class="constant  "><a href="#constant_HOST" title="HOST :: "><span class="description">HOST</span><pre>HOST</pre></a></li>
+<li class="constant  "><a href="#constant_HTTP_1" title="HTTP_1 :: "><span class="description">HTTP_1</span><pre>HTTP_1</pre></a></li>
+<li class="constant  "><a href="#constant_LINE_END" title="LINE_END :: "><span class="description">LINE_END</span><pre>LINE_END</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_URI" title="REQUEST_URI :: "><span class="description">REQUEST_URI</span><pre>REQUEST_URI</pre></a></li>
+<li class="constant  "><a href="#constant_SCHEME" title="SCHEME :: "><span class="description">SCHEME</span><pre>SCHEME</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Dropbox"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Dropbox.html">Dropbox</a>
+</li>
+</ul>
+<div class="element class"><div class="details">
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Pass in a parameters array which should look as follows:
+array('key'=&gt;'example.com', 'secret'=&gt;'mysecret');</h2>
+<pre>__construct(array $params) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_account"></a><div class="element clickable method public method_account" data-toggle="collapse" data-target=".method_account .collapse">
+<h2>Retrieve information about the authenticated users account.</h2>
+<pre>account() : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_add"></a><div class="element clickable method public method_add" data-toggle="collapse" data-target=".method_add .collapse">
+<h2>Adds a local file to the authenticated user's dropbox account using the post method</h2>
+<pre>add(string $dbpath, string $filepath, array $params, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dbpath</h4>
+<code>string</code><p>The location in the user's dropbox to place the file.</p>
+</div>
+<div class="subelement argument">
+<h4>$filepath</h4>
+<code>string</code><p>The relative path on the server of the file to upload.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>(optional) Consult the Dropbox API documentation for more details</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_copy"></a><div class="element clickable method public method_copy" data-toggle="collapse" data-target=".method_copy .collapse">
+<h2>Copies a file or folder in dropbox to another location within dropbox.</h2>
+<pre>copy(string $from, string $to, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$from</h4>
+<code>string</code><p>The relative path to the file to be copied.</p></div>
+<div class="subelement argument">
+<h4>$to</h4>
+<code>string</code><p>The relative path (Including file or folder name) to place to copy.</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_copy_ref"></a><div class="element clickable method public method_copy_ref" data-toggle="collapse" data-target=".method_copy_ref .collapse">
+<h2>Creates a reference string that can be used to copy a file to another
+user's Dropbox.</h2>
+<pre>copy_ref(string $path, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>(optional) Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_create_folder"></a><div class="element clickable method public method_create_folder" data-toggle="collapse" data-target=".method_create_folder .collapse">
+<h2>Create a folder relative to the user's Dropbox root or the user's
+application sandbox folder.</h2>
+<pre>create_folder(string $path, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the new folder to create.</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Delete a folder or file relative to the user's Dropbox root or
+the user's application sandbox folder.</h2>
+<pre>delete(string $path, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the folder or file to delete.</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_delta"></a><div class="element clickable method public method_delta" data-toggle="collapse" data-target=".method_delta .collapse">
+<h2>Periodically call to get a list of "delta entries", which are instructions
+on how to update your local state to match the server's state.</h2>
+<pre>delta(string $cursor) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cursor</h4>
+<code>string</code><p>(optional) The cursor from the last delta call.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Retrieve a file from the currently authenticated user's dropbox
+account.</h2>
+<pre>get(string $destination, string $path, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note: The path should be relative to the root dropbox
+folder and the destination should be relative to your sites root
+folder.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>The path to create the new file</p></div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question.</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object.</div>
+</div></div>
+</div>
+<a id="method_get_access_token"></a><div class="element clickable method public method_get_access_token" data-toggle="collapse" data-target=".method_get_access_token .collapse">
+<h2>This is called to finish the oauth token exchange.</h2>
+<pre>get_access_token(string $secret, string $token) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This too should
+only need to be called once for a user. The token returned should
+be stored in your database for that particular user.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$secret</h4>
+<code>string</code><p>this is the token secret supplied from the request (Only required if using HMAC)</p>
+</div>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>string</code><p>this is the oauth_token returned with your callback url</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>access token and token secret</div>
+</div></div>
+</div>
+<a id="method_get_request_token"></a><div class="element clickable method public method_get_request_token" data-toggle="collapse" data-target=".method_get_request_token .collapse">
+<h2>This is called to begin the oauth token exchange.</h2>
+<pre>get_request_token(string $callback) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This should only
+need to be called once for a user, provided they allow oauth access.
+It will return a URL that your site should redirect to, allowing the
+user to login and accept your application.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>string</code><p>the page on your site you wish to return to after the user grants your application access.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>either the URL to redirect to, or if they specified HMAC
+        signing an array with the token_secret and the redirect url</div>
+</div></div>
+</div>
+<a id="method_media"></a><div class="element clickable method public method_media" data-toggle="collapse" data-target=".method_media .collapse">
+<h2>Retrieve a link directly to a file.</h2>
+<pre>media(string $path, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>(optional) Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_metadata"></a><div class="element clickable method public method_metadata" data-toggle="collapse" data-target=".method_metadata .collapse">
+<h2>Retrieve metadata information about files or folders in the currently
+authenticated user's dropbox account.</h2>
+<pre>metadata(string $path, array $params, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note: The path should be relative
+to the root dropbox folder.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>(optional) Consult the Dropbox API documentation for more details</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object.</div>
+</div></div>
+</div>
+<a id="method_move"></a><div class="element clickable method public method_move" data-toggle="collapse" data-target=".method_move .collapse">
+<h2>Copies a file or folder in dropbox to another location within dropbox.</h2>
+<pre>move(string $from, string $to, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$from</h4>
+<code>string</code><p>The relative path to the file to be moved.</p></div>
+<div class="subelement argument">
+<h4>$to</h4>
+<code>string</code><p>The relative path (Including file or folder name) to the new location.</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_restore"></a><div class="element clickable method public method_restore" data-toggle="collapse" data-target=".method_restore .collapse">
+<h2>Restore a file or folder to a previous revision.</h2>
+<pre>restore(string $path, string $revision, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question</p></div>
+<div class="subelement argument">
+<h4>$revision</h4>
+<code>string</code><p>The rev hash to revert to.</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>(optional) Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_revisions"></a><div class="element clickable method public method_revisions" data-toggle="collapse" data-target=".method_revisions .collapse">
+<h2>Retrieve revision data about files or folders in the currently
+authenticated user's dropbox account.</h2>
+<pre>revisions(string $path, array $params, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note: The path should be relative
+to the root drop box folder.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>(optional) Consult the Dropbox API documentation for more details</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>(optional) Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object.</div>
+</div></div>
+</div>
+<a id="method_search"></a><div class="element clickable method public method_search" data-toggle="collapse" data-target=".method_search .collapse">
+<h2>Retrieve metadata for all files and folders that match the search query</h2>
+<pre>search(string $path, string $query, array $params, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question</p></div>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>string</code><p>The search query must be at least 3 characters in length</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>(optional) Consult the Dropbox API documentation for more details</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>(optional) Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_set_oauth_access"></a><div class="element clickable method public method_set_oauth_access" data-toggle="collapse" data-target=".method_set_oauth_access .collapse">
+<h2>Sets OAuth access data to authenticate a user with dropbox.</h2>
+<pre>set_oauth_access(array $access) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$access</h4>
+<code>array</code><p>an array of the form array('oauth_token'=>url encoded token,'oauth_token_secret'=>url encoded secret)</p>
+</div>
+</div></div>
+</div>
+<a id="method_shares"></a><div class="element clickable method public method_shares" data-toggle="collapse" data-target=".method_shares .collapse">
+<h2>Retrieve a shareable link to files or folders.</h2>
+<pre>shares(string $path, string $root) : \a</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The link can be used
+publicly and directs to a preview page of the file. Also returns the
+link's expiration date.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the file or folder in question</p></div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>(optional) Either 'dropbox' or 'sandbox'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\a</code>response object</div>
+</div></div>
+</div>
+<a id="method_thumbnails"></a><div class="element clickable method public method_thumbnails" data-toggle="collapse" data-target=".method_thumbnails .collapse">
+<h2>Retrieve thumbnail data from image files at specified path.</h2>
+<pre>thumbnails(string $destination, string $path, array $params, string $root) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>The path to create the thumbnail image.</p></div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the image file or folder.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>(optional) Consult the Dropbox API documentation for more details</p>
+</div>
+<div class="subelement argument">
+<h4>$root</h4>
+<code>string</code><p>Either 'dropbox' or 'sandbox'</p>
+</div>
+</div></div>
+</div>
+<a id="method__build_header"></a><div class="element clickable method private method__build_header" data-toggle="collapse" data-target=".method__build_header .collapse">
+<h2>_build_header()
+        </h2>
+<pre>_build_header($url, $method, $prepend, $append, $overwrite) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+<div class="subelement argument"><h4>$method</h4></div>
+<div class="subelement argument"><h4>$prepend</h4></div>
+<div class="subelement argument"><h4>$append</h4></div>
+<div class="subelement argument"><h4>$overwrite</h4></div>
+</div></div>
+</div>
+<a id="method__connect"></a><div class="element clickable method private method__connect" data-toggle="collapse" data-target=".method__connect .collapse">
+<h2>_connect()
+        </h2>
+<pre>_connect($url, $header, $request, $postdata, $destination) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+<div class="subelement argument"><h4>$header</h4></div>
+<div class="subelement argument"><h4>$request</h4></div>
+<div class="subelement argument"><h4>$postdata</h4></div>
+<div class="subelement argument"><h4>$destination</h4></div>
+</div></div>
+</div>
+<a id="method__content_request"></a><div class="element clickable method private method__content_request" data-toggle="collapse" data-target=".method__content_request .collapse">
+<h2>_content_request()
+        </h2>
+<pre>_content_request($uri, $destination) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$uri</h4></div>
+<div class="subelement argument"><h4>$destination</h4></div>
+</div></div>
+</div>
+<a id="method__post_request"></a><div class="element clickable method private method__post_request" data-toggle="collapse" data-target=".method__post_request .collapse">
+<h2>_post_request()
+        </h2>
+<pre>_post_request($uri, $data, $specialhost) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$uri</h4></div>
+<div class="subelement argument"><h4>$data</h4></div>
+<div class="subelement argument"><h4>$specialhost</h4></div>
+</div></div>
+</div>
+<a id="method__response_request"></a><div class="element clickable method private method__response_request" data-toggle="collapse" data-target=".method__response_request .collapse">
+<h2>_response_request()
+        </h2>
+<pre>_response_request($uri) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$uri</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__access"> </a><div class="element clickable property private property__access" data-toggle="collapse" data-target=".property__access .collapse">
+<h2>$_access</h2>
+<pre>$_access </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__consumer"> </a><div class="element clickable property private property__consumer" data-toggle="collapse" data-target=".property__consumer .collapse">
+<h2>$_consumer</h2>
+<pre>$_consumer </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__header"> </a><div class="element clickable property private property__header" data-toggle="collapse" data-target=".property__header .collapse">
+<h2>$_header</h2>
+<pre>$_header </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_ACCESS_URI"> </a><div class="element clickable constant  constant_ACCESS_URI" data-toggle="collapse" data-target=".constant_ACCESS_URI .collapse">
+<h2>ACCESS_URI</h2>
+<pre>ACCESS_URI </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_API_VERSION"> </a><div class="element clickable constant  constant_API_VERSION" data-toggle="collapse" data-target=".constant_API_VERSION .collapse">
+<h2>API_VERSION</h2>
+<pre>API_VERSION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_AUTHORIZE_URI"> </a><div class="element clickable constant  constant_AUTHORIZE_URI" data-toggle="collapse" data-target=".constant_AUTHORIZE_URI .collapse">
+<h2>AUTHORIZE_URI</h2>
+<pre>AUTHORIZE_URI </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_DEBUG"> </a><div class="element clickable constant  constant_DEBUG" data-toggle="collapse" data-target=".constant_DEBUG .collapse">
+<h2>DEBUG</h2>
+<pre>DEBUG </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_DEFAULT_ROOT"> </a><div class="element clickable constant  constant_DEFAULT_ROOT" data-toggle="collapse" data-target=".constant_DEFAULT_ROOT .collapse">
+<h2>DEFAULT_ROOT</h2>
+<pre>DEFAULT_ROOT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_HOST"> </a><div class="element clickable constant  constant_HOST" data-toggle="collapse" data-target=".constant_HOST .collapse">
+<h2>HOST</h2>
+<pre>HOST </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_HTTP_1"> </a><div class="element clickable constant  constant_HTTP_1" data-toggle="collapse" data-target=".constant_HTTP_1 .collapse">
+<h2>HTTP_1</h2>
+<pre>HTTP_1 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_LINE_END"> </a><div class="element clickable constant  constant_LINE_END" data-toggle="collapse" data-target=".constant_LINE_END .collapse">
+<h2>LINE_END</h2>
+<pre>LINE_END </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_URI"> </a><div class="element clickable constant  constant_REQUEST_URI" data-toggle="collapse" data-target=".constant_REQUEST_URI .collapse">
+<h2>REQUEST_URI</h2>
+<pre>REQUEST_URI </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_SCHEME"> </a><div class="element clickable constant  constant_SCHEME" data-toggle="collapse" data-target=".constant_SCHEME .collapse">
+<h2>SCHEME</h2>
+<pre>SCHEME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+</div>
+</body>
+</html>

@@ -98,6 +98,15 @@ class Usuario extends CI_Controller{
         return $return;
     }
     
+    /**
+ * Usuario 
+ *
+ * @category	Usuario
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/database/
+ * @param 	username Determines if active record should be used or not
+ *  		
+ */
     function cambiarPassword($username) {
     
         $password = $this->input->post('pass_signup');

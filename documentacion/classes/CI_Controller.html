@@ -1,0 +1,875 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>ci » \CI_Controller</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">ci</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/EvernoteUcab.html"><i class="icon-folder-open"></i> EvernoteUcab</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">1268</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list"><li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_benchmark" title="$benchmark :: "><span class="description">$benchmark</span><pre>$benchmark</pre></a></li>
+<li class="property public "><a href="#property_calendar" title="$calendar :: "><span class="description">$calendar</span><pre>$calendar</pre></a></li>
+<li class="property public "><a href="#property_cart" title="$cart :: "><span class="description">$cart</span><pre>$cart</pre></a></li>
+<li class="property public "><a href="#property_config" title="$config :: "><span class="description">$config</span><pre>$config</pre></a></li>
+<li class="property public "><a href="#property_controller" title="$controller :: "><span class="description">$controller</span><pre>$controller</pre></a></li>
+<li class="property public "><a href="#property_db" title="$db :: "><span class="description">$db</span><pre>$db</pre></a></li>
+<li class="property public "><a href="#property_dbforge" title="$dbforge :: "><span class="description">$dbforge</span><pre>$dbforge</pre></a></li>
+<li class="property public "><a href="#property_email" title="$email :: "><span class="description">$email</span><pre>$email</pre></a></li>
+<li class="property public "><a href="#property_encrypt" title="$encrypt :: "><span class="description">$encrypt</span><pre>$encrypt</pre></a></li>
+<li class="property public "><a href="#property_exceptions" title="$exceptions :: "><span class="description">$exceptions</span><pre>$exceptions</pre></a></li>
+<li class="property public "><a href="#property_form_validation" title="$form_validation :: "><span class="description">$form_validation</span><pre>$form_validation</pre></a></li>
+<li class="property public "><a href="#property_ftp" title="$ftp :: "><span class="description">$ftp</span><pre>$ftp</pre></a></li>
+<li class="property public "><a href="#property_hooks" title="$hooks :: "><span class="description">$hooks</span><pre>$hooks</pre></a></li>
+<li class="property public "><a href="#property_image_lib" title="$image_lib :: "><span class="description">$image_lib</span><pre>$image_lib</pre></a></li>
+<li class="property public "><a href="#property_input" title="$input :: "><span class="description">$input</span><pre>$input</pre></a></li>
+<li class="property public "><a href="#property_language" title="$language :: "><span class="description">$language</span><pre>$language</pre></a></li>
+<li class="property public "><a href="#property_load" title="$load :: "><span class="description">$load</span><pre>$load</pre></a></li>
+<li class="property public "><a href="#property_log" title="$log :: "><span class="description">$log</span><pre>$log</pre></a></li>
+<li class="property public "><a href="#property_model" title="$model :: "><span class="description">$model</span><pre>$model</pre></a></li>
+<li class="property public "><a href="#property_output" title="$output :: "><span class="description">$output</span><pre>$output</pre></a></li>
+<li class="property public "><a href="#property_pagination" title="$pagination :: "><span class="description">$pagination</span><pre>$pagination</pre></a></li>
+<li class="property public "><a href="#property_parser" title="$parser :: "><span class="description">$parser</span><pre>$parser</pre></a></li>
+<li class="property public "><a href="#property_profiler" title="$profiler :: "><span class="description">$profiler</span><pre>$profiler</pre></a></li>
+<li class="property public "><a href="#property_router" title="$router :: "><span class="description">$router</span><pre>$router</pre></a></li>
+<li class="property public "><a href="#property_session" title="$session :: "><span class="description">$session</span><pre>$session</pre></a></li>
+<li class="property public "><a href="#property_sha1" title="$sha1 :: "><span class="description">$sha1</span><pre>$sha1</pre></a></li>
+<li class="property public "><a href="#property_table" title="$table :: "><span class="description">$table</span><pre>$table</pre></a></li>
+<li class="property public "><a href="#property_trackback" title="$trackback :: "><span class="description">$trackback</span><pre>$trackback</pre></a></li>
+<li class="property public "><a href="#property_typography" title="$typography :: "><span class="description">$typography</span><pre>$typography</pre></a></li>
+<li class="property public "><a href="#property_unit_test" title="$unit_test :: "><span class="description">$unit_test</span><pre>$unit_test</pre></a></li>
+<li class="property public "><a href="#property_upload" title="$upload :: "><span class="description">$upload</span><pre>$upload</pre></a></li>
+<li class="property public "><a href="#property_uri" title="$uri :: "><span class="description">$uri</span><pre>$uri</pre></a></li>
+<li class="property public "><a href="#property_user_agent" title="$user_agent :: "><span class="description">$user_agent</span><pre>$user_agent</pre></a></li>
+<li class="property public "><a href="#property_validation" title="$validation :: "><span class="description">$validation</span><pre>$validation</pre></a></li>
+<li class="property public "><a href="#property_xmlrpc" title="$xmlrpc :: "><span class="description">$xmlrpc</span><pre>$xmlrpc</pre></a></li>
+<li class="property public "><a href="#property_xmlrpcs" title="$xmlrpcs :: "><span class="description">$xmlrpcs</span><pre>$xmlrpcs</pre></a></li>
+<li class="property public "><a href="#property_zip" title="$zip :: "><span class="description">$zip</span><pre>$zip</pre></a></li>
+</ul>
+</li></ul>
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_get_instance" title="get_instance :: "><span class="description">get_instance()
+        </span><pre>get_instance()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property_instance" title="$instance :: "><span class="description">$instance</span><pre>$instance</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\CI_Controller"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CI_Controller.html">CI_Controller</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description"></p>
+<div class="details">
+<div class="long_description"></div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_benchmark"> </a><div class="element clickable property public property_benchmark" data-toggle="collapse" data-target=".property_benchmark .collapse">
+<h2>$benchmark</h2>
+<pre>$benchmark : <a href="../classes/CI_Benchmark.html">\CI_Benchmark</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_calendar"> </a><div class="element clickable property public property_calendar" data-toggle="collapse" data-target=".property_calendar .collapse">
+<h2>$calendar</h2>
+<pre>$calendar : <a href="../classes/CI_Calendar.html">\CI_Calendar</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_cart"> </a><div class="element clickable property public property_cart" data-toggle="collapse" data-target=".property_cart .collapse">
+<h2>$cart</h2>
+<pre>$cart : <a href="../classes/CI_Cart.html">\CI_Cart</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_config"> </a><div class="element clickable property public property_config" data-toggle="collapse" data-target=".property_config .collapse">
+<h2>$config</h2>
+<pre>$config : <a href="../classes/CI_Config.html">\CI_Config</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_controller"> </a><div class="element clickable property public property_controller" data-toggle="collapse" data-target=".property_controller .collapse">
+<h2>$controller</h2>
+<pre>$controller : <a href="../classes/CI_Controller.html">\CI_Controller</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_db"> </a><div class="element clickable property public property_db" data-toggle="collapse" data-target=".property_db .collapse">
+<h2>$db</h2>
+<pre>$db : <a href="../classes/CI_DB_active_record.html">\CI_DB_active_record</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_dbforge"> </a><div class="element clickable property public property_dbforge" data-toggle="collapse" data-target=".property_dbforge .collapse">
+<h2>$dbforge</h2>
+<pre>$dbforge : <a href="../classes/CI_DB_forge.html">\CI_DB_forge</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_email"> </a><div class="element clickable property public property_email" data-toggle="collapse" data-target=".property_email .collapse">
+<h2>$email</h2>
+<pre>$email : <a href="../classes/CI_Email.html">\CI_Email</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_encrypt"> </a><div class="element clickable property public property_encrypt" data-toggle="collapse" data-target=".property_encrypt .collapse">
+<h2>$encrypt</h2>
+<pre>$encrypt : <a href="../classes/CI_Encrypt.html">\CI_Encrypt</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_exceptions"> </a><div class="element clickable property public property_exceptions" data-toggle="collapse" data-target=".property_exceptions .collapse">
+<h2>$exceptions</h2>
+<pre>$exceptions : <a href="../classes/CI_Exceptions.html">\CI_Exceptions</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_form_validation"> </a><div class="element clickable property public property_form_validation" data-toggle="collapse" data-target=".property_form_validation .collapse">
+<h2>$form_validation</h2>
+<pre>$form_validation : <a href="../classes/CI_Form_validation.html">\CI_Form_validation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_ftp"> </a><div class="element clickable property public property_ftp" data-toggle="collapse" data-target=".property_ftp .collapse">
+<h2>$ftp</h2>
+<pre>$ftp : \CI_Ftp</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_hooks"> </a><div class="element clickable property public property_hooks" data-toggle="collapse" data-target=".property_hooks .collapse">
+<h2>$hooks</h2>
+<pre>$hooks : <a href="../classes/CI_Hooks.html">\CI_Hooks</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_image_lib"> </a><div class="element clickable property public property_image_lib" data-toggle="collapse" data-target=".property_image_lib .collapse">
+<h2>$image_lib</h2>
+<pre>$image_lib : <a href="../classes/CI_Image_lib.html">\CI_Image_lib</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_input"> </a><div class="element clickable property public property_input" data-toggle="collapse" data-target=".property_input .collapse">
+<h2>$input</h2>
+<pre>$input : <a href="../classes/CI_Input.html">\CI_Input</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_language"> </a><div class="element clickable property public property_language" data-toggle="collapse" data-target=".property_language .collapse">
+<h2>$language</h2>
+<pre>$language : \CI_Language</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_load"> </a><div class="element clickable property public property_load" data-toggle="collapse" data-target=".property_load .collapse">
+<h2>$load</h2>
+<pre>$load : <a href="../classes/CI_Loader.html">\CI_Loader</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_log"> </a><div class="element clickable property public property_log" data-toggle="collapse" data-target=".property_log .collapse">
+<h2>$log</h2>
+<pre>$log : <a href="../classes/CI_Log.html">\CI_Log</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_model"> </a><div class="element clickable property public property_model" data-toggle="collapse" data-target=".property_model .collapse">
+<h2>$model</h2>
+<pre>$model : <a href="../classes/CI_Model.html">\CI_Model</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_output"> </a><div class="element clickable property public property_output" data-toggle="collapse" data-target=".property_output .collapse">
+<h2>$output</h2>
+<pre>$output : <a href="../classes/CI_Output.html">\CI_Output</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_pagination"> </a><div class="element clickable property public property_pagination" data-toggle="collapse" data-target=".property_pagination .collapse">
+<h2>$pagination</h2>
+<pre>$pagination : <a href="../classes/CI_Pagination.html">\CI_Pagination</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_parser"> </a><div class="element clickable property public property_parser" data-toggle="collapse" data-target=".property_parser .collapse">
+<h2>$parser</h2>
+<pre>$parser : <a href="../classes/CI_Parser.html">\CI_Parser</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_profiler"> </a><div class="element clickable property public property_profiler" data-toggle="collapse" data-target=".property_profiler .collapse">
+<h2>$profiler</h2>
+<pre>$profiler : <a href="../classes/CI_Profiler.html">\CI_Profiler</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_router"> </a><div class="element clickable property public property_router" data-toggle="collapse" data-target=".property_router .collapse">
+<h2>$router</h2>
+<pre>$router : <a href="../classes/CI_Router.html">\CI_Router</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_session"> </a><div class="element clickable property public property_session" data-toggle="collapse" data-target=".property_session .collapse">
+<h2>$session</h2>
+<pre>$session : <a href="../classes/CI_Session.html">\CI_Session</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_sha1"> </a><div class="element clickable property public property_sha1" data-toggle="collapse" data-target=".property_sha1 .collapse">
+<h2>$sha1</h2>
+<pre>$sha1 : \CI_Sha1</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_table"> </a><div class="element clickable property public property_table" data-toggle="collapse" data-target=".property_table .collapse">
+<h2>$table</h2>
+<pre>$table : <a href="../classes/CI_Table.html">\CI_Table</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_trackback"> </a><div class="element clickable property public property_trackback" data-toggle="collapse" data-target=".property_trackback .collapse">
+<h2>$trackback</h2>
+<pre>$trackback : <a href="../classes/CI_Trackback.html">\CI_Trackback</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_typography"> </a><div class="element clickable property public property_typography" data-toggle="collapse" data-target=".property_typography .collapse">
+<h2>$typography</h2>
+<pre>$typography : <a href="../classes/CI_Typography.html">\CI_Typography</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_unit_test"> </a><div class="element clickable property public property_unit_test" data-toggle="collapse" data-target=".property_unit_test .collapse">
+<h2>$unit_test</h2>
+<pre>$unit_test : <a href="../classes/CI_Unit_test.html">\CI_Unit_test</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_upload"> </a><div class="element clickable property public property_upload" data-toggle="collapse" data-target=".property_upload .collapse">
+<h2>$upload</h2>
+<pre>$upload : <a href="../classes/CI_Upload.html">\CI_Upload</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_uri"> </a><div class="element clickable property public property_uri" data-toggle="collapse" data-target=".property_uri .collapse">
+<h2>$uri</h2>
+<pre>$uri : <a href="../classes/CI_URI.html">\CI_URI</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_user_agent"> </a><div class="element clickable property public property_user_agent" data-toggle="collapse" data-target=".property_user_agent .collapse">
+<h2>$user_agent</h2>
+<pre>$user_agent : <a href="../classes/CI_User_agent.html">\CI_User_agent</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_validation"> </a><div class="element clickable property public property_validation" data-toggle="collapse" data-target=".property_validation .collapse">
+<h2>$validation</h2>
+<pre>$validation : \CI_Validation</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_xmlrpc"> </a><div class="element clickable property public property_xmlrpc" data-toggle="collapse" data-target=".property_xmlrpc .collapse">
+<h2>$xmlrpc</h2>
+<pre>$xmlrpc : <a href="../classes/CI_Xmlrpc.html">\CI_Xmlrpc</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_xmlrpcs"> </a><div class="element clickable property public property_xmlrpcs" data-toggle="collapse" data-target=".property_xmlrpcs .collapse">
+<h2>$xmlrpcs</h2>
+<pre>$xmlrpcs : <a href="../classes/CI_Xmlrpcs.html">\CI_Xmlrpcs</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_zip"> </a><div class="element clickable property public property_zip" data-toggle="collapse" data-target=".property_zip .collapse">
+<h2>$zip</h2>
+<pre>$zip : <a href="../classes/CI_Zip.html">\CI_Zip</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>magic</th>
+<td></td>
+</tr>
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<a id="\CI_Controller"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CI_Controller.html">CI_Controller</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">CodeIgniter Application Controller Class</p>
+<div class="details">
+<div class="long_description"><p>This class object is the super class that every library in
+CodeIgniter will be assigned to.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/CodeIgniter.Libraries.html">CodeIgniter</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Libraries</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Libraries</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">ExpressionEngine Dev Team</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://codeigniter.com/user_guide/general/controllers.html">http://codeigniter.com/user_guide/general/controllers.html</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_get_instance"></a><div class="element clickable method public method_get_instance" data-toggle="collapse" data-target=".method_get_instance .collapse">
+<h2>get_instance()
+        </h2>
+<pre>get_instance() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_instance"> </a><div class="element clickable property private property_instance" data-toggle="collapse" data-target=".property_instance .collapse">
+<h2>$instance</h2>
+<pre>$instance </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+</div>
+</body>
+</html>
