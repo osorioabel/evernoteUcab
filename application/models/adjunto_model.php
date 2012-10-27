@@ -16,9 +16,12 @@ if (!defined('BASEPATH'))
  */
 class Adjunto_Model extends CI_Model {
 
+    private $id_ajunto = '';
+    private $nombre = '';
+    private $link = '';
+
     function __construct() {
         parent::__construct();
-        
     }
 
     /**
@@ -35,8 +38,8 @@ class Adjunto_Model extends CI_Model {
      * @return	boolean dice si actualizo o no 
      */
     function registeradjunto($link, $nombre) {
-        
-        
+
+
 
         $data = array(
             'link' => $link,
@@ -45,12 +48,45 @@ class Adjunto_Model extends CI_Model {
         $insert = $this->db->insert('adjunto', $data);
         $insert2 = array();
         $insert2['error'] = $this->db->_error_message();
-        if ($insert['error'] != ''){
+        if ($insert['error'] != '') {
             return false;
-            }
-         
+        }
+
+        //$query2 = $this->db->query("SELECT * FROM adjunto order by 1 desc;");
+        //$row = $query2->num_rows();
+        //$row2 = $query2->row();
+        //$lastadjunto=$row2->id_adjunto;
+        
+        
+        
         return true;
     }
 
+    public function getId_ajunto() {
+        return $this->id_ajunto;
+    }
+
+    public function setId_ajunto($id_ajunto) {
+        $this->id_ajunto = $id_ajunto;
+    }
+
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    public function getLink() {
+        return $this->link;
+    }
+
+    public function setLink($link) {
+        $this->link = $link;
+    }
+
+
+    
 }
 
