@@ -8,7 +8,7 @@ if ($messi)
     <div id="slider-holder">
         <div id="slider">
             <a href="#"><img src="<?php echo base_url(); ?>images/Servicios1.jpg" title="Evernote Ucab is a proyect based on Cloud Computering, Cloud Storage " alt="" /></a>
-            <a href="#"><img src="<?php echo base_url(); ?>images/Cloud1.jpg" title="Evernote Ucab let you have Remainders,Notes, Notebooks and More in one single web" alt="" /></a>
+            <a href="#"><img src="<?php echo base_url(); ?>images/libro.jpg" title="Evernote Ucab let you have Remainders,Notes, Notebooks and More in one single web" alt="" /></a>
         </div>
     </div>
 </div>
