@@ -18,10 +18,18 @@
             <p>Any questions or suggestions contact us.</p>
             <b>EvernoteUcab Team is</b>
             <p></p> 
-              <p> Scrum Master and Develover: <b>Osorio, Abel</b><p>
-              <p>                  Developer: <b>Matheus, Hector</b><p>
-              <p>                  Developer: <b>Tovar, Luis</b> <p>
-         
+            <b>Abel Osorio , <i>Scrum Master and Developer</i></b>
+            <p>Twitter: <i>@osorioabel</i>
+            -- Email: <i>osorioabel@gmail.com</i></p>
+            <p></p> 
+            <b>Hector Matheus , <i>Developer</i></b>
+            <p>Twitter: <i>@hector_matheus</i>
+            -- Email: <i>hect.matheus@gmail.com</i></p>
+            <p></p> 
+            <b>Luis Tovar , <i>Scrum Master and Developer</i></b>
+            <p>Twitter: <i>@lucholj</i>
+            -- Email: <i>lucholj@gmail.com</i></p>
+                       
          </div>
         
     </div>
