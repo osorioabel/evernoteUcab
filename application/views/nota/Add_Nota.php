@@ -84,7 +84,7 @@ if ($messi)
                     jQuery(function($){
                        
                         $('.fileUpload').fileUploader({
-                            allowedExtension: 'jpg|jpeg|gif|png|zip|avi',
+                            allowedExtension: 'jpg|jpeg|gif|png|zip|avi|mpeg|plain|png|xls',
                             afterEachUpload: function(data, status, formContainer){
                                 $jsonData = $.parseJSON( $(data).find('#upload_data').text() );
                             }
