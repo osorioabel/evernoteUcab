@@ -26,7 +26,7 @@
             <p>Twitter: <i>@hector_matheus</i>
             -- Email: <i>hect.matheus@gmail.com</i></p>
             <p></p> 
-            <b>Luis Tovar , <i>Scrum Master and Developer</i></b>
+            <b>Luis Tovar , <i>Developer</i></b>
             <p>Twitter: <i>@lucholj</i>
             -- Email: <i>lucholj@gmail.com</i></p>
                        
