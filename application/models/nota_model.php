@@ -1,5 +1,19 @@
 <?php
 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * EvernoteUcab
+ *
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
+ */
+
 class Nota_Model extends CI_Model {
 
     private $id_nota = '';
@@ -13,6 +27,19 @@ class Nota_Model extends CI_Model {
         $this->load->helper('date');
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion registerNote($username, $titulo, $nota, $book) 
+    * se encarga de registrar en la base de datos 
+    * a un usuario
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	titulo de la nota
+    * @param	string	cuerpo de la nota
+    * @param	string	libreta para asociar la nota
+    * @return	boolean dice si actualizo o no 
+    */
     function registerNote($username, $titulo, $nota, $book) {
 
 
@@ -31,26 +58,39 @@ class Nota_Model extends CI_Model {
         return true;
     }
 
+    
+     /**
+    * Esta Funcion tamListNota($id) 
+    * se encarga de contar cuantas notas tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @return	int dice cantidad de notas
+    */
     public function tamListNota($id) {
         //var_dump($query);
         $query2 = $this->db->query("select id_nota from nota where id_libreta = '$id';");
         $numrow = $query2->num_rows;
-
-
         return $numrow;
     }
 
+    /**
+    * Esta Funcion notaAtIndex($index, $id)
+    * se encarga de contar devolver una nota que
+    *  tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	nombre del usuario
+    * @return	int dice cantidad de notas
+    */
     public function notaAtIndex($index, $id) {
         $nota = new Nota_Model();
-        $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_libreta = '$id';");
-
-
+        $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion 
+        from nota where id_libreta = '$id';");
         $row = $query->num_rows();
         $row2 = $query->row();
         for ($i = 0; $i < $row; $i++) {
-
-
-
             if ($index == $i) {
                 $nota->setId_nota($row2->id_nota);
                 $nota->setTitulo($row2->titulo);
@@ -63,36 +103,61 @@ class Nota_Model extends CI_Model {
         return $nota;
     }
 
+    /**
+    * Esta Funcion notaAtIndex2($id)
+    * se encarga de contar devolver una nota que
+    *  tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	nombre del usuario
+    * @return	int dice cantidad de notas
+    */
     public function notaAtIndex2($id) {
         $nota = new Nota_Model();
         $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_nota = '$id';");
-
-
-
         $row2 = $query->row();
-
         $nota->setTitulo($row2->titulo);
         $nota->setTexto($row2->texto);
-
-
 
         return $nota;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota) 
+    * se encarga de modificar un nota en la base de datos 
+    * a un usuario
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	titulo de la nota
+    * @param	string	cuerpo de la nota
+    * @param	string	libreta para asociar la nota
+    * @return	boolean dice si actualizo o no 
+    */
     function modificarNota($username, $idNote, $tituloNota, $textoNota) {
         $data = array('titulo' => $tituloNota,
             'texto' => $textoNota,
         );
 
         $query = $this->db->query("UPDATE nota SET titulo = '$tituloNota',texto ='$textoNota' WHERE id_nota = '$idNote'");
-
-
-        //  if($this->db->_error_message())
-        //  return false;
-
         return true;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion BorrarNota($username, $nota2)
+    * se encarga de borrar un nota en la base de datos 
+    * a un usuario
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	titulo de la nota
+    * @param	string	cuerpo de la nota
+    * @param	string	libreta para asociar la nota
+    * @return	boolean dice si actualizo o no 
+    */
     function BorrarNota($username, $nota2) {
 
 
@@ -105,6 +170,14 @@ class Nota_Model extends CI_Model {
         return true;
     }
 
+     /**
+    * Esta Funcion tamListNota($id) 
+    * se encarga de contar cuantas notas tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @return	int dice cantidad de notas
+    */
     public function tamListNotes($id_libreta) {
         $query = $this->db->query("select n.id_nota from nota n where n.id_libreta = '$id_libreta'");
         return $query->num_rows;

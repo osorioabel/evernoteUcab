@@ -1,15 +1,19 @@
 <?php
 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 /**
- * Evernote
+ * EvernoteUcab
  *
- * An open source application development framework for PHP 5.1.6 or newer
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
  *
  * @package		EvernoteUcab
  * @author		Abel Osorio Hector Matheus Luis Tovar
  * @copyright	        Copyright (c) 2012, 
  * @filesource
  */
+
 class Usuario_Model extends CI_Model {
 
     private $username = '';
@@ -20,6 +24,7 @@ class Usuario_Model extends CI_Model {
     private $name = '';
     private $apellido = '';
 
+    
     function __construct() {
         parent::__construct();
         $this->oauth_token='';
@@ -29,16 +34,17 @@ class Usuario_Model extends CI_Model {
     
   
     /**
-	 * 
-	 *
-	 * Esta Funcion se encarga de actualizar en la base de datos 
-         * el token que ha aignado el dropbox para su acceso  
-	 *@category Modelo
-	 * @param	string  Indica el Usuario 
-	 * @param	string	nombre del usuario
-	 * @param	string	apellido del usuario
-	 * @return	boolean dice si actualizo o no 
-	 */
+    * 
+    *
+    * Esta Funcion  modificartoken($username, $nombre, $apellido)
+    *  se encarga de actualizar en la base de datos 
+    * el token que ha aignado el dropbox para su acceso  
+    *@category Modelo
+    * @param	string  Indica el Usuario 
+    * @param	string	nombre del usuario
+    * @param	string	apellido del usuario
+    * @return	boolean dice si actualizo o no 
+    */
    public function modificartoken($username, $nombre, $apellido) {
         $data = array('oauth_token' => $nombre,
             'oauth_token_secret' => $apellido,  );
@@ -51,6 +57,17 @@ class Usuario_Model extends CI_Model {
         return true;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion login($username, $password) se encarga verificar los datos del
+    * usuario y autentificar su acceso a la app
+    *@category Modelo
+    * @param	string  Indica el Usuario 
+    * @param	string	nombre del usuario
+    * @param	string	password del usuario
+    * @return	boolean dice si actualizo o no 
+    */
     public function login($username, $password) {
 
         $this->db->where('username', $username);
@@ -63,6 +80,20 @@ class Usuario_Model extends CI_Model {
         return FALSE;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion register($name, $lastname, $username, $email, $password) 
+    * se encarga de registrar en la base de datos 
+    * a un usuario
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	apellido del usuario
+    * @param	string	username del usuario
+    * @param	string	email del usuario
+    * @param	string	password del usuario
+    * @return	boolean dice si actualizo o no 
+    */
     public function register($name, $lastname, $username, $email, $password) {
 
         $data = array(
@@ -81,6 +112,18 @@ class Usuario_Model extends CI_Model {
         return true;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion modificar($username, $nombre, $apellido, $email) 
+    * se encarga de actualizar en la base de datos 
+    * datos del usuario  
+    *@category Modelo
+    * @param	string  Indica el Usuario 
+    * @param	string	nombre del usuario
+    * @param	string	apellido del usuario
+    * @return	boolean dice si actualizo o no 
+    */
     public function modificar($username, $nombre, $apellido, $email) {
         $data = array('nombre' => $nombre,
             'apellido' => $apellido,
@@ -95,6 +138,17 @@ class Usuario_Model extends CI_Model {
         return true;
     }
     
+    /**
+    * 
+    *
+    * Esta Funcion getUser($username) se encarga de traer de  base de datos 
+    *  datos del usuario
+    *@category Modelo
+    * @param	string  Indica el Usuario 
+    * @param	string	nombre del usuario
+    * @param	string	apellido del usuario
+    * @return	object dice si actualizo o no 
+    */
        public function getUser($username) {
         $user = new Usuario_Model();
         $query = $this->db->query("select u.nombre, u.apellido,u.email from usuario u where u.username='$username'");
@@ -105,6 +159,18 @@ class Usuario_Model extends CI_Model {
         return $user;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion cambiarClave($username, $password) 
+    * se encarga de actualizar en la base de datos 
+    * el password que ha aignado el dropbox para su acceso  
+    *@category Modelo
+    * @param	string  Indica el Usuario 
+    * @param	string	nombre del usuario
+    * @param	string	apellido del usuario
+    * @return	boolean dice si actualizo o no 
+    */
     public function cambiarClave($username, $password) {
         $data = array('password' => $password,
         );
@@ -116,20 +182,6 @@ class Usuario_Model extends CI_Model {
 
         return true;
     }
-
-    public function configuarDropbox($username, $cuentadropbox, $passdropbox) {
-        $data = array('cuentadropbox' => $cuentadropbox,
-            'passdropbox' => $passdropbox,
-        );
-        $this->db->where('username', $username);
-        $this->db->update('usuario', $data);
-
-        if ($this->db->_error_message())
-            return false;
-
-        return true;
-    }
-    
     
     public function getUsername() {
         return $this->username;

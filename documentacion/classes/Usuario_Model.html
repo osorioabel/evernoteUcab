@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1268</span></a></li>
+                <span class="label label-info">1192</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -62,10 +62,11 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#method_cambiarClave" title="cambiarClave :: "><span class="description">cambiarClave()
-        </span><pre>cambiarClave()</pre></a></li>
-<li class="method public "><a href="#method_configuarDropbox" title="configuarDropbox :: "><span class="description">configuarDropbox()
-        </span><pre>configuarDropbox()</pre></a></li>
+<li class="method public "><a href="#method_cambiarClave" title="cambiarClave :: Esta Funcion cambiarClave($username, $password)
+se encarga de actualizar en la base de datos
+el password que ha aignado el dropbox para su acceso"><span class="description">Esta Funcion cambiarClave($username, $password)
+se encarga de actualizar en la base de datos
+el password que ha aignado el dropbox para su acceso</span><pre>cambiarClave()</pre></a></li>
 <li class="method public "><a href="#method_getApellido" title="getApellido :: "><span class="description">getApellido()
         </span><pre>getApellido()</pre></a></li>
 <li class="method public "><a href="#method_getEmail" title="getEmail :: "><span class="description">getEmail()
@@ -78,19 +79,29 @@
         </span><pre>getOauth_token_secret()</pre></a></li>
 <li class="method public "><a href="#method_getPassword" title="getPassword :: "><span class="description">getPassword()
         </span><pre>getPassword()</pre></a></li>
-<li class="method public "><a href="#method_getUser" title="getUser :: "><span class="description">getUser()
-        </span><pre>getUser()</pre></a></li>
+<li class="method public "><a href="#method_getUser" title="getUser :: Esta Funcion getUser($username) se encarga de traer de  base de datos
+ datos del usuario"><span class="description">Esta Funcion getUser($username) se encarga de traer de  base de datos
+ datos del usuario</span><pre>getUser()</pre></a></li>
 <li class="method public "><a href="#method_getUsername" title="getUsername :: "><span class="description">getUsername()
         </span><pre>getUsername()</pre></a></li>
-<li class="method public "><a href="#method_login" title="login :: "><span class="description">login()
-        </span><pre>login()</pre></a></li>
-<li class="method public "><a href="#method_modificar" title="modificar :: "><span class="description">modificar()
-        </span><pre>modificar()</pre></a></li>
-<li class="method public "><a href="#method_modificartoken" title="modificartoken :: Esta Funcion se encarga de actualizar en la base de datos
-el token que ha aignado el dropbox para su acceso"><span class="description">Esta Funcion se encarga de actualizar en la base de datos
+<li class="method public "><a href="#method_login" title="login :: Esta Funcion login($username, $password) se encarga verificar los datos del
+usuario y autentificar su acceso a la app"><span class="description">Esta Funcion login($username, $password) se encarga verificar los datos del
+usuario y autentificar su acceso a la app</span><pre>login()</pre></a></li>
+<li class="method public "><a href="#method_modificar" title="modificar :: Esta Funcion modificar($username, $nombre, $apellido, $email)
+se encarga de actualizar en la base de datos
+datos del usuario"><span class="description">Esta Funcion modificar($username, $nombre, $apellido, $email)
+se encarga de actualizar en la base de datos
+datos del usuario</span><pre>modificar()</pre></a></li>
+<li class="method public "><a href="#method_modificartoken" title="modificartoken :: Esta Funcion  modificartoken($username, $nombre, $apellido)
+ se encarga de actualizar en la base de datos
+el token que ha aignado el dropbox para su acceso"><span class="description">Esta Funcion  modificartoken($username, $nombre, $apellido)
+ se encarga de actualizar en la base de datos
 el token que ha aignado el dropbox para su acceso</span><pre>modificartoken()</pre></a></li>
-<li class="method public "><a href="#method_register" title="register :: "><span class="description">register()
-        </span><pre>register()</pre></a></li>
+<li class="method public "><a href="#method_register" title="register :: Esta Funcion register($name, $lastname, $username, $email, $password)
+se encarga de registrar en la base de datos
+a un usuario"><span class="description">Esta Funcion register($name, $lastname, $username, $email, $password)
+se encarga de registrar en la base de datos
+a un usuario</span><pre>register()</pre></a></li>
 <li class="method public "><a href="#method_setApellido" title="setApellido :: "><span class="description">setApellido()
         </span><pre>setApellido()</pre></a></li>
 <li class="method public "><a href="#method_setEmail" title="setEmail :: "><span class="description">setEmail()
@@ -135,9 +146,10 @@ el token que ha aignado el dropbox para su acceso</span><pre>modificartoken()</p
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Evernote</p>
+<p class="short_description">EvernoteUcab</p>
 <div class="details">
-<div class="long_description"><p>An open source application development framework for PHP 5.1.6 or newer</p></div>
+<div class="long_description"><p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
@@ -187,28 +199,27 @@ syntax as controllers.</p></div>
 </div></div>
 </div>
 <a id="method_cambiarClave"></a><div class="element clickable method public method_cambiarClave" data-toggle="collapse" data-target=".method_cambiarClave .collapse">
-<h2>cambiarClave()
-        </h2>
-<pre>cambiarClave($username, $password) </pre>
+<h2>Esta Funcion cambiarClave($username, $password)
+se encarga de actualizar en la base de datos
+el password que ha aignado el dropbox para su acceso</h2>
+<pre>cambiarClave(string $username, string $password) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$password</h4></div>
-</div></div>
-</div>
-<a id="method_configuarDropbox"></a><div class="element clickable method public method_configuarDropbox" data-toggle="collapse" data-target=".method_configuarDropbox .collapse">
-<h2>configuarDropbox()
-        </h2>
-<pre>configuarDropbox($username, $cuentadropbox, $passdropbox) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$cuentadropbox</h4></div>
-<div class="subelement argument"><h4>$passdropbox</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Indica el Usuario</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_getApellido"></a><div class="element clickable method public method_getApellido" data-toggle="collapse" data-target=".method_getApellido .collapse">
@@ -254,14 +265,23 @@ syntax as controllers.</p></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_getUser"></a><div class="element clickable method public method_getUser" data-toggle="collapse" data-target=".method_getUser .collapse">
-<h2>getUser()
-        </h2>
-<pre>getUser($username) </pre>
+<h2>Esta Funcion getUser($username) se encarga de traer de  base de datos
+ datos del usuario</h2>
+<pre>getUser(string $username) : object</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Indica el Usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_getUsername"></a><div class="element clickable method public method_getUsername" data-toggle="collapse" data-target=".method_getUsername .collapse">
@@ -272,33 +292,59 @@ syntax as controllers.</p></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_login"></a><div class="element clickable method public method_login" data-toggle="collapse" data-target=".method_login .collapse">
-<h2>login()
-        </h2>
-<pre>login($username, $password) </pre>
+<h2>Esta Funcion login($username, $password) se encarga verificar los datos del
+usuario y autentificar su acceso a la app</h2>
+<pre>login(string $username, string $password) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$password</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Indica el Usuario</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_modificar"></a><div class="element clickable method public method_modificar" data-toggle="collapse" data-target=".method_modificar .collapse">
-<h2>modificar()
-        </h2>
-<pre>modificar($username, $nombre, $apellido, $email) </pre>
+<h2>Esta Funcion modificar($username, $nombre, $apellido, $email)
+se encarga de actualizar en la base de datos
+datos del usuario</h2>
+<pre>modificar(string $username, string $nombre, string $apellido, $email) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$nombre</h4></div>
-<div class="subelement argument"><h4>$apellido</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Indica el Usuario</p></div>
+<div class="subelement argument">
+<h4>$nombre</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$apellido</h4>
+<code>string</code><p>apellido del usuario</p></div>
 <div class="subelement argument"><h4>$email</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_modificartoken"></a><div class="element clickable method public method_modificartoken" data-toggle="collapse" data-target=".method_modificartoken .collapse">
-<h2>Esta Funcion se encarga de actualizar en la base de datos
+<h2>Esta Funcion  modificartoken($username, $nombre, $apellido)
+ se encarga de actualizar en la base de datos
 el token que ha aignado el dropbox para su acceso</h2>
 <pre>modificartoken(string $username, string $nombre, string $apellido) : boolean</pre>
 <div class="labels"></div>
@@ -324,18 +370,36 @@ el token que ha aignado el dropbox para su acceso</h2>
 </div></div>
 </div>
 <a id="method_register"></a><div class="element clickable method public method_register" data-toggle="collapse" data-target=".method_register .collapse">
-<h2>register()
-        </h2>
-<pre>register($name, $lastname, $username, $email, $password) </pre>
+<h2>Esta Funcion register($name, $lastname, $username, $email, $password)
+se encarga de registrar en la base de datos
+a un usuario</h2>
+<pre>register(string $name, string $lastname, string $username, string $email, string $password) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$name</h4></div>
-<div class="subelement argument"><h4>$lastname</h4></div>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$email</h4></div>
-<div class="subelement argument"><h4>$password</h4></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$lastname</h4>
+<code>string</code><p>apellido del usuario</p></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>username del usuario</p></div>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>email del usuario</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>password del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_setApellido"></a><div class="element clickable method public method_setApellido" data-toggle="collapse" data-target=".method_setApellido .collapse">
@@ -466,7 +530,7 @@ el token que ha aignado el dropbox para su acceso</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

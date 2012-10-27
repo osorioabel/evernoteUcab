@@ -3,14 +3,39 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/**
+ * EvernoteUcab
+ *
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
+ */
 class libreta extends CI_Controller {
 
+    /**
+     *  Funcion Constructor del controlador, se realizan cargas de 
+     * algunos modelos y helpers usuados en el funcionamiento de 
+     * el controlador 
+     *  
+     * @category	Controller
+     */
     public function __construct() {
         parent::__construct();
         $this->load->model('libreta_model');
         $this->load->helper('form');
     }
 
+    /**
+     *  Funcion index() se realizan las 
+     * llamadas basicas para la carga de una de las vistas 
+     * de creacion de libreta
+     *  
+     * @category	Controller
+     */
     function index($username) {
 
         $data = array();
@@ -22,6 +47,14 @@ class libreta extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
 
+    /**
+     *  Funcion indexModify($username) se realizan las 
+     * llamadas basicas para la carga de una de las vistas 
+     * de modificacion de la informacion de la libreta
+     *  
+     * @category	Controller
+     * @param string $username usuario 
+     */
     function indexModify($username) {
 
         $data = array();
@@ -29,18 +62,33 @@ class libreta extends CI_Controller {
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Modificar';
         $data['username'] = $username;
+        // aca se llama a funcion para cargar las libretas del usuario
+        // esta variable trae un codigo HTML para que se realice 
+        // su visualizacion en la interfaz de Modificar 
         $data['upload'] = $this->uploadNotebookViewModify($username);
-        //echo $data['main_content'];
         $data['title'] = 'Modify Book';
         $this->load->view('/includes/templates', $data);
     }
 
+    /**
+     * Funcion indexModify2($username, $id) se realizan las 
+     * llamadas basicas para cargar la vista de modificacion
+     * de libreta, una vez que ya se ha seleccionado cual se
+     * desea modificar 
+     * @category	Controller
+     * @param           string $username usuario activo
+     * @param           int $id id de la libreta a modificar
+     */
     function indexModify2($username, $id) {
 
         $data = array();
         $data['messi'] = "";
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Modificar_2';
+        // aca se llama a funcion para cargar las libretas del usuario
+        // esta variable trae un codigo HTML para que se realice 
+        // su visualizacion en la vista de los detalles de la libreta a 
+        //modificar 
         $data['upload'] = $this->uploadBookDetail($username, $id);
         $data['username'] = $username;
         $data['libreta'] = $id;
@@ -48,32 +96,55 @@ class libreta extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
 
+    /**
+     * Funcion uploadBookDetail($username, $id_libreta) Esta funcion se encarga
+     *  de preguntar a la capa de modelo, cuales son los datos de la libreta 
+     * seleccionada. Para luego armar HTML que sera pasado a la 
+     * vista..
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @param int $id_libreta id de la libreta a ver su detalle 
+     * @return string codigo HTML para ser cargado en la vista
+     */
     function uploadBookDetail($username, $id_libreta) {
         $return = '';
         $libreta = new Libreta_Model();
+        // se llama al modelo y se trae la informacion de la libreta
+        //que ya hemos seleccionado para cambiar
         $libreta = $libreta->libretaAtIndex2($id_libreta, $username);
-
         $nombre = $libreta->getNombre();
         $descripcion = $libreta->getDescripcion();
-
+        // se empeiza a armar etiquetas HTML para su posterior carga en la 
+        // vista 
         $return = "<div>
-                        <label>Title</label>
-                        <input name='tituloBook'  id='tituloBook' value ='$nombre'
-                               type='text' class='form-poshytip' title='Enter a tittle' />
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <textarea name='descrip' id='descrip'  cols='30' rows='6' class='form-poshytip' title='Description'>$descripcion</textarea>
-                    </div>";
-
-
+                  <label>Title</label>
+           <input name='tituloBook'  id='tituloBook' value ='$nombre'
+        type='text' class='form-poshytip' title='Enter a tittle' />
+        </div>
+        <div>
+        <label>Description</label>
+        <textarea name='descrip' id='descrip'  cols='30' rows='6'
+        class='form-poshytip' title='Description'>$descripcion</textarea>
+        </div>";
         return $return;
     }
 
+    /**
+     * Funcion indexDelete($username) se realizan las 
+     * llamadas basicas para cargar la vista de borrar
+     * de libreta, una vez que ya se ha seleccionado cual se
+     * desea borrar 
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function indexDelete($username) {
 
         $data = array();
         $data['messi'] = "";
+        // se llama al modelo y se trae la informacion de la libreta
+        //que ya hemos seleccionado para borrar
         $data['upload'] = $this->uploadNotebookViewDelete($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Eliminar';
@@ -82,10 +153,21 @@ class libreta extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
 
+     /**
+     * Funcion indexSelect($username) se realizan las 
+     * llamadas basicas para cargar la vista de seleccionar
+     * de libreta, una vez que ya se ha seleccionado cual se
+     * desea seleccionado 
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function indexSelect($username) {
 
         $data = array();
         $data['messi'] = "";
+        // se llama al modelo y se trae la informacion de la libreta
+        //que ya hemos seleccionado para ver su informacion
         $data['upload'] = $this->uploadNotebookView($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Select';
@@ -94,10 +176,21 @@ class libreta extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
 
+    /**
+     * Funcion indexSelectConsulta($username) se realizan las 
+     * llamadas basicas para cargar la vista de seleccionar
+     * de libreta, una vez que ya se ha seleccionado cual se
+     * desea seleccionado, en este caso  
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function indexSelectConsulta($username) {
-
+       
         $data = array();
         $data['messi'] = "";
+        // se llama al modelo y se trae la informacion de la libreta
+        //que ya hemos seleccionado para ver su informacion
         $data['upload3'] = $this->uploadNotebookView2($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Select_Libreta_Consulta';
@@ -107,6 +200,15 @@ class libreta extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
 
+    /**
+     * Funcion indexDeleteNote($username) se realizan las 
+     * llamadas basicas para cargar la vista de modificacion
+     * de libreta, una vez que ya se ha seleccionado cual se
+     * desea seleccionado, en este caso para borrar
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function indexDeleteNote($username) {
 
         $data = array();
@@ -119,193 +221,229 @@ class libreta extends CI_Controller {
         $data['title'] = 'Your Books';
         $this->load->view('/includes/templates', $data);
     }
+    
 
+     /**
+     * Funcion AddBook($username) funcion que se encarga 
+     * de crear una libreta al usuario. realizando llamada 
+     * llamada al model encargadose el de dicha actividad
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function AddBook($username) {
         $titulo = $this->input->post('tituloBook');
         $descripcion = $this->input->post('descrip');
-        $booleano = $this->libreta_model->registerBook($username, $titulo, $descripcion);
+        // llamada al modelo y la creacion de la libreta
+        $booleano = $this->libreta_model->registerBook($username, $titulo, 
+                                                       $descripcion);
         if ($booleano == true) {
-            $this->index($username);
+            // si se pudo crear la libreta
+            //redirecciona al home del usuario
+            redirect('/homeuser/index/' . $username);
         } else
             echo "La estas cagando";
     }
 
+    /**
+     * Funcion ModifyBook($username, $libreta)) funcion que se encarga 
+     * de modificar una libreta al usuario. realizando llamada 
+     * llamada al model encargadose el de dicha actividad
+     * @category	Controller
+     * @param           string $username usuario activo
+     * @param int $libreta id de la libreta a modificar
+     * 
+     */
     function ModifyBook($username, $libreta) {
+        // se reciben los post de la vista
         $tituloLibreta = $this->input->post('tituloBook');
         $descripLibreta = $this->input->post('descrip');
-
-        $booleano = $this->libreta_model->modificarLibreta($username, $libreta, $tituloLibreta, $descripLibreta);
-
+        
+        // llamada al modelo y la modificacion de la libreta
+        $booleano = $this->libreta_model->modificarLibreta($username, $libreta,
+                                                $tituloLibreta, $descripLibreta);
         if ($booleano == true) {
-            $this->indexModify($username, '');
+            // si se pudo realizar el cambio redireccionar al home del usuario
+            redirect('/homeuser/index/' . $username);
         } else
         // caso de gente repetido
             echo "HOLA";
     }
-
-    function DeleteBook($username, $libreta2) {
-
-
-
-        $booleano = $this->libreta_model->BorrarLibreta($username, $libreta2);
-
+    
+    /**
+     * Funcion DeleteBook($username, $libreta) funcion que se encarga 
+     * de borarr una libreta al usuario. realizando llamada 
+     * llamada al model encargadose el de dicha actividad
+     * @category	Controller
+     * @param           string $username usuario activo
+     * @param int $libreta id de la libreta a borrar
+     * 
+     */
+    function DeleteBook($username, $libreta) {
+        // llamada al modelo para eliminar la libreta
+        $booleano = $this->libreta_model->BorrarLibreta($username, $libreta);
         if ($booleano == true) {
-            $this->indexDelete($username, '');
+            // si se pudo realizar la eliminacion redirecciona al home del user
+            redirect('/homeuser/index/' . $username);
         } else
-        // caso de gente repetido
             echo "HOLA";
     }
 
-    function a() {
-        $this->libreta_model->libretaAtIndex(0, 'lucholj');
-    }
-
+    /**
+     * Funcion uploadLastBooks($username) Esta funcion se encarga de 
+     * preguntar a la capa de modelo, cuales han sido las ultimas 3 libretas 
+     * creadas por el usuario. Para luego armar HTML que sera pasado a la 
+     * vista al momento del login exitoso del usuario.
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @return          string se devuelven a la vista HTLM para ser Impreso
+     */
     function uploadNotebookViewDelete($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
-
-
+            // este for se realiza por tantas veces el usuario tenga libretas 
             $libreta = new Libreta_Model();
-            $libreta = $libreta->libretaAtIndex($i, $username);
-
+            $libreta = $libreta->libretaAtIndex($i, $username); // se busca la libreta por su ID
             $nombre = $libreta->getNombre();
-            //$libreta->setNombre('abel');
             $id = $libreta->getId_libreta();
             $fecha = $libreta->getFecha();
-            $descripcion = $libreta->getDescripcion();
-
-
+            $descripcion = $libreta->getDescripcion(); // se realiza la lectura de atributos 
+            // se empieza a armar HTML que sera usado en la vista 
+            // luego de consultar en la capa de modelo
             $attributes = array('id' => 'sc-contact-form');
             $ref = base_url() . 'Libreta/indexDelete/' . $username . '>';
             $boton = base_url() . 'Libreta/DeleteBook/' . $username . '/' . $id;
             $ref2 = base_url() . 'Libreta/indexDelete/' . $username;
-            $result = " 
-            
+            $result = "
             <?php 
                echo form_open('/Libreta/DeleteBook/'$username'/'$nombre','$attributes');
                 ?>
                  <div class='project'>
-                          <h1><a href=$ref $nombre </a></h1>
-                                <!-- shadow -->
-                                <div class='project-shadow'>
-                                    <!-- project-thumb -->
-                                    <div class='project-thumbnail'>
-            
-
-                                        <!-- meta -->
-                                        <ul class='meta'>
-                                            <li><strong>Project date</strong> $fecha </li>
-                                            <li><strong>username</strong> <a href='#'> $username </a></li>
-                                        </ul>
-                                        <!-- ENDS meta -->
-
-                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
-                                    </div>
-                                    <!-- ENDS project-thumb -->
-
-                                    <div class='the-excerpt'>
-                                         $descripcion 
-                                    </div>	
-                                   
-             <a href=$boton class='read-more link-button' name='<?php echo $nombre ?>' id='<?php echo $nombre ?>'><span>Delete it</span></a>                        
-            </div>
-                                <!-- ENDS shadow -->
-                            </div>
-                            <!-- ENDS project -->
+                 <h1><a href=$ref $nombre </a></h1>
+                 <!-- shadow -->
+                 <div class='project-shadow'>
+                 <!-- project-thumb -->
+                 <div class='project-thumbnail'>
+                 <!-- meta -->
+                 <ul class='meta'>
+                 <li><strong>Project date</strong> $fecha </li>
+                 <li><strong>username</strong> <a href='#'> $username </a></li>
+                </ul>
+                <!-- ENDS meta -->
+                <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                </div>
+                <!-- ENDS project-thumb -->
+                <div class='the-excerpt'>
+                $descripcion 
+                 </div>	                   
+                 <a href=$boton class='read-more link-button' name='<?php echo $nombre ?>' id='<?php echo $nombre ?>'><span>Delete it</span></a>                        
+                 </div>
+                <!-- ENDS shadow -->
+                </div>
+                <!-- ENDS project -->
               <?php echo form_close(); ?>
-             
+
                  ";
-
-
-            $return = $result . $return;
+            $return = $result . $return; // aca se concatena el HTML requerido para pintar  
+            // cada libreta notebook a eliminar 
         }
         return $return;
     }
 
+     /**
+     * Funcion uploadNotebookView($username) Esta funcion se encarga de 
+     * preguntar a la capa de modelo, cuales han sido las que libretas han sido
+     * creadas por el usuario. Para luego armar HTML que sera pasado a la 
+     * para usarse al momento de q el usuario quiera ver todas sus libretas.
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @return          string se devuelven a la vista HTLM para ser Impreso
+     */
     function uploadNotebookView($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
 
-
             $libreta = new Libreta_Model();
-            $libreta = $libreta->libretaAtIndex($i, $username);
-
+            // se hace un simple get de la libreta en posicion del 
+            // del usuario 
+            $libreta = $libreta->libretaAtIndex($i, $username);  
+            
             $nombre = $libreta->getNombre();
-            //$libreta->setNombre('abel');
             $id = $libreta->getId_libreta();
             $fecha = $libreta->getFecha();
             $descripcion = $libreta->getDescripcion();
-
-
             $attributes = array('id' => 'sc-contact-form');
-
-
             $ref = base_url() . 'Nota/SelectNote/' . $username . '/' . $id . '>';
             $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $nombre;
-
             $result = " 
             
             <?php 
                echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
                 ?>
                  <div class='project'>
-                          <h1><a href=$ref $nombre </a></h1>
-                                <!-- shadow -->
-                                <div class='project-shadow'>
-                                    <!-- project-thumb -->
-                                    <div class='project-thumbnail'>
-            
+             <h1><a href=$ref $nombre </a></h1>
+             <!-- shadow -->
+             <div class='project-shadow'>
+             <!-- project-thumb -->
+              <div class='project-thumbnail'>
+             <!-- meta -->
+             <ul class='meta'>
+            <li><strong>Project date</strong> $fecha </li>
+            <li><strong>username</strong> <a href='#'> $username </a></li>
+            </ul>
+            <!-- ENDS meta -->
 
-                                        <!-- meta -->
-                                        <ul class='meta'>
-                                            <li><strong>Project date</strong> $fecha </li>
-                                            <li><strong>username</strong> <a href='#'> $username </a></li>
-                                        </ul>
-                                        <!-- ENDS meta -->
+            <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+            </div>
+            <!-- ENDS project-thumb -->
 
-                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
-                                    </div>
-                                    <!-- ENDS project-thumb -->
+            <div class='the-excerpt'>
+            $descripcion 
+            </div>	
 
-                                    <div class='the-excerpt'>
-                                         $descripcion 
-                                    </div>	
-                                 
-             </div>
-                                <!-- ENDS shadow -->
-                            </div>
-                            <!-- ENDS project -->
-              <?php echo form_close(); ?>
-             
-                 ";
+            </div>
+            <!-- ENDS shadow -->
+            </div>
+            <!-- ENDS project -->
+            <?php echo form_close(); ?>
 
-
-            $return = $result . $return;
+            ";
+            $return = $result . $return; 
+            // se concatenan las 
         }
         return $return;
     }
 
+    /**
+     * Funcion uploadNotebookViewModify Esta funcion se encarga de 
+     * preguntar a la capa de modelo, por una libreta han sido
+     * creadas por el usuario. Para luego armar HTML que sera pasado a la 
+     * para usarse al momento de q el usuario quiera modificarla
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @return          string se devuelven a la vista HTLM para ser Impreso
+     */
     function uploadNotebookViewModify($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
-
-
+            // se pregunta por la cantidad de llibretas del usuario
+            
             $libreta = new Libreta_Model();
             $libreta = $libreta->libretaAtIndex($i, $username);
+            // se trae la libreta en cierta posicion y se extraen atriburtos
             $id = $libreta->getId_libreta();
             $nombre = $libreta->getNombre();
-            //$libreta->setNombre('abel');
-
             $fecha = $libreta->getFecha();
             $descripcion = $libreta->getDescripcion();
-
-
+            
+            // se comienza a crear HTLM para mostrar en la vista
             $attributes = array('id' => 'sc-contact-form');
-
-
             $ref = base_url() . 'Libreta/indexModify2/' . $username . '/' . $id . '>';
             $ref2 = base_url() . 'Libreta/indexModify2/' . $username . '/' . $id;
 
@@ -314,43 +452,49 @@ class libreta extends CI_Controller {
             <?php 
                echo form_open('/Libreta/indexModify2/'$username'/'$nombre','$attributes');
                 ?>
-                 <div class='project'>
-                          <h1><a href=<h1><a href=$ref $nombre </a></h1></a></h1>
-                                <!-- shadow -->
-                                <div class='project-shadow'>
-                                    <!-- project-thumb -->
-                                    <div class='project-thumbnail'>
-            
+            <div class='project'>
+                     <h1><a href=<h1><a href=$ref $nombre </a></h1></a></h1>
+                           <!-- shadow -->
+            <div class='project-shadow'>
+                <!-- project-thumb -->
+                <div class='project-thumbnail'>
+                    <!-- meta -->
+                    <ul class='meta'>
+                        <li><strong>Project date</strong> $fecha </li>
+                        <li><strong>username</strong> <a href='#'> $username </a></li>
+                    </ul>
+                    <!-- ENDS meta -->
 
-                                        <!-- meta -->
-                                        <ul class='meta'>
-                                            <li><strong>Project date</strong> $fecha </li>
-                                            <li><strong>username</strong> <a href='#'> $username </a></li>
-                                        </ul>
-                                        <!-- ENDS meta -->
+                    <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                </div>
+                <!-- ENDS project-thumb -->
 
-                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
-                                    </div>
-                                    <!-- ENDS project-thumb -->
+                <div class='the-excerpt'>
+                    $descripcion 
+                </div>	
 
-                                    <div class='the-excerpt'>
-                                        $descripcion 
-                                    </div>	
-                                   
              </div>
                                 <!-- ENDS shadow -->
                             </div>
                             <!-- ENDS project -->
               <?php echo form_close(); ?>
-             
+
                  ";
-
-
             $return = $result . $return;
         }
         return $return;
     }
 
+    /**
+     * Funcion uploadNotebookView2($username) Esta funcion se encarga de 
+     * preguntar a la capa de modelo, por una libreta han sido
+     * creadas por el usuario. Para luego armar HTML que sera pasado a la 
+     * para usarse al momento de q el usuario quiera modificarla
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @return          string se devuelven a la vista HTLM para ser Impreso
+     */
     function uploadNotebookView2($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
@@ -374,58 +518,63 @@ class libreta extends CI_Controller {
             $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $nombre;
 
             $result = " 
-            
+
             <?php 
-               echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
-                ?>
-                 <div class='project'>
-                          <h1><a href=$ref $nombre </a></h1>
-                                <!-- shadow -->
-                                <div class='project-shadow'>
-                                    <!-- project-thumb -->
-                                    <div class='project-thumbnail'>
-            
+            echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
+             ?>
+            <div class='project'>
+            <h1><a href=$ref $nombre </a></h1>
+            <!-- shadow -->
+            <div class='project-shadow'>
+            <!-- project-thumb -->
+            <div class='project-thumbnail'>
+            <!-- meta -->
+            <ul class='meta'>
+            <li><strong>Project date</strong> $fecha </li>
+            <li><strong>username</strong> <a href='#'> $username </a></li>
+            </ul>
+            <!-- ENDS meta -->
+            <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+            </div>
+            <!-- ENDS project-thumb -->
+            <div class='the-excerpt'>
+            $descripcion 
+            </div>	
 
-                                        <!-- meta -->
-                                        <ul class='meta'>
-                                            <li><strong>Project date</strong> $fecha </li>
-                                            <li><strong>username</strong> <a href='#'> $username </a></li>
-                                        </ul>
-                                        <!-- ENDS meta -->
-
-                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
-                                    </div>
-                                    <!-- ENDS project-thumb -->
-
-                                    <div class='the-excerpt'>
-                                         $descripcion 
-                                    </div>	
-                                 
-             </div>
-                                <!-- ENDS shadow -->
-                            </div>
-                            <!-- ENDS project -->
-              <?php echo form_close(); ?>
-             
+            </div>
+            <!-- ENDS shadow -->
+            </div>
+            <!-- ENDS project -->
+            <?php echo form_close(); ?>
                  ";
 
 
-            $return = $result . $return;
+$return = $result . $return;
         }
         return $return;
     }
 
-    function uploadNotebookView3Delete($username) {
+    /**
+     * Funcion uploadNotebookView3Delete($username) Esta funcion se encarga de 
+     * preguntar a la capa de modelo, por una libreta han sido
+     * creadas por el usuario. Para luego armar HTML que sera pasado a la 
+     * para usarse al momento de q el usuario quiera borrarla
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @return          string se devuelven a la vista HTLM para ser Impreso
+     */
+    function uploadNotebookView3Delete($username)  {
         $base_url = base_url() . 'images/book.png';
         $return = '';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
-
+            // se pregunta por la cantidad de libretas de un usuario
 
             $libreta = new Libreta_Model();
             $libreta = $libreta->libretaAtIndex($i, $username);
 
             $nombre = $libreta->getNombre();
-            //$libreta->setNombre('abel');
+    
             $id = $libreta->getId_libreta();
             $fecha = $libreta->getFecha();
             $descripcion = $libreta->getDescripcion();
@@ -439,38 +588,38 @@ class libreta extends CI_Controller {
 
             $result = " 
             
-            <?php 
-               echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
-                ?>
-                 <div class='project'>
-                          <h1><a href=$ref $nombre </a></h1>
-                                <!-- shadow -->
-                                <div class='project-shadow'>
-                                    <!-- project-thumb -->
-                                    <div class='project-thumbnail'>
-            
+<?php 
+   echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
+    ?>
+     <div class='project'>
+              <h1><a href=$ref $nombre </a></h1>
+                    <!-- shadow -->
+                    <div class='project-shadow'>
+                        <!-- project-thumb -->
+                        <div class='project-thumbnail'>
 
-                                        <!-- meta -->
-                                        <ul class='meta'>
-                                            <li><strong>Project date</strong> $fecha </li>
-                                            <li><strong>username</strong> <a href='#'> $username </a></li>
-                                        </ul>
-                                        <!-- ENDS meta -->
 
-                                        <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
-                                    </div>
-                                    <!-- ENDS project-thumb -->
+                            <!-- meta -->
+                            <ul class='meta'>
+                                <li><strong>Project date</strong> $fecha </li>
+                                <li><strong>username</strong> <a href='#'> $username </a></li>
+                            </ul>
+                            <!-- ENDS meta -->
 
-                                    <div class='the-excerpt'>
-                                         $descripcion 
-                                    </div>	
-                                 
-             </div>
-                                <!-- ENDS shadow -->
-                            </div>
-                            <!-- ENDS project -->
-              <?php echo form_close(); ?>
-             
+                            <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
+                        </div>
+                        <!-- ENDS project-thumb -->
+
+                        <div class='the-excerpt'>
+                             $descripcion 
+                        </div>	
+
+ </div>
+                    <!-- ENDS shadow -->
+                </div>
+                <!-- ENDS project -->
+  <?php echo form_close(); ?>
+
                  ";
 
 

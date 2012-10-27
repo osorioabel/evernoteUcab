@@ -1,7 +1,27 @@
 <?php
 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * EvernoteUcab
+ *
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
+ */
 class Upload extends CI_Controller {
 
+    /**
+     *  Funcion Constructor del controlador, se realizan cargas de 
+     * algunos modelos y helpers usuados en el funcionamiento de 
+     * el controlador 
+     *  
+     * @category	Controller
+     */
     function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
@@ -9,17 +29,20 @@ class Upload extends CI_Controller {
         $this->load->model('usuario_model');
     }
 
+    
     function index() {
         $this->load->view('upload_form', array('error' => ' '));
     }
-
+    /**
+     * Funcion do_upload() Esta funcion se encarga realiar la carga de los adjuntos
+     * al servidor para ser luego subidos a dropbox 
+     * @category	Controller
+     * 
+     */
     function do_upload() {
         $config['upload_path'] = './subidos/';
         $config['allowed_types'] = 'gif|jpg|png|zip|avi';
-        /* $config['max_size']	= '1000';
-          $config['max_width']  = '1024';
-          $config['max_height']  = '768'; */
-
+       
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload()) {
@@ -36,6 +59,12 @@ class Upload extends CI_Controller {
         }
     }
     
+     /**
+     * Funcion request_dropbox() Esta funcion se encarga realizar peticion al 
+     * api de DROPBOX para autentificar al usuario
+     * @category	Controller
+     * 
+     */
     public function request_dropbox() {
         $params['key'] = 'e9us87r5ehin30k';
         $params['secret'] = 'vvzs5zc3kwt305c';
@@ -46,8 +75,13 @@ class Upload extends CI_Controller {
         
     }
 
-    //This method should not be called directly, it will be called after 
-    //the user approves your application and dropbox redirects to it
+     /**
+     * Funcion access_dropbox() Esta funcion se encarga realizar peticion al 
+     * api de DROPBOX para autentificar al usuario y deja al usuario introducir su clave 
+     * y usuario de dropbox
+     * @category	Controller
+     * 
+     */
     public function access_dropbox() {
         $params['key'] = 'e9us87r5ehin30k';
         $params['secret'] = 'vvzs5zc3kwt305c';
@@ -56,14 +90,17 @@ class Upload extends CI_Controller {
         $oauth = $this->dropbox->get_access_token($this->session->userdata('token_secret'));
         $this->session->set_userdata('oauth_token', $oauth['oauth_token']);
         $this->session->set_userdata('oauth_token_secret', $oauth['oauth_token_secret']);
+        // se actualiza el token del uauario en la BD
         $booleano= $this->usuario_model->modificartoken($user,$oauth['oauth_token'],$oauth['oauth_token_secret']);
         redirect('/homeuser/index');
     }
 
-    //Once your application is approved you can proceed to load the library
-    //with the access token data stored in the session. If you see your account
-    //information printed out then you have successfully authenticated with
-    //dropbox and can use the library to interact with your account.
+     /**
+     * Funcion test_dropbox()  Esta funcion se encarga realizar peticion al 
+     * api de DROPBOX para verificar que si se autentifico usuario 
+     * @category	Controller
+     * 
+     */
     public function test_dropbox() {
         $params['key'] = 'e9us87r5ehin30k';
         $params['secret'] = 'vvzs5zc3kwt305c';
@@ -77,6 +114,13 @@ class Upload extends CI_Controller {
         print_r($return);
     }
 
+     /**
+     * Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al 
+     * api de DROPBOX para subir archivo
+     * @category	Controller
+      * @param string $filename nombre del archivo a subir
+     * 
+     */
     public function upload_file($filename) {
         $folder = 'evernoteUcab';
         $subidos='subidos/';
@@ -87,11 +131,17 @@ class Upload extends CI_Controller {
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
         $this->load->library('dropbox', $params);
         $arrayfalso=array();
-        $this->
         $return = $this->dropbox->add($folder,$subidos.$filename,$arrayfalso,'dropbox');
         print_r($return);
     }
     
+     /**
+     * Funcion create_folder()  Esta funcion se encarga realizar peticion al 
+     * api de DROPBOX para crear carpeta en dropbox 
+     * @category	Controller
+      * @param string $filename nombre del archivo a subir
+     * 
+     */
     public function create_folder() {
 
         $params['key'] = 'e9us87r5ehin30k';

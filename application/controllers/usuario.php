@@ -1,87 +1,134 @@
 <?php
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
-class Usuario extends CI_Controller{
-    
-         
-   public function __construct() {
+/**
+ * EvernoteUcab
+ *
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
+ */
+class Usuario extends CI_Controller {
+
+    /**
+     *  Funcion Constructor del controlador, se realizan cargas de 
+     * algunos modelos y helpers usuados en el funcionamiento de 
+     * el controlador 
+     *  
+     * @category	Controller
+     */
+    public function __construct() {
         parent::__construct();
         $this->load->model('usuario_model');
         $this->load->helper('form');
     }
-    
-    function loadModifyView($username){
+
+    /**
+     *  Funcion loadModifyView($username) se realizan las 
+     * llamadas basicas para la carga de una de las vistas 
+     * de modificacion de datos del usuario
+     *  
+     * @category	Controller
+     */
+    function loadModifyView($username) {
         $data = array();
         $data['head'] = '/includes/headnormal';
-        $data['upload']=$this->uploadUserDetail($username);
+        // llamada a funcion para cargar los detalles del usuario en los input
+        // de la interfaz
+        $data['upload'] = $this->uploadUserDetail($username);
         $data['main_content'] = 'usuario/usuario_modificar';
         $data['title'] = 'Evernote->Modify';
-        $data['username']=  $username;
+        $data['username'] = $username;
         $this->load->view('/includes/templates', $data);
     }
-    
-     function loadChangePasswordView($username){
+
+    /**
+     *  Funcion loadModifyView($username) se realizan las 
+     * llamadas basicas para la carga de una de las vistas 
+     * de modificacion de claves del usuario
+     *  
+     * @category	Controller
+     */
+    function loadChangePasswordView($username) {
         $data = array();
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = 'usuario/usuario_password';
         $data['title'] = 'Evernote->Change Password';
-         $data['username']=  $username;
+        $data['username'] = $username;
         $this->load->view('/includes/templates', $data);
     }
-    
-     function loadDropboxConfigurationView($username){
-        $data = array();
-        $data['head'] = '/includes/headnormal';
-        $data['main_content'] = 'usuario/usuario_dropbox';
-        $data['title'] = 'Evernote->Configurate Dropbox';
-         $data['username']=  $username;
-        $this->load->view('/includes/templates', $data);
-    }
-    
-    
-     function index($username,$opcion) {
-         
-         switch($opcion) {
-        case 'modify':
-        $this->loadModifyView($username);
-        break;
-        case 'changePassword':
-        $this->loadChangePasswordView($username);
-        break; 
-        case 'configurateDropbox':
-        $this->loadDropboxConfigurationView($username);
-        break;    
-            
-        };
-         
-         
-    }
-    
 
+    /**
+     *  Funcion index($username,$opcion) se realizan las 
+     * llamadas basicas para la carga de una de las vistas 
+     * de datos del usuario, segun sea el caso se llaman a los demas metodos
+     *  
+     * @category	Controller
+     * @param string $username usuario 
+     * @param string $opcion nombre de funcion index a llamar 
+     */
+    function index($username, $opcion) {
+
+        switch ($opcion) {
+            case 'modify':
+                $this->loadModifyView($username);
+                break;
+            case 'changePassword':
+                $this->loadChangePasswordView($username);
+                break;
+            case 'configurateDropbox':
+                $this->loadDropboxConfigurationView($username);
+                break;
+        };
+    }
+
+    /**
+     * Funcion modificar($username) funcion que se encarga 
+     * de modificar datos al usuario. realizando llamada 
+     * llamada al model encargadose el de dicha actividad
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function modificar($username) {
-    
+
         $nombre = $this->input->post('name_signup');
         $apellido = $this->input->post('lastname_signup');
         $email = $this->input->post('email_signup');
         
-
-        $booleano = $this->usuario_model->modificar($username,$nombre,$apellido,$email);
-        
+        // se realiza llamada al model para que se modificquen los datos del usuario
+        $booleano = $this->usuario_model->modificar($username, $nombre, $apellido, $email);
         if ($booleano == true) {
+            // si se realizo la modificacion regresar al index
             redirect('/homeuser/index');
         } else
         // caso de gente repetido
             echo "esta repedito";
     }
-    
+
+    /**
+     * Funcion uploadUserDetail($username) Esta funcion se encarga de 
+     * preguntar a la capa de modelo, por los datos del usuario 
+     * y crear HTML para mostrarlo en la vista en los input del
+     * formulario
+     *  
+     * @category	Controller
+     * @param 	        string usuario que se encuentra activo 
+     * @return          string se devuelven a la vista HTLM para ser Impreso
+     */
     function uploadUserDetail($username) {
         $return = '';
         $usuario = new Usuario_Model();
         $usuario = $usuario->getUser($username);
         $nombre = $usuario->getName();
         $apellido = $usuario->getApellido();
-        $email=$usuario->getEmail();
+        $email = $usuario->getEmail();
 
         $return = "<div>
                     <label>Name</label>
@@ -97,31 +144,27 @@ class Usuario extends CI_Controller{
                 </div>";
         return $return;
     }
-    
+
     /**
- * Usuario 
- *
- * @category	Usuario
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/database/
- * @param 	username Determines if active record should be used or not
- *  		
- */
+     * Funcion cambiarPassword($username) funcion que se encarga 
+     * de modificar claves al usuario. realizando llamada 
+     * llamada al model encargadose el de dicha actividad
+     * @category	Controller
+     * @param           string $username usuario activo
+     * 
+     */
     function cambiarPassword($username) {
-    
+
         $password = $this->input->post('pass_signup');
-        $booleano = $this->usuario_model->cambiarClave($username,$password);
-        
+        // llamada al modelo para modificar clave
+        $booleano = $this->usuario_model->cambiarClave($username, $password);
+
         if ($booleano == true) {
+            // si el cambio fue exitoso se redirecciona
             redirect('/homeuser/index');
         } else
         // caso de gente repetido
             echo "esta repedito";
     }
-    
-   
-    
-    
-    
-    
+
 }

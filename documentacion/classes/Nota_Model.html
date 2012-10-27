@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1268</span></a></li>
+                <span class="label label-info">1192</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -60,8 +60,11 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_BorrarNota" title="BorrarNota :: "><span class="description">BorrarNota()
-        </span><pre>BorrarNota()</pre></a></li>
+<li class="method public "><a href="#method_BorrarNota" title="BorrarNota :: Esta Funcion BorrarNota($username, $nota2)
+se encarga de borrar un nota en la base de datos
+a un usuario"><span class="description">Esta Funcion BorrarNota($username, $nota2)
+se encarga de borrar un nota en la base de datos
+a un usuario</span><pre>BorrarNota()</pre></a></li>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#method_getFecha_creacion" title="getFecha_creacion :: "><span class="description">getFecha_creacion()
@@ -74,14 +77,26 @@
         </span><pre>getTexto()</pre></a></li>
 <li class="method public "><a href="#method_getTitulo" title="getTitulo :: "><span class="description">getTitulo()
         </span><pre>getTitulo()</pre></a></li>
-<li class="method public "><a href="#method_modificarNota" title="modificarNota :: "><span class="description">modificarNota()
-        </span><pre>modificarNota()</pre></a></li>
-<li class="method public "><a href="#method_notaAtIndex" title="notaAtIndex :: "><span class="description">notaAtIndex()
-        </span><pre>notaAtIndex()</pre></a></li>
-<li class="method public "><a href="#method_notaAtIndex2" title="notaAtIndex2 :: "><span class="description">notaAtIndex2()
-        </span><pre>notaAtIndex2()</pre></a></li>
-<li class="method public "><a href="#method_registerNote" title="registerNote :: "><span class="description">registerNote()
-        </span><pre>registerNote()</pre></a></li>
+<li class="method public "><a href="#method_modificarNota" title="modificarNota :: Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
+se encarga de modificar un nota en la base de datos
+a un usuario"><span class="description">Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
+se encarga de modificar un nota en la base de datos
+a un usuario</span><pre>modificarNota()</pre></a></li>
+<li class="method public "><a href="#method_notaAtIndex" title="notaAtIndex :: Esta Funcion notaAtIndex($index, $id)
+se encarga de contar devolver una nota que
+ tiene un usuario en la base de datos"><span class="description">Esta Funcion notaAtIndex($index, $id)
+se encarga de contar devolver una nota que
+ tiene un usuario en la base de datos</span><pre>notaAtIndex()</pre></a></li>
+<li class="method public "><a href="#method_notaAtIndex2" title="notaAtIndex2 :: Esta Funcion notaAtIndex2($id)
+se encarga de contar devolver una nota que
+ tiene un usuario en la base de datos"><span class="description">Esta Funcion notaAtIndex2($id)
+se encarga de contar devolver una nota que
+ tiene un usuario en la base de datos</span><pre>notaAtIndex2()</pre></a></li>
+<li class="method public "><a href="#method_registerNote" title="registerNote :: Esta Funcion registerNote($username, $titulo, $nota, $book)
+se encarga de registrar en la base de datos
+a un usuario"><span class="description">Esta Funcion registerNote($username, $titulo, $nota, $book)
+se encarga de registrar en la base de datos
+a un usuario</span><pre>registerNote()</pre></a></li>
 <li class="method public "><a href="#method_setFecha_creacion" title="setFecha_creacion :: "><span class="description">setFecha_creacion()
         </span><pre>setFecha_creacion()</pre></a></li>
 <li class="method public "><a href="#method_setId_libreta" title="setId_libreta :: "><span class="description">setId_libreta()
@@ -92,10 +107,12 @@
         </span><pre>setTexto()</pre></a></li>
 <li class="method public "><a href="#method_setTitulo" title="setTitulo :: "><span class="description">setTitulo()
         </span><pre>setTitulo()</pre></a></li>
-<li class="method public "><a href="#method_tamListNota" title="tamListNota :: "><span class="description">tamListNota()
-        </span><pre>tamListNota()</pre></a></li>
-<li class="method public "><a href="#method_tamListNotes" title="tamListNotes :: "><span class="description">tamListNotes()
-        </span><pre>tamListNotes()</pre></a></li>
+<li class="method public "><a href="#method_tamListNota" title="tamListNota :: Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en la base de datos"><span class="description">Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en la base de datos</span><pre>tamListNota()</pre></a></li>
+<li class="method public "><a href="#method_tamListNotes" title="tamListNotes :: Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en la base de datos"><span class="description">Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en la base de datos</span><pre>tamListNotes()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -124,31 +141,52 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">CodeIgniter Model Class</p>
+<p class="short_description">EvernoteUcab</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Default.html">CodeIgniter</a></td>
+<td><a href="../packages/EvernoteUcab.html">EvernoteUcab</a></td>
 </tr>
 <tr>
 <th>author</th>
-<td><a href="">ExpressionEngine Dev Team</a></td>
+<td><a href="">Abel Osorio Hector Matheus Luis Tovar</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012,</td>
+</tr>
+<tr>
+<th>filesource</th>
+<td></td>
 </tr>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method_BorrarNota"></a><div class="element clickable method public method_BorrarNota" data-toggle="collapse" data-target=".method_BorrarNota .collapse">
-<h2>BorrarNota()
-        </h2>
-<pre>BorrarNota($username, $nota2) </pre>
+<h2>Esta Funcion BorrarNota($username, $nota2)
+se encarga de borrar un nota en la base de datos
+a un usuario</h2>
+<pre>BorrarNota(string $username, string $nota2) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$nota2</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$nota2</h4>
+<code>string</code><p>titulo de la nota</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
@@ -215,54 +253,108 @@ syntax as controllers.</p></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_modificarNota"></a><div class="element clickable method public method_modificarNota" data-toggle="collapse" data-target=".method_modificarNota .collapse">
-<h2>modificarNota()
-        </h2>
-<pre>modificarNota($username, $idNote, $tituloNota, $textoNota) </pre>
+<h2>Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
+se encarga de modificar un nota en la base de datos
+a un usuario</h2>
+<pre>modificarNota(string $username, string $idNote, string $tituloNota, string $textoNota) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$idNote</h4></div>
-<div class="subelement argument"><h4>$tituloNota</h4></div>
-<div class="subelement argument"><h4>$textoNota</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$idNote</h4>
+<code>string</code><p>titulo de la nota</p></div>
+<div class="subelement argument">
+<h4>$tituloNota</h4>
+<code>string</code><p>cuerpo de la nota</p></div>
+<div class="subelement argument">
+<h4>$textoNota</h4>
+<code>string</code><p>libreta para asociar la nota</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_notaAtIndex"></a><div class="element clickable method public method_notaAtIndex" data-toggle="collapse" data-target=".method_notaAtIndex .collapse">
-<h2>notaAtIndex()
-        </h2>
-<pre>notaAtIndex($index, $id) </pre>
+<h2>Esta Funcion notaAtIndex($index, $id)
+se encarga de contar devolver una nota que
+ tiene un usuario en la base de datos</h2>
+<pre>notaAtIndex(string $index, string $id) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$index</h4></div>
-<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>dice cantidad de notas</div>
 </div></div>
 </div>
 <a id="method_notaAtIndex2"></a><div class="element clickable method public method_notaAtIndex2" data-toggle="collapse" data-target=".method_notaAtIndex2 .collapse">
-<h2>notaAtIndex2()
-        </h2>
-<pre>notaAtIndex2($id) </pre>
+<h2>Esta Funcion notaAtIndex2($id)
+se encarga de contar devolver una nota que
+ tiene un usuario en la base de datos</h2>
+<pre>notaAtIndex2(string $id) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>dice cantidad de notas</div>
 </div></div>
 </div>
 <a id="method_registerNote"></a><div class="element clickable method public method_registerNote" data-toggle="collapse" data-target=".method_registerNote .collapse">
-<h2>registerNote()
-        </h2>
-<pre>registerNote($username, $titulo, $nota, $book) </pre>
+<h2>Esta Funcion registerNote($username, $titulo, $nota, $book)
+se encarga de registrar en la base de datos
+a un usuario</h2>
+<pre>registerNote(string $username, string $titulo, string $nota, string $book) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$titulo</h4></div>
-<div class="subelement argument"><h4>$nota</h4></div>
-<div class="subelement argument"><h4>$book</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$titulo</h4>
+<code>string</code><p>titulo de la nota</p></div>
+<div class="subelement argument">
+<h4>$nota</h4>
+<code>string</code><p>cuerpo de la nota</p></div>
+<div class="subelement argument">
+<h4>$book</h4>
+<code>string</code><p>libreta para asociar la nota</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_setFecha_creacion"></a><div class="element clickable method public method_setFecha_creacion" data-toggle="collapse" data-target=".method_setFecha_creacion .collapse">
@@ -321,25 +413,43 @@ syntax as controllers.</p></div>
 </div></div>
 </div>
 <a id="method_tamListNota"></a><div class="element clickable method public method_tamListNota" data-toggle="collapse" data-target=".method_tamListNota .collapse">
-<h2>tamListNota()
-        </h2>
-<pre>tamListNota($id) </pre>
+<h2>Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
+<pre>tamListNota(string $id) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>dice cantidad de notas</div>
 </div></div>
 </div>
 <a id="method_tamListNotes"></a><div class="element clickable method public method_tamListNotes" data-toggle="collapse" data-target=".method_tamListNotes .collapse">
-<h2>tamListNotes()
-        </h2>
-<pre>tamListNotes($id_libreta) </pre>
+<h2>Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en la base de datos</h2>
+<pre>tamListNotes(string $id_libreta) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$id_libreta</h4></div>
+<div class="subelement argument">
+<h4>$id_libreta</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>dice cantidad de notas</div>
 </div></div>
 </div>
 <h3>
@@ -381,7 +491,7 @@ syntax as controllers.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

@@ -2,9 +2,10 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * CodeIgniter
+ * EvernoteUcab
  *
- * An open source application development framework for PHP 5.1.6 or newer
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
  *
  * @package		EvernoteUcab
  * @author		Abel Osorio Hector Matheus Luis Tovar
@@ -20,14 +21,14 @@ class adjunto extends CI_Controller{
         
     }
     
- /**
- *  Esta Funcion realiza : 
- *  
- * @category	Controller
- * @param 	string  dice q usuario es 
- * @param 	bool	Determines if active record should be used or not
- * 
- */
+    /**
+     *  Esta Funcion realiza : 
+     *  
+     * @category	Controller
+     * @param 	string  dice q usuario es 
+     * @param 	bool	Determines if active record should be used or not
+     * 
+     */
      function index($string) {
           
          $data = array();

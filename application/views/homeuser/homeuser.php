@@ -1,14 +1,14 @@
 
 <?php
-     if($messi)   
-     echo $messi;
+if ($messi)
+    echo $messi;
 ?>
 <!-- Slider -->
 <div id="slider-block">
     <div id="slider-holder">
         <div id="slider">
-            <a href="http://www.luiszuno.com"><img src="<?php echo base_url(); ?>images/Servicios1.jpg" title="Visit my web site regularly and get freebies each week!" alt="" /></a>
-            <a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz"><img src="<?php echo base_url(); ?>images/Cloud1.jpg" title="Support the freebies buying high quality premium themes from my portfolio at themeforest" alt="" /></a>
+            <a href="#"><img src="<?php echo base_url(); ?>images/Servicios1.jpg" title="Evernote Ucab is a proyect based on Cloud Computering, Cloud Storage " alt="" /></a>
+            <a href="#"><img src="<?php echo base_url(); ?>images/Cloud1.jpg" title="Evernote Ucab let you have Remainders,Notes, Notebooks and More in one single web" alt="" /></a>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
     <div class="wrapper">
 
         <!-- headline -->
-        
+
 
 
 
@@ -31,14 +31,14 @@
             <!-- the tabs -->
             <ul class="tabs">
                 <li><a href="#"><span>Last Books</span></a></li>
-               
+
             </ul>
 
             <!-- tab "panes" -->
             <div class="panes">
 
                 <!-- Posts -->
-                 <div>
+                <div>
                     <ul class="blocks-thumbs thumbs-rollover">
                         <?php echo $upload; ?>        
                     </ul>

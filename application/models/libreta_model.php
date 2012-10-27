@@ -1,5 +1,17 @@
 <?php
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * EvernoteUcab
+ *
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
+ */
 class Libreta_Model extends CI_Model {
 
     private $id_libreta = '';
@@ -13,6 +25,18 @@ class Libreta_Model extends CI_Model {
         $this->load->helper('date');
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion registerBook($username, $title, $descrip)
+    * se encarga de registrar en la base de datos 
+    * a un usuario
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	titulo de la libreta
+    * @param	string	cuerpo de la libreta
+    * @return	boolean dice si actualizo o no 
+    */
     function registerBook($username, $title, $descrip) {
         //$id =  $this->db->where('username',$username);
         $query = $this->db->query("select id_usuario from usuario where username = '$username'");
@@ -32,6 +56,20 @@ class Libreta_Model extends CI_Model {
         return true;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion modificarLibreta($username, $libreta, $titulolibreta, $descrip)
+    * se encarga de registrar en la base de datos 
+    * a un usuario
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	id de la libreta
+    * @param	string	titulo de la libreta
+    * @param	string	descripcion de la libreta
+     * 
+    * @return	boolean dice si actualizo o no 
+    */
     function modificarLibreta($username, $libreta, $titulolibreta, $descrip) {
         $data = array('nombre' => $libreta,
             'descripcion' => $descrip,
@@ -39,13 +77,20 @@ class Libreta_Model extends CI_Model {
 
         $query = $this->db->query("UPDATE libreta SET nombre = '$titulolibreta',descripcion ='$descrip' WHERE id_libreta = '$libreta'");
 
-
-        //  if($this->db->_error_message())
-        //  return false;
-
         return true;
     }
 
+    /**
+    * 
+    *
+    * Esta Funcion BorrarLibreta($username, $libreta2) 
+    * se encarga de borrrar en la base de datos 
+    * a una libreta
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	id de la nota
+    * @return	boolean dice si actualizo o no 
+    */
     function BorrarLibreta($username, $libreta2) {
 
 
@@ -58,11 +103,30 @@ class Libreta_Model extends CI_Model {
         return true;
     }
 
+    
+     /**
+    * Esta Funcion tamListLibreta($id) 
+    * se encarga de contar cuantas libretas tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @return	int dice cantidad de notas
+    */
     public function tamListLibreta($username) {
         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");
         return $query->num_rows;
     }
 
+     /**
+    * Esta Funcion libretaAtIndex($index, $id)
+    * se encarga de contar devolver una libreta que
+    *  tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	nombre del usuario
+    * @return	object una libreta
+    */
     public function libretaAtIndex($index, $username) {
         $libreta = new Libreta_Model();
         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where  u.username = '$username' and u.id_usuario = l.fk_usuario");
@@ -87,6 +151,16 @@ class Libreta_Model extends CI_Model {
         return $libreta;
     }
 
+     /**
+    * Esta Funcion libretaAtIndex2($index, $id)
+    * se encarga de contar devolver una libreta que
+    *  tiene un usuario en la base de datos 
+    * 
+    *@category Modelo
+    * @param	string	nombre del usuario
+    * @param	string	nombre del usuario
+    * @return	object una libreta
+    */
     public function libretaAtIndex2($index, $username) {
         $libreta = new Libreta_Model();
     $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where  u.username = '$username' and u.id_usuario = l.fk_usuario and l.id_libreta='$index'");

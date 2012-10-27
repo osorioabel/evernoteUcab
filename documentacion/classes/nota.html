@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1268</span></a></li>
+                <span class="label label-info">1192</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -60,35 +60,74 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_AddNote" title="AddNote :: "><span class="description">AddNote()
-        </span><pre>AddNote()</pre></a></li>
-<li class="method public "><a href="#method_DeleteNote" title="DeleteNote :: "><span class="description">DeleteNote()
-        </span><pre>DeleteNote()</pre></a></li>
-<li class="method public "><a href="#method_ModifyNote" title="ModifyNote :: "><span class="description">ModifyNote()
-        </span><pre>ModifyNote()</pre></a></li>
-<li class="method public "><a href="#method_NoteViewDelete" title="NoteViewDelete :: "><span class="description">NoteViewDelete()
-        </span><pre>NoteViewDelete()</pre></a></li>
-<li class="method public "><a href="#method_SelectNote" title="SelectNote :: "><span class="description">SelectNote()
-        </span><pre>SelectNote()</pre></a></li>
-<li class="method public "><a href="#method_SelectNoteConsulta" title="SelectNoteConsulta :: "><span class="description">SelectNoteConsulta()
-        </span><pre>SelectNoteConsulta()</pre></a></li>
-<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_AddNote" title="AddNote :: Funcion AddNote($username) funcion que se encarga
+de crear una nota al usuario."><span class="description">Funcion AddNote($username) funcion que se encarga
+de crear una nota al usuario.</span><pre>AddNote()</pre></a></li>
+<li class="method public "><a href="#method_DeleteNote" title="DeleteNote :: Funcion DeleteNote($username, $nota2, $idlibreta2) funcion que se encarga
+de borarr una nota al usuario."><span class="description">Funcion DeleteNote($username, $nota2, $idlibreta2) funcion que se encarga
+de borarr una nota al usuario.</span><pre>DeleteNote()</pre></a></li>
+<li class="method public "><a href="#method_ModifyNote" title="ModifyNote :: Funcion ModifyNote($username, $nota) funcion que se encarga
+de modificar una nota al usuario."><span class="description">Funcion ModifyNote($username, $nota) funcion que se encarga
+de modificar una nota al usuario.</span><pre>ModifyNote()</pre></a></li>
+<li class="method public "><a href="#method_NoteViewDelete" title="NoteViewDelete :: Funcion NoteViewDelete($username, $id) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario."><span class="description">Funcion NoteViewDelete($username, $id) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario.</span><pre>NoteViewDelete()</pre></a></li>
+<li class="method public "><a href="#method_SelectNote" title="SelectNote :: Funcion SelectNote($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta"><span class="description">Funcion SelectNote($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta</span><pre>SelectNote()</pre></a></li>
+<li class="method public "><a href="#method_SelectNoteConsulta" title="SelectNoteConsulta :: Funcion SelectNoteConsulta($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta"><span class="description">Funcion SelectNoteConsulta($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta</span><pre>SelectNoteConsulta()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador"><span class="description">Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method_get_instance" title="get_instance :: "><span class="description">get_instance()
         </span><pre>get_instance()</pre></a></li>
-<li class="method public "><a href="#method_index" title="index :: "><span class="description">index()
-        </span><pre>index()</pre></a></li>
-<li class="method public "><a href="#method_indexDelete" title="indexDelete :: "><span class="description">indexDelete()
-        </span><pre>indexDelete()</pre></a></li>
-<li class="method public "><a href="#method_indexModify2" title="indexModify2 :: "><span class="description">indexModify2()
-        </span><pre>indexModify2()</pre></a></li>
-<li class="method public "><a href="#method_uploadCombobox" title="uploadCombobox :: "><span class="description">uploadCombobox()
-        </span><pre>uploadCombobox()</pre></a></li>
-<li class="method public "><a href="#method_uploadListNotes" title="uploadListNotes :: "><span class="description">uploadListNotes()
-        </span><pre>uploadListNotes()</pre></a></li>
-<li class="method public "><a href="#method_uploadNoteDetail" title="uploadNoteDetail :: "><span class="description">uploadNoteDetail()
-        </span><pre>uploadNoteDetail()</pre></a></li>
-<li class="method public "><a href="#method_uploadNoteView" title="uploadNoteView :: "><span class="description">uploadNoteView()
-        </span><pre>uploadNoteView()</pre></a></li>
+<li class="method public "><a href="#method_index" title="index :: Funcion index($username) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta"><span class="description">Funcion index($username) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta</span><pre>index()</pre></a></li>
+<li class="method public "><a href="#method_indexDelete" title="indexDelete :: Funcion indexDelete($username, $idlibreta) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de nota"><span class="description">Funcion indexDelete($username, $idlibreta) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de nota</span><pre>indexDelete()</pre></a></li>
+<li class="method public "><a href="#method_indexModify2" title="indexModify2 :: Funcion indexModify2($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de nota"><span class="description">Funcion indexModify2($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de nota</span><pre>indexModify2()</pre></a></li>
+<li class="method public "><a href="#method_uploadCombobox" title="uploadCombobox :: Funcion uploadCombobox($username) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  libretas
+creadas por el usuario."><span class="description">Funcion uploadCombobox($username) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  libretas
+creadas por el usuario.</span><pre>uploadCombobox()</pre></a></li>
+<li class="method public "><a href="#method_uploadListNotes" title="uploadListNotes :: Funcion uploadListNotes($id_libreta) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario."><span class="description">Funcion uploadListNotes($id_libreta) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario.</span><pre>uploadListNotes()</pre></a></li>
+<li class="method public "><a href="#method_uploadNoteDetail" title="uploadNoteDetail :: Funcion uploadNoteDetail($id_note) Esta funcion se encarga de
+preguntar a la capa de modelo, la informacion de una nota especifica
+Para luego armar HTML que sera pasado a la
+vista en un div para ver la informacion notas a esa libreta"><span class="description">Funcion uploadNoteDetail($id_note) Esta funcion se encarga de
+preguntar a la capa de modelo, la informacion de una nota especifica
+Para luego armar HTML que sera pasado a la
+vista en un div para ver la informacion notas a esa libreta</span><pre>uploadNoteDetail()</pre></a></li>
+<li class="method public "><a href="#method_uploadNoteView" title="uploadNoteView :: Funcion uploadNoteView($username, $id) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario."><span class="description">Funcion uploadNoteView($username, $id) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario.</span><pre>uploadNoteView()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -111,99 +150,168 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">CodeIgniter Application Controller Class</p>
+<p class="short_description">EvernoteUcab</p>
 <div class="details">
-<div class="long_description"><p>This class object is the super class that every library in
-CodeIgniter will be assigned to.</p></div>
+<div class="long_description"><p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Default.html">CodeIgniter</a></td>
+<td><a href="../packages/EvernoteUcab.html">EvernoteUcab</a></td>
 </tr>
 <tr>
 <th>author</th>
-<td><a href="">ExpressionEngine Dev Team</a></td>
+<td><a href="">Abel Osorio Hector Matheus Luis Tovar</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012,</td>
+</tr>
+<tr>
+<th>filesource</th>
+<td></td>
 </tr>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method_AddNote"></a><div class="element clickable method public method_AddNote" data-toggle="collapse" data-target=".method_AddNote .collapse">
-<h2>AddNote()
-        </h2>
-<pre>AddNote($username) </pre>
+<h2>Funcion AddNote($username) funcion que se encarga
+de crear una nota al usuario.</h2>
+<pre>AddNote(string $username) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>realizando llamada
+llamada al model encargadose el de dicha actividad</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
 </div></div>
 </div>
 <a id="method_DeleteNote"></a><div class="element clickable method public method_DeleteNote" data-toggle="collapse" data-target=".method_DeleteNote .collapse">
-<h2>DeleteNote()
-        </h2>
-<pre>DeleteNote($username, $nota2, $idlibreta2) </pre>
+<h2>Funcion DeleteNote($username, $nota2, $idlibreta2) funcion que se encarga
+de borarr una nota al usuario.</h2>
+<pre>DeleteNote(string $username, int $nota2, $idlibreta2) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>realizando llamada
+llamada al model encargadose el de dicha actividad</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$nota2</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
+<div class="subelement argument">
+<h4>$nota2</h4>
+<code>int</code><p>id de la nota a eliminar</p></div>
 <div class="subelement argument"><h4>$idlibreta2</h4></div>
 </div></div>
 </div>
 <a id="method_ModifyNote"></a><div class="element clickable method public method_ModifyNote" data-toggle="collapse" data-target=".method_ModifyNote .collapse">
-<h2>ModifyNote()
-        </h2>
-<pre>ModifyNote($username, $nota) </pre>
+<h2>Funcion ModifyNote($username, $nota) funcion que se encarga
+de modificar una nota al usuario.</h2>
+<pre>ModifyNote(string $username, $nota) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>realizando llamada
+llamada al model encargadose el de dicha actividad</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
 <div class="subelement argument"><h4>$nota</h4></div>
 </div></div>
 </div>
 <a id="method_NoteViewDelete"></a><div class="element clickable method public method_NoteViewDelete" data-toggle="collapse" data-target=".method_NoteViewDelete .collapse">
-<h2>NoteViewDelete()
-        </h2>
-<pre>NoteViewDelete($username, $id) </pre>
+<h2>Funcion NoteViewDelete($username, $id) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario.</h2>
+<pre>NoteViewDelete(string $username, $id) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>Para luego armar HTML que sera pasado a la
+vista en un div para ver la informacion notas a esa nota
+para borrarla</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>id de la libreta que se encuentra activa</p></div>
 <div class="subelement argument"><h4>$id</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>se devuelven a la vista HTLM para ser Impreso</div>
 </div></div>
 </div>
 <a id="method_SelectNote"></a><div class="element clickable method public method_SelectNote" data-toggle="collapse" data-target=".method_SelectNote .collapse">
-<h2>SelectNote()
-        </h2>
-<pre>SelectNote($username, $id) </pre>
+<h2>Funcion SelectNote($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta</h2>
+<pre>SelectNote(string $username, int $id) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code><p>id de la nota</p></div>
 </div></div>
 </div>
 <a id="method_SelectNoteConsulta"></a><div class="element clickable method public method_SelectNoteConsulta" data-toggle="collapse" data-target=".method_SelectNoteConsulta .collapse">
-<h2>SelectNoteConsulta()
-        </h2>
-<pre>SelectNoteConsulta($username, $id) </pre>
+<h2>Funcion SelectNoteConsulta($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta</h2>
+<pre>SelectNoteConsulta(string $username, int $id) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code><p>id de la nota</p></div>
 </div></div>
 </div>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Constructor</h2>
+<h2>Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador</h2>
 <pre>__construct() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+</div></div>
 </div>
 <a id="method_get_instance"></a><div class="element clickable method public method_get_instance" data-toggle="collapse" data-target=".method_get_instance .collapse">
 <h2>get_instance()
@@ -221,83 +329,150 @@ CodeIgniter will be assigned to.</p></div>
 </div></div>
 </div>
 <a id="method_index"></a><div class="element clickable method public method_index" data-toggle="collapse" data-target=".method_index .collapse">
-<h2>index()
-        </h2>
-<pre>index($username) </pre>
+<h2>Funcion index($username) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de libreta</h2>
+<pre>index(string $username) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
 </div></div>
 </div>
 <a id="method_indexDelete"></a><div class="element clickable method public method_indexDelete" data-toggle="collapse" data-target=".method_indexDelete .collapse">
-<h2>indexDelete()
-        </h2>
-<pre>indexDelete($username, $idlibreta) </pre>
+<h2>Funcion indexDelete($username, $idlibreta) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de nota</h2>
+<pre>indexDelete(string $username, $idlibreta) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
 <div class="subelement argument"><h4>$idlibreta</h4></div>
 </div></div>
 </div>
 <a id="method_indexModify2"></a><div class="element clickable method public method_indexModify2" data-toggle="collapse" data-target=".method_indexModify2 .collapse">
-<h2>indexModify2()
-        </h2>
-<pre>indexModify2($username, $id) </pre>
+<h2>Funcion indexModify2($username, $id) se realizan las
+llamadas basicas para la carga de una de las vistas
+de creacion de nota</h2>
+<pre>indexModify2(string $username, int $id) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario activo</p></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code><p>id de la nota</p></div>
 </div></div>
 </div>
 <a id="method_uploadCombobox"></a><div class="element clickable method public method_uploadCombobox" data-toggle="collapse" data-target=".method_uploadCombobox .collapse">
-<h2>uploadCombobox()
-        </h2>
-<pre>uploadCombobox($username) </pre>
+<h2>Funcion uploadCombobox($username) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  libretas
+creadas por el usuario.</h2>
+<pre>uploadCombobox(string $username) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>Para luego armar HTML que sera pasado a la
+vista en un combo box para agregar notas a esa libreta</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>usuario que se encuentra activo</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>se devuelven a la vista HTLM para ser Impreso</div>
 </div></div>
 </div>
 <a id="method_uploadListNotes"></a><div class="element clickable method public method_uploadListNotes" data-toggle="collapse" data-target=".method_uploadListNotes .collapse">
-<h2>uploadListNotes()
-        </h2>
-<pre>uploadListNotes($id_libreta) </pre>
+<h2>Funcion uploadListNotes($id_libreta) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario.</h2>
+<pre>uploadListNotes(string $id_libreta) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>Para luego armar HTML que sera pasado a la
+vista en un div para ver la informacion notas a esa libreta</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$id_libreta</h4></div>
+<div class="subelement argument">
+<h4>$id_libreta</h4>
+<code>string</code><p>id de la libreta que se encuentra activa</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>se devuelven a la vista HTLM para ser Impreso</div>
 </div></div>
 </div>
 <a id="method_uploadNoteDetail"></a><div class="element clickable method public method_uploadNoteDetail" data-toggle="collapse" data-target=".method_uploadNoteDetail .collapse">
-<h2>uploadNoteDetail()
-        </h2>
-<pre>uploadNoteDetail($id_note) </pre>
+<h2>Funcion uploadNoteDetail($id_note) Esta funcion se encarga de
+preguntar a la capa de modelo, la informacion de una nota especifica
+Para luego armar HTML que sera pasado a la
+vista en un div para ver la informacion notas a esa libreta</h2>
+<pre>uploadNoteDetail(string $id_note) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$id_note</h4></div>
+<div class="subelement argument">
+<h4>$id_note</h4>
+<code>string</code><p>usuario que se encuentra activo</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>se devuelven a la vista HTLM para ser Impreso</div>
 </div></div>
 </div>
 <a id="method_uploadNoteView"></a><div class="element clickable method public method_uploadNoteView" data-toggle="collapse" data-target=".method_uploadNoteView .collapse">
-<h2>uploadNoteView()
-        </h2>
-<pre>uploadNoteView($username, $id) </pre>
+<h2>Funcion uploadNoteView($username, $id) Esta funcion se encarga de
+preguntar a la capa de modelo, cuales han sido las  notas
+creadas por el usuario.</h2>
+<pre>uploadNoteView(string $username, $id) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<div class="long_description"><p>Para luego armar HTML que sera pasado a la
+vista en un div para ver la informacion notas a esa nota</p></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>id de la libreta que se encuentra activa</p></div>
 <div class="subelement argument"><h4>$id</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>se devuelven a la vista HTLM para ser Impreso</div>
 </div></div>
 </div>
 <h3>
@@ -321,7 +496,7 @@ CodeIgniter will be assigned to.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>

@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1268</span></a></li>
+                <span class="label label-info">1192</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -60,8 +60,11 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_BorrarLibreta" title="BorrarLibreta :: "><span class="description">BorrarLibreta()
-        </span><pre>BorrarLibreta()</pre></a></li>
+<li class="method public "><a href="#method_BorrarLibreta" title="BorrarLibreta :: Esta Funcion BorrarLibreta($username, $libreta2)
+se encarga de borrrar en la base de datos
+a una libreta"><span class="description">Esta Funcion BorrarLibreta($username, $libreta2)
+se encarga de borrrar en la base de datos
+a una libreta</span><pre>BorrarLibreta()</pre></a></li>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#method_getDescripcion" title="getDescripcion :: "><span class="description">getDescripcion()
@@ -74,14 +77,26 @@
         </span><pre>getId_libreta()</pre></a></li>
 <li class="method public "><a href="#method_getNombre" title="getNombre :: "><span class="description">getNombre()
         </span><pre>getNombre()</pre></a></li>
-<li class="method public "><a href="#method_libretaAtIndex" title="libretaAtIndex :: "><span class="description">libretaAtIndex()
-        </span><pre>libretaAtIndex()</pre></a></li>
-<li class="method public "><a href="#method_libretaAtIndex2" title="libretaAtIndex2 :: "><span class="description">libretaAtIndex2()
-        </span><pre>libretaAtIndex2()</pre></a></li>
-<li class="method public "><a href="#method_modificarLibreta" title="modificarLibreta :: "><span class="description">modificarLibreta()
-        </span><pre>modificarLibreta()</pre></a></li>
-<li class="method public "><a href="#method_registerBook" title="registerBook :: "><span class="description">registerBook()
-        </span><pre>registerBook()</pre></a></li>
+<li class="method public "><a href="#method_libretaAtIndex" title="libretaAtIndex :: Esta Funcion libretaAtIndex($index, $id)
+se encarga de contar devolver una libreta que
+ tiene un usuario en la base de datos"><span class="description">Esta Funcion libretaAtIndex($index, $id)
+se encarga de contar devolver una libreta que
+ tiene un usuario en la base de datos</span><pre>libretaAtIndex()</pre></a></li>
+<li class="method public "><a href="#method_libretaAtIndex2" title="libretaAtIndex2 :: Esta Funcion libretaAtIndex2($index, $id)
+se encarga de contar devolver una libreta que
+ tiene un usuario en la base de datos"><span class="description">Esta Funcion libretaAtIndex2($index, $id)
+se encarga de contar devolver una libreta que
+ tiene un usuario en la base de datos</span><pre>libretaAtIndex2()</pre></a></li>
+<li class="method public "><a href="#method_modificarLibreta" title="modificarLibreta :: Esta Funcion modificarLibreta($username, $libreta, $titulolibreta, $descrip)
+se encarga de registrar en la base de datos
+a un usuario"><span class="description">Esta Funcion modificarLibreta($username, $libreta, $titulolibreta, $descrip)
+se encarga de registrar en la base de datos
+a un usuario</span><pre>modificarLibreta()</pre></a></li>
+<li class="method public "><a href="#method_registerBook" title="registerBook :: Esta Funcion registerBook($username, $title, $descrip)
+se encarga de registrar en la base de datos
+a un usuario"><span class="description">Esta Funcion registerBook($username, $title, $descrip)
+se encarga de registrar en la base de datos
+a un usuario</span><pre>registerBook()</pre></a></li>
 <li class="method public "><a href="#method_setDescripcion" title="setDescripcion :: "><span class="description">setDescripcion()
         </span><pre>setDescripcion()</pre></a></li>
 <li class="method public "><a href="#method_setFecha" title="setFecha :: "><span class="description">setFecha()
@@ -92,8 +107,9 @@
         </span><pre>setId_libreta()</pre></a></li>
 <li class="method public "><a href="#method_setNombre" title="setNombre :: "><span class="description">setNombre()
         </span><pre>setNombre()</pre></a></li>
-<li class="method public "><a href="#method_tamListLibreta" title="tamListLibreta :: "><span class="description">tamListLibreta()
-        </span><pre>tamListLibreta()</pre></a></li>
+<li class="method public "><a href="#method_tamListLibreta" title="tamListLibreta :: Esta Funcion tamListLibreta($id)
+se encarga de contar cuantas libretas tiene un usuario en la base de datos"><span class="description">Esta Funcion tamListLibreta($id)
+se encarga de contar cuantas libretas tiene un usuario en la base de datos</span><pre>tamListLibreta()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -122,31 +138,52 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">CodeIgniter Model Class</p>
+<p class="short_description">EvernoteUcab</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Default.html">CodeIgniter</a></td>
+<td><a href="../packages/EvernoteUcab.html">EvernoteUcab</a></td>
 </tr>
 <tr>
 <th>author</th>
-<td><a href="">ExpressionEngine Dev Team</a></td>
+<td><a href="">Abel Osorio Hector Matheus Luis Tovar</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012,</td>
+</tr>
+<tr>
+<th>filesource</th>
+<td></td>
 </tr>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method_BorrarLibreta"></a><div class="element clickable method public method_BorrarLibreta" data-toggle="collapse" data-target=".method_BorrarLibreta .collapse">
-<h2>BorrarLibreta()
-        </h2>
-<pre>BorrarLibreta($username, $libreta2) </pre>
+<h2>Esta Funcion BorrarLibreta($username, $libreta2)
+se encarga de borrrar en la base de datos
+a una libreta</h2>
+<pre>BorrarLibreta(string $username, string $libreta2) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$libreta2</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$libreta2</h4>
+<code>string</code><p>id de la nota</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
@@ -213,54 +250,108 @@ syntax as controllers.</p></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_libretaAtIndex"></a><div class="element clickable method public method_libretaAtIndex" data-toggle="collapse" data-target=".method_libretaAtIndex .collapse">
-<h2>libretaAtIndex()
-        </h2>
-<pre>libretaAtIndex($index, $username) </pre>
+<h2>Esta Funcion libretaAtIndex($index, $id)
+se encarga de contar devolver una libreta que
+ tiene un usuario en la base de datos</h2>
+<pre>libretaAtIndex(string $index, string $username) : object</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$index</h4></div>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>una libreta</div>
 </div></div>
 </div>
 <a id="method_libretaAtIndex2"></a><div class="element clickable method public method_libretaAtIndex2" data-toggle="collapse" data-target=".method_libretaAtIndex2 .collapse">
-<h2>libretaAtIndex2()
-        </h2>
-<pre>libretaAtIndex2($index, $username) </pre>
+<h2>Esta Funcion libretaAtIndex2($index, $id)
+se encarga de contar devolver una libreta que
+ tiene un usuario en la base de datos</h2>
+<pre>libretaAtIndex2(string $index, string $username) : object</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$index</h4></div>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>una libreta</div>
 </div></div>
 </div>
 <a id="method_modificarLibreta"></a><div class="element clickable method public method_modificarLibreta" data-toggle="collapse" data-target=".method_modificarLibreta .collapse">
-<h2>modificarLibreta()
-        </h2>
-<pre>modificarLibreta($username, $libreta, $titulolibreta, $descrip) </pre>
+<h2>Esta Funcion modificarLibreta($username, $libreta, $titulolibreta, $descrip)
+se encarga de registrar en la base de datos
+a un usuario</h2>
+<pre>modificarLibreta(string $username, string $libreta, string $titulolibreta, string $descrip) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$libreta</h4></div>
-<div class="subelement argument"><h4>$titulolibreta</h4></div>
-<div class="subelement argument"><h4>$descrip</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$libreta</h4>
+<code>string</code><p>id de la libreta</p></div>
+<div class="subelement argument">
+<h4>$titulolibreta</h4>
+<code>string</code><p>titulo de la libreta</p></div>
+<div class="subelement argument">
+<h4>$descrip</h4>
+<code>string</code><p>descripcion de la libreta</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_registerBook"></a><div class="element clickable method public method_registerBook" data-toggle="collapse" data-target=".method_registerBook .collapse">
-<h2>registerBook()
-        </h2>
-<pre>registerBook($username, $title, $descrip) </pre>
+<h2>Esta Funcion registerBook($username, $title, $descrip)
+se encarga de registrar en la base de datos
+a un usuario</h2>
+<pre>registerBook(string $username, string $title, string $descrip) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$title</h4></div>
-<div class="subelement argument"><h4>$descrip</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code><p>titulo de la libreta</p></div>
+<div class="subelement argument">
+<h4>$descrip</h4>
+<code>string</code><p>cuerpo de la libreta</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>dice si actualizo o no</div>
 </div></div>
 </div>
 <a id="method_setDescripcion"></a><div class="element clickable method public method_setDescripcion" data-toggle="collapse" data-target=".method_setDescripcion .collapse">
@@ -319,14 +410,23 @@ syntax as controllers.</p></div>
 </div></div>
 </div>
 <a id="method_tamListLibreta"></a><div class="element clickable method public method_tamListLibreta" data-toggle="collapse" data-target=".method_tamListLibreta .collapse">
-<h2>tamListLibreta()
-        </h2>
-<pre>tamListLibreta($username) </pre>
+<h2>Esta Funcion tamListLibreta($id)
+se encarga de contar cuantas libretas tiene un usuario en la base de datos</h2>
+<pre>tamListLibreta(string $username) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>dice cantidad de notas</div>
 </div></div>
 </div>
 <h3>
@@ -368,7 +468,7 @@ syntax as controllers.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-26T19:34:07-04:30.<br></footer></div>
+            generated on 2012-10-27T00:19:46-04:30.<br></footer></div>
 </div>
 </body>
 </html>
