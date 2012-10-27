@@ -27,6 +27,11 @@ class Upload extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $this->load->library('session');
         $this->load->model('usuario_model');
+        $this->load->model('nota_model');
+        $this->load->model('adjunto_model');
+
+        
+        
     }
 
     
@@ -124,15 +129,18 @@ class Upload extends CI_Controller {
     public function upload_file($filename) {
         $folder = 'evernoteUcab';
         $subidos='subidos/';
-        
         $params['key'] = 'e9us87r5ehin30k';
         $params['secret'] = 'vvzs5zc3kwt305c';
         $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
         $this->load->library('dropbox', $params);
         $arrayfalso=array();
+        $this->adjunto_model->registeradjunto($filename, $filename);
+       
         $return = $this->dropbox->add($folder,$subidos.$filename,$arrayfalso,'dropbox');
+      
         print_r($return);
+        
     }
     
      /**
@@ -150,9 +158,7 @@ class Upload extends CI_Controller {
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
         
         $this->load->library('dropbox', $params);
-       
-        
-        
+
         $return = $this->dropbox->create_folder('/prueba/prueba','dropbox');
         print_r($return);
     }

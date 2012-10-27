@@ -31,7 +31,7 @@ class Nota_Model extends CI_Model {
     * 
     *
     * Esta Funcion registerNote($username, $titulo, $nota, $book) 
-    * se encarga de registrar en la base de datos 
+    * se encarga de registrar una nota en la base de datos 
     * a un usuario
     *@category Modelo
     * @param	string	nombre del usuario
