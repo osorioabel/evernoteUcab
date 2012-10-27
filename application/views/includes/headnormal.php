@@ -62,7 +62,7 @@
 
                         </ul>
                     </li>
-                    <li><a href="">Contact Us<span class="subheader">Get in touch</span></a></li>
+                    <li><?php echo anchor('homeuser/indexAU', 'About Us', array('title' => 'About Us')); ?><a><span class="subheader">Get In Touch</span></a></li>
                 </ul>
                 <!-- Navigation -->
             </div>

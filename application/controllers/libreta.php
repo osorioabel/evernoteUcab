@@ -35,6 +35,7 @@ class libreta extends CI_Controller {
      * de creacion de libreta
      *  
      * @category	Controller
+     * @param string $username usuario activo
      */
     function index($username) {
 
@@ -242,7 +243,7 @@ class libreta extends CI_Controller {
             //redirecciona al home del usuario
             redirect('/homeuser/index/' . $username);
         } else
-            echo "La estas cagando";
+            echo "";
     }
 
     /**
@@ -267,7 +268,7 @@ class libreta extends CI_Controller {
             redirect('/homeuser/index/' . $username);
         } else
         // caso de gente repetido
-            echo "HOLA";
+            echo "";
     }
     
     /**
@@ -286,7 +287,7 @@ class libreta extends CI_Controller {
             // si se pudo realizar la eliminacion redirecciona al home del user
             redirect('/homeuser/index/' . $username);
         } else
-            echo "HOLA";
+            echo "";
     }
 
     /**

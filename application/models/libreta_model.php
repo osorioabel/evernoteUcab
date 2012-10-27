@@ -88,7 +88,7 @@ class Libreta_Model extends CI_Model {
     * a una libreta
     *@category Modelo
     * @param	string	nombre del usuario
-    * @param	string	id de la nota
+    * @param	string	id de la libreta
     * @return	boolean dice si actualizo o no 
     */
     function BorrarLibreta($username, $libreta2) {
@@ -110,7 +110,7 @@ class Libreta_Model extends CI_Model {
     * 
     *@category Modelo
     * @param	string	nombre del usuario
-    * @return	int dice cantidad de notas
+    * @return	int dice cantidad de libretas que tiene el usuario
     */
     public function tamListLibreta($username) {
         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");
@@ -123,7 +123,7 @@ class Libreta_Model extends CI_Model {
     *  tiene un usuario en la base de datos 
     * 
     *@category Modelo
-    * @param	string	nombre del usuario
+    * @param	string	posicion en la lista de libretas del usuario
     * @param	string	nombre del usuario
     * @return	object una libreta
     */
@@ -153,11 +153,11 @@ class Libreta_Model extends CI_Model {
 
      /**
     * Esta Funcion libretaAtIndex2($index, $id)
-    * se encarga de contar devolver una libreta que
-    *  tiene un usuario en la base de datos 
+    * se encarga de devolver una libreta en especifico
+    *  que tiene un usuario en la base de datos 
     * 
     *@category Modelo
-    * @param	string	nombre del usuario
+    * @param	string	posicion en la lista de libretas del usuario
     * @param	string	nombre del usuario
     * @return	object una libreta
     */

@@ -312,6 +312,7 @@ class nota extends CI_Controller {
      * vista en un div para ver la informacion notas a esa nota
      *  
      * @category	Controller
+     * @param 	        string username usuario activo 
      * @param 	        string id de la libreta que se encuentra activa 
      * @return          string se devuelven a la vista HTLM para ser Impreso
      */

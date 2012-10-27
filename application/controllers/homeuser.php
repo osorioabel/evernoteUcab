@@ -46,6 +46,18 @@ class homeuser extends CI_Controller {
         $data['title'] = 'Home Page User';
         $this->load->view('/includes/templates', $data);
     }
+    
+    public function indexAU() {
+
+        $data = array();
+        $data['messi'] = "";
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/aboutUs';
+        $data['username'] = $this->session->userdata('username');
+        $data['title'] = 'About Us';
+        $this->load->view('/includes/templates', $data);
+    }
 
     /**
      *  Funcion index2() se realizan las 
@@ -72,6 +84,8 @@ class homeuser extends CI_Controller {
         $data['title'] = 'Home Page User';
         $this->load->view('/includes/templates', $data);
     }
+    
+    
 
     /**
      * Funcion uploadLastBooks($username) Esta funcion se encarga de 
@@ -80,7 +94,8 @@ class homeuser extends CI_Controller {
      * vista al momento del login exitoso del usuario.
      *  
      * @category	Controller
-     * @param 	        string usuario que se encuentra activo 
+     * @param 	        string usuario que se encuentra activo
+     * @return          string codigo HTML contiene las tres ultimas libretas que creo el usuario 
      */
     public function uploadLastBooks($username) {
         $return = '';

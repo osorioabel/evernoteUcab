@@ -34,7 +34,8 @@ class Usuario extends CI_Controller {
      * llamadas basicas para la carga de una de las vistas 
      * de modificacion de datos del usuario
      *  
-     * @category	Controller
+     * @param       string $username usuario activo
+     * @category    Controller
      */
     function loadModifyView($username) {
         $data = array();
@@ -52,8 +53,9 @@ class Usuario extends CI_Controller {
      *  Funcion loadModifyView($username) se realizan las 
      * llamadas basicas para la carga de una de las vistas 
      * de modificacion de claves del usuario
-     *  
-     * @category	Controller
+     * 
+     * @param      string $username usuario activo 
+     * @categor    Controller
      */
     function loadChangePasswordView($username) {
         $data = array();

@@ -61,10 +61,10 @@ class Nota_Model extends CI_Model {
     
      /**
     * Esta Funcion tamListNota($id) 
-    * se encarga de contar cuantas notas tiene un usuario en la base de datos 
+    * se encarga de contar cuantas notas tiene un usuario en una libreta 
     * 
     *@category Modelo
-    * @param	string	nombre del usuario
+    * @param	string	id de la libreta
     * @return	int dice cantidad de notas
     */
     public function tamListNota($id) {
@@ -77,11 +77,11 @@ class Nota_Model extends CI_Model {
     /**
     * Esta Funcion notaAtIndex($index, $id)
     * se encarga de contar devolver una nota que
-    *  tiene un usuario en la base de datos 
+    *  tiene un usuario en una libreta 
     * 
     *@category Modelo
-    * @param	string	nombre del usuario
-    * @param	string	nombre del usuario
+    * @param	string	posicion de la nota en la lista
+    * @param	string	id de la libreta
     * @return	int dice cantidad de notas
     */
     public function notaAtIndex($index, $id) {
@@ -105,11 +105,10 @@ class Nota_Model extends CI_Model {
 
     /**
     * Esta Funcion notaAtIndex2($id)
-    * se encarga de contar devolver una nota que
+    * se encarga de devolver una nota que
     *  tiene un usuario en la base de datos 
     * 
     *@category Modelo
-    * @param	string	nombre del usuario
     * @param	string	nombre del usuario
     * @return	int dice cantidad de notas
     */
@@ -131,9 +130,9 @@ class Nota_Model extends CI_Model {
     * a un usuario
     *@category Modelo
     * @param	string	nombre del usuario
+    * @param	string	id de la nota a modificar
     * @param	string	titulo de la nota
-    * @param	string	cuerpo de la nota
-    * @param	string	libreta para asociar la nota
+    * @param	string	contenido de la nota
     * @return	boolean dice si actualizo o no 
     */
     function modificarNota($username, $idNote, $tituloNota, $textoNota) {
@@ -153,9 +152,7 @@ class Nota_Model extends CI_Model {
     * a un usuario
     *@category Modelo
     * @param	string	nombre del usuario
-    * @param	string	titulo de la nota
-    * @param	string	cuerpo de la nota
-    * @param	string	libreta para asociar la nota
+    * @param	string	id de la nota
     * @return	boolean dice si actualizo o no 
     */
     function BorrarNota($username, $nota2) {
@@ -172,10 +169,10 @@ class Nota_Model extends CI_Model {
 
      /**
     * Esta Funcion tamListNota($id) 
-    * se encarga de contar cuantas notas tiene un usuario en la base de datos 
+    * se encarga de contar cuantas notas tiene un usuario en una libreta 
     * 
     *@category Modelo
-    * @param	string	nombre del usuario
+    * @param	string	id de la libreta
     * @return	int dice cantidad de notas
     */
     public function tamListNotes($id_libreta) {

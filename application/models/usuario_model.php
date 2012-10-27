@@ -64,7 +64,6 @@ class Usuario_Model extends CI_Model {
     * usuario y autentificar su acceso a la app
     *@category Modelo
     * @param	string  Indica el Usuario 
-    * @param	string	nombre del usuario
     * @param	string	password del usuario
     * @return	boolean dice si actualizo o no 
     */
@@ -122,6 +121,7 @@ class Usuario_Model extends CI_Model {
     * @param	string  Indica el Usuario 
     * @param	string	nombre del usuario
     * @param	string	apellido del usuario
+    * @param	string	email del usuario
     * @return	boolean dice si actualizo o no 
     */
     public function modificar($username, $nombre, $apellido, $email) {
@@ -144,9 +144,7 @@ class Usuario_Model extends CI_Model {
     * Esta Funcion getUser($username) se encarga de traer de  base de datos 
     *  datos del usuario
     *@category Modelo
-    * @param	string  Indica el Usuario 
-    * @param	string	nombre del usuario
-    * @param	string	apellido del usuario
+    * @param	string  Indica el username a buscar 
     * @return	object dice si actualizo o no 
     */
        public function getUser($username) {
@@ -164,12 +162,11 @@ class Usuario_Model extends CI_Model {
     *
     * Esta Funcion cambiarClave($username, $password) 
     * se encarga de actualizar en la base de datos 
-    * el password que ha aignado el dropbox para su acceso  
+    * el password que ha sido cambiado
     *@category Modelo
     * @param	string  Indica el Usuario 
-    * @param	string	nombre del usuario
-    * @param	string	apellido del usuario
-    * @return	boolean dice si actualizo o no 
+    * @param	string	indica la clave 
+     * @return	boolean dice si actualizo o no 
     */
     public function cambiarClave($username, $password) {
         $data = array('password' => $password,
