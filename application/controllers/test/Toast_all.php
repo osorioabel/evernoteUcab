@@ -1,20 +1,16 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Toast_all
- * 
- * Runs all tests in the /app/controllers/test/ folder.
- * 
- * NOTE: This class *REQUIRES* CURL!
+ * EvernoteUcab
  *
- * @package			CodeIgniter
- * @subpackage	Controllers
- * @category		Unit Testing
- * @license			Creative Commons Attribution 3.0 (cc) 2009 Jens Roland
- * @author			Jens Roland (mail@jensroland.com)
- * 
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright	        Copyright (c) 2012, 
+ * @filesource
  */
-
 
 class Toast_all extends CI_Controller
 {

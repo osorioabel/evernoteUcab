@@ -75,7 +75,7 @@ class Usuario_Model extends CI_Model {
         if ($query->num_rows>0) {
             return TRUE;
         }
-
+        
         return FALSE;
     }
 
@@ -103,11 +103,11 @@ class Usuario_Model extends CI_Model {
             'password' => $password
         );
 
-        $insert = $this->db->insert('usuario', $data);
-        $insert2 = array();
-        $insert2['error'] = $this->db->_error_message();
-        if ($insert['error'] != '')
+        $this->db->insert('usuario', $data);
+        if ($this->db->_error_message()){
+             log_message("error","User Already Exists");
             return false;
+        }
         return true;
     }
 

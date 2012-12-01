@@ -1,23 +1,15 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * Toast
- * 
- * JUnit-style unit testing in CodeIgniter. Requires PHP 5 (AFAIK). Subclass
- * this class to create your own tests. See the README file or go to
- * http://jensroland.com/projects/toast/ for usage and examples.
- * 
- * RESERVED TEST FUNCTION NAMES: test_index, test_show_results, test__[*]
- * 
- * @package			CodeIgniter
- * @subpackage                      Controllers
- * @category		Unit Testing
- * @based on		Brilliant original code by user t'mo from the CI forums
- * @based on		Assert functions by user 'redguy' from the CI forums
- * @license			Creative Commons Attribution 3.0 (cc) 2009 Jens Roland
- * @author			Jens Roland (mail@jensroland.com)
- * 
+ * EvernoteUcab
+ *
+ * An Cloud Computering, Cloud storage base web app 
+ * for remeinders, Notebooks and MORE
+ *
+ * @package		EvernoteUcab
+ * @author		Abel Osorio Hector Matheus Luis Tovar
+ * @copyright                            Copyright (c) 2012, 
+ * @filesource
  */
-
 
 abstract class Toast extends CI_Controller
 {

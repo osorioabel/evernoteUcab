@@ -95,6 +95,30 @@ class Home extends CI_Controller {
         $data['title'] = 'Evernote->Home';
         $this->load->view('/includes/templates', $data);
     }
+    
+     /**
+     * Funcion index4() se realizan las 
+     * llamadas basicas para la carga de una de las vistas 
+     * que se estan linkeadas al controlador, se llama a esta vista 
+     * y se que produce error al registrar
+     *  
+     * @category	Controller
+     */
+    function index4() {
+
+        $data = array();
+        $data['messi'] = "<a id='error-title'></a>
+        <script>
+        new popUp('Username Already Exists', 
+        {title: 'Oops', titleClass: 'anim error', 
+        autoclose: '1000'});
+        </script>";
+        $this->session->unset_userdata('username');
+        $data['head'] = '/includes/headhome';
+        $data['main_content'] = 'home/home';
+        $data['title'] = 'Evernote->Home';
+        $this->load->view('/includes/templates', $data);
+    }
 
     /**
      * Funcion verifylogin() funcion encargada de verificar la informacion del 
@@ -131,11 +155,14 @@ class Home extends CI_Controller {
         $email = $this->input->post('email_signup');
         $booleano = $this->usuario_model->register($name, $lastname, 
         $username, $email, $password);
+            
         if ($booleano == true) {
             $this->index3();
         } else
         // caso de gente repetido
-            echo "esta repedito";
+            $this->index4 ();
+            log_message("error", "Problem with register, user already exists");
+           
     }
 
 }
