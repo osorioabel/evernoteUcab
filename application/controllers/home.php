@@ -11,7 +11,7 @@ if (!defined('BASEPATH'))
  *
  * @package		EvernoteUcab
  * @author		Abel Osorio Hector Matheus Luis Tovar
- * @copyright	        Copyright (c) 2012, 
+ * @copyright	                Copyright (c) 2012, 
  * @filesource
  */
 class Home extends CI_Controller {
@@ -112,6 +112,7 @@ class Home extends CI_Controller {
             $this->session->set_userdata('username', $username);
             redirect('/homeuser/index2');
         } else {
+            log_message("error", "Problem LOGIN IN");
             $this->index2();
         }
     }

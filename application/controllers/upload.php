@@ -156,9 +156,7 @@ class Upload extends CI_Controller {
         $params['secret'] = 'vvzs5zc3kwt305c';
         $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
-        
         $this->load->library('dropbox', $params);
-
         $return = $this->dropbox->create_folder('/prueba/prueba','dropbox');
         print_r($return);
     }

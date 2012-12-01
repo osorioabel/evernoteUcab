@@ -55,8 +55,6 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-validation-1.9.0/jquery.validate.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/ValidarForm.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>js/ValidarFormRegister.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js/ValidarFormlibreta.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js/ValidarFormnota.js"></script>
         <link rel="stylesheet" href="<?php echo base_url(); ?>js/messi/messi.min.css" />
         <script src="<?php echo base_url(); ?>js/messi/messi.min.js"></script>
 
