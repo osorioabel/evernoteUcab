@@ -27,6 +27,9 @@ class libreta extends CI_Controller {
         parent::__construct();
         $this->load->model('libreta_model');
         $this->load->helper('form');
+        $this->load->library('pagination');
+        $this->load->library('table');
+   
     }
 
     /**
@@ -66,8 +69,27 @@ class libreta extends CI_Controller {
         // aca se llama a funcion para cargar las libretas del usuario
         // esta variable trae un codigo HTML para que se realice 
         // su visualizacion en la interfaz de Modificar 
-        $data['upload'] = $this->uploadNotebookViewModify($username);
+        
+        
         $data['title'] = 'Modify Book';
+       $this->load->library('pagination');
+        $this->load->library('table');
+        
+        $config['base_url'] = base_url().'/evernoteUcab/libreta/';
+        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+        $config['per_page'] = 4;
+        $config['num_links'] = 20;
+        
+        $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
+        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['uri_segment'] = '3';  //segmentos que va a tener nuestra URL
+        $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
+        $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
+        $this->pagination->initialize($config);
+        //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+       $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(3));
+       $data['records'] = $libretas;
+        $data['upload'] = $this->uploadNotebookViewModify($username);
         $this->load->view('/includes/templates', $data);
     }
 
@@ -94,6 +116,7 @@ class libreta extends CI_Controller {
         $data['username'] = $username;
         $data['libreta'] = $id;
         $data['title'] = 'Modify Book';
+        $data['records'] = $this->db->get('libreta',10,$this->uri->segment(3));
         $this->load->view('/includes/templates', $data);
     }
 
@@ -174,6 +197,31 @@ class libreta extends CI_Controller {
         $data['main_content'] = '/libreria/Libreta_Select';
         $data['username'] = $username;
         $data['title'] = 'Your Books';
+        
+        $this->load->library('pagination');
+        
+        
+        $config['base_url'] = base_url().'/libreta/indexSelect/'.$username.'/';
+        
+        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+        $config['per_page'] = 4;
+        $config['num_links'] = 2;
+        
+        
+        
+        $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
+        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
+        $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
+        $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
+        $this->pagination->initialize($config);
+       // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+        $data['records'] = $libretas;
+        
+        
+        
+        
         $this->load->view('/includes/templates', $data);
     }
 
@@ -366,13 +414,22 @@ class libreta extends CI_Controller {
     function uploadNotebookView($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
-        for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
+       
+        $i=2;
+        $this->load->library('pagination');
+        $this->load->library('table');
+   
+      
+        //$libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(3));
+      //  for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
 
-            $libreta = new Libreta_Model();
+        
+        
+      $libreta = new Libreta_Model();
             // se hace un simple get de la libreta en posicion del 
             // del usuario 
-            $libreta = $libreta->libretaAtIndex($i, $username);  
-            
+            //$libreta = $libreta->libretaAtIndex($i, $username);  
+    
             $nombre = $libreta->getNombre();
             $id = $libreta->getId_libreta();
             $fecha = $libreta->getFecha();
@@ -380,9 +437,12 @@ class libreta extends CI_Controller {
             $attributes = array('id' => 'sc-contact-form');
             $ref = base_url() . 'Nota/SelectNote/' . $username . '/' . $id . '>';
             $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $nombre;
-            $result = " 
             
+            $result = "   
+           
+       
             <?php 
+            
                echo form_open('/Libreta/indexSelect/'$username'/'$nombre','$attributes');
                 ?>
                  <div class='project'>
@@ -405,17 +465,22 @@ class libreta extends CI_Controller {
             <div class='the-excerpt'>
             $descripcion 
             </div>	
-
+ 
             </div>
             <!-- ENDS shadow -->
             </div>
-            <!-- ENDS project -->
-            <?php echo form_close(); ?>
-
-            ";
-            $return = $result . $return; 
-            // se concatenan las 
-        }
+           
+        
+            
+                  <!-- ENDS project -->
+            <?php echo form_close(); ?>   
+                    ";
+       
+         $return = $result . $return; 
+            // se concatenan las
+          
+         
+        //}
         return $return;
     }
 
@@ -442,7 +507,9 @@ class libreta extends CI_Controller {
             $nombre = $libreta->getNombre();
             $fecha = $libreta->getFecha();
             $descripcion = $libreta->getDescripcion();
-            
+             
+           
+            //$this->load->view("miVista",$data);
             // se comienza a crear HTLM para mostrar en la vista
             $attributes = array('id' => 'sc-contact-form');
             $ref = base_url() . 'Libreta/indexModify2/' . $username . '/' . $id . '>';
@@ -468,6 +535,7 @@ class libreta extends CI_Controller {
 
                     <a href=$ref2 class='cover'><img src='$base_url'  alt='Feature image' /></a>
                 </div>
+                 
                 <!-- ENDS project-thumb -->
 
                 <div class='the-excerpt'>
@@ -475,14 +543,27 @@ class libreta extends CI_Controller {
                 </div>	
 
              </div>
+             
+
                                 <!-- ENDS shadow -->
                             </div>
                             <!-- ENDS project -->
+            
+
+            
+            
+            
+            
+            
+           
               <?php echo form_close(); ?>
 
                  ";
+           
             $return = $result . $return;
+            
         }
+        
         return $return;
     }
 

@@ -30,8 +30,30 @@ if ($messi)
                         <!-- project -->
                         <?php
                         echo $upload;
-                        ?>               
+   
+        
+                                     
+        
 
+
+if(isset($records)):
+
+foreach($records as $c):
+
+echo $c->nombre;
+
+endforeach;
+
+endif; //endif
+
+
+
+echo $this->pagination->create_links();
+                  //    echo $this->table->generate($records);
+                          ?>               
+	
+                        
+            
 
                     </div> 
 

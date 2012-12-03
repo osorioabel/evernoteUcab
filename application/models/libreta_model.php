@@ -102,6 +102,32 @@ class Libreta_Model extends CI_Model {
 
         return true;
     }
+    
+    
+    
+    function getlibreta($numeroRegistros, $inicio)
+
+{
+
+$this->db->limit($numeroRegistros, $inicio);
+
+$this->db->select('id_libreta,nombre,descripcion,fecha');
+
+$query = $this->db->get('libreta');
+
+return $query->result();
+
+}
+
+//método que devuelve el total de registros contenidos en la tabla ‘contactos’
+
+function getCantidad ()
+
+{
+
+return $this->db->count_all('libreta');
+
+}
 
     
      /**
