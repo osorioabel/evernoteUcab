@@ -56,6 +56,17 @@ if ($messi)
 
                         </select>
                     </div>
+                    
+                     <div> 
+                        <label>Which Tag?</label>
+                        <select class="iclass" name="ListBook"  id="ListBook" >
+                            
+
+                            <?php echo $upload; ?>
+
+                        </select>
+                    </div>
+                    
 
                     <p><input type="submit" value="Accept" name="submit" id="submit" /></p>
                 </fieldset>

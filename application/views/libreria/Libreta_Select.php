@@ -35,13 +35,13 @@ foreach($records as $c):
             $attributes = array('id' => 'sc-contact-form');
             
             $ref = base_url() . 'Libreta/indexModify2/' . $username . '/' . $c->id_libreta . '>';
-            $ref2 = base_url() . 'Libreta/indexModify2/' . $username . '/' . $c->id_libreta;
+            $ref2 = base_url() . 'Nota/SelectNote/' . $username . '/' . $c->id_libreta;
             
              echo form_open('/Libreta/indexModify2/' . $username .'/'. $c->nombre , $attributes);
              ?>
             <div class='project'>
                 
-                <h1><a href="<?php echo $ref?>"> <?php echo $c->nombre ?></a></h1>
+                <h1><a href="<?php echo $ref2?>"> <?php echo $c->nombre ?></a></h1>
                 
                 
 
@@ -56,7 +56,7 @@ foreach($records as $c):
             </ul>
             <!-- ENDS meta -->
 
-            <a href="<?php echo base_url();?><?php echo $ref2 ?>" class='cover'><img src='/evernoteUcab/images/book.png'  alt='Feature image' /></a>
+            <a href="<?php echo $ref2 ?>" class='cover'><img src='/evernoteUcab/images/book.png'  alt='Feature image' /></a>
             </div>
             <!-- ENDS project-thumb -->
 
