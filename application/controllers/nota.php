@@ -25,6 +25,7 @@ class nota extends CI_Controller {
         parent::__construct();
         $this->load->model('nota_model');
         $this->load->model('libreta_model');
+          $this->load->model('etiqueta_model');
         $this->load->helper('form');
     }
 
@@ -42,6 +43,7 @@ class nota extends CI_Controller {
         $data['messi'] = "";
         $data['head'] = '/includes/headnormal';
         $data['upload'] = $this->uploadCombobox($username);
+        $data['upload2'] = $this->uploadCombobox2($username);
         $data['main_content'] = '/nota/Add_Nota';
         $data['username'] = $username;
         $data['title'] = 'Create Note';
@@ -72,6 +74,25 @@ class nota extends CI_Controller {
 
             $return = $return . "
             <option value= $id > $nombre </option>;";
+        }
+        // se retorna el string con el codigo HTML para cargae ne la vista
+        return $return;
+    }
+    
+     function uploadCombobox2($username) {
+        $return = '';
+        for ($i = 0; $i < $this->etiqueta_model->tamListTag($username); $i++) {
+            // se pregunta por las libretas y se extrae su informacion 
+            // para ser cargada en el combo 
+            $etiqueta = new Etiqueta_Model();
+            $etiqueta = $etiqueta->etiquetaAtIndex($i);
+
+            $texto = $etiqueta->getTexto();
+            //$libreta->setNombre('abel');
+            $id = $etiqueta->getId_etiqueta();
+
+            $return = $return . "
+            <option value= $id > $texto </option>;";
         }
         // se retorna el string con el codigo HTML para cargae ne la vista
         return $return;
@@ -245,6 +266,7 @@ class nota extends CI_Controller {
         $titulo = $this->input->post('tittleNote');
         $nota = $this->input->post('Note');
         $book = $this->input->post('ListBook');
+        
         if($book){
             $booleano = $this->nota_model->registerNote($username, $titulo, $nota, $book);
             if ($booleano == true) {

@@ -15,8 +15,60 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Etiqueta_Model extends CI_Model {
     
+    private $id_etiqueta= '';
+    private $texto = '';
     
     
+    
+    function __construct() {
+        parent::__construct();
+        $this->load->helper('date');
+    }
+    
+     public function tamListTag($username) {
+        $query = $this->db->query("select e.id_etiqueta,e.texto from etiqueta e");
+        return $query->num_rows;
+    }
+    
+     public function etiquetaAtIndex($index) {
+        $etiqueta = new Etiqueta_Model();
+        $query = $this->db->query("select e.id_etiqueta,e.texto from etiqueta e");
+
+        $row = $query->num_rows();
+        $row2 = $query->row();
+        for ($i = 0; $i < $row; $i++) {
+
+
+
+            if ($index == $i) {
+                $etiqueta->setId_etiqueta($row2->id_etiqueta);
+               $etiqueta->setTexto($row2->texto);
+            }
+            $row2 = $query->next_row();
+        }
+
+
+        return $etiqueta;
+    }
+
+    
+    public function getId_etiqueta() {
+        return $this->id_etiqueta;
+    }
+
+    public function setId_etiqueta($id_etiqueta) {
+        $this->id_etiqueta = $id_etiqueta;
+    }
+
+    public function getTexto() {
+        return $this->texto;
+    }
+
+    public function setTexto($texto) {
+        $this->texto = $texto;
+    }
+
+
     
 }
 

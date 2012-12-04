@@ -8,7 +8,37 @@ if ($messi)
 
 <script src="<?php echo base_url(); ?>js/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>js/jquery.fileUploader.js" type="text/javascript"></script>
+<script   > 
 
+   $(document).ready(function() {
+       
+       
+       $('#Tag1').hide();
+       $('#Tag2').hide();
+       $('#Tag3').hide();
+       $('#Tag4').hide();
+       var cont = 1;
+       var miArray = new Array();
+       $('#addme').click(function(){
+           
+           miArray[cont] = $('#Tag').val();
+           
+           $('#Tag'+cont).val($('#Tag').val());
+           $('#TagN').val(cont);
+           $('#Tag'+cont).show();
+           
+        alert($('#TagN').val());
+           
+         
+          cont++;
+        
+       }) // put all your jQuery goodness in here.
+});
+
+
+
+
+</script>
 
 <div id="main">
 
@@ -44,9 +74,19 @@ if ($messi)
                         <label>Note</label>
                         <textarea name="Note"  id="Note" cols="20" rows="3" class="form-poshytip" title="Note" ></textarea>
                     </div>
+                    <div>
+                        <label>New Tag</label>
+                        <input name="Tag" type="hidden"  id="TagN" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag"  id="Tag2" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        
+                        <input name="Tag"  id="Tag1" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag"  id="Tag2" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag"  id="Tag3" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag"  id="Tag4" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                    
+                    </div>
 
-
-
+                      
                     <div> 
                         <label>Which book?</label>
                         <select class="iclass" name="ListBook"  id="ListBook" >
@@ -62,10 +102,16 @@ if ($messi)
                         <select class="iclass" name="ListBook"  id="ListBook" >
                             
 
-                            <?php echo $upload; ?>
+                            <?php echo $upload2; ?>
 
                         </select>
-                    </div>
+                        <p>
+                            <a name="addme" id="addme" class="link-button" >
+                                
+                                <span>add tag</span>
+                                </a></p>
+                           </div>
+                       
                     
 
                     <p><input type="submit" value="Accept" name="submit" id="submit" /></p>
