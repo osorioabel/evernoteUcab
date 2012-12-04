@@ -50,6 +50,19 @@ class Etiqueta_Model extends CI_Model {
 
         return $etiqueta;
     }
+    
+    public function createTag($content)
+    {
+           $etiqueta = new Etiqueta_Model();
+           
+            $data = array(
+            'texto' => $nota,
+        );
+        $query = $this->db->insert('etiqueta', $data);
+         $query2= $this->db->query("select max(id_etiqueta)  from etiqueta ");
+        $row2 = $query2->row();
+        return $row2->id_etiqueta;     
+    }
 
     
     public function getId_etiqueta() {

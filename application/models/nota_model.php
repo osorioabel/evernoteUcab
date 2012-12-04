@@ -25,6 +25,7 @@ class Nota_Model extends CI_Model {
     function __construct() {
         parent::__construct();
         $this->load->helper('date');
+         $this->load->model('etiqueta_model');
     }
 
     /**
@@ -102,6 +103,12 @@ class Nota_Model extends CI_Model {
 
         return $nota;
     }
+    
+    public function getMaxID(){
+        $query= $this->db->query("select max(id_nota)  from nota ");
+        $row2 = $query->row();
+        return $row2->id_nota;       
+     }
 
     /**
     * Esta Funcion notaAtIndex2($id)
@@ -120,6 +127,11 @@ class Nota_Model extends CI_Model {
         $nota->setTexto($row2->texto);
 
         return $nota;
+    }
+    
+    public function addTags2Note($id,$tag){
+        
+        
     }
 
     /**

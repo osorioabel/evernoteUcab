@@ -11,12 +11,17 @@ if ($messi)
 <script   > 
 
    $(document).ready(function() {
-       
-       
-       $('#Tag1').hide();
+      
        $('#Tag2').hide();
        $('#Tag3').hide();
        $('#Tag4').hide();
+        $('#Tag5').hide();
+       $('#Tag6').hide();
+       $('#Tag7').hide();
+       $('#Tag8').hide();
+       $('#Tag9').hide();
+       $('#Tag10').hide();
+       $('#TagN').hide();
        var cont = 1;
        var miArray = new Array();
        $('#addme').click(function(){
@@ -25,7 +30,7 @@ if ($messi)
            
            $('#Tag'+cont).val($('#Tag').val());
            $('#TagN').val(cont);
-           $('#Tag'+cont).show();
+          // $('#Tag'+cont).show();
            
         alert($('#TagN').val());
            
@@ -76,14 +81,24 @@ if ($messi)
                     </div>
                     <div>
                         <label>New Tag</label>
-                        <input name="Tag" type="hidden"  id="TagN" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
-                        <input name="Tag"  id="Tag2" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="TagN" type="number"  id="TagN" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
                         
-                        <input name="Tag"  id="Tag1" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
-                        <input name="Tag"  id="Tag2" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
-                        <input name="Tag"  id="Tag3" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
-                        <input name="Tag"  id="Tag4" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
-                    
+                        <input name="Tag1"  id="Tag1" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag2"  id="Tag2" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag3"  id="Tag3" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag4"  id="Tag4" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag5"  id="Tag5" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag6"  id="Tag6" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag7"  id="Tag7" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag8"  id="Tag8" cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag9"  id="Tag9"  cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        <input name="Tag10" id="Tag10"  cols="10" rows="2" class="form-poshytip" title="New Tag" ></input>
+                        
+                        
+                            <a name="addme" id="addme" class="link-button" >
+                                <span>Add Tag</span>
+                                </a>
+                          
                     </div>
 
                       
@@ -97,20 +112,7 @@ if ($messi)
                         </select>
                     </div>
                     
-                     <div> 
-                        <label>Which Tag?</label>
-                        <select class="iclass" name="ListBook"  id="ListBook" >
-                            
-
-                            <?php echo $upload2; ?>
-
-                        </select>
-                        <p>
-                            <a name="addme" id="addme" class="link-button" >
-                                
-                                <span>add tag</span>
-                                </a></p>
-                           </div>
+                   
                        
                     
 
