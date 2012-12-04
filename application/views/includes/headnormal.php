@@ -6,16 +6,7 @@
         <!-- wrapper-header -->
         <div class="wrapper">
             <a href="index.html"><img id="logo" src="<?php echo base_url(); ?>img/logo.png" alt="" /></a>
-            <!-- search -->
-            <div class="top-search">
-                <form  method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" value="Search..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
-                        <input type="submit" id="searchsubmit" value=" " />
-                    </div>
-                </form>
-            </div>
-            <!-- ENDS search -->
+          
         </div>
         <!-- ENDS wrapper-header -->					
     </div>
@@ -62,6 +53,8 @@
 
                         </ul>
                     </li>
+                     <li><?php echo anchor('search/indexsearch', 'Search', array('title' => 'Search')); ?><a><span class="subheader">Get In Touch</span></a></li>
+                    
                     <li><?php echo anchor('homeuser/indexAU', 'About Us', array('title' => 'About Us')); ?><a><span class="subheader">Get In Touch</span></a></li>
                 </ul>
                 <!-- Navigation -->
