@@ -19,7 +19,7 @@ if ($messi)
             <div class="centrar"> 
                 <?php
                 $attributes = array('id' => 'sc-contact-form');
-                echo form_open('/Nota/ModifyNote/' . $username . '/' . $nota, $attributes);
+                echo form_open('/nota/ModifyNote/' . $username . '/' . $nota, $attributes);
                 ?>
                 <fieldset>
                      <?php echo $upload;?>

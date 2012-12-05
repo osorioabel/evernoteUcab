@@ -34,11 +34,11 @@ if ($messi)
                             foreach ($records as $c):
                                 $attributes = array('id' => 'sc-contact-form');
 
-                                $ref = base_url() . 'Libreta/indexDelete/' . $username . '>';
-                                $boton = base_url() . 'Libreta/DeleteBook/' . $username . '/' . $c->id_libreta;
-                                $ref2 = base_url() . 'Libreta/indexDelete/' . $username;
+                                $ref = base_url() . 'libreta/indexDelete/' . $username . '>';
+                                $boton = base_url() . 'libreta/DeleteBook/' . $username . '/' . $c->id_libreta;
+                                $ref2 = base_url() . 'libreta/indexDelete/' . $username;
 
-                                echo form_open('/Libreta/DeleteBook/' . $username . '/' . $c->nombre, $attributes);
+                                echo form_open('/libreta/DeleteBook/' . $username . '/' . $c->nombre, $attributes);
                                 ?>
                                 <div class='project'>
 

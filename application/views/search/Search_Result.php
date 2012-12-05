@@ -15,6 +15,16 @@
                 <span class="subtitle">Evernote Ucab</span>
             </div>
             
+            
+             <div id="main">
+            <div class="wrapper">		
+                <!-- content -->
+                <div id="content"> 
+                    <div id="projects-list">
+            
+                        
+                        
+                    
              <?php
                         if (isset($records)):
 
@@ -22,28 +32,42 @@
             
               
                 $attributes = array('id' => 'sc-contact-form');
-                echo form_open('/Search/indexsearchResult/' . $username . '/' . $this->input->post('goal'), $attributes);
+                echo form_open('/search/indexsearchResult/' . $username . '/' . $this->input->post('goal'), $attributes);
                 ?>
-            <fieldset>
-             <div>
-                        <label>WTF</label>
-                        <input name="goal"  id="tittleNote" 
-                               type="text" class="form-poshytip"  title="Enter a tittle" />
-            </div>
-                 <p><input type="submit" value="Search" name="submit" id="submit" /></p>
+            
+              <div class='project'>
+                          <h1><a href="#"> <?php echo $c->titulo ?> </a></h1>
+                          
+                           <!-- shadow -->
+                                <div class='project-shadow'>
+                                    <!-- project-thumb -->
+                                  
+
+                                       
+       
                  
-                   <?php echo $c->titulo ?> 
+                
+                
+                 <a title='An image'><img src='/evernoteUcab/images/home.png' /></a>
                  
                  
                  
-                <?php echo $this->table->generate($records2);?>
-                       </fieldset>
+                                  </div>	
+                                 
+             </div>   
+                     
                   <?php echo form_close(); 
                   
                      endforeach;
 
                         endif;
-                        ?>
+                  ?>
+                         </div> 
+                    
+                    </div> 
+            </div> 
+        </div>        
+                    
          </div>
         
     </div>

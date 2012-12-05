@@ -11,7 +11,7 @@
 
             <?php
             $attributes2 = array('id' => 'sc-contact-form');
-            echo form_open('/Usuario/cambiarPassword/' . $username, $attributes2);
+            echo form_open('/usuario/cambiarPassword/' . $username, $attributes2);
             ?>
             <fieldset>
                 <div>

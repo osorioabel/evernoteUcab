@@ -24,7 +24,7 @@
                 <!-- Login -->
                 <?php
                 $attributes = array('id' => 'contactForm');
-                echo form_open('/Home/verifylogin', $attributes);
+                echo form_open('/home/verifylogin', $attributes);
                 ?>
                 <fieldset>
                     <div>
@@ -47,7 +47,7 @@
                 <h6 class="line-divider">Join Us</h6>
                 <?php
                 $attributes2 = array('id' => 'sc-contact-form');
-                echo form_open('/Home/register', $attributes2);
+                echo form_open('/home/register', $attributes2);
                 ?>
                 <fieldset>
                     <div>

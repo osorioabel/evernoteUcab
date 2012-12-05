@@ -21,7 +21,7 @@ if ($messi)
             <div class="centrar"> 
                 <?php
                 $attributes = array('id' => 'sc-contact-form');
-                echo form_open('/Libreta/ModifyBook/' . $username . '/' . $libreta, $attributes);
+                echo form_open('/libreta/ModifyBook/' . $username . '/' . $libreta, $attributes);
                 ?>
                 <fieldset>
                     <?php echo $upload; ?>

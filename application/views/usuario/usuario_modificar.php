@@ -11,7 +11,7 @@
 
             <?php
             $attributes2 = array('id' => 'sc-contact-form');
-            echo form_open('/Usuario/modificar/' . $username, $attributes2);
+            echo form_open('/usuario/modificar/' . $username, $attributes2);
             ?>
             <fieldset>
                 <?php echo $upload; ?>

@@ -24,13 +24,13 @@ if ($messi)
                             foreach ($records as $c):
                                 $attributes = array('id' => 'sc-contact-form');
 
-                                $ref = base_url() . 'Nota/indexModify2/' . $username . '/' . $c->id_nota . '>';
-                                $ref2 = base_url() . 'Nota/indexModify2/' . $username . '/' . $c->id_nota;
+                                $ref = base_url() . 'nota/indexModify2/' . $username . '/' . $c->id_nota . '>';
+                                $ref2 = base_url() . 'nota/indexModify2/' . $username . '/' . $c->id_nota;
        
                        
                        
                        
-               echo form_open('/Nota/indexModify2/' . $username . '/' . $c->titulo, $attributes);
+               echo form_open('/nota/indexModify2/' . $username . '/' . $c->titulo, $attributes);
                     
                 ?>
                  <div class='project'>

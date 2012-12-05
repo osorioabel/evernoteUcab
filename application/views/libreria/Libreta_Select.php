@@ -29,10 +29,10 @@ if ($messi)
                             foreach ($records as $c):
                                 $attributes = array('id' => 'sc-contact-form');
 
-                                $ref = base_url() . 'Libreta/indexModify2/' . $username . '/' . $c->id_libreta . '>';
-                                $ref2 = base_url() . 'Nota/SelectNote/' . $username . '/' . $c->id_libreta;
+                                $ref = base_url() . 'libreta/indexModify2/' . $username . '/' . $c->id_libreta . '>';
+                                $ref2 = base_url() . 'lota/SelectNote/' . $username . '/' . $c->id_libreta;
 
-                                echo form_open('/Libreta/indexModify2/' . $username . '/' . $c->nombre, $attributes);
+                                echo form_open('/libreta/indexModify2/' . $username . '/' . $c->nombre, $attributes);
                                 ?>
                                 <div class='project'>
 

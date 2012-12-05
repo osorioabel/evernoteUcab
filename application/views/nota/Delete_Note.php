@@ -31,7 +31,7 @@ if ($messi)
                        
                        
                        
-               echo form_open('/Nota/DeleteNote/' . $username . '/' . $c->id_nota . '/' .$idlibreta, $attributes);
+               echo form_open('/nota/DeleteNote/' . $username . '/' . $c->id_nota . '/' .$idlibreta, $attributes);
                     
                 ?>
                  <div class='project'>

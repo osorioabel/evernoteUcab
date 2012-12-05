@@ -35,9 +35,9 @@ if ($messi)
                                 $attributes = array('id' => 'sc-contact-form');
 
                                 $ref = base_url() . 'nota/indexDelete/' . $username . '/' . $c->id_libreta . '>';
-                                $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $c->nombre;
+                                $ref2 = base_url() . 'libreta/indexSelect/' . $username . '/' . $c->nombre;
 
-                                echo form_open('/Libreta/indexSelect/' . $username . '/' . $c->nombre, $attributes);
+                                echo form_open('/libreta/indexSelect/' . $username . '/' . $c->nombre, $attributes);
                                 ?>
                                 <div class='project'>
 
