@@ -147,10 +147,10 @@ function getBuscarNotas($numeroRegistros, $inicio,$busqueda)
     //$this->db->select('id_nota,titulo,texto,fecha_creacion');
         
     
-    $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where titulo like '%$busqueda%';");
+    $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where titulo or texto like '%$busqueda%';");
   
     
-    
+
 //$this->db->where("MATCH(titulo)AGAINST('".$busqueda."')", NULL, FALSE); 
  
 
