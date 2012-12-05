@@ -75,9 +75,10 @@ if ($messi)
                         ?>
 
                     </div> 
-                    <div class="centrar"> 
+                  
 <?php echo $this->pagination->create_links(); ?> 
-                    </div>
+                      
+                    
                 </div> 
             </div> 
         </div>                

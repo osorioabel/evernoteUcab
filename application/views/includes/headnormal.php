@@ -53,7 +53,7 @@
 
                         </ul>
                     </li>
-                     <li><?php echo anchor('search/indexsearch', 'Search', array('title' => 'Search')); ?><a><span class="subheader">Get In Touch</span></a></li>
+                     <li><?php echo anchor('search/indexsearch/'. $username, 'Search', array('title' => 'Search')); ?><a><span class="subheader">Get In Touch</span></a></li>
                     
                     <li><?php echo anchor('homeuser/indexAU', 'About Us', array('title' => 'About Us')); ?><a><span class="subheader">Get In Touch</span></a></li>
                 </ul>

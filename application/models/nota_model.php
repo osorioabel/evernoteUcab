@@ -75,6 +75,16 @@ class Nota_Model extends CI_Model {
         return $numrow;
     }
 
+    
+       public function tamListNotaBuscar($cadena) {
+        //var_dump($query);
+        $query2 = $this->db->query("select id_nota from nota where titulo like '%$cadena%';");
+      // $query2 = $this->db->query("Select nombre from libreta where nombre = $cadena;");
+          
+           $numrow = $query2->num_rows;
+        return $numrow;
+    }
+    
     /**
     * Esta Funcion notaAtIndex($index, $id)
     * se encarga de contar devolver una nota que
@@ -104,11 +114,66 @@ class Nota_Model extends CI_Model {
         return $nota;
     }
     
+
     public function getMaxID(){
         $query= $this->db->query("select max(id_nota)  from nota ");
         $row2 = $query->row();
         return $row2->id_nota;       
      }
+    
+function getnota($numeroRegistros, $inicio,$id)
+
+{
+
+    $this->db->limit($numeroRegistros, $inicio);
+
+    $this->db->select('id_nota,titulo,texto,fecha_creacion');
+    $this->db->where('id_libreta', $id);
+    $query = $this->db->get('nota');
+//$query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_nota = '$id';");
+return $query->result();
+
+
+
+}
+
+
+function getBuscarNotas($numeroRegistros, $inicio,$busqueda)
+
+{
+
+    $this->db->limit($numeroRegistros, $inicio);
+
+    //$this->db->select('id_nota,titulo,texto,fecha_creacion');
+        
+    
+    $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where titulo like '%$busqueda%';");
+  
+    
+    
+//$this->db->where("MATCH(titulo)AGAINST('".$busqueda."')", NULL, FALSE); 
+ 
+
+//$query = $this->db->get('nota');  
+    
+
+    
+    
+//$query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_nota = '$id';");
+return $query->result();
+
+
+
+}
+
+function getCantidad ()
+
+{
+
+return $this->db->count_all('nota');
+
+}
+
 
     /**
     * Esta Funcion notaAtIndex2($id)
@@ -123,6 +188,8 @@ class Nota_Model extends CI_Model {
         $nota = new Nota_Model();
         $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_nota = '$id';");
         $row2 = $query->row();
+    
+       
         $nota->setTitulo($row2->titulo);
         $nota->setTexto($row2->texto);
 
