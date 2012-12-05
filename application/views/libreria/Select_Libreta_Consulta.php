@@ -26,7 +26,7 @@ if ($messi)
                 <!-- content -->
                 <div id="content"> 
                     <div id="projects-list">
-
+<?php echo 'something' ?>;
                         <!-- project -->
                         <?php
                         echo $upload3;
