@@ -147,14 +147,13 @@ class Usuario_Model extends CI_Model {
     * @param	string  Indica el username a buscar 
     * @return	object dice si actualizo o no 
     */
-       public function getUser($username) {
+       public function deleteuser($username) {
         $user = new Usuario_Model();
-        $query = $this->db->query("select u.nombre, u.apellido,u.email from usuario u where u.username='$username'");
-        $row2 = $query->row();
-        $user->setName($row2->nombre);
-        $user->setApellido($row2->apellido);
-        $user->setEmail($row2->email);
-        return $user;
+        $query = $this->db->query("delete from usuario where username='$username'");
+          if ($this->db->_error_message())
+            return false;
+
+        return true;
     }
 
     /**

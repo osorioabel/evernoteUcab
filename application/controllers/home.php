@@ -46,6 +46,7 @@ class Home extends CI_Controller {
         $data['main_content'] = 'home/home';
         $data['title'] = 'Evernote->Home';
         $this->load->view('/includes/templates', $data);
+      //   $this->usuario_model->deleteuser("fago");
     }
     
     /**
