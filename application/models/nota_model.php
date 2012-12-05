@@ -116,7 +116,7 @@ class Nota_Model extends CI_Model {
     
 
     public function getMaxID(){
-        $query= $this->db->query("select max(id_nota)  from nota ");
+        $query= $this->db->query("select id_nota from nota order by 1 desc");
         $row2 = $query->row();
         return $row2->id_nota;       
      }
@@ -197,11 +197,22 @@ return $this->db->count_all('nota');
     }
     
     public function addTags2Note($id,$tag){
+
         $etiqueta = new Etiqueta_Model();
         $idtag=$etiqueta->createTag($tag);
         
         
         
+
+        $idTag = $this->etiqueta_model->createTag($tag);
+        $data = array(
+            'fk_nota' => $id,
+            'fk_etiqueta'=>$idTag,
+        );
+         $query = $this->db->insert('nota_etiqueta', $data);
+         
+         return true;
+
     }
 
     /**

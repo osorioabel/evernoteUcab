@@ -28,14 +28,15 @@ if ($messi)
            
            miArray[cont] = $('#Tag').val();
            
-           $('#Tag'+cont).val($('#Tag').val());
+           $('#Tag'+cont).val($('#Tag'+cont).val());
            $('#TagN').val(cont);
-          // $('#Tag'+cont).show();
+           cont++;
+          $('#Tag'+cont).show();
            
-        alert($('#TagN').val());
+       
            
          
-          cont++;
+         
         
        }) // put all your jQuery goodness in here.
 });
@@ -67,7 +68,7 @@ if ($messi)
                     .</p>
                 <?php
                 $attributes = array('id' => 'sc-contact-form');
-                echo form_open('/Nota/AddNote/' . $username, $attributes);
+                echo form_open('/nota/AddNote/' . $username, $attributes);
                 ?>
                 <fieldset>
                     <div>

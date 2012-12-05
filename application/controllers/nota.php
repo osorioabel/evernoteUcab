@@ -306,28 +306,28 @@ class nota extends CI_Controller {
         $titulo = $this->input->post('tittleNote');
         $nota = $this->input->post('Note');
         $book = $this->input->post('ListBook');
-        echo $this->input->post('TagN'); 
+        
         $n = $this->input->post('TagN');
       
-       echo var_dump($tags);
         
         if($book){
             $booleano = $this->nota_model->registerNote($username, $titulo, $nota, $book);
             
             if ($booleano == true) {
+             $idNota = $this->nota_model->getMaxID();  
                 for ($index = 1; $index < $n+1; $index++) {
-            $tags[$index] = $this->input->post('Tag'.$index);
-            
+                  $booleanito= $this->nota_model->addTags2Note($idNota,$this->input->post('Tag'.$index));
+                
             
         }
         
-             //   redirect('/homeuser/index/'.$username);
+             redirect('/homeuser/index/'.$username);
             } else
                 echo "La estas cagando";
             }
          else{
              
-      //       redirect('/nota/index/'.$username);
+            redirect('/nota/index/'.$username);
              
          }
 

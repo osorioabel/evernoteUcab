@@ -56,10 +56,10 @@ class Etiqueta_Model extends CI_Model {
            $etiqueta = new Etiqueta_Model();
            
             $data = array(
-            'texto' => $nota,
+            'texto' => $content,
         );
         $query = $this->db->insert('etiqueta', $data);
-         $query2= $this->db->query("select max(id_etiqueta)  from etiqueta ");
+         $query2= $this->db->query("select id_etiqueta from etiqueta order by 1 desc ");
         $row2 = $query2->row();
         return $row2->id_etiqueta;     
     }
