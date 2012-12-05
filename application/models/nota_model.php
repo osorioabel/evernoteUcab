@@ -199,11 +199,6 @@ return $this->db->count_all('nota');
     public function addTags2Note($id,$tag){
 
         $etiqueta = new Etiqueta_Model();
-        $idtag=$etiqueta->createTag($tag);
-        
-        
-        
-
         $idTag = $this->etiqueta_model->createTag($tag);
         $data = array(
             'fk_nota' => $id,
