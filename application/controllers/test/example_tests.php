@@ -24,6 +24,7 @@ class Example_tests extends Toast {
      */
     function Example_tests() {
         parent::Toast(__FILE__);
+        parent::__construct(__FILE__);
         $this->load->model("usuario_model");
         
         
@@ -120,9 +121,10 @@ class Example_tests extends Toast {
         
         
         
-          
-        $this->_assert_false($booleano);
-        $this->_assert_equals($booleano, false);
+        $controller = new Upload();
+        $retorno  =$controller->test_dropbox();
+        $this->_assert_not_empty($retorno);
+        //$this->_assert_equals($booleano, false);
         $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';
     }
     

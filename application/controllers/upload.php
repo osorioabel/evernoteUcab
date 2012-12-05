@@ -29,9 +29,6 @@ class Upload extends CI_Controller {
         $this->load->model('usuario_model');
         $this->load->model('nota_model');
         $this->load->model('adjunto_model');
-
-        
-        
     }
 
     
@@ -116,7 +113,7 @@ class Upload extends CI_Controller {
 
         $return = $this->dropbox->account();
 
-        print_r($return);
+       
     }
 
      /**
