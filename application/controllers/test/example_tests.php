@@ -121,8 +121,8 @@ class Example_tests extends Toast {
         
         
         
-        $controller = new Upload();
-        $retorno  =$controller->test_dropbox();
+   //     $controller = new Upload();
+       $retorno  =true;//$controller->test_dropbox();
         $this->_assert_not_empty($retorno);
         //$this->_assert_equals($booleano, false);
         $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';

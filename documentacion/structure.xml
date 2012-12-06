@@ -5,7 +5,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file application/config/autoload.php</error>
     </parse_markers>
   </file>
-  <file path="application/config/config.php" hash="5c3e06006050015ff1d43431600e0dcc" package="Default">
+  <file path="application/config/config.php" hash="b4f8fdd623b0d6e4b42c326d82393dea" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/config/config.php</error>
     </parse_markers>
@@ -75,7 +75,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file application/config/constants.php</error>
     </parse_markers>
   </file>
-  <file path="application/config/database.php" hash="da1b8667039edacc51f0988dbf094c4c" package="Default">
+  <file path="application/config/database.php" hash="5c94392e3fe60a7cc643d8eea2e90320" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/config/database.php</error>
     </parse_markers>
@@ -199,7 +199,7 @@ for remeinders, Notebooks and MORE</p>]]></long-description>
       <error line="24" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="application/controllers/home.php" hash="acd28e952b4f2eca04369a69b85893e1" package="Default">
+  <file path="application/controllers/home.php" hash="fafc4f337f317294bf5e100c4e9b644b" package="Default">
     <include line="30" type="Include Once" package="Default">
       <name/>
     </include>
@@ -238,48 +238,60 @@ que se estan linkeadas al controlador]]></description>
           <tag line="33" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="60" package="EvernoteUcab">
         <name>index2</name>
         <full_name>index2</full_name>
-        <docblock line="51">
+        <docblock line="52">
           <description><![CDATA[Funcion index2() se realizan las
 llamadas basicas para la carga de una de las vistas
 que se estan linkeadas al controlador, se llama a esta vista
 que produce error de login]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="51" name="category" description="Controller"/>
+          <tag line="52" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="EvernoteUcab">
         <name>index3</name>
         <full_name>index3</full_name>
-        <docblock line="75">
+        <docblock line="76">
           <description><![CDATA[Funcion index3() se realizan las
 llamadas basicas para la carga de una de las vistas
 que se estan linkeadas al controlador, se llama a esta vista
 y se que produce exito del login]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="75" name="category" description="Controller"/>
+          <tag line="76" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="105" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="EvernoteUcab">
+        <name>index4</name>
+        <full_name>index4</full_name>
+        <docblock line="100">
+          <description><![CDATA[Funcion index4() se realizan las
+llamadas basicas para la carga de una de las vistas
+que se estan linkeadas al controlador, se llama a esta vista
+y se que produce error al registrar]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="100" name="category" description="Controller"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="130" package="EvernoteUcab">
         <name>verifylogin</name>
         <full_name>verifylogin</full_name>
-        <docblock line="99">
+        <docblock line="124">
           <description><![CDATA[Funcion verifylogin() funcion encargada de verificar la informacion del
 usuario, mediante la llamada a la capa de modelo (usuario_model)]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="99" name="category" description="Controller"/>
+          <tag line="124" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="124" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="150" package="EvernoteUcab">
         <name>register</name>
         <full_name>register</full_name>
-        <docblock line="118">
+        <docblock line="144">
           <description><![CDATA[Funcion register() funcion encargada de registrar la informacion del
 usuario nuevo, mediante la llamada a la capa de modelo (usuario_model)]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="118" name="category" description="Controller"/>
+          <tag line="144" name="category" description="Controller"/>
         </docblock>
       </method>
     </class>
@@ -287,7 +299,7 @@ usuario nuevo, mediante la llamada a la capa de modelo (usuario_model)]]></descr
       <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/home.php</error>
     </parse_markers>
   </file>
-  <file path="application/controllers/homeuser.php" hash="3eb2165520e467cb6ed7a767bbe5643d" package="Default">
+  <file path="application/controllers/homeuser.php" hash="a5ffd401ac2730c9aba4856c102bc290" package="Default">
     <class final="false" abstract="false" namespace="global" line="17" package="EvernoteUcab">
       <extends>\CI_Controller</extends>
       <name>homeuser</name>
@@ -334,35 +346,35 @@ que se estan linkeadas al controlador]]></description>
           <tag line="50" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="77" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="87" package="EvernoteUcab">
         <name>index2</name>
         <full_name>index2</full_name>
-        <docblock line="70">
+        <docblock line="80">
           <description><![CDATA[Funcion index2() se realizan las
 llamadas basicas para la carga de una de las vistas
 que se estan linkeadas al controlador]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="70" name="category" description="Controller"/>
+          <tag line="80" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="118" package="EvernoteUcab">
         <name>uploadLastBooks</name>
         <full_name>uploadLastBooks</full_name>
-        <docblock line="98">
+        <docblock line="108">
           <description><![CDATA[Funcion uploadLastBooks($username) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las ultimas 3 libretas
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista al momento del login exitoso del usuario.</p>]]></long-description>
-          <tag line="98" name="category" description="Controller"/>
-          <tag line="98" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="108" name="category" description="Controller"/>
+          <tag line="108" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="98" name="return" description="codigo HTML contiene las tres ultimas libretas que creo el usuario" type="string">
+          <tag line="108" name="return" description="codigo HTML contiene las tres ultimas libretas que creo el usuario" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="108">
+        <argument line="118">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -373,7 +385,7 @@ vista al momento del login exitoso del usuario.</p>]]></long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/homeuser.php</error>
     </parse_markers>
   </file>
-  <file path="application/controllers/libreta.php" hash="9349cd1119e59964f5a8579a8eba2fc0" package="Default">
+  <file path="application/controllers/libreta.php" hash="ebbb9d2a7c7dac96f519e272b71cad12" package="Default">
     <class final="false" abstract="false" namespace="global" line="17" package="EvernoteUcab">
       <extends>\CI_Controller</extends>
       <name>libreta</name>
@@ -398,131 +410,111 @@ el controlador]]></description>
           <tag line="19" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="EvernoteUcab">
         <name>index</name>
         <full_name>index</full_name>
-        <docblock line="32">
+        <docblock line="35">
           <description><![CDATA[Funcion index() se realizan las
 llamadas basicas para la carga de una de las vistas
 de creacion de libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="32" name="category" description="Controller"/>
-          <tag line="32" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="35" name="category" description="Controller"/>
+          <tag line="35" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="40">
+        <argument line="43">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="62" package="EvernoteUcab">
         <name>indexModify</name>
         <full_name>indexModify</full_name>
-        <docblock line="51">
+        <docblock line="54">
           <description><![CDATA[Funcion indexModify($username) se realizan las
 llamadas basicas para la carga de una de las vistas
 de modificacion de la informacion de la libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="51" name="category" description="Controller"/>
-          <tag line="51" name="param" description="usuario" type="string" variable="$username">
+          <tag line="54" name="category" description="Controller"/>
+          <tag line="54" name="param" description="usuario" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="59">
+        <argument line="62">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="105" package="EvernoteUcab">
         <name>indexModify2</name>
         <full_name>indexModify2</full_name>
-        <docblock line="74">
+        <docblock line="96">
           <description><![CDATA[Funcion indexModify2($username, $id) se realizan las
 llamadas basicas para cargar la vista de modificacion
 de libreta, una vez que ya se ha seleccionado cual se
 desea modificar]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="74" name="category" description="Controller"/>
-          <tag line="74" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="96" name="category" description="Controller"/>
+          <tag line="96" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="74" name="param" description="id de la libreta a modificar" type="int" variable="$id">
+          <tag line="96" name="param" description="id de la libreta a modificar" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="83">
+        <argument line="105">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="83">
+        <argument line="105">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="111" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="134" package="EvernoteUcab">
         <name>uploadBookDetail</name>
         <full_name>uploadBookDetail</full_name>
-        <docblock line="100">
+        <docblock line="123">
           <description><![CDATA[Funcion uploadBookDetail($username, $id_libreta) Esta funcion se encarga
  de preguntar a la capa de modelo, cuales son los datos de la libreta
 seleccionada.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista..</p>]]></long-description>
-          <tag line="100" name="category" description="Controller"/>
-          <tag line="100" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="123" name="category" description="Controller"/>
+          <tag line="123" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="100" name="param" description="id de la libreta a ver su detalle" type="int" variable="$id_libreta">
+          <tag line="123" name="param" description="id de la libreta a ver su detalle" type="int" variable="$id_libreta">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="100" name="return" description="codigo HTML para ser cargado en la vista" type="string">
+          <tag line="123" name="return" description="codigo HTML para ser cargado en la vista" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="111">
+        <argument line="134">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="111">
+        <argument line="134">
           <name>$id_libreta</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="143" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="166" package="EvernoteUcab">
         <name>indexDelete</name>
         <full_name>indexDelete</full_name>
-        <docblock line="134">
+        <docblock line="157">
           <description><![CDATA[Funcion indexDelete($username) se realizan las
 llamadas basicas para cargar la vista de borrar
 de libreta, una vez que ya se ha seleccionado cual se
 desea borrar]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="134" name="category" description="Controller"/>
-          <tag line="134" name="param" description="usuario activo" type="string" variable="$username">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-        <argument line="143">
-          <name>$username</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="166" package="EvernoteUcab">
-        <name>indexSelect</name>
-        <full_name>indexSelect</full_name>
-        <docblock line="157">
-          <description><![CDATA[Funcion indexSelect($username) se realizan las
-llamadas basicas para cargar la vista de seleccionar
-de libreta, una vez que ya se ha seleccionado cual se
-desea seleccionado]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="157" name="category" description="Controller"/>
           <tag line="157" name="param" description="usuario activo" type="string" variable="$username">
@@ -535,229 +527,249 @@ desea seleccionado]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="189" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="211" package="EvernoteUcab">
+        <name>indexSelect</name>
+        <full_name>indexSelect</full_name>
+        <docblock line="202">
+          <description><![CDATA[Funcion indexSelect($username) se realizan las
+llamadas basicas para cargar la vista de seleccionar
+de libreta, una vez que ya se ha seleccionado cual se
+desea seleccionado]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="202" name="category" description="Controller"/>
+          <tag line="202" name="param" description="usuario activo" type="string" variable="$username">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="211">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="254" package="EvernoteUcab">
         <name>indexSelectConsulta</name>
         <full_name>indexSelectConsulta</full_name>
-        <docblock line="180">
+        <docblock line="245">
           <description><![CDATA[Funcion indexSelectConsulta($username) se realizan las
 llamadas basicas para cargar la vista de seleccionar
 de libreta, una vez que ya se ha seleccionado cual se
 desea seleccionado, en este caso]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="180" name="category" description="Controller"/>
-          <tag line="180" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="245" name="category" description="Controller"/>
+          <tag line="245" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="189">
+        <argument line="254">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="213" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="278" package="EvernoteUcab">
         <name>indexDeleteNote</name>
         <full_name>indexDeleteNote</full_name>
-        <docblock line="204">
+        <docblock line="269">
           <description><![CDATA[Funcion indexDeleteNote($username) se realizan las
 llamadas basicas para cargar la vista de modificacion
 de libreta, una vez que ya se ha seleccionado cual se
 desea seleccionado, en este caso para borrar]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="204" name="category" description="Controller"/>
-          <tag line="204" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="269" name="category" description="Controller"/>
+          <tag line="269" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="213">
+        <argument line="278">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="235" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="322" package="EvernoteUcab">
         <name>AddBook</name>
         <full_name>AddBook</full_name>
-        <docblock line="227">
+        <docblock line="314">
           <description><![CDATA[Funcion AddBook($username) funcion que se encarga
 de crear una libreta al usuario.]]></description>
           <long-description><![CDATA[<p>realizando llamada
 llamada al model encargadose el de dicha actividad</p>]]></long-description>
-          <tag line="227" name="category" description="Controller"/>
-          <tag line="227" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="314" name="category" description="Controller"/>
+          <tag line="314" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="235">
+        <argument line="322">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="258" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="345" package="EvernoteUcab">
         <name>ModifyBook</name>
         <full_name>ModifyBook</full_name>
-        <docblock line="249">
+        <docblock line="336">
           <description><![CDATA[Funcion ModifyBook($username, $libreta)) funcion que se encarga
 de modificar una libreta al usuario.]]></description>
           <long-description><![CDATA[<p>realizando llamada
 llamada al model encargadose el de dicha actividad</p>]]></long-description>
-          <tag line="249" name="category" description="Controller"/>
-          <tag line="249" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="336" name="category" description="Controller"/>
+          <tag line="336" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="249" name="param" description="id de la libreta a modificar" type="int" variable="$libreta">
+          <tag line="336" name="param" description="id de la libreta a modificar" type="int" variable="$libreta">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="258">
+        <argument line="345">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="258">
+        <argument line="345">
           <name>$libreta</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="283" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="370" package="EvernoteUcab">
         <name>DeleteBook</name>
         <full_name>DeleteBook</full_name>
-        <docblock line="274">
+        <docblock line="361">
           <description><![CDATA[Funcion DeleteBook($username, $libreta) funcion que se encarga
 de borarr una libreta al usuario.]]></description>
           <long-description><![CDATA[<p>realizando llamada
 llamada al model encargadose el de dicha actividad</p>]]></long-description>
-          <tag line="274" name="category" description="Controller"/>
-          <tag line="274" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="361" name="category" description="Controller"/>
+          <tag line="361" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="274" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
+          <tag line="361" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="283">
+        <argument line="370">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="283">
+        <argument line="370">
           <name>$libreta</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="303" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="390" package="EvernoteUcab">
         <name>uploadNotebookViewDelete</name>
         <full_name>uploadNotebookViewDelete</full_name>
-        <docblock line="293">
+        <docblock line="380">
           <description><![CDATA[Funcion uploadLastBooks($username) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las ultimas 3 libretas
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista al momento del login exitoso del usuario.</p>]]></long-description>
-          <tag line="293" name="category" description="Controller"/>
-          <tag line="293" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="380" name="category" description="Controller"/>
+          <tag line="380" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="293" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="380" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="303">
+        <argument line="390">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="366" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="453" package="EvernoteUcab">
         <name>uploadNotebookView</name>
         <full_name>uploadNotebookView</full_name>
-        <docblock line="356">
+        <docblock line="443">
           <description><![CDATA[Funcion uploadNotebookView($username) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las que libretas han sido
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 para usarse al momento de q el usuario quiera ver todas sus libretas.</p>]]></long-description>
-          <tag line="356" name="category" description="Controller"/>
-          <tag line="356" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="443" name="category" description="Controller"/>
+          <tag line="443" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="356" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="443" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="366">
+        <argument line="453">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="432" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="536" package="EvernoteUcab">
         <name>uploadNotebookViewModify</name>
         <full_name>uploadNotebookViewModify</full_name>
-        <docblock line="422">
+        <docblock line="526">
           <description><![CDATA[Funcion uploadNotebookViewModify Esta funcion se encarga de
 preguntar a la capa de modelo, por una libreta han sido
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 para usarse al momento de q el usuario quiera modificarla</p>]]></long-description>
-          <tag line="422" name="category" description="Controller"/>
-          <tag line="422" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="526" name="category" description="Controller"/>
+          <tag line="526" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="422" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="526" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="432">
+        <argument line="536">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="499" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="619" package="EvernoteUcab">
         <name>uploadNotebookView2</name>
         <full_name>uploadNotebookView2</full_name>
-        <docblock line="489">
+        <docblock line="609">
           <description><![CDATA[Funcion uploadNotebookView2($username) Esta funcion se encarga de
 preguntar a la capa de modelo, por una libreta han sido
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 para usarse al momento de q el usuario quiera modificarla</p>]]></long-description>
-          <tag line="489" name="category" description="Controller"/>
-          <tag line="489" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="609" name="category" description="Controller"/>
+          <tag line="609" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="489" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="609" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="499">
+        <argument line="619">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="568" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="688" package="EvernoteUcab">
         <name>uploadNotebookView3Delete</name>
         <full_name>uploadNotebookView3Delete</full_name>
-        <docblock line="558">
+        <docblock line="678">
           <description><![CDATA[Funcion uploadNotebookView3Delete($username) Esta funcion se encarga de
 preguntar a la capa de modelo, por una libreta han sido
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 para usarse al momento de q el usuario quiera borrarla</p>]]></long-description>
-          <tag line="558" name="category" description="Controller"/>
-          <tag line="558" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="678" name="category" description="Controller"/>
+          <tag line="678" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="558" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="678" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="568">
+        <argument line="688">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -768,7 +780,7 @@ para usarse al momento de q el usuario quiera borrarla</p>]]></long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/libreta.php</error>
     </parse_markers>
   </file>
-  <file path="application/controllers/nota.php" hash="44a5fd887087f873fa4b583eef93d8ee" package="Default">
+  <file path="application/controllers/nota.php" hash="4235c9ddfff7196b49671052ef2bef03" package="Default">
     <class final="false" abstract="false" namespace="global" line="15" package="EvernoteUcab">
       <extends>\CI_Controller</extends>
       <name>nota</name>
@@ -793,341 +805,350 @@ el controlador]]></description>
           <tag line="17" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="EvernoteUcab">
         <name>index</name>
         <full_name>index</full_name>
-        <docblock line="31">
+        <docblock line="32">
           <description><![CDATA[Funcion index($username) se realizan las
 llamadas basicas para la carga de una de las vistas
 de creacion de libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="31" name="category" description="Controller"/>
-          <tag line="31" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="32" name="category" description="Controller"/>
+          <tag line="32" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="39">
+        <argument line="40">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="63" package="EvernoteUcab">
         <name>uploadCombobox</name>
         <full_name>uploadCombobox</full_name>
-        <docblock line="51">
+        <docblock line="53">
           <description><![CDATA[Funcion uploadCombobox($username) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las  libretas
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista en un combo box para agregar notas a esa libreta</p>]]></long-description>
-          <tag line="51" name="category" description="Controller"/>
-          <tag line="51" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
+          <tag line="53" name="category" description="Controller"/>
+          <tag line="53" name="param" description="usuario que se encuentra activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="51" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="53" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="61">
+        <argument line="63">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="89" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="82" package="EvernoteUcab">
+        <name>uploadCombobox2</name>
+        <full_name>uploadCombobox2</full_name>
+        <argument line="82">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="110" package="EvernoteUcab">
         <name>SelectNote</name>
         <full_name>SelectNote</full_name>
-        <docblock line="80">
+        <docblock line="101">
           <description><![CDATA[Funcion SelectNote($username, $id) se realizan las
 llamadas basicas para la carga de una de las vistas
 de creacion de libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="80" name="category" description="Controller"/>
-          <tag line="80" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="101" name="category" description="Controller"/>
+          <tag line="101" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="80" name="param" description="id de la nota" type="int" variable="$id">
+          <tag line="101" name="param" description="id de la nota" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="89">
+        <argument line="110">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="89">
+        <argument line="110">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="111" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="152" package="EvernoteUcab">
         <name>SelectNoteConsulta</name>
         <full_name>SelectNoteConsulta</full_name>
-        <docblock line="102">
+        <docblock line="143">
           <description><![CDATA[Funcion SelectNoteConsulta($username, $id) se realizan las
 llamadas basicas para la carga de una de las vistas
 de creacion de libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="102" name="category" description="Controller"/>
-          <tag line="102" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="143" name="category" description="Controller"/>
+          <tag line="143" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="102" name="param" description="id de la nota" type="int" variable="$id">
+          <tag line="143" name="param" description="id de la nota" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="111">
+        <argument line="152">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="111">
+        <argument line="152">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="134" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="175" package="EvernoteUcab">
         <name>uploadListNotes</name>
         <full_name>uploadListNotes</full_name>
-        <docblock line="124">
+        <docblock line="165">
           <description><![CDATA[Funcion uploadListNotes($id_libreta) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las  notas
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista en un div para ver la informacion notas a esa libreta</p>]]></long-description>
-          <tag line="124" name="category" description="Controller"/>
-          <tag line="124" name="param" description="id de la libreta que se encuentra activa" type="string" variable="$id_libreta">
+          <tag line="165" name="category" description="Controller"/>
+          <tag line="165" name="param" description="id de la libreta que se encuentra activa" type="string" variable="$id_libreta">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="124" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="165" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="134">
+        <argument line="175">
           <name>$id_libreta</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="209" package="EvernoteUcab">
         <name>indexModify2</name>
         <full_name>indexModify2</full_name>
-        <docblock line="159">
+        <docblock line="200">
           <description><![CDATA[Funcion indexModify2($username, $id) se realizan las
 llamadas basicas para la carga de una de las vistas
 de creacion de nota]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="159" name="category" description="Controller"/>
-          <tag line="159" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="200" name="category" description="Controller"/>
+          <tag line="200" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="159" name="param" description="id de la nota" type="int" variable="$id">
+          <tag line="200" name="param" description="id de la nota" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="168">
+        <argument line="209">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="168">
+        <argument line="209">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="191" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="232" package="EvernoteUcab">
         <name>uploadNoteDetail</name>
         <full_name>uploadNoteDetail</full_name>
-        <docblock line="181">
+        <docblock line="222">
           <description><![CDATA[Funcion uploadNoteDetail($id_note) Esta funcion se encarga de
 preguntar a la capa de modelo, la informacion de una nota especifica
 Para luego armar HTML que sera pasado a la
 vista en un div para ver la informacion notas a esa libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="181" name="category" description="Controller"/>
-          <tag line="181" name="param" description="usuario que se encuentra activo" type="string" variable="$id_note">
+          <tag line="222" name="category" description="Controller"/>
+          <tag line="222" name="param" description="usuario que se encuentra activo" type="string" variable="$id_note">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="181" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="222" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="191">
+        <argument line="232">
           <name>$id_note</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="221" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="262" package="EvernoteUcab">
         <name>indexDelete</name>
         <full_name>indexDelete</full_name>
-        <docblock line="212">
+        <docblock line="253">
           <description><![CDATA[Funcion indexDelete($username, $idlibreta) se realizan las
 llamadas basicas para la carga de una de las vistas
 de creacion de nota]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="212" name="category" description="Controller"/>
-          <tag line="212" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="253" name="category" description="Controller"/>
+          <tag line="253" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="212" name="param" description="id de la nota" type="int" variable="$id">
+          <tag line="253" name="param" description="id de la nota" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="221">
+        <argument line="262">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="221">
+        <argument line="262">
           <name>$idlibreta</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="243" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="304" package="EvernoteUcab">
         <name>AddNote</name>
         <full_name>AddNote</full_name>
-        <docblock line="234">
+        <docblock line="295">
           <description><![CDATA[Funcion AddNote($username) funcion que se encarga
 de crear una nota al usuario.]]></description>
           <long-description><![CDATA[<p>realizando llamada
 llamada al model encargadose el de dicha actividad</p>]]></long-description>
-          <tag line="234" name="category" description="Controller"/>
-          <tag line="234" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="295" name="category" description="Controller"/>
+          <tag line="295" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="234" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
+          <tag line="295" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="243">
+        <argument line="304">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="273" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="346" package="EvernoteUcab">
         <name>ModifyNote</name>
         <full_name>ModifyNote</full_name>
-        <docblock line="264">
+        <docblock line="337">
           <description><![CDATA[Funcion ModifyNote($username, $nota) funcion que se encarga
 de modificar una nota al usuario.]]></description>
           <long-description><![CDATA[<p>realizando llamada
 llamada al model encargadose el de dicha actividad</p>]]></long-description>
-          <tag line="264" name="category" description="Controller"/>
-          <tag line="264" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="337" name="category" description="Controller"/>
+          <tag line="337" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="264" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
+          <tag line="337" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="273">
+        <argument line="346">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="273">
+        <argument line="346">
           <name>$nota</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="296" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="369" package="EvernoteUcab">
         <name>DeleteNote</name>
         <full_name>DeleteNote</full_name>
-        <docblock line="286">
+        <docblock line="359">
           <description><![CDATA[Funcion DeleteNote($username, $nota2, $idlibreta2) funcion que se encarga
 de borarr una nota al usuario.]]></description>
           <long-description><![CDATA[<p>realizando llamada
 llamada al model encargadose el de dicha actividad</p>]]></long-description>
-          <tag line="286" name="category" description="Controller"/>
-          <tag line="286" name="param" description="usuario activo" type="string" variable="$username">
+          <tag line="359" name="category" description="Controller"/>
+          <tag line="359" name="param" description="usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="286" name="param" description="id de la nota a eliminar" type="int" variable="$nota2">
+          <tag line="359" name="param" description="id de la nota a eliminar" type="int" variable="$nota2">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="286" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
+          <tag line="359" name="param" description="id de la libreta a borrar" type="int" variable="$libreta">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="296">
+        <argument line="369">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="296">
+        <argument line="369">
           <name>$nota2</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="296">
+        <argument line="369">
           <name>$idlibreta2</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="319" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="392" package="EvernoteUcab">
         <name>uploadNoteView</name>
         <full_name>uploadNoteView</full_name>
-        <docblock line="308">
+        <docblock line="381">
           <description><![CDATA[Funcion uploadNoteView($username, $id) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las  notas
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista en un div para ver la informacion notas a esa nota</p>]]></long-description>
-          <tag line="308" name="category" description="Controller"/>
-          <tag line="308" name="param" description="username usuario activo" type="string" variable="$username">
+          <tag line="381" name="category" description="Controller"/>
+          <tag line="381" name="param" description="username usuario activo" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="308" name="param" description="id de la libreta que se encuentra activa" type="string" variable="$id">
+          <tag line="381" name="param" description="id de la libreta que se encuentra activa" type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="308" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="381" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="319">
+        <argument line="392">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="319">
+        <argument line="392">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="394" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="467" package="EvernoteUcab">
         <name>NoteViewDelete</name>
         <full_name>NoteViewDelete</full_name>
-        <docblock line="383">
+        <docblock line="456">
           <description><![CDATA[Funcion NoteViewDelete($username, $id) Esta funcion se encarga de
 preguntar a la capa de modelo, cuales han sido las  notas
 creadas por el usuario.]]></description>
           <long-description><![CDATA[<p>Para luego armar HTML que sera pasado a la
 vista en un div para ver la informacion notas a esa nota
 para borrarla</p>]]></long-description>
-          <tag line="383" name="category" description="Controller"/>
-          <tag line="383" name="param" description="id de la libreta que se encuentra activa" type="string" variable="$username">
+          <tag line="456" name="category" description="Controller"/>
+          <tag line="456" name="param" description="id de la libreta que se encuentra activa" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="383" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
+          <tag line="456" name="return" description="se devuelven a la vista HTLM para ser Impreso" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="394">
+        <argument line="467">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="394">
+        <argument line="467">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -1136,17 +1157,536 @@ para borrarla</p>]]></long-description>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/nota.php</error>
-      <error line="212" code="50014">Name of argument $idlibreta does not match with the DocBlock's name $id in indexDelete()</error>
-      <notice line="212" code="50013">Parameter $id could not be found in indexDelete()</notice>
-      <notice line="234" code="50013">Parameter $libreta could not be found in AddNote()</notice>
-      <error line="264" code="50014">Name of argument $nota does not match with the DocBlock's name $libreta in ModifyNote()</error>
-      <notice line="264" code="50013">Parameter $libreta could not be found in ModifyNote()</notice>
-      <error line="286" code="50014">Name of argument $idlibreta2 does not match with the DocBlock's name $libreta in DeleteNote()</error>
-      <notice line="286" code="50013">Parameter $libreta could not be found in DeleteNote()</notice>
-      <error line="383" code="50015">Argument $id is missing from the Docblock of NoteViewDelete()</error>
+      <error line="82" code="50010">No DocBlock was found for method uploadCombobox2()</error>
+      <error line="253" code="50014">Name of argument $idlibreta does not match with the DocBlock's name $id in indexDelete()</error>
+      <notice line="253" code="50013">Parameter $id could not be found in indexDelete()</notice>
+      <notice line="295" code="50013">Parameter $libreta could not be found in AddNote()</notice>
+      <error line="337" code="50014">Name of argument $nota does not match with the DocBlock's name $libreta in ModifyNote()</error>
+      <notice line="337" code="50013">Parameter $libreta could not be found in ModifyNote()</notice>
+      <error line="359" code="50014">Name of argument $idlibreta2 does not match with the DocBlock's name $libreta in DeleteNote()</error>
+      <notice line="359" code="50013">Parameter $libreta could not be found in DeleteNote()</notice>
+      <error line="456" code="50015">Argument $id is missing from the Docblock of NoteViewDelete()</error>
     </parse_markers>
   </file>
-  <file path="application/controllers/upload.php" hash="fa004c65ce30bb03129ebe1428506e9c" package="Default">
+  <file path="application/controllers/search.php" hash="dd18e73a32f22b7a8581f1130599202f" package="Default">
+    <class final="false" abstract="false" namespace="global" line="18" package="EvernoteUcab">
+      <extends>\CI_Controller</extends>
+      <name>search</name>
+      <full_name>\search</full_name>
+      <docblock line="6">
+        <description><![CDATA[EvernoteUcab]]></description>
+        <long-description><![CDATA[<p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p>]]></long-description>
+        <tag line="6" name="package" description="EvernoteUcab"/>
+        <tag line="6" name="author" description="Abel Osorio Hector Matheus Luis Tovar"/>
+        <tag line="6" name="copyright" description="Copyright (c) 2012,"/>
+        <tag line="6" name="filesource" description=""/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="EvernoteUcab">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="20">
+          <description><![CDATA[Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="20" name="category" description="Controller"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="EvernoteUcab">
+        <name>indexsearch</name>
+        <full_name>indexsearch</full_name>
+        <argument line="35">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="47" package="EvernoteUcab">
+        <name>indexsearchResult</name>
+        <full_name>indexsearchResult</full_name>
+        <argument line="47">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="81" package="EvernoteUcab">
+        <name>search</name>
+        <full_name>search</full_name>
+        <argument line="81">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/search.php</error>
+      <error line="35" code="50010">No DocBlock was found for method indexsearch()</error>
+      <error line="47" code="50010">No DocBlock was found for method indexsearchResult()</error>
+      <error line="81" code="50010">No DocBlock was found for method search()</error>
+    </parse_markers>
+  </file>
+  <file path="application/controllers/test/example_tests.php" hash="bf45309e39051142c01c652b504ec6d7" package="Default">
+    <include line="3" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="16" package="EvernoteUcab">
+      <extends>\Toast</extends>
+      <name>Example_tests</name>
+      <full_name>\Example_tests</full_name>
+      <docblock line="5">
+        <description><![CDATA[EvernoteUcab
+h
+An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="EvernoteUcab"/>
+        <tag line="5" name="author" description="Abel Osorio Hector Matheus Luis Tovar"/>
+        <tag line="5" name="copyright" description="Copyright (c) 2012,"/>
+        <tag line="5" name="filesource" description=""/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="EvernoteUcab">
+        <name>Example_tests</name>
+        <full_name>Example_tests</full_name>
+        <docblock line="18">
+          <description><![CDATA[Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="category" description="Controller"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="EvernoteUcab">
+        <name>_pre</name>
+        <full_name>_pre</full_name>
+        <docblock line="35">
+          <description><![CDATA[Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="category" description="Controller"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="54" package="EvernoteUcab">
+        <name>_post</name>
+        <full_name>_post</full_name>
+        <docblock line="47">
+          <description><![CDATA[Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="category" description="Controller"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="EvernoteUcab">
+        <name>test_login_succesfull</name>
+        <full_name>test_login_succesfull</full_name>
+        <docblock line="61">
+          <description><![CDATA[Funcion Constructor del controlador, se realizan cargas de
+algunos modelos y helpers usuados en el funcionamiento de
+el controlador]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="category" description="Controller"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="EvernoteUcab">
+        <name>test_login_fail</name>
+        <full_name>test_login_fail</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="EvernoteUcab">
+        <name>test_register_succesful</name>
+        <full_name>test_register_succesful</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="104" package="EvernoteUcab">
+        <name>test_register_fail</name>
+        <full_name>test_register_fail</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="120" package="EvernoteUcab">
+        <name>test_dropbox_conection_succesfull</name>
+        <full_name>test_dropbox_conection_succesfull</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/test/example_tests.php</error>
+      <error line="80" code="50010">No DocBlock was found for method test_login_fail()</error>
+      <error line="90" code="50010">No DocBlock was found for method test_register_succesful()</error>
+      <error line="104" code="50010">No DocBlock was found for method test_register_fail()</error>
+      <error line="120" code="50010">No DocBlock was found for method test_dropbox_conection_succesfull()</error>
+    </parse_markers>
+  </file>
+  <file path="application/controllers/test/Toast.php" hash="37399e5c9447ed34cf5d0b2f1ec2c5cd" package="Default">
+    <class final="true" abstract="true" namespace="global" line="14" package="EvernoteUcab">
+      <extends>\CI_Controller</extends>
+      <name>Toast</name>
+      <full_name>\Toast</full_name>
+      <docblock line="2">
+        <description><![CDATA[EvernoteUcab]]></description>
+        <long-description><![CDATA[<p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p>]]></long-description>
+        <tag line="2" name="package" description="EvernoteUcab"/>
+        <tag line="2" name="author" description="Abel Osorio Hector Matheus Luis Tovar"/>
+        <tag line="2" name="copyright" description="Copyright (c) 2012,"/>
+        <tag line="2" name="filesource" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="18" namespace="global" package="Default">
+        <name>$test_dir</name>
+        <default><![CDATA['/test/']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="20" namespace="global" package="Default">
+        <name>$modelname</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" namespace="global" package="Default">
+        <name>$modelname_short</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="22" namespace="global" package="Default">
+        <name>$message</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="23" namespace="global" package="Default">
+        <name>$messages</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="24" namespace="global" package="Default">
+        <name>$asserts</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="26" package="EvernoteUcab">
+        <name>Toast</name>
+        <full_name>Toast</full_name>
+        <argument line="26">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="EvernoteUcab">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="EvernoteUcab">
+        <name>show_results</name>
+        <full_name>show_results</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="EvernoteUcab">
+        <name>_show_all</name>
+        <full_name>_show_all</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="EvernoteUcab">
+        <name>_show</name>
+        <full_name>_show</full_name>
+        <argument line="61">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="EvernoteUcab">
+        <name>_run_all</name>
+        <full_name>_run_all</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="81" package="EvernoteUcab">
+        <name>_run</name>
+        <full_name>_run</full_name>
+        <argument line="81">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="110" package="EvernoteUcab">
+        <name>_get_test_methods</name>
+        <full_name>_get_test_methods</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="133" package="EvernoteUcab">
+        <name>_remap</name>
+        <full_name>_remap</full_name>
+        <docblock line="122">
+          <description><![CDATA[Remap function (CI magic function)]]></description>
+          <long-description><![CDATA[<p>Reroutes any request that matches a test function in the subclass
+to the _show() function.</p>
+
+<p>This makes it possible to request /my_test_class/my_test_function
+to test just that single function, and /my_test_class to test all the
+functions in the class.</p>]]></long-description>
+        </docblock>
+        <argument line="133">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="151" package="EvernoteUcab">
+        <name>_pre</name>
+        <full_name>_pre</full_name>
+        <docblock line="147">
+          <description><![CDATA[Cleanup function that is run before each test case
+Override this method in test classes!]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="157" package="EvernoteUcab">
+        <name>_post</name>
+        <full_name>_post</full_name>
+        <docblock line="153">
+          <description><![CDATA[Cleanup function that is run after each test case
+Override this method in test classes!]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="160" package="EvernoteUcab">
+        <name>_fail</name>
+        <full_name>_fail</full_name>
+        <argument line="160">
+          <name>$message</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="EvernoteUcab">
+        <name>_assert_true</name>
+        <full_name>_assert_true</full_name>
+        <argument line="168">
+          <name>$assertion</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="177" package="EvernoteUcab">
+        <name>_assert_false</name>
+        <full_name>_assert_false</full_name>
+        <argument line="177">
+          <name>$assertion</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="186" package="EvernoteUcab">
+        <name>_assert_true_strict</name>
+        <full_name>_assert_true_strict</full_name>
+        <argument line="186">
+          <name>$assertion</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="195" package="EvernoteUcab">
+        <name>_assert_false_strict</name>
+        <full_name>_assert_false_strict</full_name>
+        <argument line="195">
+          <name>$assertion</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="204" package="EvernoteUcab">
+        <name>_assert_equals</name>
+        <full_name>_assert_equals</full_name>
+        <argument line="204">
+          <name>$base</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="204">
+          <name>$check</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="213" package="EvernoteUcab">
+        <name>_assert_not_equals</name>
+        <full_name>_assert_not_equals</full_name>
+        <argument line="213">
+          <name>$base</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="213">
+          <name>$check</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="222" package="EvernoteUcab">
+        <name>_assert_equals_strict</name>
+        <full_name>_assert_equals_strict</full_name>
+        <argument line="222">
+          <name>$base</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="222">
+          <name>$check</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="231" package="EvernoteUcab">
+        <name>_assert_not_equals_strict</name>
+        <full_name>_assert_not_equals_strict</full_name>
+        <argument line="231">
+          <name>$base</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$check</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="240" package="EvernoteUcab">
+        <name>_assert_empty</name>
+        <full_name>_assert_empty</full_name>
+        <argument line="240">
+          <name>$assertion</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="249" package="EvernoteUcab">
+        <name>_assert_not_empty</name>
+        <full_name>_assert_not_empty</full_name>
+        <argument line="249">
+          <name>$assertion</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <todo line="17">autoset</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/test/Toast.php</error>
+      <error line="18" code="50018">No DocBlock was found for property $test_dir</error>
+      <error line="20" code="50018">No DocBlock was found for property $modelname</error>
+      <error line="21" code="50018">No DocBlock was found for property $modelname_short</error>
+      <error line="22" code="50018">No DocBlock was found for property $message</error>
+      <error line="23" code="50018">No DocBlock was found for property $messages</error>
+      <error line="24" code="50018">No DocBlock was found for property $asserts</error>
+      <error line="26" code="50010">No DocBlock was found for method Toast()</error>
+      <error line="35" code="50010">No DocBlock was found for method index()</error>
+      <error line="40" code="50010">No DocBlock was found for method show_results()</error>
+      <error line="49" code="50010">No DocBlock was found for method _show_all()</error>
+      <error line="61" code="50010">No DocBlock was found for method _show()</error>
+      <error line="73" code="50010">No DocBlock was found for method _run_all()</error>
+      <error line="81" code="50010">No DocBlock was found for method _run()</error>
+      <error line="110" code="50010">No DocBlock was found for method _get_test_methods()</error>
+      <error line="122" code="50015">Argument $method is missing from the Docblock of _remap()</error>
+      <error line="160" code="50010">No DocBlock was found for method _fail()</error>
+      <error line="168" code="50010">No DocBlock was found for method _assert_true()</error>
+      <error line="177" code="50010">No DocBlock was found for method _assert_false()</error>
+      <error line="186" code="50010">No DocBlock was found for method _assert_true_strict()</error>
+      <error line="195" code="50010">No DocBlock was found for method _assert_false_strict()</error>
+      <error line="204" code="50010">No DocBlock was found for method _assert_equals()</error>
+      <error line="213" code="50010">No DocBlock was found for method _assert_not_equals()</error>
+      <error line="222" code="50010">No DocBlock was found for method _assert_equals_strict()</error>
+      <error line="231" code="50010">No DocBlock was found for method _assert_not_equals_strict()</error>
+      <error line="240" code="50010">No DocBlock was found for method _assert_empty()</error>
+      <error line="249" code="50010">No DocBlock was found for method _assert_not_empty()</error>
+    </parse_markers>
+  </file>
+  <file path="application/controllers/test/Toast_all.php" hash="a4f0da6bc4c79ddbbe5c386590c88302" package="Default">
+    <class final="false" abstract="false" namespace="global" line="15" package="EvernoteUcab">
+      <extends>\CI_Controller</extends>
+      <name>Toast_all</name>
+      <full_name>\Toast_all</full_name>
+      <docblock line="3">
+        <description><![CDATA[EvernoteUcab]]></description>
+        <long-description><![CDATA[<p>An Cloud Computering, Cloud storage base web app
+for remeinders, Notebooks and MORE</p>]]></long-description>
+        <tag line="3" name="package" description="EvernoteUcab"/>
+        <tag line="3" name="author" description="Abel Osorio Hector Matheus Luis Tovar"/>
+        <tag line="3" name="copyright" description="Copyright (c) 2012,"/>
+        <tag line="3" name="filesource" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="19" namespace="global" package="Default">
+        <name>$test_dir</name>
+        <default><![CDATA['/test/']]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="22" namespace="global" package="Default">
+        <name>$skip</name>
+        <default><![CDATA[array('Toast.php', 'Toast_all.php')]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="29" namespace="global" package="Default">
+        <name>$multithreaded</name>
+        <default><![CDATA[false]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="EvernoteUcab">
+        <name>Toast_all</name>
+        <full_name>Toast_all</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="EvernoteUcab">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="76" package="EvernoteUcab">
+        <name>_get_test_files</name>
+        <full_name>_get_test_files</full_name>
+        <docblock line="71">
+          <description><![CDATA[Get a list of all the test files in the test dir]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="return" description="of filenames (without '.php' extensions)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="100" package="EvernoteUcab">
+        <name>_curl_get</name>
+        <full_name>_curl_get</full_name>
+        <docblock line="94">
+          <description><![CDATA[Fetch a number of URLs as a string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="94" name="return" description="containing the (concatenated) HTML documents" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="94" name="param" description="array of fully qualified URLs" type="array" variable="$urls">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="100">
+          <name>$urls</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="120" package="EvernoteUcab">
+        <name>_curl_get_multi</name>
+        <full_name>_curl_get_multi</full_name>
+        <docblock line="114">
+          <description><![CDATA[Fetch a number of URLs as a string (multithreaded)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="114" name="return" description="containing the (concatenated) HTML documents" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="114" name="param" description="array of fully qualified URLs" type="array" variable="$urls">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="120">
+          <name>$urls</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <todo line="18">autoset</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/test/Toast_all.php</error>
+      <error line="19" code="50018">No DocBlock was found for property $test_dir</error>
+      <error line="22" code="50018">No DocBlock was found for property $skip</error>
+      <error line="29" code="50018">No DocBlock was found for property $multithreaded</error>
+      <error line="31" code="50010">No DocBlock was found for method Toast_all()</error>
+      <error line="36" code="50010">No DocBlock was found for method index()</error>
+    </parse_markers>
+  </file>
+  <file path="application/controllers/upload.php" hash="fe51297574b0cef54f5a4a12a40b5eca" package="Default">
     <class final="false" abstract="false" namespace="global" line="16" package="EvernoteUcab">
       <extends>\CI_Controller</extends>
       <name>Upload</name>
@@ -1171,78 +1711,78 @@ el controlador]]></description>
           <tag line="18" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="EvernoteUcab">
         <name>index</name>
         <full_name>index</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="47" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="EvernoteUcab">
         <name>do_upload</name>
         <full_name>do_upload</full_name>
-        <docblock line="41">
+        <docblock line="38">
           <description><![CDATA[Funcion do_upload() Esta funcion se encarga realiar la carga de los adjuntos
 al servidor para ser luego subidos a dropbox]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="41" name="category" description="Controller"/>
+          <tag line="38" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="70" package="EvernoteUcab">
         <name>request_dropbox</name>
         <full_name>request_dropbox</full_name>
-        <docblock line="67">
+        <docblock line="64">
           <description><![CDATA[Funcion request_dropbox() Esta funcion se encarga realizar peticion al
 api de DROPBOX para autentificar al usuario]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="67" name="category" description="Controller"/>
+          <tag line="64" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="87" package="EvernoteUcab">
         <name>access_dropbox</name>
         <full_name>access_dropbox</full_name>
-        <docblock line="83">
+        <docblock line="80">
           <description><![CDATA[Funcion access_dropbox() Esta funcion se encarga realizar peticion al
 api de DROPBOX para autentificar al usuario y deja al usuario introducir su clave
 y usuario de dropbox]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="83" name="category" description="Controller"/>
+          <tag line="80" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="106" package="EvernoteUcab">
         <name>test_dropbox</name>
         <full_name>test_dropbox</full_name>
-        <docblock line="103">
+        <docblock line="100">
           <description><![CDATA[Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
 api de DROPBOX para verificar que si se autentifico usuario]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="103" name="category" description="Controller"/>
+          <tag line="100" name="category" description="Controller"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="129" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="126" package="EvernoteUcab">
         <name>upload_file</name>
         <full_name>upload_file</full_name>
-        <docblock line="122">
+        <docblock line="119">
           <description><![CDATA[Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al
 api de DROPBOX para subir archivo]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="122" name="category" description="Controller"/>
-          <tag line="122" name="param" description="nombre del archivo a subir" type="string" variable="$filename">
+          <tag line="119" name="category" description="Controller"/>
+          <tag line="119" name="param" description="nombre del archivo a subir" type="string" variable="$filename">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="129">
+        <argument line="126">
           <name>$filename</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="153" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="150" package="EvernoteUcab">
         <name>create_folder</name>
         <full_name>create_folder</full_name>
-        <docblock line="146">
+        <docblock line="143">
           <description><![CDATA[Funcion create_folder()  Esta funcion se encarga realizar peticion al
 api de DROPBOX para crear carpeta en dropbox]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="146" name="category" description="Controller"/>
-          <tag line="146" name="param" description="nombre del archivo a subir" type="string" variable="$filename">
+          <tag line="143" name="category" description="Controller"/>
+          <tag line="143" name="param" description="nombre del archivo a subir" type="string" variable="$filename">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
@@ -1250,8 +1790,8 @@ api de DROPBOX para crear carpeta en dropbox]]></description>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/controllers/upload.php</error>
-      <error line="38" code="50010">No DocBlock was found for method index()</error>
-      <notice line="146" code="50013">Parameter $filename could not be found in create_folder()</notice>
+      <error line="35" code="50010">No DocBlock was found for method index()</error>
+      <notice line="143" code="50013">Parameter $filename could not be found in create_folder()</notice>
     </parse_markers>
   </file>
   <file path="application/controllers/usuario.php" hash="a94e9c46ee03d6da69c879740607ee4a" package="Default">
@@ -1683,7 +2223,7 @@ should use this instead of writing them out each time.</p>]]></long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/helpers/oauth_helper.php</error>
     </parse_markers>
   </file>
-  <file path="application/libraries/Dropbox.php" hash="ea7669a7ff71d5921e905f44af575faf" package="Default">
+  <file path="application/libraries/Dropbox.php" hash="5a013178c0909072d539db7ec18930f9" package="Default">
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
       <extends/>
       <name>Dropbox</name>
@@ -2468,6 +3008,16 @@ on how to update your local state to match the server's state.]]></description>
       <error line="477" code="50010">No DocBlock was found for method _connect()</error>
     </parse_markers>
   </file>
+  <file path="application/logs/log-2012-11-28.php" hash="cf41f95ce06675c4852abee3ea210f3c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/logs/log-2012-11-28.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/logs/log-2012-12-01.php" hash="00e923d862d92240eab4c419e58bc3f8" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/logs/log-2012-12-01.php</error>
+    </parse_markers>
+  </file>
   <file path="application/models/adjunto_model.php" hash="fbfe2a4e66f7bbdfabb545a1aabbbe37" package="Default">
     <class final="false" abstract="false" namespace="global" line="17" package="EvernoteUcab">
       <extends>\CI_Model</extends>
@@ -2590,7 +3140,12 @@ un archivo adjunto]]></description>
       <error line="85" code="50010">No DocBlock was found for method setLink()</error>
     </parse_markers>
   </file>
-  <file path="application/models/etiqueta_model.php" hash="37636c3dc0e3bc6bdc66a4d8ffd4e336" package="Default">
+  <file path="application/models/Buscar_Model.php" hash="e534f864e800f6935132f14fd3749075" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/models/Buscar_Model.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/models/etiqueta_model.php" hash="8bdb233b83350774dd967983fc5c26fb" package="Default">
     <class final="false" abstract="false" namespace="global" line="16" package="EvernoteUcab">
       <extends>\CI_Model</extends>
       <name>Etiqueta_Model</name>
@@ -2604,12 +3159,87 @@ for remeinders, Notebooks and MORE</p>]]></long-description>
         <tag line="5" name="copyright" description="Copyright (c) 2012,"/>
         <tag line="5" name="filesource" description=""/>
       </docblock>
+      <property final="false" static="false" visibility="private" line="18" namespace="global" package="Default">
+        <name>$id_etiqueta</name>
+        <default><![CDATA['']]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$texto</name>
+        <default><![CDATA['']]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="EvernoteUcab">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="EvernoteUcab">
+        <name>tamListTag</name>
+        <full_name>tamListTag</full_name>
+        <argument line="28">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="EvernoteUcab">
+        <name>etiquetaAtIndex</name>
+        <full_name>etiquetaAtIndex</full_name>
+        <argument line="33">
+          <name>$index</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="54" package="EvernoteUcab">
+        <name>createTag</name>
+        <full_name>createTag</full_name>
+        <argument line="54">
+          <name>$content</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="EvernoteUcab">
+        <name>getId_etiqueta</name>
+        <full_name>getId_etiqueta</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="72" package="EvernoteUcab">
+        <name>setId_etiqueta</name>
+        <full_name>setId_etiqueta</full_name>
+        <argument line="72">
+          <name>$id_etiqueta</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="76" package="EvernoteUcab">
+        <name>getTexto</name>
+        <full_name>getTexto</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="EvernoteUcab">
+        <name>setTexto</name>
+        <full_name>setTexto</full_name>
+        <argument line="80">
+          <name>$texto</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/models/etiqueta_model.php</error>
+      <error line="18" code="50018">No DocBlock was found for property $id_etiqueta</error>
+      <error line="19" code="50018">No DocBlock was found for property $texto</error>
+      <error line="23" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="28" code="50010">No DocBlock was found for method tamListTag()</error>
+      <error line="33" code="50010">No DocBlock was found for method etiquetaAtIndex()</error>
+      <error line="54" code="50010">No DocBlock was found for method createTag()</error>
+      <error line="68" code="50010">No DocBlock was found for method getId_etiqueta()</error>
+      <error line="72" code="50010">No DocBlock was found for method setId_etiqueta()</error>
+      <error line="76" code="50010">No DocBlock was found for method getTexto()</error>
+      <error line="80" code="50010">No DocBlock was found for method setTexto()</error>
     </parse_markers>
   </file>
-  <file path="application/models/libreta_model.php" hash="4089691a9cf607f342e8260f5821ad71" package="Default">
+  <file path="application/models/libreta_model.php" hash="44796242a76f0ff313e9184963a51464" package="Default">
     <class final="false" abstract="false" namespace="global" line="15" package="EvernoteUcab">
       <extends>\CI_Model</extends>
       <name>Libreta_Model</name>
@@ -2761,147 +3391,165 @@ a una libreta]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="115" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="EvernoteUcab">
+        <name>getlibreta</name>
+        <full_name>getlibreta</full_name>
+        <argument line="108">
+          <name>$numeroRegistros</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="108">
+          <name>$inicio</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="124" package="EvernoteUcab">
+        <name>getCantidad</name>
+        <full_name>getCantidad</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="141" package="EvernoteUcab">
         <name>tamListLibreta</name>
         <full_name>tamListLibreta</full_name>
-        <docblock line="107">
+        <docblock line="133">
           <description><![CDATA[Esta Funcion tamListLibreta($id)
 se encarga de contar cuantas libretas tiene un usuario en la base de datos]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="107" name="category" description="Modelo"/>
-          <tag line="107" name="param" description="nombre del usuario" type="string" variable="$username">
+          <tag line="133" name="category" description="Modelo"/>
+          <tag line="133" name="param" description="nombre del usuario" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="107" name="return" description="dice cantidad de libretas que tiene el usuario" type="int">
+          <tag line="133" name="return" description="dice cantidad de libretas que tiene el usuario" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="115">
+        <argument line="141">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="130" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="156" package="EvernoteUcab">
         <name>libretaAtIndex</name>
         <full_name>libretaAtIndex</full_name>
-        <docblock line="120">
+        <docblock line="146">
           <description><![CDATA[Esta Funcion libretaAtIndex($index, $id)
 se encarga de contar devolver una libreta que
  tiene un usuario en la base de datos]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="120" name="category" description="Modelo"/>
-          <tag line="120" name="param" description="posicion en la lista de libretas del usuario" type="string" variable="$index">
+          <tag line="146" name="category" description="Modelo"/>
+          <tag line="146" name="param" description="posicion en la lista de libretas del usuario" type="string" variable="$index">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="120" name="param" description="nombre del usuario" type="string" variable="$username">
+          <tag line="146" name="param" description="nombre del usuario" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="120" name="return" description="una libreta" type="object">
+          <tag line="146" name="return" description="una libreta" type="object">
             <type by_reference="false">object</type>
           </tag>
         </docblock>
-        <argument line="130">
+        <argument line="156">
           <name>$index</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="130">
+        <argument line="156">
           <name>$username</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="EvernoteUcab">
-        <name>libretaAtIndex2</name>
-        <full_name>libretaAtIndex2</full_name>
-        <docblock line="154">
-          <description><![CDATA[Esta Funcion libretaAtIndex2($index, $id)
-se encarga de devolver una libreta en especifico
- que tiene un usuario en la base de datos]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="154" name="category" description="Modelo"/>
-          <tag line="154" name="param" description="posicion en la lista de libretas del usuario" type="string" variable="$index">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="154" name="param" description="nombre del usuario" type="string" variable="$username">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="154" name="return" description="una libreta" type="object">
-            <type by_reference="false">object</type>
-          </tag>
-        </docblock>
-        <argument line="164">
-          <name>$index</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="164">
-          <name>$username</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="182" package="EvernoteUcab">
-        <name>getId_libreta</name>
-        <full_name>getId_libreta</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="186" package="EvernoteUcab">
-        <name>setId_libreta</name>
-        <full_name>setId_libreta</full_name>
-        <argument line="186">
-          <name>$id_libreta</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="190" package="EvernoteUcab">
+        <name>libretaAtIndex2</name>
+        <full_name>libretaAtIndex2</full_name>
+        <docblock line="180">
+          <description><![CDATA[Esta Funcion libretaAtIndex2($index, $id)
+se encarga de devolver una libreta en especifico
+ que tiene un usuario en la base de datos]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="180" name="category" description="Modelo"/>
+          <tag line="180" name="param" description="posicion en la lista de libretas del usuario" type="string" variable="$index">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="180" name="param" description="nombre del usuario" type="string" variable="$username">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="180" name="return" description="una libreta" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="190">
+          <name>$index</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="190">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="208" package="EvernoteUcab">
+        <name>getId_libreta</name>
+        <full_name>getId_libreta</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="212" package="EvernoteUcab">
+        <name>setId_libreta</name>
+        <full_name>setId_libreta</full_name>
+        <argument line="212">
+          <name>$id_libreta</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="216" package="EvernoteUcab">
         <name>getNombre</name>
         <full_name>getNombre</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="194" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="220" package="EvernoteUcab">
         <name>setNombre</name>
         <full_name>setNombre</full_name>
-        <argument line="194">
+        <argument line="220">
           <name>$nombre</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="224" package="EvernoteUcab">
         <name>getDescripcion</name>
         <full_name>getDescripcion</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="202" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="228" package="EvernoteUcab">
         <name>setDescripcion</name>
         <full_name>setDescripcion</full_name>
-        <argument line="202">
+        <argument line="228">
           <name>$descripcion</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="206" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="232" package="EvernoteUcab">
         <name>getFecha</name>
         <full_name>getFecha</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="210" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="236" package="EvernoteUcab">
         <name>setFecha</name>
         <full_name>setFecha</full_name>
-        <argument line="210">
+        <argument line="236">
           <name>$fecha</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="214" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="240" package="EvernoteUcab">
         <name>getFk_usuario</name>
         <full_name>getFk_usuario</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="218" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="244" package="EvernoteUcab">
         <name>setFk_usuario</name>
         <full_name>setFk_usuario</full_name>
-        <argument line="218">
+        <argument line="244">
           <name>$fk_usuario</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -2916,16 +3564,18 @@ se encarga de devolver una libreta en especifico
       <error line="20" code="50018">No DocBlock was found for property $fecha</error>
       <error line="21" code="50018">No DocBlock was found for property $fk_usuario</error>
       <error line="23" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="182" code="50010">No DocBlock was found for method getId_libreta()</error>
-      <error line="186" code="50010">No DocBlock was found for method setId_libreta()</error>
-      <error line="190" code="50010">No DocBlock was found for method getNombre()</error>
-      <error line="194" code="50010">No DocBlock was found for method setNombre()</error>
-      <error line="198" code="50010">No DocBlock was found for method getDescripcion()</error>
-      <error line="202" code="50010">No DocBlock was found for method setDescripcion()</error>
-      <error line="206" code="50010">No DocBlock was found for method getFecha()</error>
-      <error line="210" code="50010">No DocBlock was found for method setFecha()</error>
-      <error line="214" code="50010">No DocBlock was found for method getFk_usuario()</error>
-      <error line="218" code="50010">No DocBlock was found for method setFk_usuario()</error>
+      <error line="108" code="50010">No DocBlock was found for method getlibreta()</error>
+      <error line="124" code="50010">No DocBlock was found for method getCantidad()</error>
+      <error line="208" code="50010">No DocBlock was found for method getId_libreta()</error>
+      <error line="212" code="50010">No DocBlock was found for method setId_libreta()</error>
+      <error line="216" code="50010">No DocBlock was found for method getNombre()</error>
+      <error line="220" code="50010">No DocBlock was found for method setNombre()</error>
+      <error line="224" code="50010">No DocBlock was found for method getDescripcion()</error>
+      <error line="228" code="50010">No DocBlock was found for method setDescripcion()</error>
+      <error line="232" code="50010">No DocBlock was found for method getFecha()</error>
+      <error line="236" code="50010">No DocBlock was found for method setFecha()</error>
+      <error line="240" code="50010">No DocBlock was found for method getFk_usuario()</error>
+      <error line="244" code="50010">No DocBlock was found for method setFk_usuario()</error>
     </parse_markers>
   </file>
   <file path="application/models/libreta_nota_model.php" hash="4f7787604153b43a860994e676e2220c" package="Default">
@@ -2985,7 +3635,7 @@ for remeinders, Notebooks and MORE</p>]]></long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/models/nota_etiqueta_model.php</error>
     </parse_markers>
   </file>
-  <file path="application/models/nota_model.php" hash="0ccc94eb27ad8da72f70b392bfc2a8eb" package="Default">
+  <file path="application/models/nota_model.php" hash="48e9a81660dd3d24b75ab35635c25bcd" package="Default">
     <class final="false" abstract="false" namespace="global" line="17" package="EvernoteUcab">
       <extends>\CI_Model</extends>
       <name>Nota_Model</name>
@@ -3023,282 +3673,351 @@ for remeinders, Notebooks and MORE</p>]]></long-description>
         <name>__construct</name>
         <full_name>__construct</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="EvernoteUcab">
         <name>registerNote</name>
         <full_name>registerNote</full_name>
-        <docblock line="30">
+        <docblock line="31">
           <description><![CDATA[Esta Funcion registerNote($username, $titulo, $nota, $book)
 se encarga de registrar una nota en la base de datos
 a un usuario]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="30" name="category" description="Modelo"/>
-          <tag line="30" name="param" description="nombre del usuario" type="string" variable="$username">
+          <tag line="31" name="category" description="Modelo"/>
+          <tag line="31" name="param" description="nombre del usuario" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="30" name="param" description="titulo de la nota" type="string" variable="$titulo">
+          <tag line="31" name="param" description="titulo de la nota" type="string" variable="$titulo">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="30" name="param" description="cuerpo de la nota" type="string" variable="$nota">
+          <tag line="31" name="param" description="cuerpo de la nota" type="string" variable="$nota">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="30" name="param" description="libreta para asociar la nota" type="string" variable="$book">
+          <tag line="31" name="param" description="libreta para asociar la nota" type="string" variable="$book">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="30" name="return" description="dice si actualizo o no" type="boolean">
+          <tag line="31" name="return" description="dice si actualizo o no" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="43">
+        <argument line="44">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="43">
+        <argument line="44">
           <name>$titulo</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="43">
+        <argument line="44">
           <name>$nota</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="43">
+        <argument line="44">
           <name>$book</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="70" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="EvernoteUcab">
         <name>tamListNota</name>
         <full_name>tamListNota</full_name>
-        <docblock line="62">
+        <docblock line="63">
           <description><![CDATA[Esta Funcion tamListNota($id)
 se encarga de contar cuantas notas tiene un usuario en una libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="62" name="category" description="Modelo"/>
-          <tag line="62" name="param" description="id de la libreta" type="string" variable="$id">
+          <tag line="63" name="category" description="Modelo"/>
+          <tag line="63" name="param" description="id de la libreta" type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="62" name="return" description="dice cantidad de notas" type="int">
+          <tag line="63" name="return" description="dice cantidad de notas" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="70">
+        <argument line="71">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="87" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="79" package="EvernoteUcab">
+        <name>tamListNotaBuscar</name>
+        <full_name>tamListNotaBuscar</full_name>
+        <argument line="79">
+          <name>$cadena</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="98" package="EvernoteUcab">
         <name>notaAtIndex</name>
         <full_name>notaAtIndex</full_name>
-        <docblock line="77">
+        <docblock line="88">
           <description><![CDATA[Esta Funcion notaAtIndex($index, $id)
 se encarga de contar devolver una nota que
  tiene un usuario en una libreta]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="77" name="category" description="Modelo"/>
-          <tag line="77" name="param" description="posicion de la nota en la lista" type="string" variable="$index">
+          <tag line="88" name="category" description="Modelo"/>
+          <tag line="88" name="param" description="posicion de la nota en la lista" type="string" variable="$index">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="77" name="param" description="id de la libreta" type="string" variable="$id">
+          <tag line="88" name="param" description="id de la libreta" type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="77" name="return" description="dice cantidad de notas" type="int">
+          <tag line="88" name="return" description="dice cantidad de notas" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="87">
+        <argument line="98">
           <name>$index</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="87">
+        <argument line="98">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="115" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="118" package="EvernoteUcab">
+        <name>getMaxID</name>
+        <full_name>getMaxID</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="124" package="EvernoteUcab">
+        <name>getnota</name>
+        <full_name>getnota</full_name>
+        <argument line="124">
+          <name>$numeroRegistros</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="124">
+          <name>$inicio</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="124">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="141" package="EvernoteUcab">
+        <name>getBuscarNotas</name>
+        <full_name>getBuscarNotas</full_name>
+        <argument line="141">
+          <name>$numeroRegistros</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="141">
+          <name>$inicio</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="141">
+          <name>$busqueda</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="169" package="EvernoteUcab">
+        <name>getCantidad</name>
+        <full_name>getCantidad</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="EvernoteUcab">
         <name>notaAtIndex2</name>
         <full_name>notaAtIndex2</full_name>
-        <docblock line="106">
+        <docblock line="178">
           <description><![CDATA[Esta Funcion notaAtIndex2($id)
 se encarga de devolver una nota que
  tiene un usuario en la base de datos]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="106" name="category" description="Modelo"/>
-          <tag line="106" name="param" description="nombre del usuario" type="string" variable="$id">
+          <tag line="178" name="category" description="Modelo"/>
+          <tag line="178" name="param" description="nombre del usuario" type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="106" name="return" description="dice cantidad de notas" type="int">
+          <tag line="178" name="return" description="dice cantidad de notas" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="115">
-          <name>$id</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="138" package="EvernoteUcab">
-        <name>modificarNota</name>
-        <full_name>modificarNota</full_name>
-        <docblock line="125">
-          <description><![CDATA[Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
-se encarga de modificar un nota en la base de datos
-a un usuario]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="125" name="category" description="Modelo"/>
-          <tag line="125" name="param" description="nombre del usuario" type="string" variable="$username">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="125" name="param" description="id de la nota a modificar" type="string" variable="$idNote">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="125" name="param" description="titulo de la nota" type="string" variable="$tituloNota">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="125" name="param" description="contenido de la nota" type="string" variable="$textoNota">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="125" name="return" description="dice si actualizo o no" type="boolean">
-            <type by_reference="false">boolean</type>
-          </tag>
-        </docblock>
-        <argument line="138">
-          <name>$username</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="138">
-          <name>$idNote</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="138">
-          <name>$tituloNota</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="138">
-          <name>$textoNota</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="158" package="EvernoteUcab">
-        <name>BorrarNota</name>
-        <full_name>BorrarNota</full_name>
-        <docblock line="147">
-          <description><![CDATA[Esta Funcion BorrarNota($username, $nota2)
-se encarga de borrar un nota en la base de datos
-a un usuario]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="147" name="category" description="Modelo"/>
-          <tag line="147" name="param" description="nombre del usuario" type="string" variable="$username">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="147" name="param" description="id de la nota" type="string" variable="$nota2">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="147" name="return" description="dice si actualizo o no" type="boolean">
-            <type by_reference="false">boolean</type>
-          </tag>
-        </docblock>
-        <argument line="158">
-          <name>$username</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="158">
-          <name>$nota2</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="EvernoteUcab">
-        <name>tamListNotes</name>
-        <full_name>tamListNotes</full_name>
-        <docblock line="170">
-          <description><![CDATA[Esta Funcion tamListNota($id)
-se encarga de contar cuantas notas tiene un usuario en una libreta]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="170" name="category" description="Modelo"/>
-          <tag line="170" name="param" description="id de la libreta" type="string" variable="$id_libreta">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="170" name="return" description="dice cantidad de notas" type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-        <argument line="178">
-          <name>$id_libreta</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="183" package="EvernoteUcab">
-        <name>getId_nota</name>
-        <full_name>getId_nota</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="EvernoteUcab">
-        <name>setId_nota</name>
-        <full_name>setId_nota</full_name>
         <argument line="187">
-          <name>$id_nota</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="191" package="EvernoteUcab">
-        <name>getTitulo</name>
-        <full_name>getTitulo</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="195" package="EvernoteUcab">
-        <name>setTitulo</name>
-        <full_name>setTitulo</full_name>
-        <argument line="195">
-          <name>$titulo</name>
+          <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="199" package="EvernoteUcab">
+        <name>addTags2Note</name>
+        <full_name>addTags2Note</full_name>
+        <argument line="199">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="199">
+          <name>$tag</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="231" package="EvernoteUcab">
+        <name>modificarNota</name>
+        <full_name>modificarNota</full_name>
+        <docblock line="218">
+          <description><![CDATA[Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
+se encarga de modificar un nota en la base de datos
+a un usuario]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="218" name="category" description="Modelo"/>
+          <tag line="218" name="param" description="nombre del usuario" type="string" variable="$username">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="218" name="param" description="id de la nota a modificar" type="string" variable="$idNote">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="218" name="param" description="titulo de la nota" type="string" variable="$tituloNota">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="218" name="param" description="contenido de la nota" type="string" variable="$textoNota">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="218" name="return" description="dice si actualizo o no" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="231">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$idNote</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$tituloNota</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$textoNota</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="251" package="EvernoteUcab">
+        <name>BorrarNota</name>
+        <full_name>BorrarNota</full_name>
+        <docblock line="240">
+          <description><![CDATA[Esta Funcion BorrarNota($username, $nota2)
+se encarga de borrar un nota en la base de datos
+a un usuario]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="240" name="category" description="Modelo"/>
+          <tag line="240" name="param" description="nombre del usuario" type="string" variable="$username">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="240" name="param" description="id de la nota" type="string" variable="$nota2">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="240" name="return" description="dice si actualizo o no" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="251">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="251">
+          <name>$nota2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="271" package="EvernoteUcab">
+        <name>tamListNotes</name>
+        <full_name>tamListNotes</full_name>
+        <docblock line="263">
+          <description><![CDATA[Esta Funcion tamListNota($id)
+se encarga de contar cuantas notas tiene un usuario en una libreta]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="263" name="category" description="Modelo"/>
+          <tag line="263" name="param" description="id de la libreta" type="string" variable="$id_libreta">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="263" name="return" description="dice cantidad de notas" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="271">
+          <name>$id_libreta</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="276" package="EvernoteUcab">
+        <name>getId_nota</name>
+        <full_name>getId_nota</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="280" package="EvernoteUcab">
+        <name>setId_nota</name>
+        <full_name>setId_nota</full_name>
+        <argument line="280">
+          <name>$id_nota</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="284" package="EvernoteUcab">
+        <name>getTitulo</name>
+        <full_name>getTitulo</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="288" package="EvernoteUcab">
+        <name>setTitulo</name>
+        <full_name>setTitulo</full_name>
+        <argument line="288">
+          <name>$titulo</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="292" package="EvernoteUcab">
         <name>getTexto</name>
         <full_name>getTexto</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="203" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="296" package="EvernoteUcab">
         <name>setTexto</name>
         <full_name>setTexto</full_name>
-        <argument line="203">
+        <argument line="296">
           <name>$texto</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="207" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="300" package="EvernoteUcab">
         <name>getFecha_creacion</name>
         <full_name>getFecha_creacion</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="211" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="304" package="EvernoteUcab">
         <name>setFecha_creacion</name>
         <full_name>setFecha_creacion</full_name>
-        <argument line="211">
+        <argument line="304">
           <name>$fecha_creacion</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="215" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="308" package="EvernoteUcab">
         <name>getId_libreta</name>
         <full_name>getId_libreta</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="219" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="312" package="EvernoteUcab">
         <name>setId_libreta</name>
         <full_name>setId_libreta</full_name>
-        <argument line="219">
+        <argument line="312">
           <name>$id_libreta</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -3313,19 +4032,25 @@ se encarga de contar cuantas notas tiene un usuario en una libreta]]></descripti
       <error line="22" code="50018">No DocBlock was found for property $fecha_creacion</error>
       <error line="23" code="50018">No DocBlock was found for property $id_libreta</error>
       <error line="25" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="183" code="50010">No DocBlock was found for method getId_nota()</error>
-      <error line="187" code="50010">No DocBlock was found for method setId_nota()</error>
-      <error line="191" code="50010">No DocBlock was found for method getTitulo()</error>
-      <error line="195" code="50010">No DocBlock was found for method setTitulo()</error>
-      <error line="199" code="50010">No DocBlock was found for method getTexto()</error>
-      <error line="203" code="50010">No DocBlock was found for method setTexto()</error>
-      <error line="207" code="50010">No DocBlock was found for method getFecha_creacion()</error>
-      <error line="211" code="50010">No DocBlock was found for method setFecha_creacion()</error>
-      <error line="215" code="50010">No DocBlock was found for method getId_libreta()</error>
-      <error line="219" code="50010">No DocBlock was found for method setId_libreta()</error>
+      <error line="79" code="50010">No DocBlock was found for method tamListNotaBuscar()</error>
+      <error line="118" code="50010">No DocBlock was found for method getMaxID()</error>
+      <error line="124" code="50010">No DocBlock was found for method getnota()</error>
+      <error line="141" code="50010">No DocBlock was found for method getBuscarNotas()</error>
+      <error line="169" code="50010">No DocBlock was found for method getCantidad()</error>
+      <error line="199" code="50010">No DocBlock was found for method addTags2Note()</error>
+      <error line="276" code="50010">No DocBlock was found for method getId_nota()</error>
+      <error line="280" code="50010">No DocBlock was found for method setId_nota()</error>
+      <error line="284" code="50010">No DocBlock was found for method getTitulo()</error>
+      <error line="288" code="50010">No DocBlock was found for method setTitulo()</error>
+      <error line="292" code="50010">No DocBlock was found for method getTexto()</error>
+      <error line="296" code="50010">No DocBlock was found for method setTexto()</error>
+      <error line="300" code="50010">No DocBlock was found for method getFecha_creacion()</error>
+      <error line="304" code="50010">No DocBlock was found for method setFecha_creacion()</error>
+      <error line="308" code="50010">No DocBlock was found for method getId_libreta()</error>
+      <error line="312" code="50010">No DocBlock was found for method setId_libreta()</error>
     </parse_markers>
   </file>
-  <file path="application/models/usuario_model.php" hash="00092a0c0542ea964487a91a306077ae" package="Default">
+  <file path="application/models/usuario_model.php" hash="b27abf09c14829a83935e99845396922" package="Default">
     <class final="false" abstract="false" namespace="global" line="17" package="EvernoteUcab">
       <extends>\CI_Model</extends>
       <name>Usuario_Model</name>
@@ -3539,8 +4264,8 @@ datos del usuario]]></description>
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="150" package="EvernoteUcab">
-        <name>getUser</name>
-        <full_name>getUser</full_name>
+        <name>deleteuser</name>
+        <full_name>deleteuser</full_name>
         <docblock line="141">
           <description><![CDATA[Esta Funcion getUser($username) se encarga de traer de  base de datos
  datos del usuario]]></description>
@@ -3559,122 +4284,122 @@ datos del usuario]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="171" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="170" package="EvernoteUcab">
         <name>cambiarClave</name>
         <full_name>cambiarClave</full_name>
-        <docblock line="160">
+        <docblock line="159">
           <description><![CDATA[Esta Funcion cambiarClave($username, $password)
 se encarga de actualizar en la base de datos
 el password que ha sido cambiado]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="160" name="category" description="Modelo"/>
-          <tag line="160" name="param" description="Indica el Usuario" type="string" variable="$username">
+          <tag line="159" name="category" description="Modelo"/>
+          <tag line="159" name="param" description="Indica el Usuario" type="string" variable="$username">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="160" name="param" description="indica la clave" type="string" variable="$password">
+          <tag line="159" name="param" description="indica la clave" type="string" variable="$password">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="160" name="return" description="dice si actualizo o no" type="boolean">
+          <tag line="159" name="return" description="dice si actualizo o no" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="171">
+        <argument line="170">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="171">
+        <argument line="170">
           <name>$password</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="183" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="182" package="EvernoteUcab">
         <name>getUsername</name>
         <full_name>getUsername</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="186" package="EvernoteUcab">
         <name>setUsername</name>
         <full_name>setUsername</full_name>
-        <argument line="187">
+        <argument line="186">
           <name>$username</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="191" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="190" package="EvernoteUcab">
         <name>getPassword</name>
         <full_name>getPassword</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="195" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="194" package="EvernoteUcab">
         <name>setPassword</name>
         <full_name>setPassword</full_name>
-        <argument line="195">
+        <argument line="194">
           <name>$password</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="199" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="EvernoteUcab">
         <name>getEmail</name>
         <full_name>getEmail</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="203" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="202" package="EvernoteUcab">
         <name>setEmail</name>
         <full_name>setEmail</full_name>
-        <argument line="203">
+        <argument line="202">
           <name>$email</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="207" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="206" package="EvernoteUcab">
         <name>getOauth_token</name>
         <full_name>getOauth_token</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="211" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="210" package="EvernoteUcab">
         <name>setOauth_token</name>
         <full_name>setOauth_token</full_name>
-        <argument line="211">
+        <argument line="210">
           <name>$oauth_token</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="215" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="214" package="EvernoteUcab">
         <name>getOauth_token_secret</name>
         <full_name>getOauth_token_secret</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="219" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="218" package="EvernoteUcab">
         <name>setOauth_token_secret</name>
         <full_name>setOauth_token_secret</full_name>
-        <argument line="219">
+        <argument line="218">
           <name>$oauth_token_secret</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="223" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="222" package="EvernoteUcab">
         <name>getName</name>
         <full_name>getName</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="227" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="226" package="EvernoteUcab">
         <name>setName</name>
         <full_name>setName</full_name>
-        <argument line="227">
+        <argument line="226">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="231" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="230" package="EvernoteUcab">
         <name>getApellido</name>
         <full_name>getApellido</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="235" package="EvernoteUcab">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="234" package="EvernoteUcab">
         <name>setApellido</name>
         <full_name>setApellido</full_name>
-        <argument line="235">
+        <argument line="234">
           <name>$apellido</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -3691,33 +4416,33 @@ el password que ha sido cambiado]]></description>
       <error line="24" code="50018">No DocBlock was found for property $name</error>
       <error line="25" code="50018">No DocBlock was found for property $apellido</error>
       <error line="28" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="183" code="50010">No DocBlock was found for method getUsername()</error>
-      <error line="187" code="50010">No DocBlock was found for method setUsername()</error>
-      <error line="191" code="50010">No DocBlock was found for method getPassword()</error>
-      <error line="195" code="50010">No DocBlock was found for method setPassword()</error>
-      <error line="199" code="50010">No DocBlock was found for method getEmail()</error>
-      <error line="203" code="50010">No DocBlock was found for method setEmail()</error>
-      <error line="207" code="50010">No DocBlock was found for method getOauth_token()</error>
-      <error line="211" code="50010">No DocBlock was found for method setOauth_token()</error>
-      <error line="215" code="50010">No DocBlock was found for method getOauth_token_secret()</error>
-      <error line="219" code="50010">No DocBlock was found for method setOauth_token_secret()</error>
-      <error line="223" code="50010">No DocBlock was found for method getName()</error>
-      <error line="227" code="50010">No DocBlock was found for method setName()</error>
-      <error line="231" code="50010">No DocBlock was found for method getApellido()</error>
-      <error line="235" code="50010">No DocBlock was found for method setApellido()</error>
+      <error line="182" code="50010">No DocBlock was found for method getUsername()</error>
+      <error line="186" code="50010">No DocBlock was found for method setUsername()</error>
+      <error line="190" code="50010">No DocBlock was found for method getPassword()</error>
+      <error line="194" code="50010">No DocBlock was found for method setPassword()</error>
+      <error line="198" code="50010">No DocBlock was found for method getEmail()</error>
+      <error line="202" code="50010">No DocBlock was found for method setEmail()</error>
+      <error line="206" code="50010">No DocBlock was found for method getOauth_token()</error>
+      <error line="210" code="50010">No DocBlock was found for method setOauth_token()</error>
+      <error line="214" code="50010">No DocBlock was found for method getOauth_token_secret()</error>
+      <error line="218" code="50010">No DocBlock was found for method setOauth_token_secret()</error>
+      <error line="222" code="50010">No DocBlock was found for method getName()</error>
+      <error line="226" code="50010">No DocBlock was found for method setName()</error>
+      <error line="230" code="50010">No DocBlock was found for method getApellido()</error>
+      <error line="234" code="50010">No DocBlock was found for method setApellido()</error>
     </parse_markers>
   </file>
-  <file path="application/views/home/home.php" hash="47f0b89d689c8ea98aa6da65a124d919" package="Default">
+  <file path="application/views/home/home.php" hash="93a0b518ea1fdf3a7cb4ac79919512bc" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/home/home.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/homeuser/aboutUs.php" hash="fc43c33e1b06321da3c1acfffab10af9" package="Default">
+  <file path="application/views/homeuser/aboutUs.php" hash="2cd04c58265c16fdb4c87e80eda8052a" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/homeuser/aboutUs.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/homeuser/homeuser.php" hash="875b6edafd72b2cdbb834801de66c49c" package="Default">
+  <file path="application/views/homeuser/homeuser.php" hash="aee94b0976fd36f3a432f2f1a430932c" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/homeuser/homeuser.php</error>
     </parse_markers>
@@ -3727,7 +4452,7 @@ el password que ha sido cambiado]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/includes/footer.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/includes/header.php" hash="62531dda191f53ba9740b3585048fab2" package="Default">
+  <file path="application/views/includes/header.php" hash="1c64ebee41872db4a522e9b16438f6b9" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/includes/header.php</error>
     </parse_markers>
@@ -3737,7 +4462,7 @@ el password que ha sido cambiado]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/includes/headhome.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/includes/headnormal.php" hash="84b54c0a72ae6a16019f516db622d092" package="Default">
+  <file path="application/views/includes/headnormal.php" hash="5a91399dfdbfb0b8c35c63085af05ac6" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/includes/headnormal.php</error>
     </parse_markers>
@@ -3752,32 +4477,32 @@ el password que ha sido cambiado]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/json.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/libreria/libreria.php" hash="c633e005b0b255a1973f14d65f823d04" package="Default">
+  <file path="application/views/libreria/libreria.php" hash="9a5a1eba653ae4e61af2671c0bef9cef" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/libreria.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/libreria/Libreta_delete_note.php" hash="bd76548272b1b973d826f92542f4e936" package="Default">
+  <file path="application/views/libreria/Libreta_delete_note.php" hash="c19aebcca16939049ae257da25066af6" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/Libreta_delete_note.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/libreria/Libreta_Eliminar.php" hash="3e7c5a3872e71e3e40692d954a73d8e2" package="Default">
+  <file path="application/views/libreria/Libreta_Eliminar.php" hash="b95529687b33ee06eeef9f2d944c1fc9" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/Libreta_Eliminar.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/libreria/Libreta_Modificar.php" hash="3d4a9be86d09e9c35572530b543c0f7f" package="Default">
+  <file path="application/views/libreria/Libreta_Modificar.php" hash="4c7544bf5c78d0026157cdc92f945362" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/Libreta_Modificar.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/libreria/Libreta_Modificar_2.php" hash="0b6d915d1ec150a3172fc3a87367d933" package="Default">
+  <file path="application/views/libreria/Libreta_Modificar_2.php" hash="0388cb24e882a82da224637c9160e7c3" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/Libreta_Modificar_2.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/libreria/Libreta_Select.php" hash="808744d68b069ca7c25bda85ad12c8e5" package="Default">
+  <file path="application/views/libreria/Libreta_Select.php" hash="4157ee40c61deffd170b6adec5e1de90" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/Libreta_Select.php</error>
     </parse_markers>
@@ -3787,12 +4512,12 @@ el password que ha sido cambiado]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/libreria/Select_Libreta_Consulta.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/nota/Add_Nota.php" hash="0206b199ee0ce0580adc15996374ff86" package="Default">
+  <file path="application/views/nota/Add_Nota.php" hash="9407b800bd471170beedd6da7a16dc3b" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/nota/Add_Nota.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/nota/Delete_Note.php" hash="be2178eeb9a46da472f927753e9da448" package="Default">
+  <file path="application/views/nota/Delete_Note.php" hash="f07ccce693af51a9b9a3c4f5c4176256" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/nota/Delete_Note.php</error>
     </parse_markers>
@@ -3802,14 +4527,39 @@ el password que ha sido cambiado]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/nota/List_Note.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/nota/Modify_Note.php" hash="ea03d6f7e9b38b29bb01b6b42ae27bda" package="Default">
+  <file path="application/views/nota/Modify_Note.php" hash="23efd87f99d2fbc790671c8f502caeb1" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/nota/Modify_Note.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/nota/Modify_Note_2.php" hash="b9b993189dccbc0c7b2a0fc1d3b0db26" package="Default">
+  <file path="application/views/nota/Modify_Note_2.php" hash="79eaead4c7a8b7b6759b73d1a79822ca" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/nota/Modify_Note_2.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/views/search/search.php" hash="3f1e313c7ea1dcc02b1f1d6b12536e53" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/views/search/search.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/views/search/Search_Result.php" hash="baf00a93c418c6764fb1536829bf0c3c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/views/search/Search_Result.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/views/test/footer.php" hash="2801f527a0883c66f081687a3a5f0cd0" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/views/test/footer.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/views/test/header.php" hash="cad3a2e6f4115ba9076f8ecf9d92b1a6" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/views/test/header.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/views/test/results.php" hash="abe67514f18ef5bb40ddca898ffce9a1" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/views/test/results.php</error>
     </parse_markers>
   </file>
   <file path="application/views/upload_form.php" hash="c1f0129a39585b9f283f65225f8b533c" package="Default">
@@ -3817,17 +4567,17 @@ el password que ha sido cambiado]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/upload_form.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/usuario/usuario_dropbox.php" hash="5f38e6165e330f6c12cd4af76b5f217e" package="Default">
+  <file path="application/views/usuario/usuario_dropbox.php" hash="a83b43ccf52642997eae5b3f15f4c07d" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/usuario/usuario_dropbox.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/usuario/usuario_modificar.php" hash="649933762a72fe4d539db6c3fdf7c49b" package="Default">
+  <file path="application/views/usuario/usuario_modificar.php" hash="fd7160acc3a23d30ff46e481c7cbfb79" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/usuario/usuario_modificar.php</error>
     </parse_markers>
   </file>
-  <file path="application/views/usuario/usuario_password.php" hash="89e6c4f7f975e590b182667f5f3e7330" package="Default">
+  <file path="application/views/usuario/usuario_password.php" hash="5c5acb2093508b4908110ec52b41c8fe" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file application/views/usuario/usuario_password.php</error>
     </parse_markers>
@@ -37773,7 +38523,7 @@ multiple zips with different data.</p>]]></long-description>
   <package name="Default" full_name="Default"/>
   <package name="EvernoteUcab" full_name="EvernoteUcab"/>
   <namespace name="global" full_name="global"/>
-  <marker count="1">todo</marker>
+  <marker count="3">todo</marker>
   <marker count="0">fixme</marker>
   <deprecated count="0"/>
 </project>

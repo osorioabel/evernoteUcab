@@ -33,10 +33,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1193</span></a></li>
+                <span class="label label-info">1262</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">1</span>
+                <span class="label label-info">3</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -67,16 +67,26 @@ se encarga de borrar un nota en la base de datos
 a un usuario</span><pre>BorrarNota()</pre></a></li>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method_addTags2Note" title="addTags2Note :: "><span class="description">addTags2Note()
+        </span><pre>addTags2Note()</pre></a></li>
+<li class="method public "><a href="#method_getBuscarNotas" title="getBuscarNotas :: "><span class="description">getBuscarNotas()
+        </span><pre>getBuscarNotas()</pre></a></li>
+<li class="method public "><a href="#method_getCantidad" title="getCantidad :: "><span class="description">getCantidad()
+        </span><pre>getCantidad()</pre></a></li>
 <li class="method public "><a href="#method_getFecha_creacion" title="getFecha_creacion :: "><span class="description">getFecha_creacion()
         </span><pre>getFecha_creacion()</pre></a></li>
 <li class="method public "><a href="#method_getId_libreta" title="getId_libreta :: "><span class="description">getId_libreta()
         </span><pre>getId_libreta()</pre></a></li>
 <li class="method public "><a href="#method_getId_nota" title="getId_nota :: "><span class="description">getId_nota()
         </span><pre>getId_nota()</pre></a></li>
+<li class="method public "><a href="#method_getMaxID" title="getMaxID :: "><span class="description">getMaxID()
+        </span><pre>getMaxID()</pre></a></li>
 <li class="method public "><a href="#method_getTexto" title="getTexto :: "><span class="description">getTexto()
         </span><pre>getTexto()</pre></a></li>
 <li class="method public "><a href="#method_getTitulo" title="getTitulo :: "><span class="description">getTitulo()
         </span><pre>getTitulo()</pre></a></li>
+<li class="method public "><a href="#method_getnota" title="getnota :: "><span class="description">getnota()
+        </span><pre>getnota()</pre></a></li>
 <li class="method public "><a href="#method_modificarNota" title="modificarNota :: Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
 se encarga de modificar un nota en la base de datos
 a un usuario"><span class="description">Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
@@ -110,6 +120,8 @@ a un usuario</span><pre>registerNote()</pre></a></li>
 <li class="method public "><a href="#method_tamListNota" title="tamListNota :: Esta Funcion tamListNota($id)
 se encarga de contar cuantas notas tiene un usuario en una libreta"><span class="description">Esta Funcion tamListNota($id)
 se encarga de contar cuantas notas tiene un usuario en una libreta</span><pre>tamListNota()</pre></a></li>
+<li class="method public "><a href="#method_tamListNotaBuscar" title="tamListNotaBuscar :: "><span class="description">tamListNotaBuscar()
+        </span><pre>tamListNotaBuscar()</pre></a></li>
 <li class="method public "><a href="#method_tamListNotes" title="tamListNotes :: Esta Funcion tamListNota($id)
 se encarga de contar cuantas notas tiene un usuario en una libreta"><span class="description">Esta Funcion tamListNota($id)
 se encarga de contar cuantas notas tiene un usuario en una libreta</span><pre>tamListNotes()</pre></a></li>
@@ -217,6 +229,38 @@ syntax as controllers.</p></div>
 <h4>$key</h4><p>string</p></div>
 </div></div>
 </div>
+<a id="method_addTags2Note"></a><div class="element clickable method public method_addTags2Note" data-toggle="collapse" data-target=".method_addTags2Note .collapse">
+<h2>addTags2Note()
+        </h2>
+<pre>addTags2Note($id, $tag) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument"><h4>$tag</h4></div>
+</div></div>
+</div>
+<a id="method_getBuscarNotas"></a><div class="element clickable method public method_getBuscarNotas" data-toggle="collapse" data-target=".method_getBuscarNotas .collapse">
+<h2>getBuscarNotas()
+        </h2>
+<pre>getBuscarNotas($numeroRegistros, $inicio, $busqueda) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$numeroRegistros</h4></div>
+<div class="subelement argument"><h4>$inicio</h4></div>
+<div class="subelement argument"><h4>$busqueda</h4></div>
+</div></div>
+</div>
+<a id="method_getCantidad"></a><div class="element clickable method public method_getCantidad" data-toggle="collapse" data-target=".method_getCantidad .collapse">
+<h2>getCantidad()
+        </h2>
+<pre>getCantidad() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="method_getFecha_creacion"></a><div class="element clickable method public method_getFecha_creacion" data-toggle="collapse" data-target=".method_getFecha_creacion .collapse">
 <h2>getFecha_creacion()
         </h2>
@@ -238,6 +282,13 @@ syntax as controllers.</p></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="method_getMaxID"></a><div class="element clickable method public method_getMaxID" data-toggle="collapse" data-target=".method_getMaxID .collapse">
+<h2>getMaxID()
+        </h2>
+<pre>getMaxID() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="method_getTexto"></a><div class="element clickable method public method_getTexto" data-toggle="collapse" data-target=".method_getTexto .collapse">
 <h2>getTexto()
         </h2>
@@ -251,6 +302,19 @@ syntax as controllers.</p></div>
 <pre>getTitulo() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getnota"></a><div class="element clickable method public method_getnota" data-toggle="collapse" data-target=".method_getnota .collapse">
+<h2>getnota()
+        </h2>
+<pre>getnota($numeroRegistros, $inicio, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$numeroRegistros</h4></div>
+<div class="subelement argument"><h4>$inicio</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
 </div>
 <a id="method_modificarNota"></a><div class="element clickable method public method_modificarNota" data-toggle="collapse" data-target=".method_modificarNota .collapse">
 <h2>Esta Funcion modificarNota($username, $idNote, $tituloNota, $textoNota)
@@ -432,6 +496,17 @@ se encarga de contar cuantas notas tiene un usuario en una libreta</h2>
 <code>int</code>dice cantidad de notas</div>
 </div></div>
 </div>
+<a id="method_tamListNotaBuscar"></a><div class="element clickable method public method_tamListNotaBuscar" data-toggle="collapse" data-target=".method_tamListNotaBuscar .collapse">
+<h2>tamListNotaBuscar()
+        </h2>
+<pre>tamListNotaBuscar($cadena) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$cadena</h4></div>
+</div></div>
+</div>
 <a id="method_tamListNotes"></a><div class="element clickable method public method_tamListNotes" data-toggle="collapse" data-target=".method_tamListNotes .collapse">
 <h2>Esta Funcion tamListNota($id)
 se encarga de contar cuantas notas tiene un usuario en una libreta</h2>
@@ -491,7 +566,7 @@ se encarga de contar cuantas notas tiene un usuario en una libreta</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-27T13:31:46-04:30.<br></footer></div>
+            generated on 2012-12-05T19:41:03-04:30.<br></footer></div>
 </div>
 </body>
 </html>
