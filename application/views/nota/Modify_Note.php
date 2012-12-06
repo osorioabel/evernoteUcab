@@ -98,18 +98,7 @@ if ($messi)
 <?php echo $this->pagination->create_links(); ?> 
                 </div> 
                 
-                                 <?php    
-                                           
-                                            foreach ($records2 as $s): ?>
-                                                
-                                                        <div class="meta-tags">
-                                                            <a href="#"><?php echo $s->texto ?></a>
-                                                            
-                                                        </div>
-                         <?php                       
-                                     endforeach;
-                                    
-                          ?> 
+                                
             </div> 
         </div>                
         <!-- ENDS form -->
