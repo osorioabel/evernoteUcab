@@ -127,10 +127,10 @@ class Usuario extends CI_Controller {
     function uploadUserDetail($username) {
         $return = '';
         $usuario = new Usuario_Model();
-        $usuario = $usuario->getUser($username);
-        $nombre = $usuario->getName();
-        $apellido = $usuario->getApellido();
-        $email = $usuario->getEmail();
+        $usuario = $this->usuario_model->getUser($username);
+        $nombre = $this->usuario_model->getName();
+        $apellido = $this->usuario_model->getApellido();
+        $email = $this->usuario_model->getEmail();
 
         $return = "<div>
                     <label>Name</label>
