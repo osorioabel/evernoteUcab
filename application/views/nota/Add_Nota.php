@@ -67,7 +67,7 @@ if ($messi)
                     if you want Attach files 
                     .</p>
                 <?php
-                $attributes = array('id' => 'sc-contact-form');
+                $attributes = array('id' => 'contactForm');
                 echo form_open('/nota/AddNote/' . $username, $attributes);
                 ?>
                 <fieldset>

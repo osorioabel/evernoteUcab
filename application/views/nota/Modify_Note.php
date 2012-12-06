@@ -22,7 +22,7 @@ if ($messi)
                  if (isset($records)):
 
                             foreach ($records as $c):
-                                $attributes = array('id' => 'sc-contact-form');
+                                $attributes = array('id' => 'contactForm');
 
                                 $ref = base_url() . 'nota/indexModify2/' . $username . '/' . $c->id_nota . '>';
                                 $ref2 = base_url() . 'nota/indexModify2/' . $username . '/' . $c->id_nota;
