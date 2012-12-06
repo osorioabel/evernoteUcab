@@ -75,7 +75,41 @@ class search extends CI_Controller {
         $data["records2"] = $this->db->get('nota',$config['per_page'],$this->uri->segment(3));
         
         $this->load->view('/includes/templates', $data);
-    } 
+    }
+    
+    
+    
+      function indexshowresult($username, $id) {
+
+        $data = array();
+        $data['messi'] = "";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/search/search_detail';
+        $data['username'] = $username;
+        $data['nota'] = $id;
+        $data['title'] = 'Detail Note';
+        
+        $this->load->library('pagination');
+        
+        $config['base_url'] = base_url().'/nota/Selected/'.$username.'/'.$id.'/';
+        $config['total_rows'] = $this->nota_model->tamListNotaBuscar($id);//obtenemos la cantidad de registros
+        $config['per_page'] = 2;
+        $config['num_links'] = 20;
+        $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
+        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['uri_segment'] = '2';  //segmentos que va a tener nuestra URL
+        $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
+        $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
+        $this->pagination->initialize($config);
+        //$config['num_tag_open'] = '<div id="pager">';
+        //$config['num_tag_close'] = '</div>';
+        //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $notas = $this->nota_model->getBuscarNotasSelected($config['per_page'],$this->uri->segment(5),$id);
+        $data['records'] = $notas;   
+        
+        
+        $this->load->view('/includes/templates', $data);
+    }
     
     
     function search($username) {

@@ -30,7 +30,7 @@ if ($messi)
                                 $attributes = array('id' => 'sc-contact-form');
 
                                 $ref = base_url() . 'libreta/indexModify2/' . $username . '/' . $c->id_libreta . '>';
-                                $ref2 = base_url() . 'lota/SelectNote/' . $username . '/' . $c->id_libreta;
+                                $ref2 = base_url() . 'nota/SelectNote/' . $username . '/' . $c->id_libreta;
 
                                 echo form_open('/libreta/indexModify2/' . $username . '/' . $c->nombre, $attributes);
                                 ?>

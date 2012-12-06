@@ -32,27 +32,22 @@
             
               
                 $attributes = array('id' => 'sc-contact-form');
-                echo form_open('/search/indexsearchResult/' . $username . '/' . $this->input->post('goal'), $attributes);
+                $ref = base_url() . 'search/indexshowresult/' . $username . '/' . $c->id_nota . '>';
+                        echo form_open('/search/indexshowresult/' . $username . '/' . $c->id_nota, $attributes);
                 ?>
             
               <div class='project'>
-                          <h1><a href="#"> <?php echo $c->titulo ?> </a></h1>
+                          <h1><a href="<?php echo $ref ?>"> <?php echo $c->titulo ?> </a></h1>
                           
                            <!-- shadow -->
                                 <div class='project-shadow'>
                                     <!-- project-thumb -->
-                                  
-
-                                       
-       
-                 
-                
-                
-                 <a title='An image'><img src='/evernoteUcab/images/home.png' /></a>
-                 
-                 
-                 
-                                  </div>	
+                                   <a title='An image'><img src='/evernoteUcab/images/home.png' /></a>
+                               </div>
+                            <div class='the-excerpt'>
+                                               <?php echo $c->texto?> 
+                                        
+                                    </div>
                                  
              </div>   
                      

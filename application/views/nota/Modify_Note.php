@@ -50,6 +50,28 @@ if ($messi)
                                             
                                             <li><strong>Project date</strong> <? echo $c->fecha_creacion ?> </li>
                                             <li><strong>username</strong> <? echo $username ?> </li>
+                                            <li> <strong>tags</strong> 
+                                            <?php    
+                                           
+                                            foreach ($records2 as $s): 
+                                              if ($c->titulo == $s->titulo): 
+                                                 ?> 
+                                               <?php  
+                                                        
+                                                            echo $s->texto;
+                                               ?> 
+                                                 <?php 
+                                                            endif;
+                                                           
+                                                       
+                                               
+                                      
+                                     endforeach;
+                                    
+                          ?> 
+                                                    </li>
+                                        
+                                        
                                         </ul>
                                         <!-- ENDS meta -->
 
@@ -75,6 +97,19 @@ if ($messi)
                     <!-- ENDS pagination -->
 <?php echo $this->pagination->create_links(); ?> 
                 </div> 
+                
+                                 <?php    
+                                           
+                                            foreach ($records2 as $s): ?>
+                                                
+                                                        <div class="meta-tags">
+                                                            <a href="#"><?php echo $s->texto ?></a>
+                                                            
+                                                        </div>
+                         <?php                       
+                                     endforeach;
+                                    
+                          ?> 
             </div> 
         </div>                
         <!-- ENDS form -->

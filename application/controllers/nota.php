@@ -134,8 +134,9 @@ class nota extends CI_Controller {
         //$config['num_tag_close'] = '</div>';
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
         $notas = $this->nota_model->getnota($config['per_page'],$this->uri->segment(5),$id);
+        $notastag = $this->nota_model->getnotatag($id);
         $data['records'] = $notas;
-        
+        $data['records2'] = $notastag;
         
         $this->load->view('/includes/templates', $data);
     }

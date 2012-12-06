@@ -143,28 +143,41 @@ function getBuscarNotas($numeroRegistros, $inicio,$busqueda)
 {
 
     $this->db->limit($numeroRegistros, $inicio);
+    $query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
+    return $query->result();
+    
+    }
 
-    //$this->db->select('id_nota,titulo,texto,fecha_creacion');
-        
-    
-    $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where titulo or texto like '%$busqueda%';");
-  
-    
+    function getnotatag($busqueda)
 
-//$this->db->where("MATCH(titulo)AGAINST('".$busqueda."')", NULL, FALSE); 
- 
+{
 
-//$query = $this->db->get('nota');  
+   $this->db->limit(4,1);
+    $query = $this->db->query("Select n.titulo,e.texto from nota n,nota_etiqueta ne,etiqueta e where n.id_libreta = '$busqueda' and n.id_nota = ne.fk_nota and ne.fk_etiqueta = e.id_etiqueta  group by n.titulo,e.texto;");
+    return $query->result();
     
+    }
 
-    
-    
-//$query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_nota = '$id';");
+function getBuscarNotasSelected($numeroRegistros, $inicio,$idNota)
+
+{
+
+     $this->db->limit($numeroRegistros, $inicio);
+
+    $this->db->select('id_nota,titulo,texto,fecha_creacion');
+    $this->db->where('id_nota', $idNota);
+   
+    $query = $this->db->get('nota');
+
 return $query->result();
 
 
 
 }
+
+
+
+
 
 function getCantidad ()
 
