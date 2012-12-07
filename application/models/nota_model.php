@@ -93,7 +93,7 @@ class Nota_Model extends CI_Model {
 
 {
 
-    $this->db->limit($numeroRegistros, $inicio);
+    $this->db->limit($numeroRegistros-1, $inicio);
     //$query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
    //$query = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%pru%' or n.titulo like '%pru%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%pru%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
     
@@ -193,8 +193,8 @@ return $query->result();
 
 {
 
-   $this->db->limit($numeroRegistros, $inicio);
-    $query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,e.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
+    $this->db->limit(4,1);
+    $query = $this->db->query("select n.titulo,e.texto from nota n,nota_etiqueta ne,etiqueta e where n.id_libreta = $busqueda and n.id_nota = ne.fk_nota and ne.fk_etiqueta = e.id_etiqueta;");
     return $query->result();
     
     }
