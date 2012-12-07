@@ -76,14 +76,59 @@ class Nota_Model extends CI_Model {
     }
 
     
-       public function tamListNotaBuscar($cadena) {
+       public function tamListNotaBuscar() {
         //var_dump($query);
-        $query2 = $this->db->query("select id_nota from nota where titulo like '%$cadena%';");
-      // $query2 = $this->db->query("Select nombre from libreta where nombre = $cadena;");
-          
+          //$query2 = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
+       $query2 = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%pru%' or n.titulo like '%pru%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%pru%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
+       //$query2 = $this->db->query("select id_nota from nota where id_libreta = 35;");   
+        // $query2 = $this->db->query("select id_nota from nota where titulo like '%pru%' or texto like '%pru%';"); 
            $numrow = $query2->num_rows;
         return $numrow;
     }
+    
+    
+    
+    
+   function getBuscarNotas($numeroRegistros,$inicio)
+
+{
+
+    $this->db->limit($numeroRegistros - 1, $inicio);
+    //$query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
+   //$query = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%pru%' or n.titulo like '%pru%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%pru%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
+    
+    //$this->db->select('id_nota,titulo,texto,fecha_creacion');
+   // $this->db->where('id_libreta', 35);
+   // $query = $this->db->get('nota'); 
+    
+   $this->db->select('id_nota,titulo,texto,fecha_creacion');
+   $this->db->from('nota');
+   $this->db->like('titulo', 'prue');
+   $this->db->or_like('texto', 'prue');
+   $query = $this->db->get();   
+   $subQuery1 = $this->db->last_query();
+  
+  // $this->db->_reset_select();
+   
+   
+   $this->db->select('nota.id_nota,nota.titulo,nota.texto,nota.fecha_creacion');
+   $this->db->from('nota');
+   $this->db->join('nota_etiqueta', 'nota.id_nota = nota_etiqueta.fk_nota');
+   $this->db->join('etiqueta', 'etiqueta.id_etiqueta = nota_etiqueta.fk_etiqueta');        
+   $this->db->like('etiqueta.texto', 'prue');   
+   $query = $this->db->get();
+   $subQuery2 = $this->db->last_query();  
+   //$this->db->_reset_select();
+   
+   $query = $this->db->query("select * from ($subQuery1 UNION $subQuery2) as unionTable");
+   
+   
+ 
+   
+    
+    return $query->result();
+    
+    } 
     
     /**
     * Esta Funcion notaAtIndex($index, $id)
@@ -138,15 +183,7 @@ return $query->result();
 }
 
 
-function getBuscarNotas($numeroRegistros, $inicio,$busqueda)
 
-{
-
-    $this->db->limit($numeroRegistros, $inicio);
-    $query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
-    return $query->result();
-    
-    }
 
     function getnotatag($busqueda)
 

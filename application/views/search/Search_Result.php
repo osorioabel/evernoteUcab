@@ -1,14 +1,11 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+if ($messi)
+    echo $messi;
 ?>
 <div id="main">
     <div class="wrapper">
         <!-- content -->
-        <div id="content">
+    
             <!-- title -->
             <div id="page-title">
                 <span class="title">Search</span>
@@ -26,38 +23,42 @@
                         
                     
              <?php
-                        if (isset($records)):
+               if (isset($records)):
+                  foreach ($records as $c):
 
-                            foreach ($records as $c):
-            
-              
-                $attributes = array('id' => 'sc-contact-form');
-                $ref = base_url() . 'search/indexshowresult/' . $username . '/' . $c->id_nota . '>';
-                        echo form_open('/search/indexshowresult/' . $username . '/' . $c->id_nota, $attributes);
-                ?>
-            
-              <div class='project'>
-                          <h1><a href="<?php echo $ref ?>"> <?php echo $c->titulo ?> </a></h1>
-                          
-                           <!-- shadow -->
-                                <div class='project-shadow'>
-                                    <!-- project-thumb -->
-                                   <a title='An image'><img src='/evernoteUcab/images/home.png' /></a>
+
+                    $attributes = array('id' => 'sc-contact-form');
+                    $ref = base_url() . 'search/indexshowresult/' . $username . '/' . $c->id_nota . '>';
+                    echo form_open('/search/indexshowresult/' . $username . '/' . $c->id_nota, $attributes);
+?>
+                   <div class='project'>
+                       <h1><a href="<?php echo $ref ?>"> <?php echo $c->titulo ?> </a></h1>
+
+                               <!-- shadow -->
+                               <div class='project-shadow'>
+                                   <!-- project-thumb -->
+                                   <a title='An image'><img src='/evernoteUcab/images/notaSmall.jpg' /></a>
+                               
+                               <div class='the-excerpt'>
+                                   <?php echo $c->texto ?> 
+
                                </div>
-                            <div class='the-excerpt'>
-                                               <?php echo $c->texto?> 
-                                        
-                                    </div>
-                                 
-             </div>   
-                     
-                  <?php echo form_close(); 
-                  
-                     endforeach;
+                               
+                               </div>
+                             
+                                         
+                     </div>   
+                            
+        <?php
+        echo form_close();
 
-                        endif;
-                  ?>
-                         </div> 
+    endforeach;
+
+endif;
+        ?>
+                         
+                    </div> 
+                     <?php echo $this->pagination->create_links(); ?>   
                     
                     </div> 
             </div> 
@@ -65,6 +66,3 @@
                     
          </div>
         
-    </div>
-    
- </div>

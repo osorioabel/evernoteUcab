@@ -29,6 +29,8 @@ class search extends CI_Controller {
         $this->load->model('libreta_model');
         $this->load->model('nota_model');
         $this->load->helper('form');
+         $this->load->library('table');
+        $this->load->library('pagination');
     }
     
     
@@ -44,39 +46,40 @@ class search extends CI_Controller {
     }
     
     
-        public function indexsearchResult($username) {
-
-        $data = array();
-          $data['messi'] = "";
-         $objetivo = $this->input->post('goal');
+        public function indexsearchresult($username) {
+         $data = array();
+        $data['messi'] = "";
         $data['head'] = '/includes/headnormal';
-        $data['main_content'] = '/search/Search_Result';
+        $data['main_content'] = '/search/search_result';
         $data['username'] = $username;
-        $data['title'] = 'Search Result';
-        $this->load->library('table');
+        // aca se llama a funcion para cargar las libretas del usuario
+        // esta variable trae un codigo HTML para que se realice 
+        // su visualizacion en la interfaz de Modificar 
+        $data['title'] = 'Search';
         $this->load->library('pagination');
+        $this->load->library('table');
         
-        $config['base_url'] = base_url().'/nota/Result/'.$username.'/'.$objetivo.'/';
-        $config['total_rows'] = $this->nota_model->tamListNotaBuscar($objetivo);//obtenemos la cantidad de registros
+         $config['base_url'] = base_url().'/search/indexsearchresult/'.$username.'/';
+        $config['total_rows'] = $this->nota_model->tamListNotaBuscar();//obtenemos la cantidad de registros
         $config['per_page'] = 2;
         $config['num_links'] = 20;
+        
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
-        $config['uri_segment'] = '5';  //segmentos que va a tener nuestra URL
+        $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
         $this->pagination->initialize($config);
         //$config['num_tag_open'] = '<div id="pager">';
         //$config['num_tag_close'] = '</div>';
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $notas = $this->nota_model->getBuscarNotas($config['per_page'],$this->uri->segment(5),$objetivo);
-        $data['records'] = $notas;   
         
-        $data["records2"] = $this->db->get('nota',$config['per_page'],$this->uri->segment(3));
         
+        $notas = $this->nota_model->getBuscarNotas($config['per_page'],$this->uri->segment(4));
+        $data['records'] = $notas;
+        //$data['upload'] = $this->uploadNotebookViewModify($username);
         $this->load->view('/includes/templates', $data);
-    }
-    
+        }
     
     
       function indexshowresult($username, $id) {

@@ -17,7 +17,7 @@
             
               <?php
                 $attributes = array('id' => 'sc-contact-form');
-                echo form_open('/search/indexsearchResult/'. $username, $attributes);
+                echo form_open('/search/indexsearchresult/'. $username, $attributes);
                 ?>
             <fieldset>
              <div>
