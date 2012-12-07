@@ -89,7 +89,7 @@ class homeuser extends CI_Controller {
         $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
         $data['messi'] = "<a id='success-title'></a>
         <script>
-            new popUp('LOGIN EXITOSO', 
+            new popUp('SUCCESSFULL', 
             {title: 'WELCOME', titleClass: 'success', 
             autoclose: '1000'});
         </script>";
