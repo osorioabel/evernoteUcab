@@ -184,6 +184,16 @@ return $query->result();
 
 
 
+<<<<<<< HEAD
+=======
+{
+
+    $this->db->limit($numeroRegistros, $inicio);
+    $query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,e.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
+    return $query->result();
+    
+    }
+>>>>>>> zx
 
     function getnotatag($busqueda)
 
