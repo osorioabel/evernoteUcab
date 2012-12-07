@@ -22,7 +22,7 @@
             <fieldset>
              <div>
                         <label>WTF</label>
-                        <input name="goal"  id="tittleNote" 
+                        <input name="goal"  id="goal" 
                                type="text" class="form-poshytip"  title="Enter a tittle" />
             </div>
                  <p><input type="submit" value="Search" name="submit" id="submit" /></p>

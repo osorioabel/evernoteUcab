@@ -22,17 +22,29 @@ if ($messi)
                         
                         
                     
-             <?php
-               if (isset($records)):
+                          <?php
+       if (isset($records)):
                   foreach ($records as $c):
-
+           ?>   
+ <?php
+        
 
                     $attributes = array('id' => 'sc-contact-form');
-                    $ref = base_url() . 'search/indexshowresult/' . $username . '/' . $c->id_nota . '>';
-                    echo form_open('/search/indexshowresult/' . $username . '/' . $c->id_nota, $attributes);
+                    $ref = base_url() . 'search/indexshowresult/' . $username .'/'.$c->id_nota . '>';
+                    echo form_open('/search/indexshowresult/' . $username.'/'.$c->id_nota, $attributes);
 ?>
-                   <div class='project'>
-                       <h1><a href="<?php echo $ref ?>"> <?php echo $c->titulo ?> </a></h1>
+            <div>
+                       
+                        <input name="goal"  id="goal" hidden ="true" value="<?php echo $busqueda ?>"
+                               type="text" class="form-poshytip"   title="Enter a tittle" />
+                          
+            </div>  
+        
+
+<div class='project'>
+                      
+                       
+                      <h1><a href="<?php echo $ref ?>"> <?php echo $c->titulo ?> </a></h1>
 
                                <!-- shadow -->
                                <div class='project-shadow'>

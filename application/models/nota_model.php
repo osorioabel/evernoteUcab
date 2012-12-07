@@ -76,10 +76,10 @@ class Nota_Model extends CI_Model {
     }
 
     
-       public function tamListNotaBuscar() {
+       public function tamListNotaBuscar($objetivo) {
         //var_dump($query);
           //$query2 = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
-       $query2 = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%pru%' or n.titulo like '%pru%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%pru%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
+       $query2 = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%$objetivo%' or n.titulo like '%$objetivo%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$objetivo%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
        //$query2 = $this->db->query("select id_nota from nota where id_libreta = 35;");   
         // $query2 = $this->db->query("select id_nota from nota where titulo like '%pru%' or texto like '%pru%';"); 
            $numrow = $query2->num_rows;
@@ -89,7 +89,7 @@ class Nota_Model extends CI_Model {
     
     
     
-   function getBuscarNotas($numeroRegistros,$inicio)
+   function getBuscarNotas($numeroRegistros,$inicio,$objetivo)
 
 {
 
@@ -103,8 +103,8 @@ class Nota_Model extends CI_Model {
     
    $this->db->select('id_nota,titulo,texto,fecha_creacion');
    $this->db->from('nota');
-   $this->db->like('titulo', 'prue');
-   $this->db->or_like('texto', 'prue');
+   $this->db->like('titulo', $objetivo);
+   $this->db->or_like('texto', $objetivo);
    $query = $this->db->get();   
    $subQuery1 = $this->db->last_query();
   
@@ -115,7 +115,7 @@ class Nota_Model extends CI_Model {
    $this->db->from('nota');
    $this->db->join('nota_etiqueta', 'nota.id_nota = nota_etiqueta.fk_nota');
    $this->db->join('etiqueta', 'etiqueta.id_etiqueta = nota_etiqueta.fk_etiqueta');        
-   $this->db->like('etiqueta.texto', 'prue');   
+   $this->db->like('etiqueta.texto', $objetivo);   
    $query = $this->db->get();
    $subQuery2 = $this->db->last_query();  
    //$this->db->_reset_select();
