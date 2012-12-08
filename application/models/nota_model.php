@@ -76,13 +76,9 @@ class Nota_Model extends CI_Model {
     }
 
     
-       public function tamListNotaBuscar($objetivo) {
-        //var_dump($query);
-          //$query2 = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
+    public function tamListNotaBuscar($objetivo) {
        $query2 = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%$objetivo%' or n.titulo like '%$objetivo%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$objetivo%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
-       //$query2 = $this->db->query("select id_nota from nota where id_libreta = 35;");   
-        // $query2 = $this->db->query("select id_nota from nota where titulo like '%pru%' or texto like '%pru%';"); 
-           $numrow = $query2->num_rows;
+       $numrow = $query2->num_rows;
         return $numrow;
     }
     
@@ -93,7 +89,7 @@ class Nota_Model extends CI_Model {
 
 {
 
-    $this->db->limit($numeroRegistros-1, $inicio);
+    $this->db->limit($numeroRegistros);
     //$query = $this->db->query("select n.id_nota, n.titulo,n.texto from nota n,(select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$busqueda%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota) t  where n.texto like '%$busqueda%' or n.titulo like '%$busqueda%' or t.id_nota = n.id_nota;");
    //$query = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%pru%' or n.titulo like '%pru%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%pru%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
     

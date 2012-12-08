@@ -257,12 +257,38 @@ class libreta extends CI_Controller {
         $data['messi'] = "";
         // se llama al modelo y se trae la informacion de la libreta
         //que ya hemos seleccionado para ver su informacion
-        $data['upload3'] = $this->uploadNotebookView2($username);
+      //  $data['upload3'] = $this->uploadNotebookView2($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Select_Libreta_Consulta';
         $data['username'] = $username;
         //$data['libreta'] = $id;
         $data['title'] = 'Your Books';
+        
+        $this->load->library('pagination');
+        $config['base_url'] = base_url().'/libreta/indexSelectConsulta/'.$username.'/';
+        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+        $config['per_page'] = 2;
+        $config['num_links'] = 10;
+        
+        
+        
+        $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
+        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
+        $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
+        $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
+        //$config['num_tag_open'] = '<ul class="pager">';
+        //$config['num_tag_close'] = '</ul>';
+        $this->pagination->initialize($config);
+        
+       // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+        $data['records'] = $libretas;
+        
+        
+        
+        
+        
         $this->load->view('/includes/templates', $data);
     }
 

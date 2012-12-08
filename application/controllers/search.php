@@ -57,7 +57,7 @@ class search extends CI_Controller {
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/search/search_result';
         $data['username'] = $username;
-        $data['busqueda']=$this->input->post('goal');
+       $data['busqueda']=$this->input->post('goal');
         
         
         // aca se llama a funcion para cargar las libretas del usuario
@@ -69,9 +69,9 @@ class search extends CI_Controller {
         $this->load->library('pagination');
         $this->load->library('table');
         
-         $config['base_url'] = base_url().'/search/indexsearchresult2/'.$username.'/'.$this->input->post('goal').'/' ;
+        $config['base_url'] = base_url().'/search/indexsearchresult2/'.$username.'/'.$this->input->post('goal').'/' ;
         $config['total_rows'] = $this->nota_model->tamListNotaBuscar($data['busqueda']);//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 10;
         $config['num_links'] = 20;
         
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
@@ -87,7 +87,7 @@ class search extends CI_Controller {
         
         $notas = $this->nota_model->getBuscarNotas($config['per_page'],$this->uri->segment(5),$data['busqueda']);
         $data['records'] = $notas;
-        
+       
         //$data['upload'] = $this->uploadNotebookViewModify($username);
         $this->load->view('/includes/templates', $data);
         }
@@ -115,7 +115,7 @@ class search extends CI_Controller {
         
          $config['base_url'] = base_url().'/search/indexsearchresult2/'.$username.'/'.$value.'/' ;
         $config['total_rows'] = $this->nota_model->tamListNotaBuscar($data['busqueda']);//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 10;
         $config['num_links'] = 20;
         
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.

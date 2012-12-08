@@ -58,7 +58,7 @@ if ($messi)
                                                  ?> 
                                                <?php  
                                                         
-                                                            echo $s->texto;
+                                                            echo '#'.$s->texto;
                                                ?> 
                                                  <?php 
                                                             endif;
