@@ -14,6 +14,30 @@ require_once(APPPATH . '/controllers/test/Toast.php');
  * @filesource
  */
 class Example_tests extends Toast {
+    
+    
+      private $create_name = "";
+      private $create_lastname = "Gomez";
+      private $create_username = "fago";
+      private $create_password = "1234";
+      private $create_email = "fago@gmail.com"; 
+      private $loginusuario = "osorioabel";
+      private $loginpass = "490263"; 
+      private $loginusuario2 = "PrubaUnitaria";
+      private $loginpass2 = "490263";
+      private $objetivo1 = "z";
+      private $objetivo2 = "Diario";      
+      private $numeroRegistros=6;
+      private $inicio=5;
+      private $titulo = "Nota de Prueba";
+      private $nota = "Se hace Prueba de Creacion de una nota y ponerle 3 adjuntos ";
+      private $username = "osorioabel";
+      private $book = "999";
+       
+      
+
+               
+       
 
     /**
      *  Funcion Constructor del controlador, se realizan cargas de 
@@ -44,7 +68,24 @@ class Example_tests extends Toast {
      */
     function _pre() {
        $this->usuario_model->deleteuser("fago");
-        
+       $this->setCreate_name("Francisco");
+       $this->setCreate_lastname("Gomez");
+       $this->setCreate_username("fago");
+       $this->setCreate_password("123456");
+       $this->setCreate_email("fago@gmail.com");
+       $this->setLoginusuario("osorioabel");
+       $this->setLoginpass("490263");
+       $this->setLoginusuario2("PrubaUnitaria");
+       $this->setLoginpass2("490263");
+       $this->setObjetivo1("z");
+       $this->setObjetivo2("Diario");
+       $this->setNumeroRegistros("6");
+       $this->setInicio("5");
+       $this->setTitulo("Nota de Prueba");
+       $this->setNota("Se hace Prueba de Creacion de una nota y ponerle 3 adjuntos ");
+       $this->setUsername("osorioabel");
+       $this->setBook("999");
+     
     }
 
     /**
@@ -57,7 +98,25 @@ class Example_tests extends Toast {
     function _post() {
         
        $this->usuario_model->deleteuser("fago");
-        
+       $this->nota_model->deletenota();
+         $this->setCreate_name("");
+       $this->setCreate_lastname("");
+       $this->setCreate_username("");
+       $this->setCreate_password("");
+       $this->setCreate_email(".com");
+       $this->setLoginusuario("");
+       $this->setLoginpass("");
+       $this->setLoginusuario2("");
+       $this->setLoginpass2("");
+       $this->setObjetivo1("");
+       $this->setObjetivo2("");
+       $this->setNumeroRegistros("");
+       $this->setInicio("");
+       $this->setTitulo("");
+       $this->setNota("");
+       $this->setUsername("");
+       $this->setBook("");
+     
         
     }
 
@@ -72,9 +131,8 @@ class Example_tests extends Toast {
 
         // setting up variables for test 
 
-        $usuario = "osorioabel";
-        $pass = "490263";
-        $booleano = $this->usuario_model->login($usuario, $pass);
+       
+        $booleano = $this->usuario_model->login($this->loginusuario, $this->loginpass);
         $this->_assert_true($booleano);
         $this->_assert_equals($booleano, true);
         $this->message = 'Prueba Unitaria Satisfactoria el usuario se encuentra registrado en el sistema';
@@ -82,9 +140,8 @@ class Example_tests extends Toast {
 
     function test_login_fail() {
 
-        $username = "PrubaUnitaria";
-        $password = "123456";
-        $booleano = false;
+       
+        $booleano = $this->usuario_model->login($this->loginusuario2, $this->loginpass2);
         $this->_assert_false($booleano);
         $this->_assert_equals($booleano, false);
         $this->message = 'Prueba Unitaria Satisfactoria el usuario no se encuentra registrado en el sistema';
@@ -93,12 +150,8 @@ class Example_tests extends Toast {
     function test_register_succesful() {
 
 
-        $name = "Francisco";
-        $lastname = "Gomez";
-        $username = "fago";
-        $password = "123456";
-        $email = "fago@gmail.com";
-        $booleano = $this->usuario_model->register($name, $lastname, $username, $email, $password);
+       
+        $booleano = $this->usuario_model->register($this->create_name, $this->create_lastname, $this->create_username, $this->create_email, $this->create_password);
         $this->_assert_true($booleano);
         $this->_assert_equals($booleano, true);
         $this->message = 'Prueba Unitaria Satisfactoria el usuario se encuentra registrado en el sistema';
@@ -106,15 +159,7 @@ class Example_tests extends Toast {
 
     function test_register_fail() {
         
-        
-        $name = "Francisco";
-        $lastname = "Gomez";
-        $username = "fago";
-        $password = "1234";
-        $email = "fago@gmail.com";
-        //aca se inserta al usuario..
-        $booleano = $this->usuario_model->register($name, $lastname, $username, $email, $password);
-        $booleano = $this->usuario_model->register($name, $lastname, $username, $email, $password);
+        $booleano = $this->usuario_model->register($this->create_name, $this->create_lastname, $this->username, $this->create_email, $this->create_password);
         $this->_assert_false($booleano);
         $this->_assert_equals($booleano, false);
         $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';
@@ -122,7 +167,7 @@ class Example_tests extends Toast {
     
     function test_dropbox_conection_foldercreation_succesfull() {
 
-       $retorno  =$this->dropbox_model->test_dropbox('osorioabel'); 
+       $retorno  =$this->dropbox_model->test_dropbox($this->loginusuario); 
        $this->_assert_not_empty($retorno);
         $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
        
@@ -130,21 +175,180 @@ class Example_tests extends Toast {
     
     function test_createnotewith3attach() {
 
-        $titulo = "Nota de Prueba";
-        $nota = "Se hace Prueba de Creacion de una nota y ponerle 3 adjuntos ";
-        $username = "osorioabel";
-        $book = "999";
-        $notacreada=$this->nota_model->registerNote($username, $titulo, $nota, $book);
-        $this->_assert_true($booleano);
+        $notacreada=$this->nota_model->registerNote($this->username, $this->titulo, $this->nota, $this->book);
         
-         
-          
-       $this->_assert_not_empty($retorno);
+        $this->_assert_true($notacreada);
         $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
     }
     
     
+    function test_searchingwithaexistingString() {
+
+       
+       
+       $busqueda=array();
+        $busqueda=$this->nota_model->getBuscarNotas($this->numeroRegistros,  $this->inicio,  $this->objetivo1);
+        $this->_assert_not_empty($busqueda);
+        
+        $this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
+    }
+    function test_searchingwithoutaexistingString() {
+
+       
+      
+         $busqueda=array();
+         $busqueda=$this->nota_model->getBuscarNotas($this->numeroRegistros,  $this->inicio,  $this->objetivo2);
+        $this->_assert_empty($busqueda);
+        $this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
+    }
+    
+    
+    
+    
+      public function getCreate_name() {
+            return $this->create_name;
+        }
+
+        public function setCreate_name($create_name) {
+            $this->create_name = $create_name;
+        }
+
+        public function getCreate_lastname() {
+            return $this->create_lastname;
+        }
+
+        public function setCreate_lastname($create_lastname) {
+            $this->create_lastname = $create_lastname;
+        }
+
+        public function getCreate_username() {
+            return $this->create_username;
+        }
+
+        public function setCreate_username($create_username) {
+            $this->create_username = $create_username;
+        }
+
+        public function getCreate_password() {
+            return $this->create_password;
+        }
+
+        public function setCreate_password($create_password) {
+            $this->create_password = $create_password;
+        }
+
+        public function getCreate_email() {
+            return $this->create_email;
+        }
+
+        public function setCreate_email($create_email) {
+            $this->create_email = $create_email;
+        }
+
+        public function getLoginusuario() {
+            return $this->loginusuario;
+        }
+
+        public function setLoginusuario($loginusuario) {
+            $this->loginusuario = $loginusuario;
+        }
+
+        public function getLoginpass() {
+            return $this->loginpass;
+        }
+
+        public function setLoginpass($loginpass) {
+            $this->loginpass = $loginpass;
+        }
+
+        public function getLoginusuario2() {
+            return $this->loginusuario2;
+        }
+
+        public function setLoginusuario2($loginusuario2) {
+            $this->loginusuario2 = $loginusuario2;
+        }
+
+        public function getLoginpass2() {
+            return $this->loginpass2;
+        }
+
+        public function setLoginpass2($loginpass2) {
+            $this->loginpass2 = $loginpass2;
+        }
+
+        public function getObjetivo1() {
+            return $this->objetivo1;
+        }
+
+        public function setObjetivo1($objetivo1) {
+            $this->objetivo1 = $objetivo1;
+        }
+
+        public function getObjetivo2() {
+            return $this->objetivo2;
+        }
+
+        public function setObjetivo2($objetivo2) {
+            $this->objetivo2 = $objetivo2;
+        }
+
+        public function getNumeroRegistros() {
+            return $this->numeroRegistros;
+        }
+
+        public function setNumeroRegistros($numeroRegistros) {
+            $this->numeroRegistros = $numeroRegistros;
+        }
+
+        public function getInicio() {
+            return $this->inicio;
+        }
+
+        public function setInicio($inicio) {
+            $this->inicio = $inicio;
+        }
+
+        public function getTitulo() {
+            return $this->titulo;
+        }
+
+        public function setTitulo($titulo) {
+            $this->titulo = $titulo;
+        }
+
+        public function getNota() {
+            return $this->nota;
+        }
+
+        public function setNota($nota) {
+            $this->nota = $nota;
+        }
+
+        public function getUsername() {
+            return $this->username;
+        }
+
+        public function setUsername($username) {
+            $this->username = $username;
+        }
+
+        public function getBook() {
+            return $this->book;
+        }
+
+        public function setBook($book) {
+            $this->book = $book;
+        }
    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 // End of file example_test.php */
