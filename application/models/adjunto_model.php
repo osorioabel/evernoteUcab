@@ -40,7 +40,7 @@ class Adjunto_Model extends CI_Model {
     function registeradjunto($link, $nombre) {
 
 
-
+        $hoy = date("Y-m-d H:i:s");
         $data = array(
             'link' => $link,
             'nombre' => $nombre
@@ -52,15 +52,15 @@ class Adjunto_Model extends CI_Model {
             return false;
         }
 
-        //$query2 = $this->db->query("SELECT * FROM adjunto order by 1 desc;");
-        //$row = $query2->num_rows();
-        //$row2 = $query2->row();
-        //$lastadjunto=$row2->id_adjunto;
-        
-        
         
         return true;
     }
+    
+      public function getMaxID(){
+        $query= $this->db->query("select id_adjunto  from adjunto order by 1 desc");
+        $row2 = $query->row();
+        return $row2->id_adjunto;       
+     }
 
     public function getId_ajunto() {
         return $this->id_ajunto;

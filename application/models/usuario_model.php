@@ -1,6 +1,7 @@
 <?php
 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 /**
  * EvernoteUcab
@@ -13,7 +14,6 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * @copyright	        Copyright (c) 2012, 
  * @filesource
  */
-
 class Usuario_Model extends CI_Model {
 
     private $username = '';
@@ -24,30 +24,27 @@ class Usuario_Model extends CI_Model {
     private $name = '';
     private $apellido = '';
 
-    
     function __construct() {
         parent::__construct();
-        $this->oauth_token='';
-        $this->oauth_token_secret='';
-        
+        $this->oauth_token = '';
+        $this->oauth_token_secret = '';
     }
-    
-  
+
     /**
-    * 
-    *
-    * Esta Funcion  modificartoken($username, $nombre, $apellido)
-    *  se encarga de actualizar en la base de datos 
-    * el token que ha aignado el dropbox para su acceso  
-    *@category Modelo
-    * @param	string  Indica el Usuario 
-    * @param	string	nombre del usuario
-    * @param	string	apellido del usuario
-    * @return	boolean dice si actualizo o no 
-    */
-   public function modificartoken($username, $nombre, $apellido) {
+     * 
+     *
+     * Esta Funcion  modificartoken($username, $nombre, $apellido)
+     *  se encarga de actualizar en la base de datos 
+     * el token que ha aignado el dropbox para su acceso  
+     * @category Modelo
+     * @param	string  Indica el Usuario 
+     * @param	string	nombre del usuario
+     * @param	string	apellido del usuario
+     * @return	boolean dice si actualizo o no 
+     */
+    public function modificartoken($username, $nombre, $apellido) {
         $data = array('oauth_token' => $nombre,
-            'oauth_token_secret' => $apellido,  );
+            'oauth_token_secret' => $apellido,);
         $this->db->where('username', $username);
         $this->db->update('usuario', $data);
 
@@ -58,41 +55,41 @@ class Usuario_Model extends CI_Model {
     }
 
     /**
-    * 
-    *
-    * Esta Funcion login($username, $password) se encarga verificar los datos del
-    * usuario y autentificar su acceso a la app
-    *@category Modelo
-    * @param	string  Indica el Usuario 
-    * @param	string	password del usuario
-    * @return	boolean dice si actualizo o no 
-    */
+     * 
+     *
+     * Esta Funcion login($username, $password) se encarga verificar los datos del
+     * usuario y autentificar su acceso a la app
+     * @category Modelo
+     * @param	string  Indica el Usuario 
+     * @param	string	password del usuario
+     * @return	boolean dice si actualizo o no 
+     */
     public function login($username, $password) {
 
         $this->db->where('username', $username);
         $this->db->where('password', $password);
         $query = $this->db->get('usuario');
-        if ($query->num_rows>0) {
+        if ($query->num_rows > 0) {
             return TRUE;
         }
-        
+
         return FALSE;
     }
 
     /**
-    * 
-    *
-    * Esta Funcion register($name, $lastname, $username, $email, $password) 
-    * se encarga de registrar en la base de datos 
-    * a un usuario
-    *@category Modelo
-    * @param	string	nombre del usuario
-    * @param	string	apellido del usuario
-    * @param	string	username del usuario
-    * @param	string	email del usuario
-    * @param	string	password del usuario
-    * @return	boolean dice si actualizo o no 
-    */
+     * 
+     *
+     * Esta Funcion register($name, $lastname, $username, $email, $password) 
+     * se encarga de registrar en la base de datos 
+     * a un usuario
+     * @category Modelo
+     * @param	string	nombre del usuario
+     * @param	string	apellido del usuario
+     * @param	string	username del usuario
+     * @param	string	email del usuario
+     * @param	string	password del usuario
+     * @return	boolean dice si actualizo o no 
+     */
     public function register($name, $lastname, $username, $email, $password) {
 
         $data = array(
@@ -104,26 +101,26 @@ class Usuario_Model extends CI_Model {
         );
 
         $this->db->insert('usuario', $data);
-        if ($this->db->_error_message()){
-             log_message("error","User Already Exists");
+        if ($this->db->_error_message()) {
+            log_message("error", "User Already Exists");
             return false;
         }
         return true;
     }
 
     /**
-    * 
-    *
-    * Esta Funcion modificar($username, $nombre, $apellido, $email) 
-    * se encarga de actualizar en la base de datos 
-    * datos del usuario  
-    *@category Modelo
-    * @param	string  Indica el Usuario 
-    * @param	string	nombre del usuario
-    * @param	string	apellido del usuario
-    * @param	string	email del usuario
-    * @return	boolean dice si actualizo o no 
-    */
+     * 
+     *
+     * Esta Funcion modificar($username, $nombre, $apellido, $email) 
+     * se encarga de actualizar en la base de datos 
+     * datos del usuario  
+     * @category Modelo
+     * @param	string  Indica el Usuario 
+     * @param	string	nombre del usuario
+     * @param	string	apellido del usuario
+     * @param	string	email del usuario
+     * @return	boolean dice si actualizo o no 
+     */
     public function modificar($username, $nombre, $apellido, $email) {
         $data = array('nombre' => $nombre,
             'apellido' => $apellido,
@@ -137,54 +134,74 @@ class Usuario_Model extends CI_Model {
 
         return true;
     }
-    
+
     /**
-    * 
-    *
-    * Esta Funcion getUser($username) se encarga de traer de  base de datos 
-    *  datos del usuario
-    *@category Modelo
-    * @param	string  Indica el username a buscar 
-    * @return	object dice si actualizo o no 
-    */
-   public function getUser($username){
-       $this->db->where('username', $username);
-       $query = $this->db->get('usuario');
-       $row2 = $query->row();
+     * 
+     *
+     * Esta Funcion getUser($username) se encarga de traer de  base de datos 
+     *  datos del usuario
+     * @category Modelo
+     * @param	string  Indica el username a buscar 
+     * @return	object dice si actualizo o no 
+     */
+    public function getUser($username) {
+        $this->db->where('username', $username);
+        $query = $this->db->get('usuario');
+        $row2 = $query->row();
+
+        $this->setName($row2->nombre);
+        $this->setApellido($row2->apellido);
+        $this->setEmail($row2->email);
+
+        return $row2;
+    }
+
+    /**
+     * 
+     *
+     * Esta Funcion getUserToken($username) se encarga de traer de  base de datos 
+     *  datos del usuario
+     * @category Modelo
+     * @param	string  Indica el username a buscar 
+     * @return	object dice si actualizo o no 
+     */
+    public function getUserToken($username) {
+        $this->db->where('username', $username);
+        $query = $this->db->get('usuario');
+        $row2 = $query->row();
+        if ($row2!=null){
+        $token = $row2->oauth_token;
+        $secret = $row2->oauth_token_secret;
+
+        $data = array('oauth_token' => $token,
+            'oauth_token_secret' => $secret);
         
-       $this->setName($row2->nombre);
-       $this->setApellido($row2->apellido);
-       $this->setEmail($row2->email);
-               
-       return $row2; 
+        return $data;
         
-        
-       
-   }
+        }
+        return false;
+    }
 
-
-
-
-   public function deleteuser($username) {
+    public function deleteuser($username) {
         $user = new Usuario_Model();
         $query = $this->db->query("delete from usuario where username='$username'");
-          if ($this->db->_error_message())
+        if ($this->db->_error_message())
             return false;
 
         return true;
     }
 
     /**
-    * 
-    *
-    * Esta Funcion cambiarClave($username, $password) 
-    * se encarga de actualizar en la base de datos 
-    * el password que ha sido cambiado
-    *@category Modelo
-    * @param	string  Indica el Usuario 
-    * @param	string	indica la clave 
+     * 
+     *
+     * Esta Funcion cambiarClave($username, $password) 
+     * se encarga de actualizar en la base de datos 
+     * el password que ha sido cambiado
+     * @category Modelo
+     * @param	string  Indica el Usuario 
+     * @param	string	indica la clave 
      * @return	boolean dice si actualizo o no 
-    */
+     */
     public function cambiarClave($username, $password) {
         $data = array('password' => $password,
         );
@@ -196,7 +213,7 @@ class Usuario_Model extends CI_Model {
 
         return true;
     }
-    
+
     public function getUsername() {
         return $this->username;
     }
@@ -253,10 +270,5 @@ class Usuario_Model extends CI_Model {
         $this->apellido = $apellido;
     }
 
-
-    
 }
-
-   
-
 

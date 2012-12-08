@@ -26,6 +26,9 @@ class Example_tests extends Toast {
         parent::Toast(__FILE__);
         parent::__construct(__FILE__);
         $this->load->model("usuario_model");
+        $this->load->model("nota_model");
+        $this->load->model("dropbox_model");
+        $this->load->model("adjunto_model");
         
         
         
@@ -117,20 +120,31 @@ class Example_tests extends Toast {
         $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';
     }
     
-    function test_dropbox_conection_succesfull() {
-        
-        
-        
-   //     $controller = new Upload();
-       $retorno  =true;//$controller->test_dropbox();
-        $this->_assert_not_empty($retorno);
-        //$this->_assert_equals($booleano, false);
-        $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';
+    function test_dropbox_conection_foldercreation_succesfull() {
+
+       $retorno  =$this->dropbox_model->test_dropbox('osorioabel'); 
+       $this->_assert_not_empty($retorno);
+        $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
+       
     }
     
+    function test_createnotewith3attach() {
 
+        $titulo = "Nota de Prueba";
+        $nota = "Se hace Prueba de Creacion de una nota y ponerle 3 adjuntos ";
+        $username = "osorioabel";
+        $book = "999";
+        $notacreada=$this->nota_model->registerNote($username, $titulo, $nota, $book);
+        $this->_assert_true($booleano);
+        
+         
+          
+       $this->_assert_not_empty($retorno);
+        $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
+    }
     
     
+   
 }
 
 // End of file example_test.php */

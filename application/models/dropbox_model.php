@@ -14,7 +14,7 @@ if (!defined('BASEPATH'))
  * @copyright	        Copyright (c) 2012, 
  * @filesource
  */
-class Upload extends CI_Controller {
+class dropbox_model extends CI_Model {
 
     private $key = 'e9us87r5ehin30k';
     private $secret = 'vvzs5zc3kwt305c';
@@ -33,9 +33,6 @@ class Upload extends CI_Controller {
         $this->load->model('usuario_model');
         $this->load->model('nota_model');
         $this->load->model('adjunto_model');
-        $this->load->model('dropbox_model');
-        $this->load->model('nota_adjunto_model');
-        
     }
 
     function index() {
@@ -110,26 +107,24 @@ class Upload extends CI_Controller {
      * 
      */
     public function test_dropbox($username) {
-        $params['key'] = $this->key;
+      $params['key'] = $this->key;
         $params['secret'] = $this->secret;
-        $data = array();
-        $data = $this->usuario_model->getUserToken($username);
+       $data=array();
+        $data=$this->usuario_model->getUserToken($username);
+        if ($data!= false){
         $params['access'] = $data;
         $this->load->library('dropbox', $params);
-
-        $retorno = $this->dropbox->account();
-        print_r($retorno);
-        $return = $retorno;
-    }
-
-    public function test_dropbox_model($username) {
-
-        $retorno = $this->dropbox_model->test_dropbox($username);
-        if ($retorno != false) {
-            echo "si";
-        } else {
-            echo 'vacio';
+        
+        $a=$this->dropbox->create_folder('/pruebaUnitaria/prueba','dropbox');
+        
+        if ($a!=null){
+            
+            return true;
         }
+        
+        }
+        
+        return false;
     }
 
     /**
@@ -139,7 +134,7 @@ class Upload extends CI_Controller {
      * @param string $filename nombre del archivo a subir
      * 
      */
-    public function upload_file($filename) {
+   public function upload_file($filename) {
         $folder = 'evernoteUcab';
         $subidos = 'subidos/';
         $params['key'] = $this->key;
@@ -156,6 +151,7 @@ class Upload extends CI_Controller {
        $this->nota_adjunto_model->registeradjunto_nota($notaid, $adjuntoid);
        }
     }
+
 
     /**
      * Funcion create_folder()  Esta funcion se encarga realizar peticion al 

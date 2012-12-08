@@ -168,5 +168,22 @@ class Usuario extends CI_Controller {
         // caso de gente repetido
             echo "esta repedito";
     }
+    
+    
+    function test($username) {
+
+      
+        $booleano = $this->usuario_model->getUserToken($username);
+
+        if ($booleano != null) {
+            // si el cambio fue exitoso se redirecciona
+            print_r($booleano);
+        } else
+        // caso de gente repetido
+            echo "esta repedito";
+    }
+    
+    
+    
 
 }
