@@ -11,7 +11,7 @@ if ($messi)
 
             <!-- title -->
             <div id="page-title">
-                <span class="title">Modify Book</span>
+                <span class="title">Detail Note</span>
                 <span class="subtitle">Evernote Ucab</span>
             </div>
             <!-- ENDS title -->
@@ -29,14 +29,32 @@ if ($messi)
                 ?>
                 <fieldset>
                     
-                    <div>
+         <div>
         <label>Titulo</label>
          <input name='tittleNote'  id='tittleNote' value ='<?php echo $c->titulo ?>'
-               type='text' class='form-poshytip' title='Enter a tittle' />
+               type='text'readonly ="true" class='form-poshytip' title='tittle' />
+         <label>Tags</label>
         </div>
+                    <label>
+          <?php
+          
+                    if (isset($records2)):
+
+                     foreach ($records2 as $s):   ?>          
+          
+        <?php echo '#'.$s->texto. ' ' ?>
+         
+                   
+                    
+             <?php 
+                             endforeach;
+
+                        endif;?> 
+                </label>        
+                    
         <div>
         <label>Note</label>
-        <textarea name='Note' id='Note'  cols='30' rows='6' class='form-poshytip' title='Note'><?php echo $c->texto ?></textarea>
+        <textarea name='Note' id='Note'  cols='30' rows='6' class='form-poshytip' readonly ="true" title='Note'><?php echo $c->texto ?></textarea>
             </div>
                     
                     

@@ -30,6 +30,7 @@ class search extends CI_Controller {
         parent::__construct();
         $this->load->model('libreta_model');
         $this->load->model('nota_model');
+        $this->load->model('usuario_model');
         $this->load->helper('form');
          $this->load->library('table');
         $this->load->library('pagination');
@@ -59,7 +60,11 @@ class search extends CI_Controller {
         $data['username'] = $username;
        $data['busqueda']=$this->input->post('goal');
         
-        
+         $usuario = new Usuario_Model();
+         
+        $usuario = $this->usuario_model->getUser($username);
+        $id_user = $this->usuario_model->getId_user();
+        echo $id_user;
         // aca se llama a funcion para cargar las libretas del usuario
         // esta variable trae un codigo HTML para que se realice 
         // su visualizacion en la interfaz de Modificar 
@@ -102,7 +107,11 @@ class search extends CI_Controller {
         $data['main_content'] = '/search/search_result';
         $data['username'] = $username;
         $data['busqueda']=$value;
-        
+        $usuario = new Usuario_Model();
+         
+        $usuario = $this->usuario_model->getUser($username);
+        $id_user = $this->usuario_model->getId_user();
+        echo $id_user;
         
         // aca se llama a funcion para cargar las libretas del usuario
         // esta variable trae un codigo HTML para que se realice 
@@ -161,6 +170,8 @@ class search extends CI_Controller {
         //$config['num_tag_open'] = '<div id="pager">';
         //$config['num_tag_close'] = '</div>';
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $notastag = $this->nota_model->gettingnotatags($id);
+        $data['records2'] = $notastag;
         $notas = $this->nota_model->getBuscarNotasSelected($config['per_page'],$this->uri->segment(5),$id);
         $data['records'] = $notas;   
         

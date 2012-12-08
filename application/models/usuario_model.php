@@ -23,8 +23,17 @@ class Usuario_Model extends CI_Model {
     private $oauth_token_secret = '';
     private $name = '';
     private $apellido = '';
+    private $id_user ='';
+   
+    public function getId_user() {
+        return $this->id_user;
+    }
 
-    function __construct() {
+    public function setId_user($id_user) {
+        $this->id_user = $id_user;
+    }
+
+        function __construct() {
         parent::__construct();
         $this->oauth_token = '';
         $this->oauth_token_secret = '';
@@ -152,6 +161,7 @@ class Usuario_Model extends CI_Model {
         $this->setName($row2->nombre);
         $this->setApellido($row2->apellido);
         $this->setEmail($row2->email);
+        $this->setId_user($row2->id_usuario);
 
         return $row2;
     }
