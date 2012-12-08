@@ -75,7 +75,7 @@ class libreta extends CI_Controller {
         
          $config['base_url'] = base_url().'/libreta/indexModify/'.$username.'/';
         $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
-        $config['per_page'] = 4;
+        $config['per_page'] = 6;
         $config['num_links'] = 20;
         
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
@@ -180,7 +180,7 @@ class libreta extends CI_Controller {
         
          $config['base_url'] = base_url().'/libreta/indexDelete/'.$username.'/';
         $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
-        $config['per_page'] = 4;
+        $config['per_page'] = 6;
         $config['num_links'] = 20;
         
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
@@ -222,7 +222,7 @@ class libreta extends CI_Controller {
         $this->load->library('pagination');
         $config['base_url'] = base_url().'/libreta/indexSelect/'.$username.'/';
         $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 6;
         $config['num_links'] = 10;
         
         
@@ -267,7 +267,7 @@ class libreta extends CI_Controller {
         $this->load->library('pagination');
         $config['base_url'] = base_url().'/libreta/indexSelectConsulta/'.$username.'/';
         $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 6;
         $config['num_links'] = 10;
         
         
@@ -314,7 +314,7 @@ class libreta extends CI_Controller {
         $this->load->library('pagination');
         $config['base_url'] = base_url().'/libreta/indexDeleteNote/'.$username.'/';
         $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 6;
         $config['num_links'] = 10;
         
         

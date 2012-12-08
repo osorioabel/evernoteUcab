@@ -159,7 +159,7 @@ class search extends CI_Controller {
         
         $config['base_url'] = base_url().'/nota/Selected/'.$username.'/'.$id.'/';
         $config['total_rows'] = $this->nota_model->tamListNotaBuscar($id);//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 10;
         $config['num_links'] = 20;
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página

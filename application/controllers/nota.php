@@ -122,7 +122,7 @@ class nota extends CI_Controller {
   
         $config['base_url'] = base_url().'/nota/SelectNote/'.$username.'/'.$id.'/';
         $config['total_rows'] = $this->nota_model->tamListNota($id);//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 6;
         $config['num_links'] = 20;
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
@@ -165,7 +165,7 @@ class nota extends CI_Controller {
   
         $config['base_url'] = base_url().'/nota/SelectNoteConsulta/'.$username.'/'.$id.'/';
         $config['total_rows'] = $this->nota_model->tamListNota($id);//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 6;
         $config['num_links'] = 20;
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
@@ -302,7 +302,7 @@ class nota extends CI_Controller {
   
         $config['base_url'] = base_url().'/nota/indexDelete/'.$username.'/'.$idlibreta.'/';
         $config['total_rows'] = $this->nota_model->tamListNota($idlibreta);//obtenemos la cantidad de registros
-        $config['per_page'] = 2;
+        $config['per_page'] = 6;
         $config['num_links'] = 20;
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
