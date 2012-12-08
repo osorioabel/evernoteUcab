@@ -57,6 +57,7 @@ class Example_tests extends Toast {
     function _post() {
         
        $this->usuario_model->deleteuser("fago");
+       $this->nota_model->deletenota();
         
         
     }
@@ -135,11 +136,15 @@ class Example_tests extends Toast {
         $username = "osorioabel";
         $book = "999";
         $notacreada=$this->nota_model->registerNote($username, $titulo, $nota, $book);
-        $this->_assert_true($booleano);
-        
-         
-          
-       $this->_assert_not_empty($retorno);
+        $this->_assert_true($notacreada);
+        $archivo1=$this->dropbox_model->upload_file("8_b.jpg");
+        //$archivo2=$this->dropbox_model->upload_file("6_b.jpg");
+        //$archivo3= $this->dropbox_model->upload_file("7_b.jpg");
+        //echo $archivo1;
+        $this->_assert_true($archivo1);  
+       // $this->_assert_true($archivo2); 
+        //$this->_assert_true($archivo3);
+    
         $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
     }
     

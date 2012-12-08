@@ -28,11 +28,11 @@ class dropbox_model extends CI_Model {
      */
     function __construct() {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
         $this->load->library('session');
         $this->load->model('usuario_model');
         $this->load->model('nota_model');
         $this->load->model('adjunto_model');
+        $this->load->model('nota_adjunto_model');
     }
 
     function index() {
@@ -150,6 +150,7 @@ class dropbox_model extends CI_Model {
        $adjuntoid= $this->adjunto_model->getMaxID();
        $this->nota_adjunto_model->registeradjunto_nota($notaid, $adjuntoid);
        }
+       return $return;
     }
 
 
