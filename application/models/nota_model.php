@@ -179,6 +179,12 @@ return $query->result();
 }
 
 
+
+
+
+
+
+
     function getnotatag($busqueda)
 
 {
@@ -205,6 +211,9 @@ return $query->result();
 
 
 }
+
+
+
 
 
 function getCantidad ()
@@ -347,15 +356,6 @@ return $this->db->count_all('nota');
 
     public function setId_libreta($id_libreta) {
         $this->id_libreta = $id_libreta;
-    }
-    
-      public function deletenota() {
-        $user = new Usuario_Model();
-        $query = $this->db->query("delete from nota where titulo='Nota de Prueba'");
-        if ($this->db->_error_message())
-            return false;
-
-        return true;
     }
 
 }

@@ -174,15 +174,6 @@ class Upload extends CI_Controller {
         $return = $this->dropbox->create_folder('/prueba/prueba', 'dropbox');
         print_r($return);
     }
-   
-    public function seraquesube() {
-
-        
-        $return = $this->dropbox_model->upload_file("/Applications/XAMPP/xamppfiles/htdocs/evernoteUcab/subidos/5_b.jpg");
-        print_r($return);
-    }
-    
-    
 
 }
 
