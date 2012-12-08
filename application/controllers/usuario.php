@@ -26,6 +26,8 @@ class Usuario extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('usuario_model');
+        $this->load->model('nota_model');
+        
         $this->load->helper('form');
     }
 
@@ -170,14 +172,17 @@ class Usuario extends CI_Controller {
     }
     
     
-    function test($username) {
+    function test() {
 
-      
-        $booleano = $this->usuario_model->getUserToken($username);
+       $numeroRegistros=6;
+       $inicio=5;
+       $objetivo="z";
+       $busqueda=array();
+        $busqueda = $this->nota_model->getBuscarNotas($numeroRegistros,$inicio,$objetivo);
 
-        if ($booleano != null) {
+        if ($busqueda != null) {
             // si el cambio fue exitoso se redirecciona
-            print_r($booleano);
+            echo $booleano;
         } else
         // caso de gente repetido
             echo "esta repedito";
