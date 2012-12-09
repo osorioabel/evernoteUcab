@@ -16,23 +16,23 @@ require_once(APPPATH . '/controllers/test/Toast.php');
 class Example_tests extends Toast {
     
     
-      private $create_name = "";
-      private $create_lastname = "Gomez";
-      private $create_username = "fago";
-      private $create_password = "1234";
-      private $create_email = "fago@gmail.com"; 
-      private $loginusuario = "osorioabel";
-      private $loginpass = "490263"; 
-      private $loginusuario2 = "PrubaUnitaria";
-      private $loginpass2 = "490263";
-      private $objetivo1 = "z";
-      private $objetivo2 = "Diario";      
-      private $numeroRegistros=6;
-      private $inicio=5;
-      private $titulo = "Nota de Prueba";
-      private $nota = "Se hace Prueba de Creacion de una nota y ponerle 3 adjuntos ";
-      private $username = "osorioabel";
-      private $book = "999";
+      private $create_name ;
+      private $create_lastname ;
+      private $create_username;
+      private $create_password ;
+      private $create_email ; 
+      private $loginusuario;
+      private $loginpass; 
+      private $loginusuario2 ;
+      private $loginpass2;
+      private $objetivo1;
+      private $objetivo2 ;      
+      private $numeroRegistros;
+      private $inicio;
+      private $titulo ;
+      private $nota ;
+      private $username;
+      private $book;
        
       
 
