@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1262</span></a></li>
+                <span class="label label-info">1323</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">3</span>
@@ -86,6 +86,8 @@ api de DROPBOX para autentificar al usuario</span><pre>request_dropbox()</pre></
 <li class="method public "><a href="#method_test_dropbox" title="test_dropbox :: Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
 api de DROPBOX para verificar que si se autentifico usuario"><span class="description">Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
 api de DROPBOX para verificar que si se autentifico usuario</span><pre>test_dropbox()</pre></a></li>
+<li class="method public "><a href="#method_test_dropbox_model" title="test_dropbox_model :: "><span class="description">test_dropbox_model()
+        </span><pre>test_dropbox_model()</pre></a></li>
 <li class="method public "><a href="#method_upload_file" title="upload_file :: Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al
 api de DROPBOX para subir archivo"><span class="description">Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al
 api de DROPBOX para subir archivo</span><pre>upload_file()</pre></a></li>
@@ -96,7 +98,11 @@ api de DROPBOX para subir archivo</span><pre>upload_file()</pre></a></li>
                     <ul></ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="property private inherited"><a href="#property_instance" title="$instance :: "><span class="description">$instance</span><pre>$instance</pre></a></li></ul>
+                    <ul>
+<li class="property private inherited"><a href="#property_instance" title="$instance :: "><span class="description">$instance</span><pre>$instance</pre></a></li>
+<li class="property private "><a href="#property_key" title="$key :: "><span class="description">$key</span><pre>$key</pre></a></li>
+<li class="property private "><a href="#property_secret" title="$secret :: "><span class="description">$secret</span><pre>$secret</pre></a></li>
+</ul>
 </li>
 </ul>
 </div>
@@ -227,7 +233,7 @@ api de DROPBOX para autentificar al usuario</h2>
 <a id="method_test_dropbox"></a><div class="element clickable method public method_test_dropbox" data-toggle="collapse" data-target=".method_test_dropbox .collapse">
 <h2>Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
 api de DROPBOX para verificar que si se autentifico usuario</h2>
-<pre>test_dropbox() </pre>
+<pre>test_dropbox($username) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -235,6 +241,19 @@ api de DROPBOX para verificar que si se autentifico usuario</h2>
 <th>category</th>
 <td>Controller</td>
 </tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$username</h4></div>
+</div></div>
+</div>
+<a id="method_test_dropbox_model"></a><div class="element clickable method public method_test_dropbox_model" data-toggle="collapse" data-target=".method_test_dropbox_model .collapse">
+<h2>test_dropbox_model()
+        </h2>
+<pre>test_dropbox_model($username) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$username</h4></div>
 </div></div>
 </div>
 <a id="method_upload_file"></a><div class="element clickable method public method_upload_file" data-toggle="collapse" data-target=".method_upload_file .collapse">
@@ -268,6 +287,18 @@ api de DROPBOX para subir archivo</h2>
 </tr></table>
 </div></div>
 </div>
+<a id="property_key"> </a><div class="element clickable property private property_key" data-toggle="collapse" data-target=".property_key .collapse">
+<h2>$key</h2>
+<pre>$key </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_secret"> </a><div class="element clickable property private property_secret" data-toggle="collapse" data-target=".property_secret .collapse">
+<h2>$secret</h2>
+<pre>$secret </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -275,7 +306,7 @@ api de DROPBOX para subir archivo</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-12-05T19:41:03-04:30.<br></footer></div>
+            generated on 2012-12-08T19:36:10-04:30.<br></footer></div>
 </div>
 </body>
 </html>

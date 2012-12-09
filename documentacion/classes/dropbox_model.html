@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>ci » \search</title>
+<title>ci » \dropbox_model</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -65,22 +65,29 @@ algunos modelos y helpers usuados en el funcionamiento de
 el controlador"><span class="description">Funcion Constructor del controlador, se realizan cargas de
 algunos modelos y helpers usuados en el funcionamiento de
 el controlador</span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#method_get_instance" title="get_instance :: "><span class="description">get_instance()
-        </span><pre>get_instance()</pre></a></li>
-<li class="method public "><a href="#method_indexsearch" title="indexsearch :: Funcion indexsearch() se encarga
-de elaborar  y construir la vista de la busqueda"><span class="description">Funcion indexsearch() se encarga
-de elaborar  y construir la vista de la busqueda</span><pre>indexsearch()</pre></a></li>
-<li class="method public "><a href="#method_indexsearchresult" title="indexsearchresult :: Funcion indexsearchresult() se encarga
-de mostrar la busqueda a realizada"><span class="description">Funcion indexsearchresult() se encarga
-de mostrar la busqueda a realizada</span><pre>indexsearchresult()</pre></a></li>
-<li class="method public "><a href="#method_indexsearchresult2" title="indexsearchresult2 :: Funcion indexsearchresult2() se encarga
-de mostrar la busqueda a realizada"><span class="description">Funcion indexsearchresult2() se encarga
-de mostrar la busqueda a realizada</span><pre>indexsearchresult2()</pre></a></li>
-<li class="method public "><a href="#method_indexshowresult" title="indexshowresult :: Funcion indexshowresult() se encarga
-de mostrar la nota seleccionada"><span class="description">Funcion indexshowresult() se encarga
-de mostrar la nota seleccionada</span><pre>indexshowresult()</pre></a></li>
-<li class="method public "><a href="#method_search" title="search :: "><span class="description">search()
-        </span><pre>search()</pre></a></li>
+<li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method_access_dropbox" title="access_dropbox :: Funcion access_dropbox() Esta funcion se encarga realizar peticion al
+api de DROPBOX para autentificar al usuario y deja al usuario introducir su clave
+y usuario de dropbox"><span class="description">Funcion access_dropbox() Esta funcion se encarga realizar peticion al
+api de DROPBOX para autentificar al usuario y deja al usuario introducir su clave
+y usuario de dropbox</span><pre>access_dropbox()</pre></a></li>
+<li class="method public "><a href="#method_create_folder" title="create_folder :: Funcion create_folder()  Esta funcion se encarga realizar peticion al
+api de DROPBOX para crear carpeta en dropbox"><span class="description">Funcion create_folder()  Esta funcion se encarga realizar peticion al
+api de DROPBOX para crear carpeta en dropbox</span><pre>create_folder()</pre></a></li>
+<li class="method public "><a href="#method_do_upload" title="do_upload :: Funcion do_upload() Esta funcion se encarga realiar la carga de los adjuntos
+al servidor para ser luego subidos a dropbox"><span class="description">Funcion do_upload() Esta funcion se encarga realiar la carga de los adjuntos
+al servidor para ser luego subidos a dropbox</span><pre>do_upload()</pre></a></li>
+<li class="method public "><a href="#method_index" title="index :: "><span class="description">index()
+        </span><pre>index()</pre></a></li>
+<li class="method public "><a href="#method_request_dropbox" title="request_dropbox :: Funcion request_dropbox() Esta funcion se encarga realizar peticion al
+api de DROPBOX para autentificar al usuario"><span class="description">Funcion request_dropbox() Esta funcion se encarga realizar peticion al
+api de DROPBOX para autentificar al usuario</span><pre>request_dropbox()</pre></a></li>
+<li class="method public "><a href="#method_test_dropbox" title="test_dropbox :: Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
+api de DROPBOX para verificar que si se autentifico usuario"><span class="description">Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
+api de DROPBOX para verificar que si se autentifico usuario</span><pre>test_dropbox()</pre></a></li>
+<li class="method public "><a href="#method_upload_file" title="upload_file :: Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al
+api de DROPBOX para subir archivo"><span class="description">Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al
+api de DROPBOX para subir archivo</span><pre>upload_file()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -89,20 +96,20 @@ de mostrar la nota seleccionada</span><pre>indexshowresult()</pre></a></li>
 </li>
 <li class="nav-header private">» Private
                     <ul>
-<li class="property private inherited"><a href="#property_instance" title="$instance :: "><span class="description">$instance</span><pre>$instance</pre></a></li>
-<li class="property private "><a href="#property_variable" title="$variable :: "><span class="description">$variable</span><pre>$variable</pre></a></li>
+<li class="property private "><a href="#property_key" title="$key :: "><span class="description">$key</span><pre>$key</pre></a></li>
+<li class="property private "><a href="#property_secret" title="$secret :: "><span class="description">$secret</span><pre>$secret</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\search"></a><ul class="breadcrumb">
+<a id="\dropbox_model"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/search.html">search</a>
+<span class="divider">\</span><a href="../classes/dropbox_model.html">dropbox_model</a>
 </li>
 </ul>
 <div class="element class">
@@ -144,115 +151,131 @@ el controlador</h2>
 </tr></table>
 </div></div>
 </div>
-<a id="method_get_instance"></a><div class="element clickable method public method_get_instance" data-toggle="collapse" data-target=".method_get_instance .collapse">
-<h2>get_instance()
-        </h2>
-<pre>get_instance() </pre>
-<div class="labels">
-<span class="label">Inherited</span><span class="label">Static</span>
-</div>
+<a id="method___get"></a><div class="element clickable method public method___get" data-toggle="collapse" data-target=".method___get .collapse">
+<h2>__get</h2>
+<pre>__get($key) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<div class="long_description"><p>Allows models to access CI's loaded classes using the same
+syntax as controllers.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+<tr>
 <th>inherited_from</th>
-<td>\CI_Controller::get_instance()</td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_indexsearch"></a><div class="element clickable method public method_indexsearch" data-toggle="collapse" data-target=".method_indexsearch .collapse">
-<h2>Funcion indexsearch() se encarga
-de elaborar  y construir la vista de la busqueda</h2>
-<pre>indexsearch($username) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>@param String $username usuario actual</p></div>
-<table class="table table-bordered"><tr>
-<th>category</th>
-<td>Controller</td>
-</tr></table>
+<td>\CI_Model::__get()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-</div></div>
-</div>
-<a id="method_indexsearchresult"></a><div class="element clickable method public method_indexsearchresult" data-toggle="collapse" data-target=".method_indexsearchresult .collapse">
-<h2>Funcion indexsearchresult() se encarga
-de mostrar la busqueda a realizada</h2>
-<pre>indexsearchresult($username) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>@param String $username usuario actual</p></div>
-<table class="table table-bordered"><tr>
-<th>category</th>
-<td>Controller</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-</div></div>
-</div>
-<a id="method_indexsearchresult2"></a><div class="element clickable method public method_indexsearchresult2" data-toggle="collapse" data-target=".method_indexsearchresult2 .collapse">
-<h2>Funcion indexsearchresult2() se encarga
-de mostrar la busqueda a realizada</h2>
-<pre>indexsearchresult2($username, String $value) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>@param String $username usuario actual</p></div>
-<table class="table table-bordered"><tr>
-<th>category</th>
-<td>Controller</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
 <div class="subelement argument">
-<h4>$value</h4>
-<code>String</code><p>palabra que se esta buscando</p></div>
+<h4>$key</h4><p>string</p></div>
 </div></div>
 </div>
-<a id="method_indexshowresult"></a><div class="element clickable method public method_indexshowresult" data-toggle="collapse" data-target=".method_indexshowresult .collapse">
-<h2>Funcion indexshowresult() se encarga
-de mostrar la nota seleccionada</h2>
-<pre>indexshowresult($username, String $id) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>@param String $value palabra que se esta buscando</p></div>
-<table class="table table-bordered"><tr>
-<th>category</th>
-<td>Controller</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument">
-<h4>$id</h4>
-<code>String</code><p>id de la nota</p></div>
-</div></div>
-</div>
-<a id="method_search"></a><div class="element clickable method public method_search" data-toggle="collapse" data-target=".method_search .collapse">
-<h2>search()
-        </h2>
-<pre>search($username) </pre>
+<a id="method_access_dropbox"></a><div class="element clickable method public method_access_dropbox" data-toggle="collapse" data-target=".method_access_dropbox .collapse">
+<h2>Funcion access_dropbox() Esta funcion se encarga realizar peticion al
+api de DROPBOX para autentificar al usuario y deja al usuario introducir su clave
+y usuario de dropbox</h2>
+<pre>access_dropbox() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_create_folder"></a><div class="element clickable method public method_create_folder" data-toggle="collapse" data-target=".method_create_folder .collapse">
+<h2>Funcion create_folder()  Esta funcion se encarga realizar peticion al
+api de DROPBOX para crear carpeta en dropbox</h2>
+<pre>create_folder() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_do_upload"></a><div class="element clickable method public method_do_upload" data-toggle="collapse" data-target=".method_do_upload .collapse">
+<h2>Funcion do_upload() Esta funcion se encarga realiar la carga de los adjuntos
+al servidor para ser luego subidos a dropbox</h2>
+<pre>do_upload() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_index"></a><div class="element clickable method public method_index" data-toggle="collapse" data-target=".method_index .collapse">
+<h2>index()
+        </h2>
+<pre>index() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_request_dropbox"></a><div class="element clickable method public method_request_dropbox" data-toggle="collapse" data-target=".method_request_dropbox .collapse">
+<h2>Funcion request_dropbox() Esta funcion se encarga realizar peticion al
+api de DROPBOX para autentificar al usuario</h2>
+<pre>request_dropbox() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_test_dropbox"></a><div class="element clickable method public method_test_dropbox" data-toggle="collapse" data-target=".method_test_dropbox .collapse">
+<h2>Funcion test_dropbox()  Esta funcion se encarga realizar peticion al
+api de DROPBOX para verificar que si se autentifico usuario</h2>
+<pre>test_dropbox($username) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$username</h4></div>
+</div></div>
+</div>
+<a id="method_upload_file"></a><div class="element clickable method public method_upload_file" data-toggle="collapse" data-target=".method_upload_file .collapse">
+<h2>Funcion upload_file($filename)  Esta funcion se encarga realizar peticion al
+api de DROPBOX para subir archivo</h2>
+<pre>upload_file(string $filename) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Controller</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>nombre del archivo a subir</p></div>
 </div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_instance"> </a><div class="element clickable property private property_instance" data-toggle="collapse" data-target=".property_instance .collapse">
-<h2>$instance</h2>
-<pre>$instance </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\CI_Controller::$$instance</td>
-</tr></table>
-</div></div>
+<a id="property_key"> </a><div class="element clickable property private property_key" data-toggle="collapse" data-target=".property_key .collapse">
+<h2>$key</h2>
+<pre>$key </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_variable"> </a><div class="element clickable property private property_variable" data-toggle="collapse" data-target=".property_variable .collapse">
-<h2>$variable</h2>
-<pre>$variable </pre>
+<a id="property_secret"> </a><div class="element clickable property private property_secret" data-toggle="collapse" data-target=".property_secret .collapse">
+<h2>$secret</h2>
+<pre>$secret </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>

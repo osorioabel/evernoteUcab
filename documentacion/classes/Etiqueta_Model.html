@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1262</span></a></li>
+                <span class="label label-info">1323</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">3</span>
@@ -62,20 +62,31 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#method_createTag" title="createTag :: "><span class="description">createTag()
-        </span><pre>createTag()</pre></a></li>
-<li class="method public "><a href="#method_etiquetaAtIndex" title="etiquetaAtIndex :: "><span class="description">etiquetaAtIndex()
-        </span><pre>etiquetaAtIndex()</pre></a></li>
-<li class="method public "><a href="#method_getId_etiqueta" title="getId_etiqueta :: "><span class="description">getId_etiqueta()
-        </span><pre>getId_etiqueta()</pre></a></li>
-<li class="method public "><a href="#method_getTexto" title="getTexto :: "><span class="description">getTexto()
-        </span><pre>getTexto()</pre></a></li>
-<li class="method public "><a href="#method_setId_etiqueta" title="setId_etiqueta :: "><span class="description">setId_etiqueta()
-        </span><pre>setId_etiqueta()</pre></a></li>
-<li class="method public "><a href="#method_setTexto" title="setTexto :: "><span class="description">setTexto()
-        </span><pre>setTexto()</pre></a></li>
-<li class="method public "><a href="#method_tamListTag" title="tamListTag :: "><span class="description">tamListTag()
-        </span><pre>tamListTag()</pre></a></li>
+<li class="method public "><a href="#method_createTag" title="createTag :: Esta Funcion createTag($content)
+se encarga crear un tag con un contenido en especifico"><span class="description">Esta Funcion createTag($content)
+se encarga crear un tag con un contenido en especifico</span><pre>createTag()</pre></a></li>
+<li class="method public "><a href="#method_etiquetaAtIndex" title="etiquetaAtIndex :: Esta Funcion etiquetaAtIndex($username)
+se encarga de devolver una etiqueta en una posicion en especifico
+ de  una nota"><span class="description">Esta Funcion etiquetaAtIndex($username)
+se encarga de devolver una etiqueta en una posicion en especifico
+ de  una nota</span><pre>etiquetaAtIndex()</pre></a></li>
+<li class="method public "><a href="#method_getId_etiqueta" title="getId_etiqueta :: Esta Funcion getId_etiqueta()
+se encarga de devolver el id de la etiqueta"><span class="description">Esta Funcion getId_etiqueta()
+se encarga de devolver el id de la etiqueta</span><pre>getId_etiqueta()</pre></a></li>
+<li class="method public "><a href="#method_getTexto" title="getTexto :: Esta Funcion getTexto()
+se encarga de devolver el texto de la etiqueta"><span class="description">Esta Funcion getTexto()
+se encarga de devolver el texto de la etiqueta</span><pre>getTexto()</pre></a></li>
+<li class="method public "><a href="#method_setId_etiqueta" title="setId_etiqueta :: Esta Funcion setId_etiqueta($id_etiqueta)
+se encarga de setear el id de la etiqueta"><span class="description">Esta Funcion setId_etiqueta($id_etiqueta)
+se encarga de setear el id de la etiqueta</span><pre>setId_etiqueta()</pre></a></li>
+<li class="method public "><a href="#method_setTexto" title="setTexto :: Esta Funcion setTexto($texto)
+se encarga de setear el texto de la etiqueta"><span class="description">Esta Funcion setTexto($texto)
+se encarga de setear el texto de la etiqueta</span><pre>setTexto()</pre></a></li>
+<li class="method public "><a href="#method_tamListTag" title="tamListTag :: Esta Funcion tamListTag($username)
+se encarga de contar cuantos tag
+ tiene  una nota"><span class="description">Esta Funcion tamListTag($username)
+se encarga de contar cuantos tag
+ tiene  una nota</span><pre>tamListTag()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -154,72 +165,129 @@ syntax as controllers.</p></div>
 </div></div>
 </div>
 <a id="method_createTag"></a><div class="element clickable method public method_createTag" data-toggle="collapse" data-target=".method_createTag .collapse">
-<h2>createTag()
-        </h2>
-<pre>createTag($content) </pre>
+<h2>Esta Funcion createTag($content)
+se encarga crear un tag con un contenido en especifico</h2>
+<pre>createTag(string $content) : \Una</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$content</h4></div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>contenido del tag</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Una</code>etiqueta creada</div>
 </div></div>
 </div>
 <a id="method_etiquetaAtIndex"></a><div class="element clickable method public method_etiquetaAtIndex" data-toggle="collapse" data-target=".method_etiquetaAtIndex .collapse">
-<h2>etiquetaAtIndex()
-        </h2>
-<pre>etiquetaAtIndex($index) </pre>
+<h2>Esta Funcion etiquetaAtIndex($username)
+se encarga de devolver una etiqueta en una posicion en especifico
+ de  una nota</h2>
+<pre>etiquetaAtIndex(string $index) : \Una</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$index</h4></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Una</code>etiqueta</div>
 </div></div>
 </div>
 <a id="method_getId_etiqueta"></a><div class="element clickable method public method_getId_etiqueta" data-toggle="collapse" data-target=".method_getId_etiqueta .collapse">
-<h2>getId_etiqueta()
-        </h2>
-<pre>getId_etiqueta() </pre>
+<h2>Esta Funcion getId_etiqueta()
+se encarga de devolver el id de la etiqueta</h2>
+<pre>getId_etiqueta() : \el</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\el</code>id de de una etiqueta</div>
+</div></div>
 </div>
 <a id="method_getTexto"></a><div class="element clickable method public method_getTexto" data-toggle="collapse" data-target=".method_getTexto .collapse">
-<h2>getTexto()
-        </h2>
-<pre>getTexto() </pre>
+<h2>Esta Funcion getTexto()
+se encarga de devolver el texto de la etiqueta</h2>
+<pre>getTexto() : \el</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\el</code>texto de la etiqueta</div>
+</div></div>
 </div>
 <a id="method_setId_etiqueta"></a><div class="element clickable method public method_setId_etiqueta" data-toggle="collapse" data-target=".method_setId_etiqueta .collapse">
-<h2>setId_etiqueta()
-        </h2>
+<h2>Esta Funcion setId_etiqueta($id_etiqueta)
+se encarga de setear el id de la etiqueta</h2>
 <pre>setId_etiqueta($id_etiqueta) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$id_etiqueta</h4></div>
 </div></div>
 </div>
 <a id="method_setTexto"></a><div class="element clickable method public method_setTexto" data-toggle="collapse" data-target=".method_setTexto .collapse">
-<h2>setTexto()
-        </h2>
-<pre>setTexto($texto) </pre>
+<h2>Esta Funcion setTexto($texto)
+se encarga de setear el texto de la etiqueta</h2>
+<pre>setTexto(string $texto) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$texto</h4></div>
+<div class="subelement argument">
+<h4>$texto</h4>
+<code>string</code><p>texto de la etiqueta</p></div>
 </div></div>
 </div>
 <a id="method_tamListTag"></a><div class="element clickable method public method_tamListTag" data-toggle="collapse" data-target=".method_tamListTag .collapse">
-<h2>tamListTag()
-        </h2>
-<pre>tamListTag($username) </pre>
+<h2>Esta Funcion tamListTag($username)
+se encarga de contar cuantos tag
+ tiene  una nota</h2>
+<pre>tamListTag(string $username) : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>nombre del usuario</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>dice cantidad de tags que tiene el usuario</div>
 </div></div>
 </div>
 <h3>
@@ -243,7 +311,7 @@ syntax as controllers.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-12-05T19:41:03-04:30.<br></footer></div>
+            generated on 2012-12-08T19:36:10-04:30.<br></footer></div>
 </div>
 </body>
 </html>

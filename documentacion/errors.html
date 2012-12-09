@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1262</span></a></li>
+                <span class="label label-info">1323</span></a></li>
 <li><a href="markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">3</span>
@@ -91,8 +91,10 @@
 <li><a href="#application/libraries/Dropbox.php"><i class="icon-file"></i>application/libraries/Dropbox.php</a></li>
 <li><a href="#application/logs/log-2012-11-28.php"><i class="icon-file"></i>application/logs/log-2012-11-28.php</a></li>
 <li><a href="#application/logs/log-2012-12-01.php"><i class="icon-file"></i>application/logs/log-2012-12-01.php</a></li>
+<li><a href="#application/logs/log-2012-12-08.php"><i class="icon-file"></i>application/logs/log-2012-12-08.php</a></li>
 <li><a href="#application/models/adjunto_model.php"><i class="icon-file"></i>application/models/adjunto_model.php</a></li>
 <li><a href="#application/models/Buscar_Model.php"><i class="icon-file"></i>application/models/Buscar_Model.php</a></li>
+<li><a href="#application/models/dropbox_model.php"><i class="icon-file"></i>application/models/dropbox_model.php</a></li>
 <li><a href="#application/models/etiqueta_model.php"><i class="icon-file"></i>application/models/etiqueta_model.php</a></li>
 <li><a href="#application/models/libreta_model.php"><i class="icon-file"></i>application/models/libreta_model.php</a></li>
 <li><a href="#application/models/libreta_nota_model.php"><i class="icon-file"></i>application/models/libreta_nota_model.php</a></li>
@@ -122,6 +124,7 @@
 <li><a href="#application/views/nota/Modify_Note.php"><i class="icon-file"></i>application/views/nota/Modify_Note.php</a></li>
 <li><a href="#application/views/nota/Modify_Note_2.php"><i class="icon-file"></i>application/views/nota/Modify_Note_2.php</a></li>
 <li><a href="#application/views/search/search.php"><i class="icon-file"></i>application/views/search/search.php</a></li>
+<li><a href="#application/views/search/search_detail.php"><i class="icon-file"></i>application/views/search/search_detail.php</a></li>
 <li><a href="#application/views/search/Search_Result.php"><i class="icon-file"></i>application/views/search/Search_Result.php</a></li>
 <li><a href="#application/views/test/footer.php"><i class="icon-file"></i>application/views/test/footer.php</a></li>
 <li><a href="#application/views/test/header.php"><i class="icon-file"></i>application/views/test/header.php</a></li>
@@ -630,42 +633,42 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>253</td>
+<td>281</td>
 <td>Name of argument $idlibreta does not match with the DocBlock's name $id in indexDelete()</td>
 </tr>
 <tr class="notice">
 <td>notice</td>
-<td>253</td>
+<td>281</td>
 <td>Parameter $id could not be found in indexDelete()</td>
 </tr>
 <tr class="notice">
 <td>notice</td>
-<td>295</td>
+<td>323</td>
 <td>Parameter $libreta could not be found in AddNote()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>337</td>
+<td>365</td>
 <td>Name of argument $nota does not match with the DocBlock's name $libreta in ModifyNote()</td>
 </tr>
 <tr class="notice">
 <td>notice</td>
-<td>337</td>
+<td>365</td>
 <td>Parameter $libreta could not be found in ModifyNote()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>359</td>
+<td>387</td>
 <td>Name of argument $idlibreta2 does not match with the DocBlock's name $libreta in DeleteNote()</td>
 </tr>
 <tr class="notice">
 <td>notice</td>
-<td>359</td>
+<td>387</td>
 <td>Parameter $libreta could not be found in DeleteNote()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>456</td>
+<td>484</td>
 <td>Argument $id is missing from the Docblock of NoteViewDelete()</td>
 </tr>
 </tbody>
@@ -673,7 +676,7 @@
 </div>
 <div class="package-contents">
 <a name="application/controllers/search.php" id="application/controllers/search.php"></a><h3>
-<i class="icon-file"></i>application/controllers/search.php<small style="float: right;padding-right: 10px;">4</small>
+<i class="icon-file"></i>application/controllers/search.php<small style="float: right;padding-right: 10px;">9</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -689,17 +692,42 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>35</td>
-<td>No DocBlock was found for method indexsearch()</td>
+<td>20</td>
+<td>No DocBlock was found for property $variable</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>47</td>
-<td>No DocBlock was found for method indexsearchResult()</td>
+<td>39</td>
+<td>Argument $username is missing from the Docblock of indexsearch()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>81</td>
+<td>57</td>
+<td>Argument $username is missing from the Docblock of indexsearchresult()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>112</td>
+<td>Name of argument $username does not match with the DocBlock's name $value in indexsearchresult2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>112</td>
+<td>Argument $value is missing from the Docblock of indexsearchresult2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>167</td>
+<td>Name of argument $username does not match with the DocBlock's name $id in indexshowresult()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>167</td>
+<td>Argument $id is missing from the Docblock of indexshowresult()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>209</td>
 <td>No DocBlock was found for method search()</td>
 </tr>
 </tbody>
@@ -707,7 +735,7 @@
 </div>
 <div class="package-contents">
 <a name="application/controllers/test/example_tests.php" id="application/controllers/test/example_tests.php"></a><h3>
-<i class="icon-file"></i>application/controllers/test/example_tests.php<small style="float: right;padding-right: 10px;">5</small>
+<i class="icon-file"></i>application/controllers/test/example_tests.php<small style="float: right;padding-right: 10px;">59</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -723,23 +751,293 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>80</td>
+<td>19</td>
+<td>No DocBlock was found for property $create_name</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for property $create_lastname</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for property $create_username</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for property $create_password</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for property $create_email</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>24</td>
+<td>No DocBlock was found for property $loginusuario</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for property $loginpass</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>26</td>
+<td>No DocBlock was found for property $loginusuario2</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for property $loginpass2</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>28</td>
+<td>No DocBlock was found for property $objetivo1</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>29</td>
+<td>No DocBlock was found for property $objetivo2</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>30</td>
+<td>No DocBlock was found for property $numeroRegistros</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>31</td>
+<td>No DocBlock was found for property $inicio</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>32</td>
+<td>No DocBlock was found for property $titulo</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>33</td>
+<td>No DocBlock was found for property $nota</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>34</td>
+<td>No DocBlock was found for property $username</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>35</td>
+<td>No DocBlock was found for property $book</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>141</td>
 <td>No DocBlock was found for method test_login_fail()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>90</td>
+<td>150</td>
 <td>No DocBlock was found for method test_register_succesful()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>104</td>
+<td>160</td>
 <td>No DocBlock was found for method test_register_fail()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>120</td>
-<td>No DocBlock was found for method test_dropbox_conection_succesfull()</td>
+<td>168</td>
+<td>No DocBlock was found for method test_dropbox_conection_foldercreation_succesfull()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>176</td>
+<td>No DocBlock was found for method test_createnotewith3attach()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>185</td>
+<td>No DocBlock was found for method test_searchingwithaexistingString()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>195</td>
+<td>No DocBlock was found for method test_searchingwithoutaexistingString()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>208</td>
+<td>No DocBlock was found for method getCreate_name()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>212</td>
+<td>No DocBlock was found for method setCreate_name()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>216</td>
+<td>No DocBlock was found for method getCreate_lastname()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>220</td>
+<td>No DocBlock was found for method setCreate_lastname()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>224</td>
+<td>No DocBlock was found for method getCreate_username()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>228</td>
+<td>No DocBlock was found for method setCreate_username()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>232</td>
+<td>No DocBlock was found for method getCreate_password()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>236</td>
+<td>No DocBlock was found for method setCreate_password()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>240</td>
+<td>No DocBlock was found for method getCreate_email()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>244</td>
+<td>No DocBlock was found for method setCreate_email()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>248</td>
+<td>No DocBlock was found for method getLoginusuario()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>252</td>
+<td>No DocBlock was found for method setLoginusuario()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>256</td>
+<td>No DocBlock was found for method getLoginpass()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>260</td>
+<td>No DocBlock was found for method setLoginpass()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>264</td>
+<td>No DocBlock was found for method getLoginusuario2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>268</td>
+<td>No DocBlock was found for method setLoginusuario2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>272</td>
+<td>No DocBlock was found for method getLoginpass2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>276</td>
+<td>No DocBlock was found for method setLoginpass2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>280</td>
+<td>No DocBlock was found for method getObjetivo1()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>284</td>
+<td>No DocBlock was found for method setObjetivo1()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>288</td>
+<td>No DocBlock was found for method getObjetivo2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>292</td>
+<td>No DocBlock was found for method setObjetivo2()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>296</td>
+<td>No DocBlock was found for method getNumeroRegistros()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>300</td>
+<td>No DocBlock was found for method setNumeroRegistros()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>304</td>
+<td>No DocBlock was found for method getInicio()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>308</td>
+<td>No DocBlock was found for method setInicio()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>312</td>
+<td>No DocBlock was found for method getTitulo()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>316</td>
+<td>No DocBlock was found for method setTitulo()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>320</td>
+<td>No DocBlock was found for method getNota()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>324</td>
+<td>No DocBlock was found for method setNota()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>328</td>
+<td>No DocBlock was found for method getUsername()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>332</td>
+<td>No DocBlock was found for method setUsername()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>336</td>
+<td>No DocBlock was found for method getBook()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>340</td>
+<td>No DocBlock was found for method setBook()</td>
 </tr>
 </tbody>
 </table></div>
@@ -939,7 +1237,7 @@
 </div>
 <div class="package-contents">
 <a name="application/controllers/upload.php" id="application/controllers/upload.php"></a><h3>
-<i class="icon-file"></i>application/controllers/upload.php<small style="float: right;padding-right: 10px;">3</small>
+<i class="icon-file"></i>application/controllers/upload.php<small style="float: right;padding-right: 10px;">7</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -955,12 +1253,32 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>35</td>
+<td>19</td>
+<td>No DocBlock was found for property $key</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for property $secret</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>41</td>
 <td>No DocBlock was found for method index()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>106</td>
+<td>Argument $username is missing from the Docblock of test_dropbox()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>125</td>
+<td>No DocBlock was found for method test_dropbox_model()</td>
 </tr>
 <tr class="notice">
 <td>notice</td>
-<td>143</td>
+<td>160</td>
 <td>Parameter $filename could not be found in create_folder()</td>
 </tr>
 </tbody>
@@ -1182,8 +1500,25 @@
 </table></div>
 </div>
 <div class="package-contents">
+<a name="application/logs/log-2012-12-08.php" id="application/logs/log-2012-12-08.php"></a><h3>
+<i class="icon-file"></i>application/logs/log-2012-12-08.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file application/logs/log-2012-12-08.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
 <a name="application/models/adjunto_model.php" id="application/models/adjunto_model.php"></a><h3>
-<i class="icon-file"></i>application/models/adjunto_model.php<small style="float: right;padding-right: 10px;">13</small>
+<i class="icon-file"></i>application/models/adjunto_model.php<small style="float: right;padding-right: 10px;">9</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -1229,33 +1564,13 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>65</td>
-<td>No DocBlock was found for method getId_ajunto()</td>
+<td>110</td>
+<td>Argument $nombre is missing from the Docblock of setNombre()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>69</td>
-<td>No DocBlock was found for method setId_ajunto()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>73</td>
-<td>No DocBlock was found for method getNombre()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>77</td>
-<td>No DocBlock was found for method setNombre()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>81</td>
-<td>No DocBlock was found for method getLink()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>85</td>
-<td>No DocBlock was found for method setLink()</td>
+<td>132</td>
+<td>Argument $link is missing from the Docblock of setLink()</td>
 </tr>
 </tbody>
 </table></div>
@@ -1278,8 +1593,52 @@
 </table></div>
 </div>
 <div class="package-contents">
+<a name="application/models/dropbox_model.php" id="application/models/dropbox_model.php"></a><h3>
+<i class="icon-file"></i>application/models/dropbox_model.php<small style="float: right;padding-right: 10px;">6</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file application/models/dropbox_model.php</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for property $key</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for property $secret</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>38</td>
+<td>No DocBlock was found for method index()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>103</td>
+<td>Argument $username is missing from the Docblock of test_dropbox()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>159</td>
+<td>Parameter $filename could not be found in create_folder()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
 <a name="application/models/etiqueta_model.php" id="application/models/etiqueta_model.php"></a><h3>
-<i class="icon-file"></i>application/models/etiqueta_model.php<small style="float: right;padding-right: 10px;">11</small>
+<i class="icon-file"></i>application/models/etiqueta_model.php<small style="float: right;padding-right: 10px;">6</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -1310,45 +1669,20 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>28</td>
-<td>No DocBlock was found for method tamListTag()</td>
+<td>107</td>
+<td>Name of argument $id_etiqueta does not match with the DocBlock's name $id_etiquetat in setId_etiqueta()</td>
 </tr>
-<tr class="error">
-<td>error</td>
-<td>33</td>
-<td>No DocBlock was found for method etiquetaAtIndex()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>54</td>
-<td>No DocBlock was found for method createTag()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>68</td>
-<td>No DocBlock was found for method getId_etiqueta()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>72</td>
-<td>No DocBlock was found for method setId_etiqueta()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>76</td>
-<td>No DocBlock was found for method getTexto()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>80</td>
-<td>No DocBlock was found for method setTexto()</td>
+<tr class="notice">
+<td>notice</td>
+<td>107</td>
+<td>Parameter $id_etiquetat could not be found in setId_etiqueta()</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="package-contents">
 <a name="application/models/libreta_model.php" id="application/models/libreta_model.php"></a><h3>
-<i class="icon-file"></i>application/models/libreta_model.php<small style="float: right;padding-right: 10px;">19</small>
+<i class="icon-file"></i>application/models/libreta_model.php<small style="float: right;padding-right: 10px;">17</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -1394,62 +1728,52 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>108</td>
-<td>No DocBlock was found for method getlibreta()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>124</td>
-<td>No DocBlock was found for method getCantidad()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>208</td>
+<td>232</td>
 <td>No DocBlock was found for method getId_libreta()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>212</td>
+<td>236</td>
 <td>No DocBlock was found for method setId_libreta()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>216</td>
+<td>240</td>
 <td>No DocBlock was found for method getNombre()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>220</td>
+<td>244</td>
 <td>No DocBlock was found for method setNombre()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>224</td>
+<td>248</td>
 <td>No DocBlock was found for method getDescripcion()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>228</td>
+<td>252</td>
 <td>No DocBlock was found for method setDescripcion()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>232</td>
+<td>256</td>
 <td>No DocBlock was found for method getFecha()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>236</td>
+<td>260</td>
 <td>No DocBlock was found for method setFecha()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>240</td>
+<td>264</td>
 <td>No DocBlock was found for method getFk_usuario()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>244</td>
+<td>268</td>
 <td>No DocBlock was found for method setFk_usuario()</td>
 </tr>
 </tbody>
@@ -1474,7 +1798,7 @@
 </div>
 <div class="package-contents">
 <a name="application/models/nota_adjunto_model.php" id="application/models/nota_adjunto_model.php"></a><h3>
-<i class="icon-file"></i>application/models/nota_adjunto_model.php<small style="float: right;padding-right: 10px;">1</small>
+<i class="icon-file"></i>application/models/nota_adjunto_model.php<small style="float: right;padding-right: 10px;">3</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -1482,11 +1806,23 @@
 <th>Line</th>
 <th>Description</th>
 </tr></thead>
-<tbody><tr class="error">
+<tbody>
+<tr class="error">
 <td>error</td>
 <td>0</td>
 <td>No page-level DocBlock was found in file application/models/nota_adjunto_model.php</td>
-</tr></tbody>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>18</td>
+<td>Parameter  could not be found in registeradjunto_nota()</td>
+</tr>
+<tr class="notice">
+<td>notice</td>
+<td>18</td>
+<td>Parameter  could not be found in registeradjunto_nota()</td>
+</tr>
+</tbody>
 </table></div>
 </div>
 <div class="package-contents">
@@ -1508,7 +1844,7 @@
 </div>
 <div class="package-contents">
 <a name="application/models/nota_model.php" id="application/models/nota_model.php"></a><h3>
-<i class="icon-file"></i>application/models/nota_model.php<small style="float: right;padding-right: 10px;">23</small>
+<i class="icon-file"></i>application/models/nota_model.php<small style="float: right;padding-right: 10px;">18</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -1554,90 +1890,65 @@
 </tr>
 <tr class="error">
 <td>error</td>
-<td>79</td>
-<td>No DocBlock was found for method tamListNotaBuscar()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>118</td>
-<td>No DocBlock was found for method getMaxID()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>124</td>
-<td>No DocBlock was found for method getnota()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>141</td>
-<td>No DocBlock was found for method getBuscarNotas()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>169</td>
-<td>No DocBlock was found for method getCantidad()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>199</td>
-<td>No DocBlock was found for method addTags2Note()</td>
-</tr>
-<tr class="error">
-<td>error</td>
-<td>276</td>
+<td>425</td>
 <td>No DocBlock was found for method getId_nota()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>280</td>
+<td>429</td>
 <td>No DocBlock was found for method setId_nota()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>284</td>
+<td>433</td>
 <td>No DocBlock was found for method getTitulo()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>288</td>
+<td>437</td>
 <td>No DocBlock was found for method setTitulo()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>292</td>
+<td>441</td>
 <td>No DocBlock was found for method getTexto()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>296</td>
+<td>445</td>
 <td>No DocBlock was found for method setTexto()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>300</td>
+<td>449</td>
 <td>No DocBlock was found for method getFecha_creacion()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>304</td>
+<td>453</td>
 <td>No DocBlock was found for method setFecha_creacion()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>308</td>
+<td>457</td>
 <td>No DocBlock was found for method getId_libreta()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>312</td>
+<td>461</td>
 <td>No DocBlock was found for method setId_libreta()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>465</td>
+<td>No DocBlock was found for method deletenota()</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="package-contents">
 <a name="application/models/usuario_model.php" id="application/models/usuario_model.php"></a><h3>
-<i class="icon-file"></i>application/models/usuario_model.php<small style="float: right;padding-right: 10px;">23</small>
+<i class="icon-file"></i>application/models/usuario_model.php<small style="float: right;padding-right: 10px;">27</small>
 </h3>
 <div><table class="table markers table-bordered">
 <thead><tr>
@@ -1688,77 +1999,97 @@
 </tr>
 <tr class="error">
 <td>error</td>
+<td>26</td>
+<td>No DocBlock was found for property $id_user</td>
+</tr>
+<tr class="error">
+<td>error</td>
 <td>28</td>
+<td>No DocBlock was found for method getId_user()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>32</td>
+<td>No DocBlock was found for method setId_user()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>36</td>
 <td>No DocBlock was found for method __construct()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>182</td>
+<td>204</td>
+<td>No DocBlock was found for method deleteuser()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>241</td>
 <td>No DocBlock was found for method getUsername()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>186</td>
+<td>245</td>
 <td>No DocBlock was found for method setUsername()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>190</td>
+<td>249</td>
 <td>No DocBlock was found for method getPassword()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>194</td>
+<td>253</td>
 <td>No DocBlock was found for method setPassword()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>198</td>
+<td>257</td>
 <td>No DocBlock was found for method getEmail()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>202</td>
+<td>261</td>
 <td>No DocBlock was found for method setEmail()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>206</td>
+<td>265</td>
 <td>No DocBlock was found for method getOauth_token()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>210</td>
+<td>269</td>
 <td>No DocBlock was found for method setOauth_token()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>214</td>
+<td>273</td>
 <td>No DocBlock was found for method getOauth_token_secret()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>218</td>
+<td>277</td>
 <td>No DocBlock was found for method setOauth_token_secret()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>222</td>
+<td>281</td>
 <td>No DocBlock was found for method getName()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>226</td>
+<td>285</td>
 <td>No DocBlock was found for method setName()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>230</td>
+<td>289</td>
 <td>No DocBlock was found for method getApellido()</td>
 </tr>
 <tr class="error">
 <td>error</td>
-<td>234</td>
+<td>293</td>
 <td>No DocBlock was found for method setApellido()</td>
 </tr>
 </tbody>
@@ -2135,6 +2466,23 @@
 <td>error</td>
 <td>0</td>
 <td>No page-level DocBlock was found in file application/views/search/search.php</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="application/views/search/search_detail.php" id="application/views/search/search_detail.php"></a><h3>
+<i class="icon-file"></i>application/views/search/search_detail.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No page-level DocBlock was found in file application/views/search/search_detail.php</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -9346,7 +9694,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-12-05T19:41:06-04:30.<br></footer></div>
+            generated on 2012-12-08T19:36:12-04:30.<br></footer></div>
 </div>
 </body>
 </html>

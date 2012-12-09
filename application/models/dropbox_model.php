@@ -120,9 +120,11 @@ class dropbox_model extends CI_Model {
         if ($a!=null){
             
             return true;
+             log_message("error", "Successfull Operation conecction Dropbox ");
         }
         
         }
+        log_message("error", "Error in conecction Dropbox ");
         
         return false;
     }
@@ -149,6 +151,7 @@ class dropbox_model extends CI_Model {
        $notaid=  $this->nota_model->getMaxID();
        $adjuntoid= $this->adjunto_model->getMaxID();
        $this->nota_adjunto_model->registeradjunto_nota($notaid, $adjuntoid);
+        log_message("error", "Successfull Attachment to the note ");
        }
     }
 
@@ -168,6 +171,7 @@ class dropbox_model extends CI_Model {
             'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
         $this->load->library('dropbox', $params);
         $return = $this->dropbox->create_folder('/prueba/prueba', 'dropbox');
+        log_message("error", "Successfull Operation creating a Folder in Dropbox ");
         print_r($return);
     }
 

@@ -54,8 +54,11 @@ class Nota_Model extends CI_Model {
         $insert = $this->db->insert('nota', $data);
         $insert2 = array();
         $insert2['error'] = $this->db->_error_message();
-        if ($insert['error'] != '')
+        if ($insert['error'] != ''){
+              log_message("error", "Error   registing a Note  in a NoteBook .. ");  
             return false;
+        }
+             log_message("error", "Succesfull registing a Note  in a NoteBook .. ");  
         return true;
     }
 
@@ -75,7 +78,14 @@ class Nota_Model extends CI_Model {
         return $numrow;
     }
 
-    
+     /**
+    * Esta Funcion tamListNotaBuscar($objetivo) 
+    * se encarga de contar cuantas notas se estan buscando
+    * 
+    *@category Modelo
+    * @param	string $objetivo contenido buscado en la nota
+    * @return	devuelve cuantas notas hay
+    */
     public function tamListNotaBuscar($objetivo) {
       $query2 = $this->db->query("(select n.id_nota, n.titulo,n.texto from nota n where n.texto like '%$objetivo%' or n.titulo like '%$objetivo%') union (select n.id_nota,n.titulo,n.texto from nota n,nota_etiqueta ne,etiqueta e  where e.texto like '%$objetivo%' and ne.fk_etiqueta = e.id_etiqueta and ne.fk_nota=n.id_nota);");
     /*   
@@ -111,7 +121,16 @@ class Nota_Model extends CI_Model {
     
     
     
-    
+     /**
+    * Esta Funcion getBuscarNotas($numeroRegistros,$inicio,$objetivo) 
+    * se encarga de contar cuantas notas se estan buscando
+    * 
+    *@category Modelo
+    * @param	string $numeroRegistros
+    * @param	string $inicio
+    * @param	string $objetivo
+    * @return	devuelve las notas de la busqueda
+    */
    function getBuscarNotas($numeroRegistros,$inicio,$objetivo)
 
 {
@@ -181,13 +200,29 @@ class Nota_Model extends CI_Model {
         return $nota;
     }
     
-
+   /**
+    * getMaxID
+    * se encarga de devlver el id mayor de las notas
+    * 
+    *@category Modelo
+    * @return	devuelve el maximo id de las notas
+    */
     public function getMaxID(){
         $query= $this->db->query("select id_nota from nota order by 1 desc");
         $row2 = $query->row();
         return $row2->id_nota;       
      }
     
+ /**
+    * Esta Funcion getnota($numeroRegistros, $inicio,$id)
+    * se encarga de obtener la nota
+    * 
+    *@category Modelo
+    * @param	string $numeroRegistros
+    * @param	string $inicio
+    * @param	string $id
+    * @return	devuelve las nota buscada
+    */     
 function getnota($numeroRegistros, $inicio,$id)
 
 {
@@ -204,7 +239,14 @@ return $query->result();
 
 }
 
-
+/**
+    * Esta Funcion getnotatag($busqueda)
+    * se encarga de buscar lostags de una nota
+    * 
+    *@category Modelo
+    * @param	string $busqueda id de la libreta
+    * @return	devuelve las notas de la libreta
+    */ 
     function getnotatag($busqueda)
 
 {
@@ -217,7 +259,14 @@ return $query->result();
     
     
     
-    
+    /**
+    * Esta Funcion gettingnotatags($id_nota)
+    * se encarga de buscar lostags de una nota
+    * 
+    *@category Modelo
+    * @param	string $id_nota id de la libreta
+    * @return	devuelve las notas de la libreta
+    */ 
      function gettingnotatags($id_nota)
 
 {
@@ -228,6 +277,16 @@ return $query->result();
     
     }   
 
+   /**
+    * Esta Funcion getBuscarNotasSelected($numeroRegistros, $inicio,$idNota)
+    * se encarga de buscar lostags de una nota
+    * 
+    *@category Modelo
+    * @param	string $numeroRegistros
+    * @param	string $inicio
+    * @param             string $idNota
+    * @return	devuelve la nota
+    */  
 function getBuscarNotasSelected($numeroRegistros, $inicio,$idNota)
 
 {
@@ -245,7 +304,11 @@ return $query->result();
 
 }
 
-
+ /**
+    * Esta Funcion getCantidad ()
+    * se encarga de contar  cuantas notas hay
+    * @return	devuelve la cantidad de notas
+    */  
 function getCantidad ()
 
 {
@@ -276,6 +339,17 @@ return $this->db->count_all('nota');
         return $nota;
     }
     
+    
+    /**
+    * Esta Funcion addTags2Note($id,$tag)
+    * se encarga de agregar tags a una nota
+    *  en especifico
+    * 
+    *@category Modelo
+    * @param	string	$id id de la nota
+     * @param	string	$tag contenido del tag
+    * @return	int dice cantidad de notas
+    */
     public function addTags2Note($id,$tag){
 
         $etiqueta = new Etiqueta_Model();

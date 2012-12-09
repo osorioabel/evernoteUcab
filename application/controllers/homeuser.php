@@ -66,17 +66,7 @@ class homeuser extends CI_Controller {
         $data['title'] = 'About Us';
         $this->load->view('/includes/templates', $data);
     }
-    
-     /**
-     *  Funcion indexsearch() se realizan las 
-     * llamadas al about us de la pagina 
-     * que se estan linkeadas al controlador 
-     *  
-     * @category	Controller
-     */
-    
-    
-
+   
     /**
      *  Funcion index2() se realizan las 
      * llamadas basicas para la carga de una de las vistas 

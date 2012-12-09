@@ -51,9 +51,16 @@ class Libreta_Model extends CI_Model {
         $insert = $this->db->insert('libreta', $data);
         $insert2 = array();
         $insert2['error'] = $this->db->_error_message();
-        if ($insert['error'] != '')
+        if ($insert['error'] != ''){
+            
+            log_message("error", "Error Creation a NoteBook .. At registerBook in libreta Model");
             return false;
+            
+            
+            }
+                log_message("error", "Succesfull  Creation a NoteBook .. ");
         return true;
+           
     }
 
     /**
@@ -76,7 +83,7 @@ class Libreta_Model extends CI_Model {
         );
 
         $query = $this->db->query("UPDATE libreta SET nombre = '$titulolibreta',descripcion ='$descrip' WHERE id_libreta = '$libreta'");
-
+         log_message("error", "Succesfull  Modification of  a NoteBook .. ");
         return true;
     }
 
@@ -97,14 +104,25 @@ class Libreta_Model extends CI_Model {
         $query = $this->db->query("Delete from libreta where id_libreta = '$libreta2'");
 
 
-        if ($this->db->_error_message())
+        if ($this->db->_error_message()){
+            log_message("error", "Error  Deleting  of  a NoteBook .. ");
             return false;
-
+        }
         return true;
     }
     
     
-    
+     /**
+    * 
+    *
+    * Esta Funcion getlibreta($numeroRegistros, $inicio) 
+    * se encarga de obtener la libreta
+    * a una libreta
+    *@category Modelo
+    * @param	string	$numeroRegistros
+    * @param	string	i$inicio
+    * @return	la libreta
+    */
     function getlibreta($numeroRegistros, $inicio)
 
 {
@@ -119,8 +137,14 @@ return $query->result();
 
 }
 
-//método que devuelve el total de registros contenidos en la tabla ‘contactos’
 
+ /**
+    * 
+    *
+    * Esta Funcion getCantidad()
+    *@category Modelo
+    * @return	la cantidad de libretas que hay
+    */
 function getCantidad ()
 
 {

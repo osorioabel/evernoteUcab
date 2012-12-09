@@ -41,10 +41,12 @@ class Nota_Adjunto_Model extends CI_Model {
         $insert2 = array();
         $insert2['error'] = $this->db->_error_message();
         if ($insert['error'] != '') {
+            
+            log_message("error", "Succesfull  registing a Attach in a NoteBook .. ");
             return false;
         }
 
-        
+        log_message("error", "Succesfull  Registing a  Attach in  a NoteBook .. ");
         return true;
     }
 

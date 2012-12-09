@@ -50,38 +50,93 @@ class Adjunto_Model extends CI_Model {
         $insert2['error'] = $this->db->_error_message();
         if ($insert['error'] != '') {
             return false;
+            log_message("error", "Error Attaching a File");
         }
 
-        
+        log_message("error", "Attached Successful");
         return true;
     }
     
+    /**
+     * 
+     *
+     * Esta Funcion getMaxID()
+     * se encarga de devolver el ultimo id
+     * @category Modelo
+     * @return devuelve el id del ultimo adjunto agregado
+     */
       public function getMaxID(){
         $query= $this->db->query("select id_adjunto  from adjunto order by 1 desc");
         $row2 = $query->row();
         return $row2->id_adjunto;       
      }
-
+     
+     
+      /**
+     * 
+     *
+     * Esta Funcion getId_ajunto()
+     * se encarga de devolver el id del adjunto
+     * @category Modelo
+     * @return devuelve el id del ultimo adjunto agregado
+     */
     public function getId_ajunto() {
         return $this->id_ajunto;
     }
 
+       /**
+     * 
+     *
+     * Esta Funcion setId_ajunto()
+     * se encarga setear el id del adjunto
+     * @category Modelo
+     * @param  Integer	id del adjunto
+     
+     */
     public function setId_ajunto($id_ajunto) {
         $this->id_ajunto = $id_ajunto;
     }
-
+       /**
+     * 
+     *
+     * Esta Funcion getNombre()
+     * se encarga de devolver el nombre del adjunto
+     * @category Modelo
+     * @return devuelve el id del ultimo adjunto agregado
+     */
     public function getNombre() {
         return $this->nombre;
     }
-
+       /**
+     * 
+     *
+     * Esta Funcion setNombre()
+     * se encarga de setear el nombre
+        @category Modelo
+     * 
+     */
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
-
+      /**
+     * 
+     *
+     * Esta Funcion getLink()
+     * se encarga de devolver el link
+     * @category Modelo
+     * @return devuelve el id del ultimo adjunto agregado
+     */
     public function getLink() {
         return $this->link;
     }
-
+      /**
+     * 
+     *
+     * Esta Funcion setLink()
+     * se encarga de setear el link
+     * @category Modelo
+     * 
+     */
     public function setLink($link) {
         $this->link = $link;
     }

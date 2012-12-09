@@ -159,6 +159,7 @@ class Home extends CI_Controller {
             
         if ($booleano == true) {
             $this->index3();
+             log_message("error", "Register Successful");
         } else
         // caso de gente repetido
             $this->index4 ();

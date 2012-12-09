@@ -170,25 +170,6 @@ class Usuario extends CI_Controller {
         // caso de gente repetido
             echo "esta repedito";
     }
-    
-    
-    function test() {
-
-       $numeroRegistros=6;
-       $inicio=5;
-       $objetivo="z";
-       $busqueda=array();
-        $busqueda = $this->nota_model->getBuscarNotas($numeroRegistros,$inicio,$objetivo);
-
-        if ($busqueda != null) {
-            // si el cambio fue exitoso se redirecciona
-            echo $booleano;
-        } else
-        // caso de gente repetido
-            echo "esta repedito";
-    }
-    
-    
-    
+   
 
 }

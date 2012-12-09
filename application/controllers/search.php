@@ -36,6 +36,12 @@ class search extends CI_Controller {
         $this->load->library('pagination');
     }
     
+     /**
+     *  Funcion indexsearch() se encarga 
+     * de elaborar  y construir la vista de la busqueda
+     *  @param String $username usuario actual
+     * @category	Controller
+     */
     
      public function indexsearch($username) {
 
@@ -48,6 +54,12 @@ class search extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
     
+     /**
+     *  Funcion indexsearchresult() se encarga
+     * de mostrar la busqueda a realizada
+     *  @param String $username usuario actual
+     * @category	Controller
+     */
     
         public function indexsearchresult($username) {
           
@@ -97,6 +109,13 @@ class search extends CI_Controller {
         $this->load->view('/includes/templates', $data);
         }
     
+         /**
+     *  Funcion indexsearchresult2() se encarga
+     * de mostrar la busqueda a realizada
+     *  @param String $username usuario actual
+     *  @param String $value palabra que se esta buscando
+     * @category	Controller
+     */
     public function indexsearchresult2($username,$value) {
           
         // $username = $this->input->post('username_login');
@@ -145,6 +164,13 @@ class search extends CI_Controller {
         $this->load->view('/includes/templates', $data);
         }
         
+          /**
+     * Funcion indexshowresult() se encarga
+     * de mostrar la nota seleccionada 
+     *  @param String $value palabra que se esta buscando
+     *  @param String $id id de la nota
+     * @category	Controller
+     */ 
       function indexshowresult($username, $id) {
 
         $data = array();

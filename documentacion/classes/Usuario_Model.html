@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1262</span></a></li>
+                <span class="label label-info">1323</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">3</span>
@@ -67,13 +67,14 @@ se encarga de actualizar en la base de datos
 el password que ha sido cambiado"><span class="description">Esta Funcion cambiarClave($username, $password)
 se encarga de actualizar en la base de datos
 el password que ha sido cambiado</span><pre>cambiarClave()</pre></a></li>
-<li class="method public "><a href="#method_deleteuser" title="deleteuser :: Esta Funcion getUser($username) se encarga de traer de  base de datos
- datos del usuario"><span class="description">Esta Funcion getUser($username) se encarga de traer de  base de datos
- datos del usuario</span><pre>deleteuser()</pre></a></li>
+<li class="method public "><a href="#method_deleteuser" title="deleteuser :: "><span class="description">deleteuser()
+        </span><pre>deleteuser()</pre></a></li>
 <li class="method public "><a href="#method_getApellido" title="getApellido :: "><span class="description">getApellido()
         </span><pre>getApellido()</pre></a></li>
 <li class="method public "><a href="#method_getEmail" title="getEmail :: "><span class="description">getEmail()
         </span><pre>getEmail()</pre></a></li>
+<li class="method public "><a href="#method_getId_user" title="getId_user :: "><span class="description">getId_user()
+        </span><pre>getId_user()</pre></a></li>
 <li class="method public "><a href="#method_getName" title="getName :: "><span class="description">getName()
         </span><pre>getName()</pre></a></li>
 <li class="method public "><a href="#method_getOauth_token" title="getOauth_token :: "><span class="description">getOauth_token()
@@ -82,6 +83,12 @@ el password que ha sido cambiado</span><pre>cambiarClave()</pre></a></li>
         </span><pre>getOauth_token_secret()</pre></a></li>
 <li class="method public "><a href="#method_getPassword" title="getPassword :: "><span class="description">getPassword()
         </span><pre>getPassword()</pre></a></li>
+<li class="method public "><a href="#method_getUser" title="getUser :: Esta Funcion getUser($username) se encarga de traer de  base de datos
+ datos del usuario"><span class="description">Esta Funcion getUser($username) se encarga de traer de  base de datos
+ datos del usuario</span><pre>getUser()</pre></a></li>
+<li class="method public "><a href="#method_getUserToken" title="getUserToken :: Esta Funcion getUserToken($username) se encarga de traer de  base de datos
+ datos del usuario"><span class="description">Esta Funcion getUserToken($username) se encarga de traer de  base de datos
+ datos del usuario</span><pre>getUserToken()</pre></a></li>
 <li class="method public "><a href="#method_getUsername" title="getUsername :: "><span class="description">getUsername()
         </span><pre>getUsername()</pre></a></li>
 <li class="method public "><a href="#method_login" title="login :: Esta Funcion login($username, $password) se encarga verificar los datos del
@@ -106,6 +113,8 @@ a un usuario</span><pre>register()</pre></a></li>
         </span><pre>setApellido()</pre></a></li>
 <li class="method public "><a href="#method_setEmail" title="setEmail :: "><span class="description">setEmail()
         </span><pre>setEmail()</pre></a></li>
+<li class="method public "><a href="#method_setId_user" title="setId_user :: "><span class="description">setId_user()
+        </span><pre>setId_user()</pre></a></li>
 <li class="method public "><a href="#method_setName" title="setName :: "><span class="description">setName()
         </span><pre>setName()</pre></a></li>
 <li class="method public "><a href="#method_setOauth_token" title="setOauth_token :: "><span class="description">setOauth_token()
@@ -126,6 +135,7 @@ a un usuario</span><pre>register()</pre></a></li>
                     <ul>
 <li class="property private "><a href="#property_apellido" title="$apellido :: "><span class="description">$apellido</span><pre>$apellido</pre></a></li>
 <li class="property private "><a href="#property_email" title="$email :: "><span class="description">$email</span><pre>$email</pre></a></li>
+<li class="property private "><a href="#property_id_user" title="$id_user :: "><span class="description">$id_user</span><pre>$id_user</pre></a></li>
 <li class="property private "><a href="#property_name" title="$name :: "><span class="description">$name</span><pre>$name</pre></a></li>
 <li class="property private "><a href="#property_oauth_token" title="$oauth_token :: "><span class="description">$oauth_token</span><pre>$oauth_token</pre></a></li>
 <li class="property private "><a href="#property_oauth_token_secret" title="$oauth_token_secret :: "><span class="description">$oauth_token_secret</span><pre>$oauth_token_secret</pre></a></li>
@@ -223,23 +233,14 @@ el password que ha sido cambiado</h2>
 </div></div>
 </div>
 <a id="method_deleteuser"></a><div class="element clickable method public method_deleteuser" data-toggle="collapse" data-target=".method_deleteuser .collapse">
-<h2>Esta Funcion getUser($username) se encarga de traer de  base de datos
- datos del usuario</h2>
-<pre>deleteuser(string $username) : object</pre>
+<h2>deleteuser()
+        </h2>
+<pre>deleteuser($username) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>category</th>
-<td>Modelo</td>
-</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$username</h4>
-<code>string</code><p>Indica el username a buscar</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>object</code>dice si actualizo o no</div>
+<div class="subelement argument"><h4>$username</h4></div>
 </div></div>
 </div>
 <a id="method_getApellido"></a><div class="element clickable method public method_getApellido" data-toggle="collapse" data-target=".method_getApellido .collapse">
@@ -253,6 +254,13 @@ el password que ha sido cambiado</h2>
 <h2>getEmail()
         </h2>
 <pre>getEmail() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getId_user"></a><div class="element clickable method public method_getId_user" data-toggle="collapse" data-target=".method_getId_user .collapse">
+<h2>getId_user()
+        </h2>
+<pre>getId_user() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -283,6 +291,46 @@ el password que ha sido cambiado</h2>
 <pre>getPassword() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getUser"></a><div class="element clickable method public method_getUser" data-toggle="collapse" data-target=".method_getUser .collapse">
+<h2>Esta Funcion getUser($username) se encarga de traer de  base de datos
+ datos del usuario</h2>
+<pre>getUser(string $username) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Indica el username a buscar</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>dice si actualizo o no</div>
+</div></div>
+</div>
+<a id="method_getUserToken"></a><div class="element clickable method public method_getUserToken" data-toggle="collapse" data-target=".method_getUserToken .collapse">
+<h2>Esta Funcion getUserToken($username) se encarga de traer de  base de datos
+ datos del usuario</h2>
+<pre>getUserToken(string $username) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Indica el username a buscar</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>dice si actualizo o no</div>
+</div></div>
 </div>
 <a id="method_getUsername"></a><div class="element clickable method public method_getUsername" data-toggle="collapse" data-target=".method_getUsername .collapse">
 <h2>getUsername()
@@ -426,6 +474,17 @@ a un usuario</h2>
 <div class="subelement argument"><h4>$email</h4></div>
 </div></div>
 </div>
+<a id="method_setId_user"></a><div class="element clickable method public method_setId_user" data-toggle="collapse" data-target=".method_setId_user .collapse">
+<h2>setId_user()
+        </h2>
+<pre>setId_user($id_user) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id_user</h4></div>
+</div></div>
+</div>
 <a id="method_setName"></a><div class="element clickable method public method_setName" data-toggle="collapse" data-target=".method_setName .collapse">
 <h2>setName()
         </h2>
@@ -495,6 +554,12 @@ a un usuario</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_id_user"> </a><div class="element clickable property private property_id_user" data-toggle="collapse" data-target=".property_id_user .collapse">
+<h2>$id_user</h2>
+<pre>$id_user </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_name"> </a><div class="element clickable property private property_name" data-toggle="collapse" data-target=".property_name .collapse">
 <h2>$name</h2>
 <pre>$name </pre>
@@ -532,7 +597,7 @@ a un usuario</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-12-05T19:41:03-04:30.<br></footer></div>
+            generated on 2012-12-08T19:36:10-04:30.<br></footer></div>
 </div>
 </body>
 </html>

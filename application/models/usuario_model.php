@@ -57,9 +57,12 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $this->db->update('usuario', $data);
 
-        if ($this->db->_error_message())
+        if ($this->db->_error_message()){
+          
+                 log_message("error", "Error chaging a secret token ");  
             return false;
-
+        }
+           log_message("error", "Succesfull chaging a secret token ");  
         return true;
     }
 
@@ -79,9 +82,11 @@ class Usuario_Model extends CI_Model {
         $this->db->where('password', $password);
         $query = $this->db->get('usuario');
         if ($query->num_rows > 0) {
+              log_message("error", "Succesfull Login ");  
             return TRUE;
         }
 
+            log_message("error", "Error in  Login ");  
         return FALSE;
     }
 
@@ -114,6 +119,7 @@ class Usuario_Model extends CI_Model {
             log_message("error", "User Already Exists");
             return false;
         }
+            log_message("error", "Succesfull Register ");  
         return true;
     }
 
@@ -139,8 +145,11 @@ class Usuario_Model extends CI_Model {
         $this->db->update('usuario', $data);
 
         if ($this->db->_error_message())
+        {
+                log_message("error", "Error modification a user  ");  
             return false;
-
+        }   
+             log_message("error", "Succesfull modification a user  ");  
         return true;
     }
 
@@ -195,9 +204,12 @@ class Usuario_Model extends CI_Model {
     public function deleteuser($username) {
         $user = new Usuario_Model();
         $query = $this->db->query("delete from usuario where username='$username'");
-        if ($this->db->_error_message())
+        if ($this->db->_error_message()){
+                 log_message("error", "Error deleting  a user  ");  
             return false;
-
+            
+        }
+                 log_message("error", "Succesfull deleting a user  ");  
         return true;
     }
 
@@ -218,9 +230,11 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $this->db->update('usuario', $data);
 
-        if ($this->db->_error_message())
+        if ($this->db->_error_message()){
+            log_message("error", "Error deleting a user  ");  
             return false;
-
+        }
+        log_message("error", "Succesfull deleting a user  ");  
         return true;
     }
 

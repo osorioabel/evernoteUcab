@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1262</span></a></li>
+                <span class="label label-info">1323</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">3</span>
@@ -67,8 +67,7 @@ se encarga de borrrar en la base de datos
 a una libreta</span><pre>BorrarLibreta()</pre></a></li>
 <li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method___get" title="__get :: __get"><span class="description">__get</span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#method_getCantidad" title="getCantidad :: "><span class="description">getCantidad()
-        </span><pre>getCantidad()</pre></a></li>
+<li class="method public "><a href="#method_getCantidad" title="getCantidad :: Esta Funcion getCantidad()"><span class="description">Esta Funcion getCantidad()</span><pre>getCantidad()</pre></a></li>
 <li class="method public "><a href="#method_getDescripcion" title="getDescripcion :: "><span class="description">getDescripcion()
         </span><pre>getDescripcion()</pre></a></li>
 <li class="method public "><a href="#method_getFecha" title="getFecha :: "><span class="description">getFecha()
@@ -79,8 +78,11 @@ a una libreta</span><pre>BorrarLibreta()</pre></a></li>
         </span><pre>getId_libreta()</pre></a></li>
 <li class="method public "><a href="#method_getNombre" title="getNombre :: "><span class="description">getNombre()
         </span><pre>getNombre()</pre></a></li>
-<li class="method public "><a href="#method_getlibreta" title="getlibreta :: "><span class="description">getlibreta()
-        </span><pre>getlibreta()</pre></a></li>
+<li class="method public "><a href="#method_getlibreta" title="getlibreta :: Esta Funcion getlibreta($numeroRegistros, $inicio)
+se encarga de obtener la libreta
+a una libreta"><span class="description">Esta Funcion getlibreta($numeroRegistros, $inicio)
+se encarga de obtener la libreta
+a una libreta</span><pre>getlibreta()</pre></a></li>
 <li class="method public "><a href="#method_libretaAtIndex" title="libretaAtIndex :: Esta Funcion libretaAtIndex($index, $id)
 se encarga de contar devolver una libreta que
  tiene un usuario en la base de datos"><span class="description">Esta Funcion libretaAtIndex($index, $id)
@@ -219,11 +221,19 @@ syntax as controllers.</p></div>
 </div></div>
 </div>
 <a id="method_getCantidad"></a><div class="element clickable method public method_getCantidad" data-toggle="collapse" data-target=".method_getCantidad .collapse">
-<h2>getCantidad()
-        </h2>
-<pre>getCantidad() </pre>
+<h2>Esta Funcion getCantidad()</h2>
+<pre>getCantidad() : \la</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\la</code>cantidad de libretas que hay</div>
+</div></div>
 </div>
 <a id="method_getDescripcion"></a><div class="element clickable method public method_getDescripcion" data-toggle="collapse" data-target=".method_getDescripcion .collapse">
 <h2>getDescripcion()
@@ -261,15 +271,29 @@ syntax as controllers.</p></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_getlibreta"></a><div class="element clickable method public method_getlibreta" data-toggle="collapse" data-target=".method_getlibreta .collapse">
-<h2>getlibreta()
-        </h2>
-<pre>getlibreta($numeroRegistros, $inicio) </pre>
+<h2>Esta Funcion getlibreta($numeroRegistros, $inicio)
+se encarga de obtener la libreta
+a una libreta</h2>
+<pre>getlibreta(string $numeroRegistros, string $inicio) : \la</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>category</th>
+<td>Modelo</td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$numeroRegistros</h4></div>
-<div class="subelement argument"><h4>$inicio</h4></div>
+<div class="subelement argument">
+<h4>$numeroRegistros</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$inicio</h4>
+<code>string</code><p>i$inicio</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\la</code>libreta</div>
 </div></div>
 </div>
 <a id="method_libretaAtIndex"></a><div class="element clickable method public method_libretaAtIndex" data-toggle="collapse" data-target=".method_libretaAtIndex .collapse">
@@ -491,7 +515,7 @@ se encarga de contar cuantas libretas tiene un usuario en la base de datos</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-12-05T19:41:03-04:30.<br></footer></div>
+            generated on 2012-12-08T19:36:10-04:30.<br></footer></div>
 </div>
 </body>
 </html>
