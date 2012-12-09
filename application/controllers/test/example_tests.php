@@ -176,7 +176,12 @@ class Example_tests extends Toast {
     function test_createnotewith3attach() {
 
         $notacreada=$this->nota_model->registerNote($this->username, $this->titulo, $this->nota, $this->book);
-        
+        $archivo1=$this->dropbox_model->upload_file("travel_0001.jpg") ;
+        $archivo2=$this->dropbox_model->upload_file("travel_0017.jpg") ;
+        $archivo3=$this->dropbox_model->upload_file("travel_0028.jpg") ;
+        $this->_assert_true($archivo1);
+        $this->_assert_true($archivo2);
+        $this->_assert_true($archivo3);
         $this->_assert_true($notacreada);
         $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
     }

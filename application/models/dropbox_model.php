@@ -33,6 +33,7 @@ class dropbox_model extends CI_Model {
         $this->load->model('usuario_model');
         $this->load->model('nota_model');
         $this->load->model('adjunto_model');
+        $this->load->model("nota_adjunto_model");
     }
 
     function index() {
@@ -61,8 +62,10 @@ class dropbox_model extends CI_Model {
             echo '<div id="message">' . $data['upload_data']['file_name'] . ' Successfully uploaded.</div>';
             //pass the data to js
             echo '<div id="upload_data">' . json_encode($data) . '</div>';
-            $this->upload_file($data['upload_data']['file_name']);
+         //   $this->upload_file($data['upload_data']['file_name']);
+            return $this->upload_file($data['upload_data']['file_name']);
         }
+        return false;
     }
 
     /**
@@ -141,18 +144,23 @@ class dropbox_model extends CI_Model {
         $subidos = 'subidos/';
         $params['key'] = $this->key;
         $params['secret'] = $this->secret;
-        $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
-            'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
+       $data=$this->usuario_model->getUserToken("osorioabel");
+        if ($data!= false){
+       $params['access'] = $data;
        $this->load->library('dropbox', $params);
        $arrayfalso = array();
        $return = $this->dropbox->add($folder, $subidos . $filename, $arrayfalso, 'dropbox');
+       //print_r($return);
        $boolean = $this->adjunto_model->registeradjunto($filename, $filename);
        if ($boolean == true){
        $notaid=  $this->nota_model->getMaxID();
        $adjuntoid= $this->adjunto_model->getMaxID();
        $this->nota_adjunto_model->registeradjunto_nota($notaid, $adjuntoid);
         log_message("error", "Successfull Attachment to the note ");
+        return true;
        }
+        }
+       return false;
     }
 
 
