@@ -354,7 +354,7 @@ class libreta extends CI_Controller {
         if ($booleano == true) {
             // si se pudo crear la libreta
             //redirecciona al home del usuario
-            redirect('/homeuser/index/' . $username);
+            redirect('/homeuser/indexafter/' . $username);
         } else
             echo "";
     }
@@ -378,7 +378,7 @@ class libreta extends CI_Controller {
                                                 $tituloLibreta, $descripLibreta);
         if ($booleano == true) {
             // si se pudo realizar el cambio redireccionar al home del usuario
-            redirect('/homeuser/index/' . $username);
+             redirect('/homeuser/indexafter/' . $username);
         } else
         // caso de gente repetido
             echo "";
@@ -398,7 +398,7 @@ class libreta extends CI_Controller {
         $booleano = $this->libreta_model->BorrarLibreta($username, $libreta);
         if ($booleano == true) {
             // si se pudo realizar la eliminacion redirecciona al home del user
-            redirect('/homeuser/index/' . $username);
+             redirect('/homeuser/indexafterdelete/' . $username);
         } else
             echo "";
     }

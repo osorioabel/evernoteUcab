@@ -180,13 +180,6 @@ class nota extends CI_Controller {
         $notastag = $this->nota_model->getnotatag($id);
         $data['records'] = $notas;
         $data['records2'] = $notastag;
-        
-        
-        
-        
-        
-        
-        
         $this->load->view('/includes/templates', $data);
     }
 
@@ -349,7 +342,7 @@ class nota extends CI_Controller {
             
         }
         
-             redirect('/homeuser/index/'.$username);
+             redirect('/homeuser/indexafter2/'.$username);
             } else
                 echo "La estas cagando";
             }
@@ -378,7 +371,7 @@ class nota extends CI_Controller {
         $booleano = $this->nota_model->modificarNota($username, $nota, $tituloNota, $textoNota);
 
         if ($booleano == true) {
-             redirect('/homeuser/index/'.$username);
+             redirect('/homeuser/indexafter2/'.$username);
         } else
         // caso de gente repetido
             echo "HOLA";
@@ -400,7 +393,7 @@ class nota extends CI_Controller {
         $booleano = $this->nota_model->BorrarNota($username, $nota2);
 
         if ($booleano == true) {
-             redirect('/homeuser/index/'.$username);
+             redirect('/homeuser/indexafterdelete2/'.$username);
         } else
         // caso de gente repetido
             echo "HOLA";

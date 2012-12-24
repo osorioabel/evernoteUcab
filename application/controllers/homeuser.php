@@ -94,6 +94,84 @@ class homeuser extends CI_Controller {
     }
     
     
+    public function indexafter() {
+        $data = array();
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['messi'] = "<a id='success-title'></a>
+        <script>
+            new popUp('SUCCESSFULL', 
+            {title: 'Congrats creation o modification of  notebook ', titleClass: 'success', 
+            autoclose: '2000'});
+        </script>";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/homeuser';
+        $data['username'] = $this->session->userdata('username');
+        //$data['username'] = $username;
+        // $data['user'] = $success;
+        //echo $data['main_content'];
+        $data['title'] = 'Home Page User';
+        $this->load->view('/includes/templates', $data);
+    }
+    
+     public function indexafter2() {
+        $data = array();
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['messi'] = "<a id='success-title'></a>
+        <script>
+            new popUp('SUCCESSFULL', 
+            {title: 'Congrats creation o modification of  note ', titleClass: 'success', 
+            autoclose: '2000'});
+        </script>";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/homeuser';
+        $data['username'] = $this->session->userdata('username');
+        //$data['username'] = $username;
+        // $data['user'] = $success;
+        //echo $data['main_content'];
+        $data['title'] = 'Home Page User';
+        $this->load->view('/includes/templates', $data);
+    }
+    
+    public function indexafterdelete() {
+        $data = array();
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['messi'] = "<a id='success-title'></a>
+        <script>
+            new popUp('SUCCESSFULL', 
+            {title: 'Notebook Deleted ', titleClass: 'success', 
+            autoclose: '2000'});
+        </script>";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/homeuser';
+        $data['username'] = $this->session->userdata('username');
+        //$data['username'] = $username;
+        // $data['user'] = $success;
+        //echo $data['main_content'];
+        $data['title'] = 'Home Page User';
+        $this->load->view('/includes/templates', $data);
+    }
+    
+    public function indexafterdelete2() {
+        $data = array();
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['messi'] = "<a id='success-title'></a>
+        <script>
+            new popUp('SUCCESSFULL', 
+            {title: 'Note Deleted ', titleClass: 'success', 
+            autoclose: '2000'});
+        </script>";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/homeuser';
+        $data['username'] = $this->session->userdata('username');
+        //$data['username'] = $username;
+        // $data['user'] = $success;
+        //echo $data['main_content'];
+        $data['title'] = 'Home Page User';
+        $this->load->view('/includes/templates', $data);
+    }
+    
+    
+    
 
     /**
      * Funcion uploadLastBooks($username) Esta funcion se encarga de 

@@ -21,7 +21,7 @@
                 ?>
             <fieldset>
              <div>
-                        <label>WTF</label>
+                        <label>What are you looking for?</label>
                         <input name="goal"  id="goal" 
                                type="text" class="form-poshytip"  title="Enter a tittle" />
             </div>
