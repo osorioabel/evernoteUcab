@@ -29,7 +29,6 @@ class libreta extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('pagination');
         $this->load->library('table');
-   
     }
 
     /**
@@ -72,14 +71,14 @@ class libreta extends CI_Controller {
         $data['title'] = 'Modify Book';
         $this->load->library('pagination');
         $this->load->library('table');
-        
-         $config['base_url'] = base_url().'/libreta/indexModify/'.$username.'/';
-        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+
+        $config['base_url'] = base_url() . '/libreta/indexModify/' . $username . '/';
+        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 20;
-        
+
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
-        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['next_link'] = 'siguiente'; //texto del enlace que nos lleva a la sig. página
         $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
@@ -87,7 +86,7 @@ class libreta extends CI_Controller {
         //$config['num_tag_open'] = '<div id="pager">';
         //$config['num_tag_close'] = '</div>';
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
         $data['records'] = $libretas;
         //$data['upload'] = $this->uploadNotebookViewModify($username);
         $this->load->view('/includes/templates', $data);
@@ -116,7 +115,7 @@ class libreta extends CI_Controller {
         $data['username'] = $username;
         $data['libreta'] = $id;
         $data['title'] = 'Modify Book';
-        $data['records'] = $this->db->get('libreta',10,$this->uri->segment(3));
+        $data['records'] = $this->db->get('libreta', 10, $this->uri->segment(3));
         $this->load->view('/includes/templates', $data);
     }
 
@@ -169,37 +168,33 @@ class libreta extends CI_Controller {
         $data['messi'] = "";
         // se llama al modelo y se trae la informacion de la libreta
         //que ya hemos seleccionado para borrar
-       // $data['upload'] = $this->uploadNotebookViewDelete($username);
+        // $data['upload'] = $this->uploadNotebookViewDelete($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Libreta_Eliminar';
         $data['username'] = $username;
         $data['title'] = 'Delete Book';
-        
         $this->load->library('pagination');
-   
-        
-         $config['base_url'] = base_url().'/libreta/indexDelete/'.$username.'/';
-        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+
+
+        $config['base_url'] = base_url() . '/libreta/indexDelete/' . $username . '/';
+        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 20;
-        
+
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
-        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['next_link'] = 'siguiente'; //texto del enlace que nos lleva a la sig. página
         $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
         $this->pagination->initialize($config);
-        //$config['num_tag_open'] = '<div id="pager">';
-        //$config['num_tag_close'] = '</div>';
-        //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
         $data['records'] = $libretas;
-        
-        
+
+
         $this->load->view('/includes/templates', $data);
     }
 
-     /**
+    /**
      * Funcion indexSelect($username) se realizan las 
      * llamadas basicas para cargar la vista de seleccionar
      * de libreta, una vez que ya se ha seleccionado cual se
@@ -220,24 +215,24 @@ class libreta extends CI_Controller {
         $data['username'] = $username;
         $data['title'] = 'Your Books';
         $this->load->library('pagination');
-        $config['base_url'] = base_url().'/libreta/indexSelect/'.$username.'/';
-        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+        $config['base_url'] = base_url() . '/libreta/indexSelect/' . $username . '/';
+        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 10;
-        
-        
-        
+
+
+
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
-        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['next_link'] = 'siguiente'; //texto del enlace que nos lleva a la sig. página
         $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
         //$config['num_tag_open'] = '<ul class="pager">';
         //$config['num_tag_close'] = '</ul>';
         $this->pagination->initialize($config);
-        
-       // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+
+        // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
         $data['records'] = $libretas;
         $this->load->view('/includes/templates', $data);
     }
@@ -252,43 +247,39 @@ class libreta extends CI_Controller {
      * 
      */
     function indexSelectConsulta($username) {
-       
+
         $data = array();
         $data['messi'] = "";
         // se llama al modelo y se trae la informacion de la libreta
         //que ya hemos seleccionado para ver su informacion
-      //  $data['upload3'] = $this->uploadNotebookView2($username);
+        //  $data['upload3'] = $this->uploadNotebookView2($username);
         $data['head'] = '/includes/headnormal';
         $data['main_content'] = '/libreria/Select_Libreta_Consulta';
         $data['username'] = $username;
         //$data['libreta'] = $id;
         $data['title'] = 'Your Books';
-        
         $this->load->library('pagination');
-        $config['base_url'] = base_url().'/libreta/indexSelectConsulta/'.$username.'/';
-        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+        $config['base_url'] = base_url() . '/libreta/indexSelectConsulta/' . $username . '/';
+        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 10;
-        
-        
-        
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
-        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['next_link'] = 'siguiente'; //texto del enlace que nos lleva a la sig. página
         $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
         //$config['num_tag_open'] = '<ul class="pager">';
         //$config['num_tag_close'] = '</ul>';
         $this->pagination->initialize($config);
-        
-       // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+
+        // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
         $data['records'] = $libretas;
-        
-        
-        
-        
-        
+
+
+
+
+
         $this->load->view('/includes/templates', $data);
     }
 
@@ -312,32 +303,31 @@ class libreta extends CI_Controller {
         //$data['libreta'] = $id;
         $data['title'] = 'Your Books';
         $this->load->library('pagination');
-        $config['base_url'] = base_url().'/libreta/indexDeleteNote/'.$username.'/';
-        $config['total_rows'] = $this->libreta_model->getCantidad();//obtenemos la cantidad de registros
+        $config['base_url'] = base_url() . '/libreta/indexDeleteNote/' . $username . '/';
+        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 10;
-        
-        
-        
+
+
+
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
-        $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
+        $config['next_link'] = 'siguiente'; //texto del enlace que nos lleva a la sig. página
         $config['uri_segment'] = '4';  //segmentos que va a tener nuestra URL
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
         //$config['num_tag_open'] = '<ul class="pager">';
         //$config['num_tag_close'] = '</ul>';
         $this->pagination->initialize($config);
-        
-       // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(4));
+
+        // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
         $data['records'] = $libretas;
-        
-        
+
+
         $this->load->view('/includes/templates', $data);
     }
-    
 
-     /**
+    /**
      * Funcion AddBook($username) funcion que se encarga 
      * de crear una libreta al usuario. realizando llamada 
      * llamada al model encargadose el de dicha actividad
@@ -349,8 +339,7 @@ class libreta extends CI_Controller {
         $titulo = $this->input->post('tituloBook');
         $descripcion = $this->input->post('descrip');
         // llamada al modelo y la creacion de la libreta
-        $booleano = $this->libreta_model->registerBook($username, $titulo, 
-                                                       $descripcion);
+        $booleano = $this->libreta_model->registerBook($username, $titulo, $descripcion);
         if ($booleano == true) {
             // si se pudo crear la libreta
             //redirecciona al home del usuario
@@ -372,18 +361,17 @@ class libreta extends CI_Controller {
         // se reciben los post de la vista
         $tituloLibreta = $this->input->post('tituloBook');
         $descripLibreta = $this->input->post('descrip');
-        
+
         // llamada al modelo y la modificacion de la libreta
-        $booleano = $this->libreta_model->modificarLibreta($username, $libreta,
-                                                $tituloLibreta, $descripLibreta);
+        $booleano = $this->libreta_model->modificarLibreta($username, $libreta, $tituloLibreta, $descripLibreta);
         if ($booleano == true) {
             // si se pudo realizar el cambio redireccionar al home del usuario
-             redirect('/homeuser/indexafter/' . $username);
+            redirect('/homeuser/indexafter/' . $username);
         } else
         // caso de gente repetido
             echo "";
     }
-    
+
     /**
      * Funcion DeleteBook($username, $libreta) funcion que se encarga 
      * de borarr una libreta al usuario. realizando llamada 
@@ -398,7 +386,7 @@ class libreta extends CI_Controller {
         $booleano = $this->libreta_model->BorrarLibreta($username, $libreta);
         if ($booleano == true) {
             // si se pudo realizar la eliminacion redirecciona al home del user
-             redirect('/homeuser/indexafterdelete/' . $username);
+            redirect('/homeuser/indexafterdelete/' . $username);
         } else
             echo "";
     }
@@ -466,7 +454,7 @@ class libreta extends CI_Controller {
         return $return;
     }
 
-     /**
+    /**
      * Funcion uploadNotebookView($username) Esta funcion se encarga de 
      * preguntar a la capa de modelo, cuales han sido las que libretas han sido
      * creadas por el usuario. Para luego armar HTML que sera pasado a la 
@@ -479,31 +467,31 @@ class libreta extends CI_Controller {
     function uploadNotebookView($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
-       
-        $i=2;
+
+        $i = 2;
         $this->load->library('pagination');
         $this->load->library('table');
-   
-      
-        //$libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(3));
-      //  for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
 
-        
-        
-      $libreta = new Libreta_Model();
-            // se hace un simple get de la libreta en posicion del 
-            // del usuario 
-            //$libreta = $libreta->libretaAtIndex($i, $username);  
-    
-            $nombre = $libreta->getNombre();
-            $id = $libreta->getId_libreta();
-            $fecha = $libreta->getFecha();
-            $descripcion = $libreta->getDescripcion();
-            $attributes = array('id' => 'sc-contact-form');
-            $ref = base_url() . 'Nota/SelectNote/' . $username . '/' . $id . '>';
-            $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $nombre;
-            
-            $result = "   
+
+        //$libretas = $this->libreta_model->getlibreta($config['per_page'],$this->uri->segment(3));
+        //  for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
+
+
+
+        $libreta = new Libreta_Model();
+        // se hace un simple get de la libreta en posicion del 
+        // del usuario 
+        //$libreta = $libreta->libretaAtIndex($i, $username);  
+
+        $nombre = $libreta->getNombre();
+        $id = $libreta->getId_libreta();
+        $fecha = $libreta->getFecha();
+        $descripcion = $libreta->getDescripcion();
+        $attributes = array('id' => 'sc-contact-form');
+        $ref = base_url() . 'Nota/SelectNote/' . $username . '/' . $id . '>';
+        $ref2 = base_url() . 'Libreta/indexSelect/' . $username . '/' . $nombre;
+
+        $result = "   
            
        
             <?php 
@@ -540,11 +528,9 @@ class libreta extends CI_Controller {
                   <!-- ENDS project -->
             <?php echo form_close(); ?>   
                     ";
-       
-         $return = $result . $return; 
-            // se concatenan las
-          
-         
+
+        $return = $result . $return;
+        // se concatenan las
         //}
         return $return;
     }
@@ -564,7 +550,7 @@ class libreta extends CI_Controller {
         $return = '';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
             // se pregunta por la cantidad de llibretas del usuario
-            
+
             $libreta = new Libreta_Model();
             $libreta = $libreta->libretaAtIndex($i, $username);
             // se trae la libreta en cierta posicion y se extraen atriburtos
@@ -572,8 +558,8 @@ class libreta extends CI_Controller {
             $nombre = $libreta->getNombre();
             $fecha = $libreta->getFecha();
             $descripcion = $libreta->getDescripcion();
-             
-           
+
+
             //$this->load->view("miVista",$data);
             // se comienza a crear HTLM para mostrar en la vista
             $attributes = array('id' => 'sc-contact-form');
@@ -624,11 +610,10 @@ class libreta extends CI_Controller {
               <?php echo form_close(); ?>
 
                  ";
-           
+
             $return = $result . $return;
-            
         }
-        
+
         return $return;
     }
 
@@ -696,7 +681,7 @@ class libreta extends CI_Controller {
                  ";
 
 
-$return = $result . $return;
+            $return = $result . $return;
         }
         return $return;
     }
@@ -711,7 +696,7 @@ $return = $result . $return;
      * @param 	        string usuario que se encuentra activo 
      * @return          string se devuelven a la vista HTLM para ser Impreso
      */
-    function uploadNotebookView3Delete($username)  {
+    function uploadNotebookView3Delete($username) {
         $base_url = base_url() . 'images/book.png';
         $return = '';
         for ($i = 0; $i < $this->libreta_model->tamListLibreta($username); $i++) {
@@ -721,7 +706,7 @@ $return = $result . $return;
             $libreta = $libreta->libretaAtIndex($i, $username);
 
             $nombre = $libreta->getNombre();
-    
+
             $id = $libreta->getId_libreta();
             $fecha = $libreta->getFecha();
             $descripcion = $libreta->getDescripcion();
