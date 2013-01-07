@@ -23,8 +23,8 @@ class Usuario_Model extends CI_Model {
     private $oauth_token_secret = '';
     private $name = '';
     private $apellido = '';
-    private $id_user ='';
-   
+    private $id_user = '';
+
     public function getId_user() {
         return $this->id_user;
     }
@@ -33,7 +33,7 @@ class Usuario_Model extends CI_Model {
         $this->id_user = $id_user;
     }
 
-        function __construct() {
+    function __construct() {
         parent::__construct();
         $this->oauth_token = '';
         $this->oauth_token_secret = '';
@@ -57,12 +57,12 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $this->db->update('usuario', $data);
 
-        if ($this->db->_error_message()){
-          
-                 log_message("error", "Error chaging a secret token ");  
+        if ($this->db->_error_message()) {
+
+            log_message("error", "Error chaging a secret token ");
             return false;
         }
-           log_message("error", "Succesfull chaging a secret token ");  
+        log_message("error", "Succesfull chaging a secret token ");
         return true;
     }
 
@@ -82,11 +82,11 @@ class Usuario_Model extends CI_Model {
         $this->db->where('password', $password);
         $query = $this->db->get('usuario');
         if ($query->num_rows > 0) {
-              log_message("error", "Succesfull Login ");  
+            log_message("error", "Succesfull Login ");
             return TRUE;
         }
 
-            log_message("error", "Error in  Login ");  
+        log_message("error", "Error in  Login ");
         return FALSE;
     }
 
@@ -119,7 +119,7 @@ class Usuario_Model extends CI_Model {
             log_message("error", "User Already Exists");
             return false;
         }
-            log_message("error", "Succesfull Register ");  
+        log_message("error", "Succesfull Register ");
         return true;
     }
 
@@ -144,12 +144,11 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $this->db->update('usuario', $data);
 
-        if ($this->db->_error_message())
-        {
-                log_message("error", "Error modification a user  ");  
+        if ($this->db->_error_message()) {
+            log_message("error", "Error modification a user  ");
             return false;
-        }   
-             log_message("error", "Succesfull modification a user  ");  
+        }
+        log_message("error", "Succesfull modification a user  ");
         return true;
     }
 
@@ -175,6 +174,23 @@ class Usuario_Model extends CI_Model {
         return $row2;
     }
 
+    public function getUserxml($username) {
+
+
+        $this->load->dbutil();
+        $sql = "select * from usuario";
+        $query = $this->db->query($sql);
+        $config = array(
+            'root' => 'root',
+            'element' => 'usuario',
+            'newline' => "\n",
+            'tab' => "\t"
+        );
+        $xml = $this->dbutil->xml_from_result($query, $config);
+        $this->output->set_content_type('text/xml');
+        $this->output->set_output($xml);
+    }
+
     /**
      * 
      *
@@ -188,15 +204,14 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $query = $this->db->get('usuario');
         $row2 = $query->row();
-        if ($row2!=null){
-        $token = $row2->oauth_token;
-        $secret = $row2->oauth_token_secret;
+        if ($row2 != null) {
+            $token = $row2->oauth_token;
+            $secret = $row2->oauth_token_secret;
 
-        $data = array('oauth_token' => $token,
-            'oauth_token_secret' => $secret);
-        
-        return $data;
-        
+            $data = array('oauth_token' => $token,
+                'oauth_token_secret' => $secret);
+
+            return $data;
         }
         return false;
     }
@@ -204,12 +219,11 @@ class Usuario_Model extends CI_Model {
     public function deleteuser($username) {
         $user = new Usuario_Model();
         $query = $this->db->query("delete from usuario where username='$username'");
-        if ($this->db->_error_message()){
-                 log_message("error", "Error deleting  a user  ");  
+        if ($this->db->_error_message()) {
+            log_message("error", "Error deleting  a user  ");
             return false;
-            
         }
-                 log_message("error", "Succesfull deleting a user  ");  
+        log_message("error", "Succesfull deleting a user  ");
         return true;
     }
 
@@ -230,11 +244,11 @@ class Usuario_Model extends CI_Model {
         $this->db->where('username', $username);
         $this->db->update('usuario', $data);
 
-        if ($this->db->_error_message()){
-            log_message("error", "Error deleting a user  ");  
+        if ($this->db->_error_message()) {
+            log_message("error", "Error deleting a user  ");
             return false;
         }
-        log_message("error", "Succesfull deleting a user  ");  
+        log_message("error", "Succesfull deleting a user  ");
         return true;
     }
 

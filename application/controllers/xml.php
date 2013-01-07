@@ -13,25 +13,22 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * @copyright	        Copyright (c) 2012, 
  * @filesource
  */
-class etiqueta extends CI_Controller{
+class xml extends CI_Controller{
     
     
     public function __construct() {
         parent::__construct();
+        $this->load->model('usuario_model');
+        $this->load->helper('xml');
         
     }
     
-     function exportprueba() {
+       function index() {
           
-         $data = "hola como estas ";
-         $dataxml=xml_convert($data);
-         
-        
+           
+          echo $this->usuario_model->getUserxml("osorioabel");
         
     }
-    
-    
     
     
 }
-
