@@ -89,6 +89,9 @@ class Usuario extends CI_Controller {
             case 'configurateDropbox':
                 $this->loadDropboxConfigurationView($username);
                 break;
+            case 'ExportXMLFIle':
+                $this->ExportXMLFIle($username);
+                break;
         };
     }
 
@@ -170,6 +173,20 @@ class Usuario extends CI_Controller {
         // caso de gente repetido
             echo "esta repedito";
     }
+    
+    function ExportXMLFIle($username) {
+
+        $booleano = $this->usuario_model->getUserInfoxml($username) ;
+
+        if ($booleano == true) {
+            // si el cambio fue exitoso se redirecciona
+            redirect('/homeuser/index');
+        } else
+        // caso de gente repetido
+            echo "esta repedito";
+    }
+    
+    
    
 
 }

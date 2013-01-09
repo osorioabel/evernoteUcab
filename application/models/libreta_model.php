@@ -121,11 +121,11 @@ class Libreta_Model extends CI_Model {
      * @param	string	i$inicio
      * @return	la libreta
      */
-    function getlibreta($numeroRegistros, $inicio) {
+    function getlibreta($numeroRegistros, $inicio,$username) {
 
         $this->db->limit($numeroRegistros, $inicio);
-        $this->db->select('id_libreta,nombre,descripcion,fecha');
-        $query = $this->db->get('libreta');
+        
+        $query = $this->db->query("Select  * from libreta where fk_usuario = '$username' ");
         return $query->result();
     }
 
@@ -140,7 +140,7 @@ class Libreta_Model extends CI_Model {
 
         return $this->db->count_all('libreta');
     }
-
+    
     /**
      * Esta Funcion tamListLibreta($id) 
      * se encarga de contar cuantas libretas tiene un usuario en la base de datos 

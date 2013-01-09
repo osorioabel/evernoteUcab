@@ -135,7 +135,7 @@ class Example_tests extends Toast {
         $booleano = $this->usuario_model->login($this->loginusuario, $this->loginpass);
         $this->_assert_true($booleano);
         $this->_assert_equals($booleano, true);
-        $this->message = 'Prueba Unitaria Satisfactoria el usuario se encuentra registrado en el sistema';
+      //  $this->message = 'Prueba Unitaria Satisfactoria el usuario se encuentra registrado en el sistema';
     }
 
     function test_login_fail() {
@@ -144,7 +144,7 @@ class Example_tests extends Toast {
         $booleano = $this->usuario_model->login($this->loginusuario2, $this->loginpass2);
         $this->_assert_false($booleano);
         $this->_assert_equals($booleano, false);
-        $this->message = 'Prueba Unitaria Satisfactoria el usuario no se encuentra registrado en el sistema';
+      //  $this->message = 'Prueba Unitaria Satisfactoria el usuario no se encuentra registrado en el sistema';
     }
 
     function test_register_succesful() {
@@ -154,7 +154,7 @@ class Example_tests extends Toast {
         $booleano = $this->usuario_model->register($this->create_name, $this->create_lastname, $this->create_username, $this->create_email, $this->create_password);
         $this->_assert_true($booleano);
         $this->_assert_equals($booleano, true);
-        $this->message = 'Prueba Unitaria Satisfactoria el usuario se encuentra registrado en el sistema';
+       // $this->message = 'Prueba Unitaria Satisfactoria el usuario se encuentra registrado en el sistema';
     }
 
     function test_register_fail() {
@@ -162,14 +162,14 @@ class Example_tests extends Toast {
         $booleano = $this->usuario_model->register($this->create_name, $this->create_lastname, $this->username, $this->create_email, $this->create_password);
         $this->_assert_false($booleano);
         $this->_assert_equals($booleano, false);
-        $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';
+       // $this->message = 'Prueba Unitaria Satisfactoria el usuario no se puede  registrar en el sistema';
     }
     
     function test_dropbox_conection_foldercreation_succesfull() {
 
        $retorno  =$this->dropbox_model->test_dropbox($this->loginusuario); 
        $this->_assert_not_empty($retorno);
-        $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
+       // $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
        
     }
     
@@ -183,7 +183,7 @@ class Example_tests extends Toast {
         $this->_assert_true($archivo2);
         $this->_assert_true($archivo3);
         $this->_assert_true($notacreada);
-        $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
+       // $this->message = 'Prueba Unitaria Satisfactoria el Servicio de Almacenamiento Dropbox esta activo y se ha podido crear la carpeta';
     }
     
     
@@ -195,8 +195,17 @@ class Example_tests extends Toast {
         $busqueda=$this->nota_model->getBuscarNotas($this->numeroRegistros,  $this->inicio,  $this->objetivo1);
         $this->_assert_not_empty($busqueda);
         
-        $this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
+      //  $this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
     }
+    
+    function test_xmlexport() {
+
+         $busqueda=array();
+         $busqueda=$this->usuario_model->getUserInfoxml($this->loginusuario);
+         $this->_assert_true($busqueda);
+        //$this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
+    }
+    
     function test_searchingwithoutaexistingString() {
 
        
@@ -204,8 +213,10 @@ class Example_tests extends Toast {
          $busqueda=array();
          $busqueda=$this->nota_model->getBuscarNotas($this->numeroRegistros,  $this->inicio,  $this->objetivo2);
         $this->_assert_empty($busqueda);
-        $this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
+        //$this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
     }
+    
+     
     
     
     

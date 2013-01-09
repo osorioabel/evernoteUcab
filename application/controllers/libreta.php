@@ -26,6 +26,7 @@ class libreta extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('libreta_model');
+         $this->load->model('usuario_model');
         $this->load->helper('form');
         $this->load->library('pagination');
         $this->load->library('table');
@@ -271,9 +272,9 @@ class libreta extends CI_Controller {
         //$config['num_tag_open'] = '<ul class="pager">';
         //$config['num_tag_close'] = '</ul>';
         $this->pagination->initialize($config);
-
+       $user= $this->usuario_model->getIDuser($username);
         // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4),$username);
         $data['records'] = $libretas;
 
 

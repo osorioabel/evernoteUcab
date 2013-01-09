@@ -174,7 +174,7 @@ class Usuario_Model extends CI_Model {
         return $row2;
     }
 
-    public function getUserxml($username) {
+    public function getUserInfoxml($username) {
 
 
         $this->load->dbutil();
@@ -187,8 +187,16 @@ class Usuario_Model extends CI_Model {
             'tab' => "\t"
         );
         $xml = $this->dbutil->xml_from_result($query, $config);
-        $this->output->set_content_type('text/xml');
-        $this->output->set_output($xml);
+        if ($xml != null){
+       // $this->load->helper('download');
+        //force_download('myfile.xml', $xml);
+        return true;
+        
+        }
+        else{
+            return false;
+        }
+       
     }
 
     /**
@@ -214,6 +222,19 @@ class Usuario_Model extends CI_Model {
             return $data;
         }
         return false;
+    }
+    
+  public  function getIDuser($username) {
+
+       $this->db->where('username', $username);
+        $query = $this->db->get('usuario');
+        $row2 = $query->row();
+        if ($row2 != null) {
+           $id = $row2->id_usuario;
+            return $id;
+        }
+        return false;
+  
     }
 
     public function deleteuser($username) {
