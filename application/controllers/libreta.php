@@ -87,7 +87,7 @@ class libreta extends CI_Controller {
         //$config['num_tag_open'] = '<div id="pager">';
         //$config['num_tag_close'] = '</div>';
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4),$username);
         $data['records'] = $libretas;
         //$data['upload'] = $this->uploadNotebookViewModify($username);
         $this->load->view('/includes/templates', $data);
@@ -188,7 +188,7 @@ class libreta extends CI_Controller {
         $config['first_link'] = '<<';  //texto del enlace que nos lleva a la primer página
         $config['last_link'] = '>>';   //texto del enlace que nos lleva a la última página
         $this->pagination->initialize($config);
-        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4),$username);
         $data['records'] = $libretas;
 
 
@@ -321,7 +321,7 @@ class libreta extends CI_Controller {
         $this->pagination->initialize($config);
 
         // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4),$username);
         $data['records'] = $libretas;
 
 
