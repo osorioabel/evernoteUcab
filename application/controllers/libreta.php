@@ -217,7 +217,7 @@ class libreta extends CI_Controller {
         $data['title'] = 'Your Books';
         $this->load->library('pagination');
         $config['base_url'] = base_url() . '/libreta/indexSelect/' . $username . '/';
-        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
+        $config['total_rows'] = $this->libreta_model->tamListLibreta($username); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 10;
 
@@ -233,7 +233,7 @@ class libreta extends CI_Controller {
         $this->pagination->initialize($config);
 
         // $data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
-        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4));
+        $libretas = $this->libreta_model->getlibreta($config['per_page'], $this->uri->segment(4),$username);
         $data['records'] = $libretas;
         $this->load->view('/includes/templates', $data);
     }
@@ -261,7 +261,7 @@ class libreta extends CI_Controller {
         $data['title'] = 'Your Books';
         $this->load->library('pagination');
         $config['base_url'] = base_url() . '/libreta/indexSelectConsulta/' . $username . '/';
-        $config['total_rows'] = $this->libreta_model->getCantidad(); //obtenemos la cantidad de registros
+        $config['total_rows'] = $this->libreta_model->tamListLibreta($username); //obtenemos la cantidad de registros
         $config['per_page'] = 6;
         $config['num_links'] = 10;
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.

@@ -124,8 +124,8 @@ class Libreta_Model extends CI_Model {
     function getlibreta($numeroRegistros, $inicio,$username) {
 
         $this->db->limit($numeroRegistros, $inicio);
-        
-        $query = $this->db->query("Select  * from libreta where fk_usuario = '$username' ");
+         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");
+       
         return $query->result();
     }
 
