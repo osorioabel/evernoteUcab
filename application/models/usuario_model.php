@@ -178,7 +178,7 @@ class Usuario_Model extends CI_Model {
 
 
         $this->load->dbutil();
-        $sql = "select * from usuario";
+        $sql = "select * from usuario where username = '$username'";
         $query = $this->db->query($sql);
         $config = array(
             'root' => 'root',
@@ -187,16 +187,45 @@ class Usuario_Model extends CI_Model {
             'tab' => "\t"
         );
         $xml = $this->dbutil->xml_from_result($query, $config);
-        if ($xml != null){
-       // $this->load->helper('download');
-        //force_download('myfile.xml', $xml);
-        return true;
-        
-        }
-        else{
+        if ($xml != null) {
+            // libretas
+            $sql2 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
+            $query2 = $this->db->query($sql2);
+            $config2 = array(
+                'root' => 'libretas',
+                'element' => 'libreta',
+                'newline' => "\n",
+                'tab' => "\t"
+            );
+            $xml2 = $this->dbutil->xml_from_result($query2, $config2);
+            $xml3 = $xml . $xml2;
+         
+            
+            // notas 
+            $sql3 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
+            $query3 = $this->db->query($sql2);
+            $config3 = array(
+                'root' => 'libretas',
+                'element' => 'libreta',
+                'newline' => "\n",
+                'tab' => "\t"
+            );
+            $xml4 = $this->dbutil->xml_from_result($query3, $config3);
+            $xml5 = $xml3 . $xml4;
+            
+            
+
+
+
+
+
+            $this->load->helper('download');
+            force_download('myfile.xml', $xml3);
+
+            return true;
+        } else {
             return false;
         }
-       
     }
 
     /**
@@ -223,18 +252,17 @@ class Usuario_Model extends CI_Model {
         }
         return false;
     }
-    
-  public  function getIDuser($username) {
 
-       $this->db->where('username', $username);
+    public function getIDuser($username) {
+
+        $this->db->where('username', $username);
         $query = $this->db->get('usuario');
         $row2 = $query->row();
         if ($row2 != null) {
-           $id = $row2->id_usuario;
+            $id = $row2->id_usuario;
             return $id;
         }
         return false;
-  
     }
 
     public function deleteuser($username) {
