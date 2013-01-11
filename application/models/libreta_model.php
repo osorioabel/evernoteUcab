@@ -128,6 +128,49 @@ class Libreta_Model extends CI_Model {
        
         return $query->result();
     }
+    
+    function cantNotas($numeroRegistros, $inicio,$username){
+        $this->db->limit($numeroRegistros, $inicio);
+         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");
+        $row = $query->num_rows();
+        $row2 = $query->row();
+        $var = 0;
+        
+        for ($i = 0; $i < $row; $i++) {
+                 $idLibreta= $row2->id_libreta;
+            $query3 = $this->db->query("select n.id_nota from nota n, libreta l  where l.id_libreta = '$idLibreta' and n.id_libreta= '$idLibreta'");
+                 
+                $var=$query3->num_rows()+$var;
+           
+            $row2 = $query->next_row();
+        }
+
+
+        return $var;
+        
+    }
+    function busqueda($numeroRegistros, $inicio,$username){
+        $this->db->limit($numeroRegistros, $inicio);
+         $query = $this->db->query("select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario");
+        $row = $query->num_rows();
+        $row2 = $query->row();
+        
+        for ($i = 0; $i < $row; $i++) {
+                 $idLibreta= $row2->id_libreta;
+                 
+                
+                $query3 = $this->db->query("select n.id_nota,n.titulo,n.texto,n.fecha_creacion from nota n, libreta l  where l.id_libreta = '$idLibreta' and n.id_libreta= '$idLibreta'");
+                
+                 
+                 if($i==0){
+                 $query6 = $this->db->query("select * from ($query3 UNION $query3) as unionTable u");
+                
+                 }
+           
+            $row2 = $query->next_row();
+        }
+        return $query6->result();
+    }
 
     /**
      * 

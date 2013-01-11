@@ -75,8 +75,8 @@ class search extends CI_Controller {
          $usuario = new Usuario_Model();
          
         $usuario = $this->usuario_model->getUser($username);
-        $id_user = $this->usuario_model->getId_user();
-        echo $id_user;
+      
+        
         // aca se llama a funcion para cargar las libretas del usuario
         // esta variable trae un codigo HTML para que se realice 
         // su visualizacion en la interfaz de Modificar 
@@ -87,9 +87,12 @@ class search extends CI_Controller {
         $this->load->library('table');
         
         $config['base_url'] = base_url().'/search/indexsearchresult2/'.$username.'/'.$this->input->post('goal').'/' ;
-        $config['total_rows'] = $this->nota_model->tamListNotaBuscar($data['busqueda']);//obtenemos la cantidad de registros
         $config['per_page'] = 10;
         $config['num_links'] = 20;
+        $config['total_rows'] = $this->libreta_model->cantNotas($config['per_page'], $this->uri->segment(4),$username);
+       
+        $id_user = $this->usuario_model->getId_user();
+       
         
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
@@ -102,8 +105,8 @@ class search extends CI_Controller {
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
         
         
-        $notas = $this->nota_model->getBuscarNotas($config['per_page'],$this->uri->segment(5),$data['busqueda']);
-        $data['records'] = $notas;
+        $notas = $this->nota_model->getBuscarNotas($config['per_page'], $this->uri->segment(4), $data['busqueda'],$username);
+         $data['records'] = $notas;
        
         //$data['upload'] = $this->uploadNotebookViewModify($username);
         $this->load->view('/includes/templates', $data);
@@ -129,8 +132,8 @@ class search extends CI_Controller {
         $usuario = new Usuario_Model();
          
         $usuario = $this->usuario_model->getUser($username);
-        $id_user = $this->usuario_model->getId_user();
-        echo $id_user;
+         
+        
         
         // aca se llama a funcion para cargar las libretas del usuario
         // esta variable trae un codigo HTML para que se realice 
@@ -142,9 +145,10 @@ class search extends CI_Controller {
         $this->load->library('table');
         
          $config['base_url'] = base_url().'/search/indexsearchresult2/'.$username.'/'.$value.'/' ;
-        $config['total_rows'] = $this->nota_model->tamListNotaBuscar($data['busqueda']);//obtenemos la cantidad de registros
-        $config['per_page'] = 10;
+        $config['total_rows'] = $this->libreta_model->cantNotas($config['per_page'], $this->uri->segment(4),$username);
+       $config['per_page'] = 10;
         $config['num_links'] = 20;
+        $id_user = $this->usuario_model->getId_user();
         
         $config['prev_link'] = 'anterior'; //texto del enlace que nos lleva a la pagina ant.
         $config['next_link'] ='siguiente'; //texto del enlace que nos lleva a la sig. página
@@ -157,7 +161,7 @@ class search extends CI_Controller {
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
         
         
-        $notas = $this->nota_model->getBuscarNotas($config['per_page'],$this->uri->segment(5),$data['busqueda']);
+        $notas = $this->nota_model->getBuscarNotas($config['per_page'], $this->uri->segment(4),$username);
         $data['records'] = $notas;
         
         //$data['upload'] = $this->uploadNotebookViewModify($username);

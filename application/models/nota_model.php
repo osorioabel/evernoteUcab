@@ -26,6 +26,7 @@ class Nota_Model extends CI_Model {
         parent::__construct();
         $this->load->helper('date');
          $this->load->model('etiqueta_model');
+         
     }
 
     /**
@@ -131,41 +132,13 @@ class Nota_Model extends CI_Model {
     * @param	string $objetivo
     * @return	devuelve las notas de la busqueda
     */
-   function getBuscarNotas($numeroRegistros,$inicio,$objetivo)
+   function getBuscarNotas($numeroRegistros,$inicio,$objetivo,$username)
 
 {
 
     $this->db->limit($numeroRegistros);
    
-    
-   $this->db->select('nota.id_nota,nota.titulo,nota.texto,nota.fecha_creacion');
-   $this->db->from('nota');
-   $this->db->like('nota.titulo', $objetivo);
-   $this->db->or_like('nota.texto', $objetivo);
-   //$this->db->join('libreta','nota.id_libreta = libreta.id_libreta');
-   //$this->db->join('usuario','libreta.fk_usuario=usuario.id_usuario');
-   //$this->db->where('usuario.id_usuario',$username);
-   
-   $query = $this->db->get();    
-   $subQuery1 = $this->db->last_query();
-  
-  // $this->db->_reset_select();
-   
-   
-   $this->db->select('nota.id_nota,nota.titulo,nota.texto,nota.fecha_creacion');
-   $this->db->from('nota');
-   $this->db->join('nota_etiqueta', 'nota.id_nota = nota_etiqueta.fk_nota');
-   $this->db->join('etiqueta', 'etiqueta.id_etiqueta = nota_etiqueta.fk_etiqueta');        
-   $this->db->like('etiqueta.texto', $objetivo);   
-   $query = $this->db->get();
-   $subQuery2 = $this->db->last_query();  
-   //$this->db->_reset_select();
-   
-   $query = $this->db->query("select * from ($subQuery1 UNION $subQuery2) as unionTable");
-   
-   
- 
-   
+   $query = $this->db->query("select * from (select Distinct n.id_nota,n.titulo,n.texto,n.fecha_creacion,n.id_libreta from nota n,libreta l, usuario u where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and u.username = '$username') as n where n.titulo like '%$objetivo%' or n.texto like '%$objetivo%'");
     
     return $query->result();
     
