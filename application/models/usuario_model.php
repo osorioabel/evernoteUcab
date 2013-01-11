@@ -181,7 +181,7 @@ class Usuario_Model extends CI_Model {
         $sql = "select * from usuario where username = '$username'";
         $query = $this->db->query($sql);
         $config = array(
-            'root' => 'root',
+            'root' => 'infousuario',
             'element' => 'usuario',
             'newline' => "\n",
             'tab' => "\t"
@@ -199,32 +199,64 @@ class Usuario_Model extends CI_Model {
             );
             $xml2 = $this->dbutil->xml_from_result($query2, $config2);
             $xml3 = $xml . $xml2;
-         
-            
+
+        
             // notas 
-            $sql3 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
-            $query3 = $this->db->query($sql2);
+            $sql3 = "select n.id_nota,n.titulo,n.texto,n.fecha_creacion,n.id_libreta from nota n,libreta l, usuario u where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and u.username = '$username' ";
+            $query3 = $this->db->query($sql3);
             $config3 = array(
-                'root' => 'libretas',
-                'element' => 'libreta',
+                'root' => 'notas',
+                'element' => 'nota',
                 'newline' => "\n",
                 'tab' => "\t"
             );
             $xml4 = $this->dbutil->xml_from_result($query3, $config3);
+
+
             $xml5 = $xml3 . $xml4;
-            
-            
+
+            // adjuntos 
+            $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto 
+and u.username = '$username'";
+            $query4 = $this->db->query($sql4);
+            $config4 = array(
+                'root' => 'adjuntos',
+                'element' => 'adjunto',
+                'newline' => "\n",
+                'tab' => "\t"
+            );
+            $xml6 = $this->dbutil->xml_from_result($query4, $config4);
 
 
-
+            $xml7 = $xml5 . $xml6;
 
 
             $this->load->helper('download');
-            force_download('myfile.xml', $xml3);
+            force_download($username . '.xml', $xml7);
 
             return true;
         } else {
             return false;
+        }
+    }
+
+    public function SetUserInfoFromxml($username) {
+
+        $doc = new DOMDocument();
+        $doc->load("subidos/usuariox.xml");//xml file loading here
+
+        $employees = $doc->getElementsByTagName("infousuario");
+        foreach ($employees as $employee) {
+            $names = $employee->getElementsByTagName("id_usuario");
+            $name = $names->item(0)->nodeValue;
+
+            $ages = $employee->getElementsByTagName("nombre");
+            $age = $ages->item(0)->nodeValue;
+
+            $salaries = $employee->getElementsByTagName("apellido");
+            $salary = $salaries->item(0)->nodeValue;
+
+            return $name . $salary . $age;
         }
     }
 

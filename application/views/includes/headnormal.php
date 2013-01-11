@@ -30,7 +30,8 @@
                             <li><?php echo anchor('usuario/index/' . $username . '/modify', 'Modify User Data', array('title' => 'Modify')); ?></li>
                             <li><?php echo anchor('usuario/index/' . $username . '/changePassword', 'Change Password', array('title' => 'Change Password')); ?></li>
                             <li><?php echo anchor('upload/request_dropbox/', 'Configure Dropbox Account', array('title' => 'Configurate Dropbox Account')); ?></li>
-                            <li><?php echo anchor('usuario/index/' . $username . '/ExportXMLFIle', 'Export User Info to XML FIle', array('title' => 'Export to XML')); ?></li>
+                            <li><?php echo anchor('usuario/index/' . $username . '/ExportXMLFIle', 'Export User Info to Xml', array('title' => 'Export to XML')); ?></li>
+                             <li><?php echo anchor('usuario/index/' . $username . '/ImportXMLFIle', 'Import User Info From Xml', array('title' => 'Import From XML')); ?></li>
                             <li><?php echo anchor('home', 'Logout', array('title' => 'Home')); ?></li>
 
                         </ul>

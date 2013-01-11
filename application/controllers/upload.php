@@ -50,7 +50,7 @@ class Upload extends CI_Controller {
      */
     function do_upload() {
         $config['upload_path'] = './subidos/';
-        $config['allowed_types'] = 'gif|jpg|png|zip|avi';
+        $config['allowed_types'] = 'gif|jpg|png|zip|avi|xml';
 
         $this->load->library('upload', $config);
 

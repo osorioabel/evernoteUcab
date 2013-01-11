@@ -92,6 +92,9 @@ class Usuario extends CI_Controller {
             case 'ExportXMLFIle':
                 $this->ExportXMLFIle($username);
                 break;
+               case 'ImportXMLFIle':
+                $this->ImportXMLFIle($username);
+                break;
         };
     }
 
@@ -181,6 +184,19 @@ class Usuario extends CI_Controller {
         if ($booleano == true) {
             // si el cambio fue exitoso se redirecciona
             redirect('/homeuser/index');
+        } else
+        // caso de gente repetido
+            echo "esta repedito";
+    }
+    
+    function ImportXMLFIle($username) {
+
+        $booleano = $this->usuario_model->SetUserInfoFromxml($username) ;
+
+        if ($booleano != null) {
+            // si el cambio fue exitoso se redirecciona
+           // redirect('/homeuser/index');
+            echo $booleano;
         } else
         // caso de gente repetido
             echo "esta repedito";
