@@ -62,7 +62,7 @@ class Nota_Model extends CI_Model {
              log_message("error", "Succesfull registing a Note  in a NoteBook .. ");  
         return true;
     }
-
+    
     
      /**
     * Esta Funcion tamListNota($id) 
