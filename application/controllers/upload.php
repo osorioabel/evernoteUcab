@@ -149,7 +149,8 @@ class Upload extends CI_Controller {
        $this->load->library('dropbox', $params);
        $arrayfalso = array();
        $return = $this->dropbox->add($folder, $subidos . $filename, $arrayfalso, 'dropbox');
-       $boolean = $this->adjunto_model->registeradjunto($filename, $filename);
+       $linkarchivo=$this->create_link($filename);
+       $boolean = $this->adjunto_model->registeradjunto($linkarchivo, $filename);
        if ($boolean == true){
        $notaid=  $this->nota_model->getMaxID();
        $adjuntoid= $this->adjunto_model->getMaxID();
@@ -174,6 +175,20 @@ class Upload extends CI_Controller {
         $return = $this->dropbox->create_folder('/prueba/prueba', 'dropbox');
         print_r($return);
     }
+    
+    public function create_link($nombrearchivo) {
+
+        $params['key'] = $this->key;
+        $params['secret'] = $this->secret;
+        $params['access'] = array('oauth_token' => urlencode($this->session->userdata('oauth_token')),
+        'oauth_token_secret' => urlencode($this->session->userdata('oauth_token_secret')));
+        $this->load->library('dropbox', $params);
+        $return = $this->dropbox->media('/evernoteUcab/'.$nombrearchivo, 'dropbox');
+        return $return->url;
+        
+        }
+    
+    
 
 }
 

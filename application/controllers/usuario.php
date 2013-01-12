@@ -28,6 +28,8 @@ class Usuario extends CI_Controller {
         $this->load->model('usuario_model');
         $this->load->model('nota_model');
         
+        
+        
         $this->load->helper('form');
     }
 
@@ -200,6 +202,25 @@ class Usuario extends CI_Controller {
         } else
         // caso de gente repetido
             echo "esta repedito";
+        
+      
+        
+    }
+    
+    function pruebalink($username) {
+
+        $booleano = $this->usuario_model->SetUserInfoFromxml($username) ;
+
+        if ($booleano != null) {
+            // si el cambio fue exitoso se redirecciona
+           // redirect('/homeuser/index');
+            echo $booleano;
+        } else
+        // caso de gente repetido
+            echo "esta repedito";
+        
+      
+        
     }
     
     
