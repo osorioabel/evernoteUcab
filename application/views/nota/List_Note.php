@@ -62,12 +62,14 @@ if ($messi)
                                             endforeach; 
                                                  ?>
                                                <li> <strong>Adjunto</strong> 
+                                                
                                                    
                                                 <?php     
                                                    if (isset($records3)):
                                                     foreach ($records3 as $b): 
-                                                      if ($c->titulo == $b->titulo): 
-                                                       echo $b->link;
+                                                      if ($c->titulo == $b->titulo): ?>
+                                                   <a href=<?php echo $b->link ?> > <?php echo $b->nombre ?> </a> </li>
+                                                <?php   
                                                       endif;
                                                     endforeach;
                                                    endif;
