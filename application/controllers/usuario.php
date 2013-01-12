@@ -181,9 +181,9 @@ class Usuario extends CI_Controller {
     
     function ExportXMLFIle($username) {
 
-        $booleano = $this->usuario_model->getUserInfoxml($username) ;
+        $booleano = $this->usuario_model->getUserInfoxml2($username) ;
 
-        if ($booleano == true) {
+        if ($booleano != null) {
             // si el cambio fue exitoso se redirecciona
             redirect('/homeuser/index');
         } else
@@ -206,24 +206,4 @@ class Usuario extends CI_Controller {
       
         
     }
-    
-    function pruebalink($username) {
-
-        $booleano = $this->usuario_model->SetUserInfoFromxml($username) ;
-
-        if ($booleano != null) {
-            // si el cambio fue exitoso se redirecciona
-           // redirect('/homeuser/index');
-            echo $booleano;
-        } else
-        // caso de gente repetido
-            echo "esta repedito";
-        
-      
-        
-    }
-    
-    
-   
-
 }

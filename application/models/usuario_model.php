@@ -37,6 +37,12 @@ class Usuario_Model extends CI_Model {
         parent::__construct();
         $this->oauth_token = '';
         $this->oauth_token_secret = '';
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('session');
+        $this->load->model('libreta_model');
+        $this->load->model('nota_model');
+        $this->load->model('adjunto_model');
+        $this->load->model("nota_adjunto_model");
     }
 
     /**
@@ -178,86 +184,170 @@ class Usuario_Model extends CI_Model {
 
 
         $this->load->dbutil();
-        $sql = "select * from usuario where username = '$username'";
-        $query = $this->db->query($sql);
-        $config = array(
+        // libretas
+        $sql2 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
+        $query2 = $this->db->query($sql2);
+        $config2 = array(
             'root' => 'infousuario',
-            'element' => 'usuario',
+            'element' => 'libreta',
             'newline' => "\n",
             'tab' => "\t"
         );
-        $xml = $this->dbutil->xml_from_result($query, $config);
-        if ($xml != null) {
-            // libretas
-            $sql2 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
-            $query2 = $this->db->query($sql2);
-            $config2 = array(
-                'root' => 'libretas',
-                'element' => 'libreta',
-                'newline' => "\n",
-                'tab' => "\t"
-            );
-            $xml2 = $this->dbutil->xml_from_result($query2, $config2);
-            $xml3 = $xml . $xml2;
-
-        
-            // notas 
-            $sql3 = "select n.id_nota,n.titulo,n.texto,n.fecha_creacion,n.id_libreta from nota n,libreta l, usuario u where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and u.username = '$username' ";
-            $query3 = $this->db->query($sql3);
-            $config3 = array(
-                'root' => 'notas',
-                'element' => 'nota',
-                'newline' => "\n",
-                'tab' => "\t"
-            );
-            $xml4 = $this->dbutil->xml_from_result($query3, $config3);
+        $xml2 = $this->dbutil->xml_from_result($query2, $config2);
+        $xml3 = $xml2;
 
 
-            $xml5 = $xml3 . $xml4;
+        // notas 
+        $sql3 = "select n.id_nota,n.titulo,n.texto,n.fecha_creacion,n.id_libreta from nota n,libreta l, usuario u where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and u.username = '$username' ";
+        $query3 = $this->db->query($sql3);
+        $config3 = array(
+            //  'root' => 'notas',
+            'element' => 'nota',
+            'newline' => "\n",
+            'tab' => "\t"
+        );
+        $xml4 = $this->dbutil->xml_from_result($query3, $config3);
 
-            // adjuntos 
-            $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto 
+
+        $xml5 = $xml3 . $xml4;
+
+        // adjuntos 
+        $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto 
 and u.username = '$username'";
-            $query4 = $this->db->query($sql4);
-            $config4 = array(
-                'root' => 'adjuntos',
-                'element' => 'adjunto',
-                'newline' => "\n",
-                'tab' => "\t"
-            );
-            $xml6 = $this->dbutil->xml_from_result($query4, $config4);
+        $query4 = $this->db->query($sql4);
+        $config4 = array(
+            //    'root' => 'adjuntos',
+            'element' => 'adjunto',
+            'newline' => "\n",
+            'tab' => "\t"
+        );
+        $xml6 = $this->dbutil->xml_from_result($query4, $config4);
 
 
-            $xml7 = $xml5 . $xml6;
+        $xml7 = $xml5 . $xml6;
 
 
-            $this->load->helper('download');
-            force_download($username . '.xml', $xml7);
+        $this->load->helper('download');
+        force_download($username . '.xml', $xml7);
 
-            return true;
-        } else {
-            return false;
-        }
+        return true;
+    }
+
+    public function getUserInfoxml2($username) {
+
+
+        // Load XML writer library
+        $this->load->library('xml_writer');
+
+        // Initiate class
+        $xml = new Xml_writer();
+        $xml->setRootName('inforuser');
+        $xml->initiate();
+
+        // Start branch 1
+         $xml->startBranch('libretas');
+        $sql2 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha, l.fk_usuario from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
+        $query2 = $this->db->query($sql2);
+        $records = $query2->result();
+        
+        foreach ($records as $c):
+            // Set branch 1-1 and its nodes
+            //  $xml->startBranch('libreta'); // start branch 1-1
+            $xml->startBranch('libreta');
+            $xml->addNode('id_libreta', $c->id_libreta);
+            $xml->addNode('fk_usuario', $c->fk_usuario);
+            $xml->addNode('nombre', $c->nombre);
+            $xml->addNode('fecha', $c->fecha);
+            $xml->addNode('descripcion', $c->descripcion);
+
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+       
+        $xml->endBranch();
+        
+
+        // notas
+        $sql3 = "select n.id_nota,n.titulo,n.texto,n.fecha_creacion,n.id_libreta from nota n,libreta l, usuario u where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and u.username = '$username' ";
+        $query3 = $this->db->query($sql3);
+        $records2 = $query3->result();
+        $xml->startBranch('notas');
+        foreach ($records2 as $c2):
+
+            $xml->startBranch('nota');
+            $xml->addNode('id_nota', $c2->id_nota);
+            $xml->addNode('titulo', $c2->titulo);
+            $xml->addNode('texto', $c2->texto);
+            $xml->addNode('fecha_creacion', $c2->fecha_creacion);
+            $xml->addNode('id_libreta', $c2->id_libreta);
+
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+   
+
+
+
+
+
+        $this->load->helper('download');
+        force_download($username . '.xml', $xml->getXml());
+
+        return $xml->getXml();
     }
 
     public function SetUserInfoFromxml($username) {
 
         $doc = new DOMDocument();
-        $doc->load("subidos/usuariox.xml");//xml file loading here
+        $doc->load("subidos/usuarioy.xml"); //xml file loading here
 
-        $employees = $doc->getElementsByTagName("infousuario");
-        foreach ($employees as $employee) {
-            $names = $employee->getElementsByTagName("id_usuario");
-            $name = $names->item(0)->nodeValue;
+        $employees = $doc->getElementsByTagName("libreta");
+        $final2 = "";
+        foreach ($employees as $employee) :
+            for ($i = 0; $i < count($employee); $i++) {
+                $names = $employee->getElementsByTagName("fk_usuario");
+                $userID = $names->item($i)->nodeValue;
 
-            $ages = $employee->getElementsByTagName("nombre");
-            $age = $ages->item(0)->nodeValue;
+                $names2 = $employee->getElementsByTagName("id_libreta");
+                $id_libreta = $names2->item($i)->nodeValue;
 
-            $salaries = $employee->getElementsByTagName("apellido");
-            $salary = $salaries->item(0)->nodeValue;
 
-            return $name . $salary . $age;
-        }
+                $ages = $employee->getElementsByTagName("nombre");
+                $title = $ages->item($i)->nodeValue;
+
+                $salaries = $employee->getElementsByTagName("descripcion");
+                $descrip = $salaries->item($i)->nodeValue;
+                $this->libreta_model->registerBookwithID($userID, $title, $descrip, $id_libreta);
+            }
+           
+        endforeach;
+        
+        $employees2= $doc->getElementsByTagName("nota");
+        $final2 = "";
+        foreach ($employees2 as $employee2) :
+            for ($i = 0; $i < count($employee2); $i++) {
+                
+                $names = $employee2->getElementsByTagName("id_nota");
+                $userID = $names->item($i)->nodeValue;
+
+                $names2 = $employee2->getElementsByTagName("titulo");
+                $id_libreta = $names2->item($i)->nodeValue;
+
+
+                $ages = $employee2->getElementsByTagName("texto");
+                $title = $ages->item($i)->nodeValue;
+
+                $salaries = $employee2->getElementsByTagName("fecha_creacion");
+                $descrip = $salaries->item($i)->nodeValue;
+                
+                $salaries2 = $employee2->getElementsByTagName("id_libreta");
+                $descrip2 = $salaries->item($i)->nodeValue;
+                
+                
+                $this->libreta_model->registerBookwithID($userID, $title, $descrip, $id_libreta);
+            }
+            endforeach;
+        
     }
 
     /**
