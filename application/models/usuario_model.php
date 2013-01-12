@@ -42,6 +42,7 @@ class Usuario_Model extends CI_Model {
         $this->load->model('libreta_model');
         $this->load->model('nota_model');
         $this->load->model('adjunto_model');
+        $this->load->model('etiqueta_model');
         $this->load->model("nota_adjunto_model");
     }
 
@@ -212,8 +213,7 @@ class Usuario_Model extends CI_Model {
         $xml5 = $xml3 . $xml4;
 
         // adjuntos 
-        $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto 
-and u.username = '$username'";
+        $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto and u.username = '$username'";
         $query4 = $this->db->query($sql4);
         $config4 = array(
             //    'root' => 'adjuntos',
@@ -284,7 +284,72 @@ and u.username = '$username'";
             // End branch 1
             $xml->endBranch();
         endforeach;
-   
+        
+         $xml->endBranch();
+        // adjuntos
+        
+        $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto";
+        $query4 = $this->db->query($sql4);
+        $records3 = $query4->result();
+        $xml->startBranch('adjuntos');
+        foreach ($records3 as $c3):
+
+            $xml->startBranch('adjunto');
+            $xml->addNode('id_adjunto', $c3->id_adjunto);
+            $xml->addNode('link', $c3->link);
+            $xml->addNode('nombre', $c3->nombre);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+          $xml->endBranch();
+        //etiquetas
+          $sql5 = "select e.id_etiqueta,e.texto from nota n,libreta l, usuario u , etiqueta e , nota_etiqueta ne where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and ne.fk_nota = n.id_nota and ne.fk_etiqueta = e.id_etiqueta";
+        $query5 = $this->db->query($sql5);
+        $records5 = $query5->result();
+        $xml->startBranch('etiquetas');
+        foreach ($records5 as $c5):
+
+            $xml->startBranch('etiqueta');
+            $xml->addNode('id_etiqueta', $c5->id_etiqueta);
+            $xml->addNode('texto', $c5->texto);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+          $xml->endBranch();
+        
+       //notas-etiqueta
+        
+        $sql6 = "select ne.fk_nota,ne.fk_etiqueta from nota n,libreta l, usuario u , etiqueta e , nota_etiqueta ne where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and ne.fk_nota = n.id_nota and ne.fk_etiqueta = e.id_etiqueta";
+        $query6 = $this->db->query($sql6);
+        $records6 = $query6->result();
+        $xml->startBranch('notaEtiquetas');
+        foreach ($records6 as $c6):
+
+            $xml->startBranch('notaEtiqueta');
+            $xml->addNode('fk_nota', $c6->fk_nota);
+            $xml->addNode('fk_etiqueta', $c6->fk_etiqueta);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+          $xml->endBranch();
+// nota-adjunto       
+           $sql6 = "select na.fk_nota,na.fk_adjunto from nota n,libreta l, usuario u , adjunto a, nota_adjunto na where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto";
+        $query6 = $this->db->query($sql6);
+        $records6 = $query6->result();
+        $xml->startBranch('notaAdjuntos');
+        foreach ($records6 as $c6):
+
+            $xml->startBranch('notaAdjunto');
+            $xml->addNode('fk_nota', $c6->fk_nota);
+            $xml->addNode('fk_adjunto', $c6->fk_adjunto);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+        
 
 
 
@@ -296,13 +361,13 @@ and u.username = '$username'";
         return $xml->getXml();
     }
 
-    public function SetUserInfoFromxml($username) {
+    public function SetUserInfoFromxml() {
 
         $doc = new DOMDocument();
         $doc->load("subidos/usuarioy.xml"); //xml file loading here
 
         $employees = $doc->getElementsByTagName("libreta");
-        $final2 = "";
+     //  $final2 = "";
         foreach ($employees as $employee) :
             for ($i = 0; $i < count($employee); $i++) {
                 $names = $employee->getElementsByTagName("fk_usuario");
@@ -323,30 +388,97 @@ and u.username = '$username'";
         endforeach;
         
         $employees2= $doc->getElementsByTagName("nota");
-        $final2 = "";
+      //  $final2 = "";
         foreach ($employees2 as $employee2) :
             for ($i = 0; $i < count($employee2); $i++) {
                 
                 $names = $employee2->getElementsByTagName("id_nota");
-                $userID = $names->item($i)->nodeValue;
+                $id_nota = $names->item($i)->nodeValue;
 
                 $names2 = $employee2->getElementsByTagName("titulo");
-                $id_libreta = $names2->item($i)->nodeValue;
+                $titulo = $names2->item($i)->nodeValue;
 
 
                 $ages = $employee2->getElementsByTagName("texto");
-                $title = $ages->item($i)->nodeValue;
+                $nota = $ages->item($i)->nodeValue;
 
                 $salaries = $employee2->getElementsByTagName("fecha_creacion");
-                $descrip = $salaries->item($i)->nodeValue;
+                $fecha = $salaries->item($i)->nodeValue;
                 
                 $salaries2 = $employee2->getElementsByTagName("id_libreta");
-                $descrip2 = $salaries->item($i)->nodeValue;
+                $book = $salaries2->item($i)->nodeValue;
                 
                 
-                $this->libreta_model->registerBookwithID($userID, $title, $descrip, $id_libreta);
+                $this->nota_model->registerNotewithID($id_nota,$fecha, $titulo, $nota, $book);
             }
             endforeach;
+            
+        $employees3= $doc->getElementsByTagName("adjunto");
+      //  $final2 = "";
+        foreach ($employees3 as $employee3) :
+            for ($i = 0; $i < count($employee3); $i++) {
+                
+                $names = $employee3->getElementsByTagName("id_adjunto");
+                $id_adjunto = $names->item($i)->nodeValue;
+
+                $names2 = $employee3->getElementsByTagName("link");
+                $link = $names2->item($i)->nodeValue;
+
+
+                $ages = $employee3->getElementsByTagName("nombre");
+                $nombre = $ages->item($i)->nodeValue;
+        
+                $this->adjunto_model->registeradjuntowithID($id_adjunto,$link, $nombre);
+            }
+            endforeach;
+            
+            $employees4= $doc->getElementsByTagName("etiqueta");
+      //  $final2 = "";
+        foreach ($employees4 as $employee4) :
+            for ($i = 0; $i < count($employee4); $i++) {
+                
+                $names = $employee4->getElementsByTagName("id_etiqueta");
+                $id_etiqueta = $names->item($i)->nodeValue;
+
+                $names2 = $employee4->getElementsByTagName("texto");
+                $texto = $names2->item($i)->nodeValue;
+                $this->etiqueta_model->createTagWithID($id_etiqueta,$texto);
+            }      
+            endforeach;
+            
+              $employees5= $doc->getElementsByTagName("notaEtiqueta");
+      //  $final2 = "";
+        foreach ($employees5 as $employee5) :
+            for ($i = 0; $i < count($employee5); $i++) {
+                
+                $names = $employee5->getElementsByTagName("fk_nota");
+                $fk_nota = $names->item($i)->nodeValue;
+
+                $names2 = $employee5->getElementsByTagName("fk_etiqueta");
+                $fk_etiqueta = $names2->item($i)->nodeValue;
+                $this->nota_model->addTags2Note2($fk_nota ,$fk_etiqueta);
+            }      
+            endforeach;
+            
+             $employees6= $doc->getElementsByTagName("notaAdjunto");
+      //  $final2 = "";
+        foreach ($employees6 as $employee6) :
+            for ($i = 0; $i < count($employee6); $i++) {
+                
+                $names = $employee6->getElementsByTagName("fk_nota");
+                $fk_nota = $names->item($i)->nodeValue;
+
+                $names2 = $employee6->getElementsByTagName("fk_adjunto");
+                $fk_adjuntos= $names2->item($i)->nodeValue;
+                $this->nota_adjunto_model->registeradjunto_nota($fk_nota,$fk_adjuntos);
+            }      
+            endforeach;
+            
+            
+            
+            
+            
+            return true;
         
     }
 

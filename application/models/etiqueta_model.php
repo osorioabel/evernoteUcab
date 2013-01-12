@@ -91,6 +91,20 @@ class Etiqueta_Model extends CI_Model {
            log_message("error", "Successfull Tag creation");
         return $row2->id_etiqueta;     
     }
+     public function createTagWithID($id_etiqueta,$content)
+    {
+           $etiqueta = new Etiqueta_Model();
+           
+            $data = array(
+             'id_etiqueta'  => $id_etiqueta, 
+            'texto' => $content,
+        );
+        $query = $this->db->insert('etiqueta', $data);
+         $query2= $this->db->query("select id_etiqueta from etiqueta order by 1 desc ");
+        $row2 = $query2->row();
+           log_message("error", "Successfull Tag creation");
+        return $row2->id_etiqueta;     
+    }
 
     
       /**

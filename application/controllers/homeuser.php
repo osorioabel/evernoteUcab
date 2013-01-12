@@ -151,6 +151,43 @@ class homeuser extends CI_Controller {
         $this->load->view('/includes/templates', $data);
     }
     
+     public function indexImport() {
+        $data = array();
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['messi'] = "<a id='success-title'></a>
+        <script>
+            new popUp('SUCCESSFULL', 
+            {title: 'Information Imported ', titleClass: 'success', 
+            autoclose: '2000'});
+        </script>";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/homeuser';
+        $data['username'] = $this->session->userdata('username');
+        //$data['username'] = $username;
+        // $data['user'] = $success;
+        //echo $data['main_content'];
+        $data['title'] = 'Home Page User';
+        $this->load->view('/includes/templates', $data);
+    }
+    public function indexExport() {
+        $data = array();
+        $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));
+        $data['messi'] = "<a id='success-title'></a>
+        <script>
+            new popUp('SUCCESSFULL', 
+            {title: 'Information Exported ', titleClass: 'success', 
+            autoclose: '2000'});
+        </script>";
+        $data['head'] = '/includes/headnormal';
+        $data['main_content'] = '/homeuser/homeuser';
+        $data['username'] = $this->session->userdata('username');
+        //$data['username'] = $username;
+        // $data['user'] = $success;
+        //echo $data['main_content'];
+        $data['title'] = 'Home Page User';
+        $this->load->view('/includes/templates', $data);
+    }
+    
     public function indexafterdelete2() {
         $data = array();
         $data['upload'] = $this->uploadLastBooks($this->session->userdata('username'));

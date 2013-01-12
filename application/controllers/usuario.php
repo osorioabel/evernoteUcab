@@ -185,7 +185,7 @@ class Usuario extends CI_Controller {
 
         if ($booleano != null) {
             // si el cambio fue exitoso se redirecciona
-            redirect('/homeuser/index');
+            redirect('/homeuser/indexExport');
         } else
         // caso de gente repetido
             echo "esta repedito";
@@ -195,10 +195,10 @@ class Usuario extends CI_Controller {
 
         $booleano = $this->usuario_model->SetUserInfoFromxml($username) ;
 
-        if ($booleano != null) {
+        if ($booleano == true) {
             // si el cambio fue exitoso se redirecciona
-           // redirect('/homeuser/index');
-            echo $booleano;
+           redirect('/homeuser/indexImport');
+           
         } else
         // caso de gente repetido
             echo "esta repedito";

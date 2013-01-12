@@ -63,7 +63,27 @@ class Nota_Model extends CI_Model {
         return true;
     }
     
+      function registerNotewithID($id_nota,$fecha, $titulo, $nota, $book) {
+
+
     
+        $data = array(
+             'id_nota' => $id_nota,
+            'titulo' => $titulo,
+            'texto' => $nota,
+            'fecha_creacion' => $fecha,
+            'id_libreta' => $book,
+        );
+        $insert = $this->db->insert('nota', $data);
+        $insert2 = array();
+        $insert2['error'] = $this->db->_error_message();
+        if ($insert['error'] != ''){
+              log_message("error", "Error   registing a Note  in a NoteBook .. ");  
+            return false;
+        }
+             log_message("error", "Succesfull registing a Note  in a NoteBook .. ");  
+        return true;
+    }
      /**
     * Esta Funcion tamListNota($id) 
     * se encarga de contar cuantas notas tiene un usuario en una libreta 
@@ -359,6 +379,18 @@ return $this->db->count_all('nota');
 
     }
 
+     public function addTags2Note2($id,$tag){
+
+        
+        $data = array(
+            'fk_nota' => $id,
+            'fk_etiqueta'=>$tag,
+        );
+         $query = $this->db->insert('nota_etiqueta', $data);
+         
+         return true;
+
+    }
     /**
     * 
     *
@@ -426,7 +458,7 @@ return $this->db->count_all('nota');
 
 
         $query = $this->db->query("Delete from nota where id_nota = '$nota2'");
-
+        
 
         if ($this->db->_error_message())
             return false;

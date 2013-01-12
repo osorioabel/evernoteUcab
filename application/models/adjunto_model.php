@@ -57,6 +57,27 @@ class Adjunto_Model extends CI_Model {
         return true;
     }
     
+    function registeradjuntowithID($id_adjunto,$link, $nombre) {
+
+
+        $hoy = date("Y-m-d H:i:s");
+        $data = array(
+            'id_adjunto' => $id_adjunto,
+            'link' => $link,
+            'nombre' => $nombre
+        );
+        $insert = $this->db->insert('adjunto', $data);
+        $insert2 = array();
+        $insert2['error'] = $this->db->_error_message();
+        if ($insert['error'] != '') {
+            return false;
+            log_message("error", "Error Attaching a File");
+        }
+
+        log_message("error", "Attached Successful");
+        return true;
+    }
+    
     /**
      * 
      *
@@ -66,7 +87,7 @@ class Adjunto_Model extends CI_Model {
      * @return devuelve el id del ultimo adjunto agregado
      */
       public function getMaxID(){
-        $query= $this->db->query("select id_adjunto  from adjunto order by 1 desc");
+        $query= $this->db->query("select id_adjunto   from adjunto order by 1 desc");
         $row2 = $query->row();
         return $row2->id_adjunto;       
      }
