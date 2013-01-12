@@ -46,11 +46,10 @@ if ($messi)
 
                                         <!-- meta -->
                                         <ul class='meta'>
-                                            
-                                            
+                                           
                                             
                                             <li><strong>Project date</strong> <? echo $c->fecha_creacion ?> </li>
-                                            <li><strong>username</strong> <? echo $username ?> </li>
+                                           
                                             
                                             <li><strong>tags</strong>
                                             

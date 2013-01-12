@@ -267,9 +267,34 @@ class nota extends CI_Controller {
         </div>
         <div>
         <label>Note</label>
+        
         <textarea name='Note' id='Note'  cols='30' rows='6' class='form-poshytip' title='Note'>$texto</textarea>
-            </div>";
-
+            </div>
+        <label>Tags</label>";
+        
+        $tags=array();
+        $tags=$this->nota_model->getnotatagID($nota->getId_nota());
+        $n=count($tags); 
+        //for ($i = 0; $i < $n; $i++) {
+        
+         if (isset($tags)):
+              foreach ($tags as $c):
+                for ($i = 0; $i < count($c); $i++){ 
+        $auxstring= "<div><input name='$c->id_etiqueta'  id='$c->id_etiqueta' value ='$c->texto'
+               type='text' class='form-poshytip' title='Enter a tittle' />
+            </div>
+                 <input name='tag'.$i value='$c->id_etiqueta' id='tag'.$i cols='10' rows='2' class='form-poshytip' title='New Tag' ></input>
+                
+                ";
+        $result= $result . $auxstring;
+             }   
+         endforeach;
+         endif;
+         
+             
+        
+            
+         //}
         return $result;
     }
 

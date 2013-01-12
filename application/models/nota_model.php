@@ -230,6 +230,18 @@ return $query->result();
     
     }
     
+    
+      function getnotatagID($busqueda)
+
+{
+
+ 
+    $query = $this->db->query("select e.texto, e.id_etiqueta from nota_etiqueta ne,etiqueta e where ne.fk_nota= $busqueda and ne.fk_etiqueta = e.id_etiqueta;");
+    return $query->result();
+    
+    }  
+    
+    
       function getnotaadjunto($busqueda)
 
 {
@@ -315,9 +327,9 @@ return $this->db->count_all('nota');
         $query = $this->db->query("select id_nota,titulo,texto,fecha_creacion from nota where id_nota = '$id';");
         $row2 = $query->row();
     
-       
         $nota->setTitulo($row2->titulo);
         $nota->setTexto($row2->texto);
+        $nota->setId_nota($row2->id_nota);
 
         return $nota;
     }
