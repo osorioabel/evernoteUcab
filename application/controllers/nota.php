@@ -258,6 +258,10 @@ class nota extends CI_Controller {
 
         $titulo = $nota->gettitulo();
         $texto = $nota->gettexto();
+        $id= $nota->getId_nota();
+            $tags=array();
+        $tags=$this->nota_model->getnotatagID($nota->getId_nota());
+        $n=count($tags); 
         $result = "
         
         <div>
@@ -269,12 +273,14 @@ class nota extends CI_Controller {
         <label>Note</label>
         
         <textarea name='Note' id='Note'  cols='30' rows='6' class='form-poshytip' title='Note'>$texto</textarea>
+        <input name='id_nota'  hidden='true' id='id_nota' value ='$id' 
+               type='text' />
+        <input name='tam'  hidden='true' id='tam' value ='$n' 
+               type='text' />
             </div>
         <label>Tags</label>";
         
-        $tags=array();
-        $tags=$this->nota_model->getnotatagID($nota->getId_nota());
-        $n=count($tags); 
+       
         //for ($i = 0; $i < $n; $i++) {
         
          if (isset($tags)):
@@ -394,13 +400,25 @@ class nota extends CI_Controller {
         $textoNota = $this->input->post('Note');
 
         $booleano = $this->nota_model->modificarNota($username, $nota, $tituloNota, $textoNota);
-
+        
+     
+            
+            if ($booleano == true) {
+             $idNota = $this->input->post('id_nota');  
+                for ($i= 0; $i < $this->input->post('tam'); $i++) {
+                 $idTag=  $this->nota_model->tagAtIndex($idNota,$i);  
+                 $booleanito= $this->nota_model->modifyTags($idTag,$this->input->post($idTag));
+                
+            
+        } 
+        
+        
         if ($booleano == true) {
              redirect('/homeuser/indexafter2/'.$username);
         } else
         // caso de gente repetido
             echo "HOLA";
-    }
+    }}
 
     /**
      * Funcion DeleteNote($username, $nota2, $idlibreta2) funcion que se encarga 

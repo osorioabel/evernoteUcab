@@ -380,6 +380,36 @@ return $this->db->count_all('nota');
         $query = $this->db->query("UPDATE nota SET titulo = '$tituloNota',texto ='$textoNota' WHERE id_nota = '$idNote'");
         return true;
     }
+    
+    function tagAtIndex($idNota,$index){
+        
+        $query = $this->db->query("SELECT fk_etiqueta FROM nota_etiqueta
+        WHERE fk_nota =$idNota");
+        $row = $query->num_rows();
+        $row2 = $query->row();
+        for ($i = 0; $i < $row; $i++) {
+            if ($index == $i) {
+                return $row2->fk_etiqueta;
+               
+            }
+            $row2 = $query->next_row();
+        }
+        
+        
+        return 0;
+        
+    }
+    
+    function modifyTags($idTag,$contenido){
+        $query = $this->db->query("UPDATE etiqueta SET texto = '$contenido' where  id_etiqueta=$idTag");
+
+
+        if ($this->db->_error_message())
+            return false;
+
+        return true;
+    }
+    
 
     /**
     * 
