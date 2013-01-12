@@ -283,8 +283,6 @@ class nota extends CI_Controller {
         $auxstring= "<div><input name='$c->id_etiqueta'  id='$c->id_etiqueta' value ='$c->texto'
                type='text' class='form-poshytip' title='Enter a tittle' />
             </div>
-                 <input name='tag'.$i value='$c->id_etiqueta' id='tag'.$i cols='10' rows='2' class='form-poshytip' title='New Tag' ></input>
-                
                 ";
         $result= $result . $auxstring;
              }   
