@@ -61,6 +61,29 @@ class Libreta_Model extends CI_Model {
         log_message("error", "Succesfull  Creation a NoteBook .. ");
         return true;
     }
+    
+    function registerBookwithID($userID, $title, $descrip, $id_libreta) {
+        //$id =  $this->db->where('username',$username);
+        
+        $hoy = date("Y-m-d H:i:s");
+        $data = array(
+            'id_libreta'=> $id_libreta,
+            'fk_usuario' => $userID,
+            'nombre' => $title,
+            'descripcion' => $descrip,
+            'fecha' => $hoy,
+        );
+        $insert = $this->db->insert('libreta', $data);
+        $insert2 = array();
+        $insert2['error'] = $this->db->_error_message();
+        if ($insert['error'] != '') {
+
+            log_message("error", "Error Creation a NoteBook .. At registerBook in libreta Model");
+            return false;
+        }
+        log_message("error", "Succesfull  Creation a NoteBook .. ");
+        return true;
+    }
 
     /**
      * 

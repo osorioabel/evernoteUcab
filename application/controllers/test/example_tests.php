@@ -206,6 +206,14 @@ class Example_tests extends Toast {
         //$this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
     }
     
+      function test_xmlimport() {
+
+         $busqueda=array();
+         $busqueda=$this->usuario_model->SetUserInfoFromxml($this->loginusuario);
+         $this->_assert_true($busqueda);
+        //$this->message = 'Prueba Unitaria Satisfactoria se ha encontrado con el buscador la cadena expecificada ';
+    }
+    
     function test_searchingwithoutaexistingString() {
 
        

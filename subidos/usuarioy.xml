@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inforuser>
+    <libretas>
+        <libreta>
+            <id_libreta>1002</id_libreta>
+            <fk_usuario>33</fk_usuario>
+            <nombre>hola</nombre>
+            <fecha>2013-01-12</fecha>
+            <descripcion>hola como estas eres un abusador </descripcion>
+        </libreta>
+        <libreta>
+            <id_libreta>1003</id_libreta>
+            <fk_usuario>33</fk_usuario>
+            <nombre>note 2</nombre>
+            <fecha>2013-01-12</fecha>
+            <descripcion>esto es la segundoa asdlas';flka'fkad'fa</descripcion>
+        </libreta>
+    </libretas>
+    <notas>
+        <nota>
+            <id_nota>240</id_nota>
+            <titulo>nota</titulo>
+            <texto>asdasdadsasdasda</texto>
+            <fecha_creacion>2013-01-12</fecha_creacion>
+            <id_libreta>1002</id_libreta>
+        </nota>
+    </notas>
+</inforuser>
