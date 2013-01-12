@@ -230,6 +230,16 @@ return $query->result();
     
     }
     
+      function getnotaadjunto($busqueda)
+
+{
+
+    $this->db->limit(4,1);
+    $query = $this->db->query("select n.titulo,a.link from nota n,nota_adjunto na,adjunto a where n.id_libreta = $busqueda and n.id_nota = na.fk_nota and na.fk_adjunto = a.id_adjunto;");
+    return $query->result();
+    
+    }
+    
     
     
     /**

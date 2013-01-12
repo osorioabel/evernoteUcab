@@ -51,23 +51,27 @@ if ($messi)
                                             
                                             <li><strong>Project date</strong> <? echo $c->fecha_creacion ?> </li>
                                             <li><strong>username</strong> <? echo $username ?> </li>
-                                            <li> <strong>tags</strong> 
-                                            <?php    
-                                           
+                                            
+                                            <li><strong>tags</strong>
+                                            
+                                          <?php    
+                                          
                                             foreach ($records2 as $s): 
                                               if ($c->titulo == $s->titulo): 
-                                                 ?> 
-                                               <?php  
-                                                        
-                                                           echo '#'.$s->texto;
-                                               ?> 
-                                                 <?php 
-                                                            endif;
-                                                           
-                                                       
-                                               
-                                      
-                                     endforeach;
+                                                  echo '#'.$s->texto;
+                                              endif;
+                                            endforeach; 
+                                                 ?>
+                                               <li> <strong>Adjunto</strong> 
+                                                   
+                                                <?php     
+                                                   if (isset($records3)):
+                                                    foreach ($records3 as $b): 
+                                                      if ($c->titulo == $b->titulo): 
+                                                       echo $b->link;
+                                                      endif;
+                                                    endforeach;
+                                                   endif;
                                     
                           ?> 
                                                     </li>

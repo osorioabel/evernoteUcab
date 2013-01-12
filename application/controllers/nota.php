@@ -178,8 +178,10 @@ class nota extends CI_Controller {
         //$data["records"] = $this->db->get('libreta',$config['per_page'],$this->uri->segment(3));
         $notas = $this->nota_model->getnota($config['per_page'],$this->uri->segment(5),$id);
         $notastag = $this->nota_model->getnotatag($id);
+        $notasadjunto = $this->nota_model->getnotaadjunto($id);
         $data['records'] = $notas;
         $data['records2'] = $notastag;
+        $data['records3'] = $notasadjunto;
         $this->load->view('/includes/templates', $data);
     }
 
