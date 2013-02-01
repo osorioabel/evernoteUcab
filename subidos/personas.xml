@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inforuser>
+    <personas>
+        <persona>
+             <dato> 1,hector</dato>
+        </persona>
+        <persona>
+           <dato> 2,david</dato>
+        </persona>
+        <persona>
+             <dato> 3,pedro</dato>
+        </persona>
+        <persona>
+           <dato> 4,miguel</dato>
+        </persona>
+        <persona>
+             <dato> 5,juan</dato>
+        </persona>
+        <persona>
+             <dato> 6,carlosr</dato>
+        </persona>
+    </personas>
+</inforuser>

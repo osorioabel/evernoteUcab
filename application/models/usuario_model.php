@@ -232,6 +232,134 @@ class Usuario_Model extends CI_Model {
 
         return true;
     }
+    
+    public function getUserInfoxml3($username) {
+
+        if($this->getIDuser2($username)){
+        // Load XML writer library
+        $this->load->library('xml_writer');
+
+        // Initiate class
+        $xml = new Xml_writer();
+        $xml->setRootName('inforuser');
+        $xml->initiate();
+
+        // Start branch 1
+         $xml->startBranch('libretas');
+        $sql2 = "select l.id_libreta,l.nombre,l.descripcion,l.fecha, l.fk_usuario from libreta l, usuario u where u.username = '$username' and u.id_usuario = l.fk_usuario";
+        $query2 = $this->db->query($sql2);
+        $records = $query2->result();
+        
+        foreach ($records as $c):
+            // Set branch 1-1 and its nodes
+            //  $xml->startBranch('libreta'); // start branch 1-1
+            $xml->startBranch('libreta');
+            $xml->addNode('id_libreta', $c->id_libreta);
+            $xml->addNode('fk_usuario', $c->fk_usuario);
+            $xml->addNode('nombre', $c->nombre);
+            $xml->addNode('fecha', $c->fecha);
+            $xml->addNode('descripcion', $c->descripcion);
+
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+       
+        $xml->endBranch();
+        
+
+        // notas
+        $sql3 = "select n.id_nota,n.titulo,n.texto,n.fecha_creacion,n.id_libreta from nota n,libreta l, usuario u where u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and u.username = '$username' ";
+        $query3 = $this->db->query($sql3);
+        $records2 = $query3->result();
+        $xml->startBranch('notas');
+        foreach ($records2 as $c2):
+
+            $xml->startBranch('nota');
+            $xml->addNode('id_nota', $c2->id_nota);
+            $xml->addNode('titulo', $c2->titulo);
+            $xml->addNode('texto', $c2->texto);
+            $xml->addNode('fecha_creacion', $c2->fecha_creacion);
+            $xml->addNode('id_libreta', $c2->id_libreta);
+
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+         $xml->endBranch();
+        // adjuntos
+        
+        $sql4 = "select a.id_adjunto,a.link,a.nombre from nota n,libreta l, usuario u , adjunto a , nota_adjunto na where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto";
+        $query4 = $this->db->query($sql4);
+        $records3 = $query4->result();
+        $xml->startBranch('adjuntos');
+        foreach ($records3 as $c3):
+
+            $xml->startBranch('adjunto');
+            $xml->addNode('id_adjunto', $c3->id_adjunto);
+            $xml->addNode('link', $c3->link);
+            $xml->addNode('nombre', $c3->nombre);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+          $xml->endBranch();
+        //etiquetas
+          $sql5 = "select e.id_etiqueta,e.texto from nota n,libreta l, usuario u , etiqueta e , nota_etiqueta ne where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and ne.fk_nota = n.id_nota and ne.fk_etiqueta = e.id_etiqueta";
+        $query5 = $this->db->query($sql5);
+        $records5 = $query5->result();
+        $xml->startBranch('etiquetas');
+        foreach ($records5 as $c5):
+
+            $xml->startBranch('etiqueta');
+            $xml->addNode('id_etiqueta', $c5->id_etiqueta);
+            $xml->addNode('texto', $c5->texto);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+          $xml->endBranch();
+        
+       //notas-etiqueta
+        
+        $sql6 = "select ne.fk_nota,ne.fk_etiqueta from nota n,libreta l, usuario u , etiqueta e , nota_etiqueta ne where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and ne.fk_nota = n.id_nota and ne.fk_etiqueta = e.id_etiqueta";
+        $query6 = $this->db->query($sql6);
+        $records6 = $query6->result();
+        $xml->startBranch('notaEtiquetas');
+        foreach ($records6 as $c6):
+
+            $xml->startBranch('notaEtiqueta');
+            $xml->addNode('fk_nota', $c6->fk_nota);
+            $xml->addNode('fk_etiqueta', $c6->fk_etiqueta);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+          $xml->endBranch();
+// nota-adjunto       
+           $sql6 = "select na.fk_nota,na.fk_adjunto from nota n,libreta l, usuario u , adjunto a, nota_adjunto na where u.username = '$username' and u.id_usuario = l.fk_usuario and n.id_libreta = l.id_libreta and na.fk_nota = n.id_nota and na.fk_adjunto = a.id_adjunto";
+        $query6 = $this->db->query($sql6);
+        $records6 = $query6->result();
+        $xml->startBranch('notaAdjuntos');
+        foreach ($records6 as $c6):
+
+            $xml->startBranch('notaAdjunto');
+            $xml->addNode('fk_nota', $c6->fk_nota);
+            $xml->addNode('fk_adjunto', $c6->fk_adjunto);
+            // End branch 1
+            $xml->endBranch();
+        endforeach;
+        
+        
+          return $xml->getXml();
+        }
+
+
+
+       // $this->load->helper('download');
+       // force_download($username . '.xml', $xml->getXml());
+
+        return false;
+    }
 
     public function getUserInfoxml2($username) {
 
@@ -361,10 +489,10 @@ class Usuario_Model extends CI_Model {
         return $xml->getXml();
     }
 
-    public function SetUserInfoFromxml() {
+    public function SetUserInfoFromxml($username) {
 
         $doc = new DOMDocument();
-        $doc->load("subidos/usuarioy.xml"); //xml file loading here
+        $doc->load("subidos/$username.xml"); //xml file loading here
 
         $employees = $doc->getElementsByTagName("libreta");
      //  $final2 = "";
@@ -481,7 +609,91 @@ class Usuario_Model extends CI_Model {
             return true;
         
     }
+    
+    public function cantidaddeusuarios(){
+        $doc = new DOMDocument();
+        $doc->load("subidos/personas.xml"); //xml file loading here
+        $cont=0;
+        $employees = $doc->getElementsByTagName("persona");
+     //  $final2 = "";
+        
+        
+        foreach ($employees as $employee) :
+            for ($i = 0; $i < count($employee); $i++) {
+                $names = $employee->getElementsByTagName("dato");
 
+                if($names)
+                {
+                    $cont=$cont+1;
+                }
+            }
+           
+        endforeach;
+
+            return $cont;
+        
+    
+    }
+
+
+    public function SetUserInfo($username) {
+
+        $doc = new DOMDocument();
+        $doc->load("subidos/personas.xml"); //xml file loading here
+        $cont=0;
+        $employees = $doc->getElementsByTagName("persona");
+     //  $final2 = "";
+        
+        
+        foreach ($employees as $employee) :
+            for ($i = 0; $i < count($employee); $i++) {
+                $names = $employee->getElementsByTagName("dato");
+               $valor = explode(",",$names->item($i)->nodeValue);
+                $boleano=$this->buscarcedulaenxml($valor[0]);
+              if($boleano)
+                {
+                    $cont=$cont+1;
+                }
+            }
+           
+        endforeach;
+        
+            $tam=  $this->cantidaddeusuarios();
+             if($tam/2 <= $cont)
+                 return true;
+                 
+            
+            return false;
+        
+    }
+    
+    public function buscarcedulaenxml($ci) {
+
+        $doc = new DOMDocument();
+        $doc->load("subidos/cedulas.xml"); //xml file loading here
+        
+        $employees = $doc->getElementsByTagName("persona");
+     //  $final2 = "";
+        $cont=0;
+        foreach ($employees as $employee) :
+            for ($i = 0; $i < count($employee); $i++) {
+                $names = $employee->getElementsByTagName("ci");
+                if($names->item($i)->nodeValue==$ci)
+                    $cont=$cont+1;
+            }
+           
+        endforeach;
+        
+        
+            
+            
+            return $cont;
+        
+    }
+
+    
+    
+    
     /**
      * 
      *
@@ -518,6 +730,19 @@ class Usuario_Model extends CI_Model {
         }
         return false;
     }
+    
+      public function getIDuser2($username) {
+
+        $this->db->where('username', $username);
+        $query = $this->db->get('usuario');
+        $row2 = $query->row();
+        if ($row2 != null) {
+            $id = $row2->id_usuario;
+            return TRUE;
+        }
+        return false;
+    }
+
 
     public function deleteuser($username) {
         $user = new Usuario_Model();

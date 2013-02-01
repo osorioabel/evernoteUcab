@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inforuser>
+    <libretas>
+        <libreta>
+            <id_libreta>1006</id_libreta>
+            <fk_usuario>35</fk_usuario>
+            <nombre>Libreta Creada</nombre>
+            <fecha>2013-01-16</fecha>
+            <descripcion>libreta de correccion final</descripcion>
+        </libreta>
+    </libretas>
+    <notas>
+        <nota>
+            <id_nota>257</id_nota>
+            <titulo>Nota Correccion 1</titulo>
+            <texto>was an officer in the British Army, known as a pioneer of military deception operations during the Second World War. His ideas for combining fictional orders of battle, visual deception and double agents helped define Allied deception strategy during the war. Clarke trained with the Royal Flying Corps during the First World War, and then led a varied </texto>
+            <fecha_creacion>2013-01-16</fecha_creacion>
+            <id_libreta>1006</id_libreta>
+        </nota>
+        <nota>
+            <id_nota>258</id_nota>
+            <titulo>correccion 3 version 2</titulo>
+            <texto>was an officer in the British Army, known as a pioneer of military deception operations during the Second World War. His ideas for combining fictional orders of battle, visual deception and double agents helped define Allied deception strategy during the war. Clarke trained with the Royal Flying Corps during the First World War, and then led a varied </texto>
+            <fecha_creacion>2013-01-16</fecha_creacion>
+            <id_libreta>1006</id_libreta>
+        </nota>
+        <nota>
+            <id_nota>259</id_nota>
+            <titulo>correccion 3 nota 3</titulo>
+            <texto>was an officer in the British Army, known as a pioneer of military deception operations during the Second World War. His ideas for combining fictional orders of battle, visual deception and double agents helped define Allied deception strategy during the war. Clarke trained with the Royal Flying Corps during the First World War, and then led a varied </texto>
+            <fecha_creacion>2013-01-16</fecha_creacion>
+            <id_libreta>1006</id_libreta>
+        </nota>
+        <nota>
+            <id_nota>260</id_nota>
+            <titulo>nota despues de exporte</titulo>
+            <texto>was an officer in the British Army, known as a pioneer of military deception operations during the Second World War. His ideas for combining fictional orders of battle, visual deception and double agents helped define Allied deception strategy during the war. Clarke trained with the Royal Flying Corps during the First World War, and then led a varied </texto>
+            <fecha_creacion>2013-01-16</fecha_creacion>
+            <id_libreta>1006</id_libreta>
+        </nota>
+    </notas>
+    <adjuntos/>
+    <etiquetas>
+        <etiqueta>
+            <id_etiqueta>43</id_etiqueta>
+            <texto>autoevaluacion</texto>
+        </etiqueta>
+        <etiqueta>
+            <id_etiqueta>44</id_etiqueta>
+            <texto>correccion</texto>
+        </etiqueta>
+        <etiqueta>
+            <id_etiqueta>45</id_etiqueta>
+            <texto>correccion 2</texto>
+        </etiqueta>
+        <etiqueta>
+            <id_etiqueta>43</id_etiqueta>
+            <texto>autoevaluacion</texto>
+        </etiqueta>
+        <etiqueta>
+            <id_etiqueta>44</id_etiqueta>
+            <texto>correccion</texto>
+        </etiqueta>
+    </etiquetas>
+    <notaEtiquetas>
+        <notaEtiqueta>
+            <fk_nota>258</fk_nota>
+            <fk_etiqueta>43</fk_etiqueta>
+        </notaEtiqueta>
+        <notaEtiqueta>
+            <fk_nota>259</fk_nota>
+            <fk_etiqueta>44</fk_etiqueta>
+        </notaEtiqueta>
+        <notaEtiqueta>
+            <fk_nota>260</fk_nota>
+            <fk_etiqueta>45</fk_etiqueta>
+        </notaEtiqueta>
+        <notaEtiqueta>
+            <fk_nota>258</fk_nota>
+            <fk_etiqueta>43</fk_etiqueta>
+        </notaEtiqueta>
+        <notaEtiqueta>
+            <fk_nota>259</fk_nota>
+            <fk_etiqueta>44</fk_etiqueta>
+        </notaEtiqueta>
+    </notaEtiquetas>
+    <notaAdjuntos/>
+</inforuser>
